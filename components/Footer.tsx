@@ -15,9 +15,9 @@ export default function Footer() {
       { name: 'Kariéra', href: '#' },
     ],
     legal: [
-      { name: 'Obchodní podmínky', href: '#' },
-      { name: 'Ochrana soukromí', href: '#' },
-      { name: 'GDPR', href: '#' },
+      { name: 'Obchodní podmínky', href: '/obchodni-podminky' },
+      { name: 'Ochrana soukromí', href: '/ochrana-soukromi' },
+      { name: 'GDPR', href: '/ochrana-soukromi' },
     ],
   }
 
