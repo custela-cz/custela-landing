@@ -30,44 +30,25 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Headline — word by word reveal */}
-          <div className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-6 tracking-tight">
-            <span className="text-gradient">
-              {'Všechny vaše reklamy.'.split(' ').map((word, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.15 + i * 0.08,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="inline-block mr-[0.27em]"
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </span>
-            <br />
-            <span className="text-gradient-lime">
-              {'Jedno místo.'.split(' ').map((word, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.39 + i * 0.08,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="inline-block mr-[0.27em]"
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </span>
-          </div>
+          {/* Headline — line by line blur reveal */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-6 tracking-tight">
+            <motion.span
+              initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="text-gradient block"
+            >
+              Všechny vaše reklamy.
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="text-gradient-lime block"
+            >
+              Jedno místo.
+            </motion.span>
+          </h1>
 
           {/* Subheadline */}
           <motion.p
