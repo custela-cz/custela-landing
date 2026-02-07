@@ -21,12 +21,12 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-dark-secondary border-t border-white/5">
+    <footer className="bg-white border-t border-black/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-5 gap-12 mb-16">
           {/* Brand */}
           <div className="md:col-span-2">
-            <a href="/" className="text-2xl font-bold text-white tracking-tight">
+            <a href="/" className="text-2xl font-bold text-dark tracking-tight">
               Custela<span className="text-lime">.</span>
             </a>
             <p className="text-gray-text mt-4 max-w-xs text-sm leading-relaxed">
@@ -35,7 +35,7 @@ export default function Footer() {
             <div className="mt-6">
               <a
                 href="mailto:info@custela.com"
-                className="text-gray-text hover:text-lime text-sm transition-colors"
+                className="text-gray-muted hover:text-dark text-sm transition-colors"
               >
                 info@custela.com
               </a>
@@ -44,11 +44,11 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Produkt</h4>
+            <h4 className="text-dark font-semibold mb-4 text-sm">Produkt</h4>
             <ul className="space-y-3">
               {links.product.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-text hover:text-white transition-colors text-sm">
+                  <a href={link.href} className="text-gray-text hover:text-dark transition-colors text-sm">
                     {link.name}
                   </a>
                 </li>
@@ -57,11 +57,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Společnost</h4>
+            <h4 className="text-dark font-semibold mb-4 text-sm">Společnost</h4>
             <ul className="space-y-3">
               {links.company.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-text hover:text-white transition-colors text-sm">
+                  <a href={link.href} className="text-gray-text hover:text-dark transition-colors text-sm">
                     {link.name}
                   </a>
                 </li>
@@ -70,11 +70,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Právní</h4>
+            <h4 className="text-dark font-semibold mb-4 text-sm">Právní</h4>
             <ul className="space-y-3">
               {links.legal.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-text hover:text-white transition-colors text-sm">
+                  <a href={link.href} className="text-gray-text hover:text-dark transition-colors text-sm">
                     {link.name}
                   </a>
                 </li>
@@ -84,11 +84,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-text">
+        <div className="pt-8 border-t border-black/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gray-muted">
             &copy; {currentYear} Custela. Všechna práva vyhrazena.
           </p>
-          <p className="text-xs text-gray-text">
+          <p className="text-xs text-gray-muted">
             Michael Cetl, IČO: 08992207
           </p>
         </div>

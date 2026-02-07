@@ -16,8 +16,8 @@ html {
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #0A0A0A;
-  color: #FFFFFF;
+  background-color: #FAFAFA;
+  color: #0A0A0A;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,23 +28,23 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #111111;
+  background: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: #D4D4D4;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #444444;
+  background: #A3A3A3;
 }
 
 /* Fade in animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -72,18 +72,18 @@ body {
   animation-delay: 0.4s;
 }
 
-/* Gradient backgrounds */
-.gradient-radial {
-  background: radial-gradient(ellipse at top right, rgba(191, 255, 55, 0.15) 0%, transparent 50%);
+/* Subtle gradient accents */
+.gradient-lime-subtle {
+  background: radial-gradient(ellipse at top right, rgba(191, 255, 55, 0.08) 0%, transparent 50%);
 }
 
-.gradient-radial-bottom {
-  background: radial-gradient(ellipse at bottom left, rgba(191, 255, 55, 0.1) 0%, transparent 50%);
+.gradient-lime-bottom {
+  background: radial-gradient(ellipse at bottom left, rgba(191, 255, 55, 0.06) 0%, transparent 50%);
 }
 
 /* Legal content styles */
 .legal-content h2 {
-  @apply text-xl md:text-2xl font-bold text-white mb-6 mt-8 pb-3 border-b border-lime/30;
+  @apply text-xl md:text-2xl font-bold text-dark mb-6 mt-8 pb-3 border-b border-black/[0.06];
 }
 
 .legal-content h2:first-of-type {
@@ -91,7 +91,7 @@ body {
 }
 
 .legal-content h3 {
-  @apply text-lg font-semibold text-white mb-4 mt-6;
+  @apply text-lg font-semibold text-dark mb-4 mt-6;
 }
 
 .legal-content p {
@@ -99,11 +99,11 @@ body {
 }
 
 .legal-content strong {
-  @apply text-white font-medium;
+  @apply text-dark font-medium;
 }
 
 .legal-content a {
-  @apply text-lime hover:text-lime-hover underline underline-offset-2 transition-colors;
+  @apply text-dark hover:text-lime-hover underline underline-offset-2 transition-colors;
 }
 
 .legal-content ul {
@@ -119,13 +119,13 @@ body {
 }
 
 .legal-content table th {
-  @apply bg-dark-secondary text-white font-semibold text-left px-4 py-3 border border-white/10;
+  @apply bg-gray-50 text-dark font-semibold text-left px-4 py-3 border border-black/[0.06];
 }
 
 .legal-content table td {
-  @apply text-gray-text px-4 py-3 border border-white/10;
+  @apply text-gray-text px-4 py-3 border border-black/[0.06];
 }
 
 .legal-content table tr:hover td {
-  @apply bg-white/5;
+  @apply bg-gray-50;
 }

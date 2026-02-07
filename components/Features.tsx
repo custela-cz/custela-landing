@@ -41,19 +41,19 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 md:py-28 relative">
-      <div className="absolute inset-0 gradient-radial-bottom pointer-events-none" />
+    <section id="features" className="py-20 md:py-28 relative bg-white">
+      <div className="absolute inset-0 gradient-lime-bottom pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-lime text-sm font-semibold uppercase tracking-wider mb-4">
+          <p className="text-lime-hover text-sm font-semibold uppercase tracking-wider mb-4">
             Funkce
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-dark mb-6">
             Vše co potřebujete pro
             <br />
-            <span className="text-lime">úspěšný marketing</span>
+            <span className="bg-lime/20 px-1">úspěšný marketing</span>
           </h2>
           <p className="text-lg text-gray-text">
             Custela kombinuje všechny vaše reklamní platformy do jednoho nástroje.
@@ -65,12 +65,12 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className={`group p-7 bg-dark-secondary border border-white/5 rounded-card hover:border-lime/20 transition-all duration-300 ${feature.span}`}
+              className={`group p-7 bg-white border border-black/[0.06] rounded-card shadow-card hover:shadow-card-hover hover:border-lime/30 transition-all duration-300 ${feature.span}`}
             >
-              <div className="w-12 h-12 bg-lime/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-lime/20 transition-colors">
-                <feature.icon className="w-6 h-6 text-lime" />
+              <div className="w-12 h-12 bg-[#F5F5F5] rounded-xl flex items-center justify-center mb-5 group-hover:bg-lime/10 transition-colors">
+                <feature.icon className="w-6 h-6 text-gray-text group-hover:text-lime-hover transition-colors" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="text-lg font-semibold text-dark mb-2">
                 {feature.title}
               </h3>
               <p className="text-gray-text text-sm leading-relaxed">

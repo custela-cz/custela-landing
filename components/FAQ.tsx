@@ -34,15 +34,15 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-20 md:py-28">
+    <section id="faq" className="py-20 md:py-28 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-lime text-sm font-semibold uppercase tracking-wider mb-4">
+          <p className="text-lime-hover text-sm font-semibold uppercase tracking-wider mb-4">
             FAQ
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Časté <span className="text-lime">dotazy</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-dark mb-6">
+            Časté <span className="bg-lime/20 px-1">dotazy</span>
           </h2>
         </div>
 
@@ -51,16 +51,16 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-white/5 rounded-card overflow-hidden"
+              className="border border-black/[0.06] rounded-card overflow-hidden bg-white shadow-card"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors"
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-[#FAFAFA] transition-colors"
               >
-                <span className="text-white font-medium pr-4">{faq.question}</span>
+                <span className="text-dark font-medium pr-4">{faq.question}</span>
                 <ChevronDown
                   size={20}
-                  className={`text-gray-text shrink-0 transition-transform duration-200 ${
+                  className={`text-gray-muted shrink-0 transition-transform duration-200 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />

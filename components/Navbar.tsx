@@ -24,14 +24,14 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-dark/90 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-black/[0.06] shadow-card'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="text-xl font-bold text-white tracking-tight">
+          <a href="/" className="text-xl font-bold text-dark tracking-tight">
             Custela<span className="text-lime">.</span>
           </a>
 
@@ -41,18 +41,18 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-text hover:text-white transition-colors text-sm font-medium"
+                className="text-gray-text hover:text-dark transition-colors text-sm font-medium"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <a
               href="https://app.custela.com/auth"
-              className="text-gray-text hover:text-white transition-colors text-sm font-medium"
+              className="text-gray-text hover:text-dark transition-colors text-sm font-medium"
             >
               Přihlásit se
             </a>
@@ -67,7 +67,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-gray-text hover:text-white"
+            className="md:hidden p-2 text-gray-text hover:text-dark"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -76,22 +76,22 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-dark/95 backdrop-blur-xl border-t border-white/5">
+        <div className="md:hidden bg-white/95 backdrop-blur-xl border-t border-black/[0.06]">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-gray-text hover:text-white transition-colors py-2"
+                className="block text-gray-text hover:text-dark transition-colors py-2"
               >
                 {link.name}
               </a>
             ))}
-            <div className="pt-4 border-t border-white/5 space-y-3">
+            <div className="pt-4 border-t border-black/[0.06] space-y-3">
               <a
                 href="https://app.custela.com/auth"
-                className="block text-gray-text hover:text-white transition-colors py-2 text-center"
+                className="block text-gray-text hover:text-dark transition-colors py-2 text-center"
               >
                 Přihlásit se
               </a>

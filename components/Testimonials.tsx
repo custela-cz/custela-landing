@@ -26,15 +26,15 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-28 bg-dark-secondary">
+    <section className="py-20 md:py-28 bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-lime text-sm font-semibold uppercase tracking-wider mb-4">
+          <p className="text-lime-hover text-sm font-semibold uppercase tracking-wider mb-4">
             Reference
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Co říkají naši <span className="text-lime">zákazníci</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-dark mb-6">
+            Co říkají naši <span className="bg-lime/20 px-1">zákazníci</span>
           </h2>
         </div>
 
@@ -43,12 +43,12 @@ export default function Testimonials() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
-              className="p-8 bg-dark border border-white/5 rounded-card"
+              className="p-8 bg-white border border-black/[0.06] rounded-card shadow-card"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="text-lime fill-lime" />
+                  <Star key={i} size={16} className="text-amber-400 fill-amber-400" />
                 ))}
               </div>
 
@@ -59,12 +59,12 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-lime/10 rounded-full flex items-center justify-center">
-                  <span className="text-lime text-sm font-semibold">{testimonial.initials}</span>
+                <div className="w-10 h-10 bg-[#F5F5F5] rounded-full flex items-center justify-center">
+                  <span className="text-gray-text text-sm font-semibold">{testimonial.initials}</span>
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium">{testimonial.name}</p>
-                  <p className="text-gray-text text-xs">
+                  <p className="text-dark text-sm font-medium">{testimonial.name}</p>
+                  <p className="text-gray-muted text-xs">
                     {testimonial.role}, {testimonial.company}
                   </p>
                 </div>

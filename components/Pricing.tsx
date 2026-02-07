@@ -50,21 +50,21 @@ const tiers = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 md:py-28">
+    <section id="pricing" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-lime text-sm font-semibold uppercase tracking-wider mb-4">
+          <p className="text-lime-hover text-sm font-semibold uppercase tracking-wider mb-4">
             Ceník
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Jednoduchý a <span className="text-lime">transparentní</span> ceník
+          <h2 className="text-3xl md:text-5xl font-bold text-dark mb-6">
+            Jednoduchý a <span className="bg-lime/20 px-1">transparentní</span> ceník
           </h2>
           <p className="text-lg text-gray-text">
             Vyberte si tarif podle vašeho reklamního rozpočtu. Bez skrytých poplatků.
           </p>
-          <p className="text-sm text-gray-text mt-3">
-            Ušetřete <span className="text-lime font-semibold">15 %</span> při roční platbě
+          <p className="text-sm text-gray-muted mt-3">
+            Ušetřete <span className="text-dark font-semibold">15 %</span> při roční platbě
           </p>
         </div>
 
@@ -75,8 +75,8 @@ export default function Pricing() {
               key={tier.name}
               className={`relative p-8 rounded-card border transition-all duration-300 ${
                 tier.popular
-                  ? 'bg-dark-secondary border-lime/40 shadow-[0_0_40px_rgba(191,255,55,0.08)]'
-                  : 'bg-dark-secondary border-white/5 hover:border-white/10'
+                  ? 'bg-white border-lime/40 shadow-[0_4px_24px_rgba(191,255,55,0.12)]'
+                  : 'bg-white border-black/[0.06] shadow-card hover:shadow-card-hover'
               }`}
             >
               {/* Popular badge */}
@@ -89,15 +89,15 @@ export default function Pricing() {
               )}
 
               {/* Tier name */}
-              <h3 className="text-xl font-semibold text-white mb-2">{tier.name}</h3>
+              <h3 className="text-xl font-semibold text-dark mb-2">{tier.name}</h3>
               <p className="text-sm text-gray-text mb-6">{tier.description}</p>
 
               {/* Price */}
               <div className="mb-2">
-                <span className="text-4xl font-bold text-white">{tier.price}</span>
-                <span className="text-gray-text ml-1">Kč/měsíc</span>
+                <span className="text-4xl font-bold text-dark">{tier.price}</span>
+                <span className="text-gray-muted ml-1">Kč/měsíc</span>
               </div>
-              <p className="text-xs text-gray-text mb-8">
+              <p className="text-xs text-gray-muted mb-8">
                 Reklamní rozpočet {tier.spend}
               </p>
 
@@ -106,8 +106,8 @@ export default function Pricing() {
                 href="https://app.custela.com/auth"
                 className={`group flex items-center justify-center gap-2 w-full py-3.5 rounded-btn font-semibold transition-all text-sm mb-8 ${
                   tier.popular
-                    ? 'bg-lime hover:bg-lime-hover text-dark'
-                    : 'bg-white/5 hover:bg-white/10 text-white border border-white/10'
+                    ? 'bg-lime hover:bg-lime-hover text-dark shadow-[0_4px_16px_rgba(191,255,55,0.3)]'
+                    : 'bg-[#FAFAFA] hover:bg-[#F0F0F0] text-dark border border-black/[0.06]'
                 }`}
               >
                 Začít zdarma
@@ -118,7 +118,7 @@ export default function Pricing() {
               <ul className="space-y-3">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3 text-sm">
-                    <Check size={16} className="text-lime mt-0.5 shrink-0" />
+                    <Check size={16} className="text-emerald-500 mt-0.5 shrink-0" />
                     <span className="text-gray-text">{feature}</span>
                   </li>
                 ))}
@@ -129,16 +129,16 @@ export default function Pricing() {
 
         {/* Enterprise */}
         <div className="max-w-5xl mx-auto mt-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between p-8 bg-dark-secondary border border-white/5 rounded-card gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between p-8 bg-[#FAFAFA] border border-black/[0.06] rounded-card gap-6">
             <div>
-              <h3 className="text-xl font-semibold text-white mb-1">Enterprise</h3>
+              <h3 className="text-xl font-semibold text-dark mb-1">Enterprise</h3>
               <p className="text-gray-text text-sm">
                 Reklamní rozpočet nad 200 000 Kč? Připravíme vám řešení na míru.
               </p>
             </div>
             <a
               href="mailto:info@custela.com"
-              className="shrink-0 px-6 py-3 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-btn font-semibold text-sm transition-all"
+              className="shrink-0 px-6 py-3 bg-white hover:bg-[#F5F5F5] text-dark border border-black/[0.06] rounded-btn font-semibold text-sm transition-all"
             >
               Kontaktujte nás
             </a>
@@ -146,7 +146,7 @@ export default function Pricing() {
         </div>
 
         {/* Note */}
-        <p className="text-center text-xs text-gray-text mt-6">
+        <p className="text-center text-xs text-gray-muted mt-6">
           Ceny jsou bez DPH (21 %). 7 dní zdarma u všech tarifů. Zrušení kdykoliv.
         </p>
       </div>
