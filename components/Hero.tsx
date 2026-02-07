@@ -13,6 +13,16 @@ export default function Hero() {
       <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-lime/[0.03] rounded-full blur-[100px] pointer-events-none animate-glow-pulse" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[300px] bg-blue-500/[0.02] rounded-full blur-[100px] pointer-events-none" />
 
+      {/* Floating geometric shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
+        <div className="absolute top-[15%] left-[10%] w-16 h-16 border border-white/[0.04] rounded-xl animate-float-slow" style={{ animationDelay: '0s' }} />
+        <div className="absolute top-[55%] right-[12%] w-10 h-10 border border-lime/[0.06] rounded-full animate-float-slow" style={{ animationDelay: '-3s' }} />
+        <div className="absolute top-[30%] right-[7%] w-20 h-20 border border-white/[0.03] rounded-2xl rotate-12 animate-float-slow" style={{ animationDelay: '-5s' }} />
+        <div className="absolute bottom-[30%] left-[18%] w-6 h-6 bg-lime/[0.05] rounded-full animate-float-slow" style={{ animationDelay: '-2s' }} />
+        <div className="absolute top-[22%] right-[28%] w-2 h-2 bg-lime/[0.12] rounded-full animate-float-slow" style={{ animationDelay: '-4s' }} />
+        <div className="absolute bottom-[35%] right-[38%] w-14 h-14 border border-white/[0.03] rounded-full animate-float-slow" style={{ animationDelay: '-7s' }} />
+      </div>
+
       {/* Gradient fade at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 

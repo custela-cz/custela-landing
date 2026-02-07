@@ -7,11 +7,31 @@ import { motion, AnimatePresence } from 'framer-motion'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const sectionIds = ['features', 'how-it-works', 'pricing', 'faq']
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    )
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
   }, [])
 
   const navLinks = [
@@ -28,7 +48,7 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-black/70 backdrop-blur-2xl border-b border-white/[0.06]'
+          ? 'bg-black/70 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
           : 'bg-transparent'
       }`}
     >
@@ -38,16 +58,29 @@ export default function Navbar() {
             Custela<span className="text-gradient-lime">.</span>
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-[#888] hover:text-white transition-colors duration-300 text-sm font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => {
+              const sectionId = link.href.replace('#', '')
+              const isActive = activeSection === sectionId
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+                    isActive ? 'text-white' : 'text-[#888] hover:text-white'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNav"
+                      className="absolute inset-0 bg-white/[0.08] rounded-full"
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative">{link.name}</span>
+                </a>
+              )
+            })}
           </div>
 
           <div className="hidden md:flex items-center gap-4">

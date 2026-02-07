@@ -35,8 +35,7 @@ export default function DashboardPreview() {
 
             {/* Browser frame with tilt */}
             <div
-              className="relative rounded-2xl border border-black/[0.08] overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.15)]"
-              style={{ transform: 'rotateX(2deg)' }}
+              className="relative rounded-2xl border border-black/[0.08] overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.12)] animate-dashboard-float"
             >
               {/* Title bar */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-black/[0.06] bg-[#F5F5F5]">

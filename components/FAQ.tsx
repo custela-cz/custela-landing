@@ -69,7 +69,7 @@ export default function FAQ() {
                   onClick={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors duration-300"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.03] transition-all duration-300"
                 >
                   <span className="text-white font-medium pr-4">
                     {faq.question}

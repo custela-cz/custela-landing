@@ -81,7 +81,7 @@ export default function Features() {
         >
           {features.map((feature) => (
             <StaggerItem key={feature.title} className={feature.span}>
-              <div className="group p-7 rounded-2xl card-light hover:border-[#7AB800]/30 h-full">
+              <div className="group p-7 rounded-2xl card-light card-shine-light hover:border-[#7AB800]/30 h-full">
                 <div className="w-12 h-12 bg-[#0A0A0A]/[0.04] rounded-xl flex items-center justify-center mb-5 group-hover:bg-lime/10 transition-colors duration-300">
                   <feature.icon className="w-6 h-6 text-[#9CA3AF] group-hover:text-[#7AB800] transition-colors duration-300" />
                 </div>

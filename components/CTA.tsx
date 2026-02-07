@@ -12,9 +12,10 @@ export default function CTA() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <AnimateIn variant="blurScale">
           <div className="card-premium rounded-2xl p-8 md:p-16 text-center relative overflow-hidden glow-lime">
-            {/* Lime glow orb */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[250px] bg-lime/[0.06] rounded-full blur-[80px] pointer-events-none" />
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[200px] bg-lime/[0.03] rounded-full blur-[60px] pointer-events-none" />
+            {/* Animated background orbs */}
+            <div className="absolute top-0 left-1/3 w-[400px] h-[250px] bg-lime/[0.06] rounded-full blur-[80px] pointer-events-none animate-float-slow" style={{ animationDelay: '0s' }} />
+            <div className="absolute bottom-0 right-1/3 w-[300px] h-[200px] bg-lime/[0.04] rounded-full blur-[60px] pointer-events-none animate-float-slow" style={{ animationDelay: '-4s' }} />
+            <div className="absolute top-1/2 left-0 w-[200px] h-[200px] bg-blue-500/[0.03] rounded-full blur-[60px] pointer-events-none animate-float-slow" style={{ animationDelay: '-7s' }} />
 
             <div className="relative">
               {/* Badge */}
