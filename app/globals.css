@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,116 +16,235 @@ html {
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #FAFAFA;
-  color: #0A0A0A;
+  background-color: #000000;
+  color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+/* ==================== */
+/* SCROLLBAR            */
+/* ==================== */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #F5F5F5;
+  background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #D4D4D4;
-  border-radius: 4px;
+  background: #333;
+  border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #A3A3A3;
+  background: #555;
 }
 
-/* Fade in animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ==================== */
+/* DOT GRID BACKGROUND  */
+/* ==================== */
+.bg-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+.bg-grid-lg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
-.animate-delay-100 {
-  animation-delay: 0.1s;
+/* ==================== */
+/* GRADIENT TEXT         */
+/* ==================== */
+.text-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.animate-delay-200 {
-  animation-delay: 0.2s;
+.text-gradient-lime {
+  background: linear-gradient(135deg, #BFFF37 0%, #D4FF70 50%, #BFFF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.animate-delay-300 {
-  animation-delay: 0.3s;
+/* ==================== */
+/* GLOW EFFECTS         */
+/* ==================== */
+.glow-lime {
+  box-shadow:
+    0 0 20px rgba(191, 255, 55, 0.15),
+    0 0 60px rgba(191, 255, 55, 0.08),
+    0 0 100px rgba(191, 255, 55, 0.04);
 }
 
-.animate-delay-400 {
-  animation-delay: 0.4s;
+.glow-lime-strong {
+  box-shadow:
+    0 0 20px rgba(191, 255, 55, 0.25),
+    0 0 60px rgba(191, 255, 55, 0.15),
+    0 0 120px rgba(191, 255, 55, 0.06);
 }
 
-/* Subtle gradient accents */
-.gradient-lime-subtle {
-  background: radial-gradient(ellipse at top right, rgba(191, 255, 55, 0.08) 0%, transparent 50%);
+.glow-lime-btn {
+  box-shadow:
+    0 0 20px rgba(191, 255, 55, 0.3),
+    0 4px 16px rgba(191, 255, 55, 0.2);
 }
 
-.gradient-lime-bottom {
-  background: radial-gradient(ellipse at bottom left, rgba(191, 255, 55, 0.06) 0%, transparent 50%);
+.glow-lime-btn:hover {
+  box-shadow:
+    0 0 30px rgba(191, 255, 55, 0.4),
+    0 6px 24px rgba(191, 255, 55, 0.3);
 }
 
-/* Legal content styles */
+/* ==================== */
+/* ANIMATED BORDER      */
+/* ==================== */
+.border-glow {
+  position: relative;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--border-angle, 0deg),
+    transparent 60%,
+    rgba(191, 255, 55, 0.4) 80%,
+    transparent 100%
+  );
+  z-index: -1;
+  animation: border-rotate 4s linear infinite;
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-rotate {
+  to { --border-angle: 360deg; }
+}
+
+/* ==================== */
+/* SHIMMER EFFECT       */
+/* ==================== */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.4) 0%,
+    rgba(255,255,255,0.8) 50%,
+    rgba(255,255,255,0.4) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Badge shimmer */
+.shimmer-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(191, 255, 55, 0.1) 50%,
+    transparent 100%
+  );
+  animation: shimmer-slide 3s ease-in-out infinite;
+}
+
+@keyframes shimmer-slide {
+  0%, 100% { left: -100%; }
+  50% { left: 100%; }
+}
+
+/* ==================== */
+/* NOISE TEXTURE        */
+/* ==================== */
+.noise {
+  position: relative;
+}
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+/* ==================== */
+/* CARD STYLES          */
+/* ==================== */
+.card-premium {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-premium:hover {
+  border-color: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.card-glass {
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ==================== */
+/* SECTION DIVIDERS     */
+/* ==================== */
+.section-fade-top {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+}
+
+/* ==================== */
+/* LEGAL CONTENT        */
+/* ==================== */
 .legal-content h2 {
-  @apply text-xl md:text-2xl font-bold text-dark mb-6 mt-8 pb-3 border-b border-black/[0.06];
+  @apply text-xl md:text-2xl font-bold text-white mb-6 mt-8 pb-3 border-b border-white/[0.06];
 }
-
-.legal-content h2:first-of-type {
-  @apply mt-0;
-}
-
-.legal-content h3 {
-  @apply text-lg font-semibold text-dark mb-4 mt-6;
-}
-
-.legal-content p {
-  @apply text-gray-text leading-relaxed mb-4;
-}
-
-.legal-content strong {
-  @apply text-dark font-medium;
-}
-
-.legal-content a {
-  @apply text-dark hover:text-lime-hover underline underline-offset-2 transition-colors;
-}
-
-.legal-content ul {
-  @apply list-disc list-inside mb-4 space-y-2 text-gray-text;
-}
-
-.legal-content ul li {
-  @apply leading-relaxed;
-}
-
-.legal-content table {
-  @apply w-full border-collapse mb-4;
-}
-
-.legal-content table th {
-  @apply bg-gray-50 text-dark font-semibold text-left px-4 py-3 border border-black/[0.06];
-}
-
-.legal-content table td {
-  @apply text-gray-text px-4 py-3 border border-black/[0.06];
-}
-
-.legal-content table tr:hover td {
-  @apply bg-gray-50;
-}
+.legal-content h2:first-of-type { @apply mt-0; }
+.legal-content h3 { @apply text-lg font-semibold text-white mb-4 mt-6; }
+.legal-content p { @apply text-[#888] leading-relaxed mb-4; }
+.legal-content strong { @apply text-white font-medium; }
+.legal-content a { @apply text-lime hover:text-lime-hover underline underline-offset-2 transition-colors; }
+.legal-content ul { @apply list-disc list-inside mb-4 space-y-2 text-[#888]; }
+.legal-content ul li { @apply leading-relaxed; }
+.legal-content table { @apply w-full border-collapse mb-4; }
+.legal-content table th { @apply bg-white/[0.03] text-white font-semibold text-left px-4 py-3 border border-white/[0.06]; }
+.legal-content table td { @apply text-[#888] px-4 py-3 border border-white/[0.06]; }
+.legal-content table tr:hover td { @apply bg-white/[0.02]; }

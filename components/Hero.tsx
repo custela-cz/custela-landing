@@ -1,79 +1,111 @@
-import { ArrowRight, Shield, Zap, Clock } from 'lucide-react'
+'use client'
+
+import { ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-white">
-      {/* Subtle gradient accent */}
-      <div className="absolute inset-0 gradient-lime-subtle pointer-events-none" />
+    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-grid pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-lime/[0.04] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-lime/[0.03] rounded-full blur-[100px] pointer-events-none animate-glow-pulse" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[300px] bg-blue-500/[0.02] rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Gradient fade at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-lime/10 border border-lime/20 rounded-full mb-8 animate-fade-in-up">
-            <span className="w-2 h-2 bg-lime rounded-full animate-pulse" />
-            <span className="text-sm text-gray-text font-medium">Google Ads + Meta Ads + Sklik v jednom</span>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] border border-white/[0.08] rounded-full mb-8 shimmer-badge">
+              <span className="w-2 h-2 bg-lime rounded-full animate-pulse" />
+              <span className="text-sm text-[#999] font-medium">Google Ads + Meta Ads + Sklik</span>
+            </div>
+          </motion.div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-dark leading-[1.1] mb-6 animate-fade-in-up animate-delay-100 tracking-tight">
-            Všechny vaše reklamy.
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-6 tracking-tight"
+          >
+            <span className="text-gradient">Všechny vaše reklamy.</span>
             <br />
-            <span className="bg-lime/20 px-2 decoration-lime">Jedno místo.</span>
-          </h1>
+            <span className="text-gradient-lime">Jedno místo.</span>
+          </motion.h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-gray-text max-w-2xl mx-auto mb-10 animate-fade-in-up animate-delay-200 leading-relaxed">
-            Přestaňte přepínat mezi platformami. Custela spojí vaše kampaně do jednoho dashboardu — vidíte výkon, šetříte čas a utrácíte chytřeji.
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-lg md:text-xl text-[#888] max-w-2xl mx-auto mb-12 leading-relaxed"
+          >
+            Přestaňte přepínat mezi platformami. Custela spojí vaše kampaně
+            do jednoho dashboardu — vidíte výkon, šetříte čas a utrácíte chytřeji.
+          </motion.p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animate-delay-300">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
             <a
               href="https://app.custela.com/auth"
-              className="group flex items-center gap-2 px-8 py-4 bg-lime hover:bg-lime-hover text-dark font-bold rounded-btn transition-all text-lg shadow-[0_4px_16px_rgba(191,255,55,0.3)] hover:shadow-[0_6px_24px_rgba(191,255,55,0.4)]"
+              className="group flex items-center gap-2 px-8 py-4 bg-lime hover:bg-lime-hover text-black font-bold rounded-full transition-all duration-300 text-lg glow-lime-btn"
             >
               Vyzkoušet 7 dní zdarma
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <a
               href="#features"
-              className="flex items-center gap-2 px-8 py-4 border border-black/[0.1] hover:border-black/[0.2] text-dark font-medium rounded-btn transition-all text-lg hover:bg-black/[0.02]"
+              className="flex items-center gap-2 px-8 py-4 bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.1] hover:border-white/[0.2] text-white font-medium rounded-full transition-all duration-300 text-lg"
             >
               Zjistit více
             </a>
-          </div>
+          </motion.div>
 
-          {/* Trust bar */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-10 animate-fade-in-up animate-delay-400">
-            <span className="flex items-center gap-2 text-sm text-gray-muted">
-              <Shield size={14} className="text-gray-muted" />
-              Bez kreditní karty
-            </span>
-            <span className="flex items-center gap-2 text-sm text-gray-muted">
-              <Zap size={14} className="text-gray-muted" />
-              Setup za 5 minut
-            </span>
-            <span className="flex items-center gap-2 text-sm text-gray-muted">
-              <Clock size={14} className="text-gray-muted" />
-              Zrušení kdykoliv
-            </span>
-          </div>
+          {/* Trust */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="flex flex-wrap items-center justify-center gap-8 mt-10 text-sm text-[#555]"
+          >
+            <span>Bez kreditní karty</span>
+            <span className="w-1 h-1 bg-[#333] rounded-full" />
+            <span>Setup za 5 minut</span>
+            <span className="w-1 h-1 bg-[#333] rounded-full" />
+            <span>Zrušení kdykoliv</span>
+          </motion.div>
 
           {/* Stats */}
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 mt-14 pt-14 border-t border-black/[0.06] animate-fade-in-up animate-delay-400">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-dark">500+</div>
-              <div className="text-sm text-gray-muted mt-1">Aktivních uživatelů</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-dark">34%</div>
-              <div className="text-sm text-gray-muted mt-1">Průměrná úspora</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-dark">3 min</div>
-              <div className="text-sm text-gray-muted mt-1">Propojení účtů</div>
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-wrap items-center justify-center gap-12 md:gap-20 mt-20 pt-16 border-t border-white/[0.06]"
+          >
+            {[
+              { value: '500+', label: 'Aktivních uživatelů' },
+              { value: '34%', label: 'Průměrná úspora' },
+              { value: '3 min', label: 'Propojení účtů' },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl md:text-5xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-[#555]">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
