@@ -1,5 +1,3 @@
-import { Linkedin, Twitter } from 'lucide-react'
-
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -8,11 +6,12 @@ export default function Footer() {
       { name: 'Funkce', href: '#features' },
       { name: 'Jak to funguje', href: '#how-it-works' },
       { name: 'Ceník', href: '#pricing' },
+      { name: 'FAQ', href: '#faq' },
     ],
     company: [
       { name: 'O nás', href: '#' },
       { name: 'Blog', href: '#' },
-      { name: 'Kariéra', href: '#' },
+      { name: 'Kontakt', href: 'mailto:info@custela.com' },
     ],
     legal: [
       { name: 'Obchodní podmínky', href: '/obchodni-podminky' },
@@ -27,36 +26,25 @@ export default function Footer() {
         <div className="grid md:grid-cols-5 gap-12 mb-16">
           {/* Brand */}
           <div className="md:col-span-2">
-            <a href="/" className="text-2xl font-semibold text-white">
+            <a href="/" className="text-2xl font-bold text-white tracking-tight">
               Custela<span className="text-lime">.</span>
             </a>
-            <p className="text-gray-text mt-4 max-w-xs">
-              Automatizujte svůj e-commerce marketing a šetřete čas i peníze.
+            <p className="text-gray-text mt-4 max-w-xs text-sm leading-relaxed">
+              Spravujte všechny reklamní platformy z jednoho místa. Šetřete čas, snižte náklady a rostěte rychleji.
             </p>
-            {/* Social */}
-            <div className="flex gap-4 mt-6">
+            <div className="mt-6">
               <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-full flex items-center justify-center text-gray-text hover:text-white transition-colors"
+                href="mailto:info@custela.com"
+                className="text-gray-text hover:text-lime text-sm transition-colors"
               >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-full flex items-center justify-center text-gray-text hover:text-white transition-colors"
-              >
-                <Twitter size={20} />
+                info@custela.com
               </a>
             </div>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Produkt</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm">Produkt</h4>
             <ul className="space-y-3">
               {links.product.map((link) => (
                 <li key={link.name}>
@@ -69,7 +57,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Společnost</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm">Společnost</h4>
             <ul className="space-y-3">
               {links.company.map((link) => (
                 <li key={link.name}>
@@ -82,7 +70,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Právní</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm">Právní</h4>
             <ul className="space-y-3">
               {links.legal.map((link) => (
                 <li key={link.name}>
@@ -97,11 +85,11 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-text">
-            © {currentYear} Custela. Všechna práva vyhrazena.
+          <p className="text-xs text-gray-text">
+            &copy; {currentYear} Custela. Všechna práva vyhrazena.
           </p>
-          <p className="text-sm text-gray-text">
-            Vytvořeno s ❤️ v České republice
+          <p className="text-xs text-gray-text">
+            Michael Cetl, IČO: 08992207
           </p>
         </div>
       </div>
