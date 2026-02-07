@@ -33,17 +33,17 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-28 bg-dark-secondary relative">
+    <section className="py-20 md:py-28 bg-[#F5F5F5] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <AnimateIn variant="fadeUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-lime/60 text-sm font-semibold uppercase tracking-[0.2em] mb-4">
+            <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
               Reference
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient">Co říkají naši</span>{' '}
-              <span className="text-gradient-lime">zákazníci</span>
+              <span className="text-gradient-dark">Co říkají naši</span>{' '}
+              <span className="text-gradient-lime-dark">zákazníci</span>
             </h2>
           </div>
         </AnimateIn>
@@ -55,7 +55,7 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial) => (
             <StaggerItem key={testimonial.name}>
-              <div className="p-8 rounded-2xl card-premium h-full flex flex-col">
+              <div className="p-8 rounded-2xl card-light h-full flex flex-col">
                 {/* Stars */}
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
@@ -68,22 +68,22 @@ export default function Testimonials() {
                 </div>
 
                 {/* Quote */}
-                <p className="text-[#888] leading-relaxed mb-8 text-sm flex-1">
+                <p className="text-[#6B7280] leading-relaxed mb-8 text-sm flex-1">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white/[0.06] rounded-full flex items-center justify-center">
-                    <span className="text-[#888] text-sm font-semibold">
+                  <div className="w-10 h-10 bg-[#0A0A0A]/[0.05] rounded-full flex items-center justify-center">
+                    <span className="text-[#6B7280] text-sm font-semibold">
                       {testimonial.initials}
                     </span>
                   </div>
                   <div>
-                    <p className="text-white text-sm font-medium">
+                    <p className="text-[#0A0A0A] text-sm font-medium">
                       {testimonial.name}
                     </p>
-                    <p className="text-[#555] text-xs">
+                    <p className="text-[#9CA3AF] text-xs">
                       {testimonial.role}, {testimonial.company}
                     </p>
                   </div>

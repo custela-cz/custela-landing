@@ -5,22 +5,22 @@ import AnimateIn from '@/components/AnimateIn'
 
 export default function DashboardPreview() {
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden bg-black">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-lime/[0.04] rounded-full blur-[120px] pointer-events-none" />
+    <section className="py-20 md:py-28 relative overflow-hidden bg-white">
+      {/* Subtle lime glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-lime/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <AnimateIn variant="fadeUp">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-lime/60 text-sm font-semibold uppercase tracking-[0.2em] mb-4">
+            <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
               Jeden dashboard
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient">Všechno na</span>{' '}
-              <span className="text-gradient-lime">jednom místě</span>
+              <span className="text-gradient-dark">Všechno na</span>{' '}
+              <span className="text-gradient-lime-dark">jednom místě</span>
             </h2>
-            <p className="text-lg text-[#888]">
+            <p className="text-lg text-[#6B7280]">
               Přehledný dashboard, kde vidíte výkon všech kampaní v reálném čase.
             </p>
           </div>
@@ -29,24 +29,24 @@ export default function DashboardPreview() {
         {/* Dashboard mockup with perspective */}
         <AnimateIn variant="scaleUp" duration={0.8}>
           <div className="relative max-w-5xl mx-auto" style={{ perspective: '1200px' }}>
-            {/* Lime glow behind browser */}
-            <div className="absolute -inset-8 bg-lime/[0.06] rounded-[40px] blur-3xl pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-lime/[0.08] rounded-full blur-[80px] pointer-events-none" />
+            {/* Shadow + subtle glow behind browser */}
+            <div className="absolute -inset-4 bg-gradient-to-b from-black/[0.03] to-black/[0.08] rounded-[32px] blur-2xl pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[50%] bg-lime/[0.04] rounded-full blur-[80px] pointer-events-none" />
 
             {/* Browser frame with tilt */}
             <div
-              className="relative rounded-2xl border border-white/[0.08] overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.6)]"
+              className="relative rounded-2xl border border-black/[0.08] overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.15)]"
               style={{ transform: 'rotateX(2deg)' }}
             >
               {/* Title bar */}
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06] bg-[#0A0A0A]">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-black/[0.06] bg-[#F5F5F5]">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
                   <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
                   <div className="w-3 h-3 rounded-full bg-[#28C840]" />
                 </div>
                 <div className="flex-1 flex justify-center">
-                  <div className="px-4 py-1 bg-white/[0.04] rounded-md text-xs text-[#555] border border-white/[0.06]">
+                  <div className="px-4 py-1 bg-white rounded-md text-xs text-[#9CA3AF] border border-black/[0.06]">
                     app.custela.com
                   </div>
                 </div>
@@ -57,7 +57,7 @@ export default function DashboardPreview() {
                 {/* Sidebar */}
                 <div className="hidden sm:flex flex-col w-[200px] bg-white border-r border-black/[0.06] p-4">
                   <div className="text-lg font-bold text-[#0A0A0A] mb-6 tracking-tight">
-                    Custela<span className="text-lime">.</span>
+                    Custela<span className="text-[#7AB800]">.</span>
                   </div>
                   <nav className="space-y-1">
                     {['Dashboard', 'Analytika', 'Kampaně', 'Zdroje dat'].map(
@@ -67,7 +67,7 @@ export default function DashboardPreview() {
                           className={`px-3 py-2 rounded-lg text-sm ${
                             i === 0
                               ? 'bg-[#FAFAFA] text-[#0A0A0A] font-medium border border-black/[0.06]'
-                              : 'text-[#888]'
+                              : 'text-[#9CA3AF]'
                           }`}
                         >
                           {item}
@@ -80,12 +80,12 @@ export default function DashboardPreview() {
                       <div className="w-7 h-7 bg-lime/20 rounded-full flex items-center justify-center text-xs text-[#0A0A0A] font-semibold">
                         M
                       </div>
-                      <span className="text-xs text-[#888]">Můj e-shop</span>
+                      <span className="text-xs text-[#9CA3AF]">Můj e-shop</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Main content - Light mode */}
+                {/* Main content */}
                 <div className="flex-1 p-4 md:p-6 overflow-hidden bg-[#FAFAFA]">
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6">
@@ -93,7 +93,7 @@ export default function DashboardPreview() {
                       <h3 className="text-[#0A0A0A] font-semibold text-sm md:text-base">
                         Dashboard
                       </h3>
-                      <p className="text-[#888] text-xs">Posledních 30 dní</p>
+                      <p className="text-[#9CA3AF] text-xs">Posledních 30 dní</p>
                     </div>
                     <div className="flex gap-2">
                       <div className="px-3 py-1.5 bg-emerald-50 text-emerald-600 rounded-lg text-xs font-medium flex items-center gap-1">
@@ -131,7 +131,7 @@ export default function DashboardPreview() {
                         key={stat.label}
                         className="bg-white rounded-xl p-3 md:p-4 border border-black/[0.06]"
                       >
-                        <p className="text-[#888] text-[10px] md:text-xs uppercase tracking-wider mb-1">
+                        <p className="text-[#9CA3AF] text-[10px] md:text-xs uppercase tracking-wider mb-1">
                           {stat.label}
                         </p>
                         <p className="text-[#0A0A0A] font-bold text-sm md:text-lg">
@@ -141,7 +141,7 @@ export default function DashboardPreview() {
                           className={`text-[10px] md:text-xs mt-1 ${
                             stat.change.startsWith('+')
                               ? 'text-emerald-500'
-                              : 'text-red-400'
+                              : 'text-amber-500'
                           }`}
                         >
                           {stat.change}
@@ -157,11 +157,11 @@ export default function DashboardPreview() {
                         Výkon kampaní
                       </p>
                       <div className="flex gap-3">
-                        <span className="flex items-center gap-1 text-[10px] text-[#888]">
-                          <span className="w-2 h-2 rounded-full bg-lime" />{' '}
+                        <span className="flex items-center gap-1 text-[10px] text-[#9CA3AF]">
+                          <span className="w-2 h-2 rounded-full bg-[#7AB800]" />{' '}
                           Zobrazení
                         </span>
-                        <span className="flex items-center gap-1 text-[10px] text-[#888]">
+                        <span className="flex items-center gap-1 text-[10px] text-[#9CA3AF]">
                           <span className="w-2 h-2 rounded-full bg-blue-400" />{' '}
                           Prokliky
                         </span>
@@ -182,12 +182,12 @@ export default function DashboardPreview() {
                         >
                           <stop
                             offset="0%"
-                            stopColor="#BFFF37"
-                            stopOpacity="0.2"
+                            stopColor="#7AB800"
+                            stopOpacity="0.15"
                           />
                           <stop
                             offset="100%"
-                            stopColor="#BFFF37"
+                            stopColor="#7AB800"
                             stopOpacity="0"
                           />
                         </linearGradient>
@@ -195,7 +195,7 @@ export default function DashboardPreview() {
                       <path
                         d="M0,80 C30,70 60,60 100,55 C140,50 170,65 200,45 C230,25 260,35 300,20 C340,5 370,15 400,10"
                         fill="none"
-                        stroke="#BFFF37"
+                        stroke="#7AB800"
                         strokeWidth="2"
                       />
                       <path
@@ -259,7 +259,7 @@ export default function DashboardPreview() {
                             </span>
                           </div>
                           <div className="flex items-center gap-6">
-                            <span className="text-[#888]">
+                            <span className="text-[#9CA3AF]">
                               {campaign.spend} Kč
                             </span>
                             <span className="text-emerald-600 font-medium">
@@ -281,7 +281,7 @@ export default function DashboardPreview() {
           <div className="text-center mt-12">
             <a
               href="https://app.custela.com/auth"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-lime hover:bg-lime-hover text-black font-bold rounded-full transition-all text-base glow-lime-btn"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-[#0A0A0A] hover:bg-[#171717] text-white font-bold rounded-full transition-all text-base shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
             >
               Vyzkoušet zdarma
               <ArrowRight

@@ -13,16 +13,20 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen">
       <Navbar />
       <Hero />
       <LogoCloud />
+      {/* Dark → Light transition */}
+      <div className="h-24 md:h-32 bg-gradient-to-b from-black to-[#FAFAFA]" />
       <Problems />
       <DashboardPreview />
       <Features />
       <HowItWorks />
       <Pricing />
       <Testimonials />
+      {/* Light → Dark transition */}
+      <div className="h-24 md:h-32 bg-gradient-to-b from-[#F5F5F5] to-black" />
       <FAQ />
       <CTA />
       <Footer />
