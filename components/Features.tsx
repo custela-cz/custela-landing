@@ -58,7 +58,7 @@ export default function Features() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
-        <AnimateIn variant="fadeUp">
+        <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
               Funkce

@@ -45,7 +45,7 @@ export default function FAQ() {
     <section id="faq" className="py-20 md:py-28 bg-black relative">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <AnimateIn variant="fadeUp">
+        <AnimateIn variant="blurUp">
           <div className="text-center mb-16">
             <p className="text-lime/60 text-sm font-semibold uppercase tracking-[0.2em] mb-4">
               FAQ
@@ -58,7 +58,7 @@ export default function FAQ() {
         </AnimateIn>
 
         {/* Accordion */}
-        <AnimateIn variant="fadeUp" delay={0.1}>
+        <AnimateIn variant="blurUp" delay={0.1}>
           <div className="space-y-3">
             {faqs.map((faq, index) => (
               <div

@@ -11,7 +11,7 @@ export default function DashboardPreview() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
-        <AnimateIn variant="fadeUp">
+        <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
               Jeden dashboard
@@ -27,7 +27,7 @@ export default function DashboardPreview() {
         </AnimateIn>
 
         {/* Dashboard mockup with perspective */}
-        <AnimateIn variant="scaleUp" duration={0.8}>
+        <AnimateIn variant="blurScale" duration={0.9}>
           <div className="relative max-w-5xl mx-auto" style={{ perspective: '1200px' }}>
             {/* Shadow + subtle glow behind browser */}
             <div className="absolute -inset-4 bg-gradient-to-b from-black/[0.03] to-black/[0.08] rounded-[32px] blur-2xl pointer-events-none" />
@@ -277,7 +277,7 @@ export default function DashboardPreview() {
         </AnimateIn>
 
         {/* CTA below mockup */}
-        <AnimateIn variant="fadeUp" delay={0.3}>
+        <AnimateIn variant="blurUp" delay={0.3}>
           <div className="text-center mt-12">
             <a
               href="https://app.custela.com/auth"

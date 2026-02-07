@@ -10,7 +10,7 @@ export default function CTA() {
       className="py-20 md:py-28 relative overflow-hidden bg-black"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <AnimateIn variant="scaleUp">
+        <AnimateIn variant="blurScale">
           <div className="card-premium rounded-2xl p-8 md:p-16 text-center relative overflow-hidden glow-lime">
             {/* Lime glow orb */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[250px] bg-lime/[0.06] rounded-full blur-[80px] pointer-events-none" />

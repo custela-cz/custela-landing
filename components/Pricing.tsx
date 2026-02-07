@@ -60,7 +60,7 @@ export default function Pricing() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
-        <AnimateIn variant="fadeUp">
+        <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
               Ceník
@@ -158,7 +158,7 @@ export default function Pricing() {
         </StaggerContainer>
 
         {/* Enterprise */}
-        <AnimateIn variant="fadeUp" delay={0.3}>
+        <AnimateIn variant="blurUp" delay={0.3}>
           <div className="max-w-5xl mx-auto mt-8">
             <div className="flex flex-col sm:flex-row items-center justify-between p-8 card-light rounded-2xl gap-6">
               <div>
@@ -180,7 +180,7 @@ export default function Pricing() {
         </AnimateIn>
 
         {/* Note */}
-        <AnimateIn variant="fade" delay={0.4}>
+        <AnimateIn variant="blurFade" delay={0.4}>
           <p className="text-center text-xs text-[#9CA3AF] mt-6">
             Ceny jsou bez DPH (21 %). 7 dní zdarma u všech tarifů. Zrušení kdykoliv.
           </p>

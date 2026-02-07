@@ -2,6 +2,7 @@
 
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { CountUp } from '@/components/AnimateIn'
 
 export default function Hero() {
   return (
@@ -19,9 +20,9 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 20, scale: 0.95, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] border border-white/[0.08] rounded-full mb-8 shimmer-badge">
               <span className="w-2 h-2 bg-lime rounded-full animate-pulse" />
@@ -29,23 +30,50 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-6 tracking-tight"
-          >
-            <span className="text-gradient">Všechny vaše reklamy.</span>
+          {/* Headline — word by word reveal */}
+          <div className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-6 tracking-tight">
+            <span className="text-gradient">
+              {'Všechny vaše reklamy.'.split(' ').map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.15 + i * 0.08,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  className="inline-block mr-[0.27em]"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </span>
             <br />
-            <span className="text-gradient-lime">Jedno místo.</span>
-          </motion.h1>
+            <span className="text-gradient-lime">
+              {'Jedno místo.'.split(' ').map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.39 + i * 0.08,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  className="inline-block mr-[0.27em]"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </span>
+          </div>
 
           {/* Subheadline */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.7, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-[#888] max-w-2xl mx-auto mb-12 leading-relaxed"
           >
             Přestaňte přepínat mezi platformami. Custela spojí vaše kampaně
@@ -54,9 +82,9 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.7, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
@@ -76,9 +104,9 @@ export default function Hero() {
 
           {/* Trust */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
+            initial={{ opacity: 0, filter: 'blur(6px)' }}
+            animate={{ opacity: 1, filter: 'blur(0px)' }}
+            transition={{ duration: 0.7, delay: 0.8 }}
             className="flex flex-wrap items-center justify-center gap-8 mt-10 text-sm text-[#555]"
           >
             <span>Bez kreditní karty</span>
@@ -88,23 +116,31 @@ export default function Hero() {
             <span>Zrušení kdykoliv</span>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats with counter animation */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-wrap items-center justify-center gap-12 md:gap-20 mt-20 pt-16 border-t border-white/[0.06]"
           >
-            {[
-              { value: '500+', label: 'Aktivních uživatelů' },
-              { value: '34%', label: 'Průměrná úspora' },
-              { value: '3 min', label: 'Propojení účtů' },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-5xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-[#555]">{stat.label}</div>
+            <div className="text-center">
+              <div className="text-3xl md:text-5xl font-bold text-white mb-1">
+                <CountUp value={500} suffix="+" duration={2} />
               </div>
-            ))}
+              <div className="text-sm text-[#555]">Aktivních uživatelů</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-5xl font-bold text-white mb-1">
+                <CountUp value={34} suffix="%" duration={2} />
+              </div>
+              <div className="text-sm text-[#555]">Průměrná úspora</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-5xl font-bold text-white mb-1">
+                <CountUp value={3} suffix=" min" duration={1.5} />
+              </div>
+              <div className="text-sm text-[#555]">Propojení účtů</div>
+            </div>
           </motion.div>
         </div>
       </div>

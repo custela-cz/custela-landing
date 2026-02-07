@@ -32,7 +32,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-20 md:py-28 bg-[#FAFAFA] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <AnimateIn variant="fadeUp">
+        <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
               3 jednoduché kroky
@@ -54,7 +54,7 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <AnimateIn
               key={step.number}
-              variant="fadeUp"
+              variant="blurUp"
               delay={index * 0.2}
             >
               <div className="text-center relative">
@@ -83,7 +83,7 @@ export default function HowItWorks() {
         </div>
 
         {/* CTA */}
-        <AnimateIn variant="fadeUp" delay={0.6}>
+        <AnimateIn variant="blurUp" delay={0.6}>
           <div className="text-center mt-14">
             <a
               href="https://app.custela.com/auth"
