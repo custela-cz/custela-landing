@@ -1,51 +1,45 @@
 'use client'
 
-import { LayoutDashboard, BarChart3, Zap, RefreshCw, Settings, Wallet } from 'lucide-react'
+import { LayoutDashboard, BarChart3, Zap, RefreshCw, Settings, Wallet, X, Check } from 'lucide-react'
 import { StaggerContainer, StaggerItem } from '@/components/AnimateIn'
 import AnimateIn from '@/components/AnimateIn'
 
 const features = [
   {
     icon: LayoutDashboard,
-    title: 'Všechno na jedné obrazovce',
+    title: 'Přehled kampaní',
     before: 'Otevíráte Google Ads, Meta Ads a Sklik zvlášť — každé ráno dokola.',
     after: 'Jeden dashboard, tři platformy. Otevřete a vidíte vše najednou.',
-    span: 'md:col-span-2',
   },
   {
     icon: BarChart3,
-    title: 'Reporty za vteřiny',
+    title: 'Reporting',
     before: 'Hodiny exportů, kopírování a formátování v Excelu.',
     after: 'Přehledné reporty se generují automaticky. Žádné ruční tabulky.',
-    span: '',
   },
   {
     icon: Zap,
-    title: 'AI doporučení',
+    title: 'Optimalizace',
     before: 'Problémy v kampaních zjistíte pozdě — až když utrácíte zbytečně.',
     after: 'AI identifikuje neefektivní kampaně dřív, než vás stojí peníze.',
-    span: '',
   },
   {
     icon: RefreshCw,
-    title: 'Data vždy aktuální',
+    title: 'Aktuálnost dat',
     before: 'Ruční kontrola dat na každé platformě zvlášť.',
     after: 'Automatická synchronizace každé 4 hodiny. Vždy aktuální čísla.',
-    span: '',
   },
   {
     icon: Settings,
-    title: 'Správa z jednoho místa',
+    title: 'Správa kampaní',
     before: 'Změny rozpočtů a cílení na třech různých platformách.',
     after: 'Jednou rukou ovládáte kampaně na Google, Metu i Skliku.',
-    span: '',
   },
   {
     icon: Wallet,
-    title: 'Rozpočty pod kontrolou',
+    title: 'Rozpočty',
     before: 'Nevíte, kolik celkově utrácíte napříč platformami.',
     after: 'Okamžitý přehled výdajů. Upozornění, když se náklady vymknou.',
-    span: 'md:col-span-2',
   },
 ]
 
@@ -70,33 +64,72 @@ export default function Features() {
           </div>
         </AnimateIn>
 
-        {/* Bento Grid with before/after */}
+        {/* Column headers */}
+        <AnimateIn variant="blurUp" delay={0.1}>
+          <div className="max-w-4xl mx-auto mb-4">
+            <div className="hidden md:grid md:grid-cols-[200px_1fr_1fr] gap-4 px-2">
+              <div />
+              <div className="flex items-center gap-2 px-4 py-2">
+                <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center">
+                  <X size={12} className="text-red-400" />
+                </div>
+                <span className="text-sm font-semibold text-red-400 uppercase tracking-wider">Bez Custely</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2">
+                <div className="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center">
+                  <Check size={12} className="text-emerald-500" />
+                </div>
+                <span className="text-sm font-semibold text-emerald-600 uppercase tracking-wider">S Custelou</span>
+              </div>
+            </div>
+          </div>
+        </AnimateIn>
+
+        {/* Comparison rows */}
         <StaggerContainer
-          className="grid md:grid-cols-4 gap-4 max-w-5xl mx-auto"
-          staggerDelay={0.1}
+          className="max-w-4xl mx-auto space-y-3"
+          staggerDelay={0.08}
         >
           {features.map((feature) => (
-            <StaggerItem key={feature.title} className={feature.span}>
-              <div className="group p-7 rounded-2xl card-light h-full">
-                <div className="w-12 h-12 bg-[#0A0A0A]/[0.04] rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#7AB800]/[0.08] transition-colors duration-300">
-                  <feature.icon className="w-6 h-6 text-[#9CA3AF] group-hover:text-[#7AB800] transition-colors duration-300" />
+            <StaggerItem key={feature.title}>
+              <div className="rounded-2xl border border-black/[0.06] bg-white overflow-hidden hover:border-black/[0.1] transition-colors">
+                {/* Desktop: 3-column row */}
+                <div className="hidden md:grid md:grid-cols-[200px_1fr_1fr]">
+                  {/* Feature label */}
+                  <div className="flex items-center gap-3 p-5 border-r border-black/[0.06]">
+                    <feature.icon className="w-5 h-5 text-[#9CA3AF] shrink-0" />
+                    <span className="text-sm font-semibold text-[#0A0A0A]">{feature.title}</span>
+                  </div>
+                  {/* Before */}
+                  <div className="p-5 bg-red-50/50 border-r border-black/[0.06]">
+                    <p className="text-sm text-[#6B7280] leading-relaxed">{feature.before}</p>
+                  </div>
+                  {/* After */}
+                  <div className="p-5 bg-emerald-50/50">
+                    <p className="text-sm text-[#0A0A0A] leading-relaxed font-medium">{feature.after}</p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-[#0A0A0A] mb-4">
-                  {feature.title}
-                </h3>
-                {/* Before */}
-                <div className="flex items-start gap-2 mb-2">
-                  <span className="text-red-400 text-sm mt-0.5 shrink-0">&#10005;</span>
-                  <p className="text-[#9CA3AF] text-sm leading-relaxed line-through decoration-[#E5E7EB]">
-                    {feature.before}
-                  </p>
-                </div>
-                {/* After */}
-                <div className="flex items-start gap-2">
-                  <span className="text-emerald-500 text-sm mt-0.5 shrink-0">&#10003;</span>
-                  <p className="text-[#4B5563] text-sm leading-relaxed font-medium">
-                    {feature.after}
-                  </p>
+
+                {/* Mobile: stacked */}
+                <div className="md:hidden p-5">
+                  <div className="flex items-center gap-3 mb-4">
+                    <feature.icon className="w-5 h-5 text-[#9CA3AF] shrink-0" />
+                    <span className="text-sm font-semibold text-[#0A0A0A]">{feature.title}</span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-2.5 p-3 rounded-xl bg-red-50/60">
+                      <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center mt-0.5 shrink-0">
+                        <X size={10} className="text-red-400" />
+                      </div>
+                      <p className="text-sm text-[#6B7280] leading-relaxed">{feature.before}</p>
+                    </div>
+                    <div className="flex items-start gap-2.5 p-3 rounded-xl bg-emerald-50/60">
+                      <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center mt-0.5 shrink-0">
+                        <Check size={10} className="text-emerald-500" />
+                      </div>
+                      <p className="text-sm text-[#0A0A0A] leading-relaxed font-medium">{feature.after}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </StaggerItem>
