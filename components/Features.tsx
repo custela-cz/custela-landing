@@ -1,6 +1,6 @@
 'use client'
 
-import { LayoutDashboard, BarChart3, Zap, RefreshCw, Settings, Wallet, X, Check } from 'lucide-react'
+import { LayoutDashboard, BarChart3, Zap, RefreshCw, Settings, Wallet, X, Check, ArrowRight } from 'lucide-react'
 import { StaggerContainer, StaggerItem } from '@/components/AnimateIn'
 import AnimateIn from '@/components/AnimateIn'
 
@@ -8,38 +8,38 @@ const features = [
   {
     icon: LayoutDashboard,
     title: 'Přehled kampaní',
-    before: 'Otevíráte Google Ads, Meta Ads a Sklik zvlášť — každé ráno dokola.',
-    after: 'Jeden dashboard, tři platformy. Otevřete a vidíte vše najednou.',
+    before: '3 platformy, 3 přihlášení, každé ráno',
+    after: '1 dashboard — vše na jednom místě',
   },
   {
     icon: BarChart3,
     title: 'Reporting',
-    before: 'Hodiny exportů, kopírování a formátování v Excelu.',
-    after: 'Přehledné reporty se generují automaticky. Žádné ruční tabulky.',
+    before: 'Ruční exporty a Excel tabulky',
+    after: 'Automatické reporty za vteřiny',
   },
   {
     icon: Zap,
     title: 'Optimalizace',
-    before: 'Problémy v kampaních zjistíte pozdě — až když utrácíte zbytečně.',
-    after: 'AI identifikuje neefektivní kampaně dřív, než vás stojí peníze.',
+    before: 'Problémy zjistíte, až když stojí peníze',
+    after: 'AI upozorní předem',
   },
   {
     icon: RefreshCw,
     title: 'Aktuálnost dat',
-    before: 'Ruční kontrola dat na každé platformě zvlášť.',
-    after: 'Automatická synchronizace každé 4 hodiny. Vždy aktuální čísla.',
+    before: 'Ruční kontrola na každé platformě',
+    after: 'Auto-sync každé 4 hodiny',
   },
   {
     icon: Settings,
     title: 'Správa kampaní',
-    before: 'Změny rozpočtů a cílení na třech různých platformách.',
-    after: 'Jednou rukou ovládáte kampaně na Google, Metu i Skliku.',
+    before: '3 rozhraní, 3× stejná práce',
+    after: 'Jeden nástroj na vše',
   },
   {
     icon: Wallet,
     title: 'Rozpočty',
-    before: 'Nevíte, kolik celkově utrácíte napříč platformami.',
-    after: 'Okamžitý přehled výdajů. Upozornění, když se náklady vymknou.',
+    before: 'Žádný celkový přehled výdajů',
+    after: 'Real-time náklady + upozornění',
   },
 ]
 
@@ -49,7 +49,7 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <AnimateIn variant="blurUp">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-14">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
               Co se změní
             </p>
@@ -57,84 +57,73 @@ export default function Features() {
               <span className="text-gradient-dark">Před a po</span>{' '}
               <span className="text-gradient-lime-dark">Custele</span>
             </h2>
-            <p className="text-lg text-[#6B7280]">
-              Jeden nástroj, který nahradí přepínání mezi třemi platformami,
-              ruční reporty a nekonečné kontrolování rozpočtů.
-            </p>
           </div>
         </AnimateIn>
 
-        {/* Column headers */}
-        <AnimateIn variant="blurUp" delay={0.1}>
-          <div className="max-w-4xl mx-auto mb-4">
-            <div className="hidden md:grid md:grid-cols-[200px_1fr_1fr] gap-4 px-2">
+        {/* Comparison table */}
+        <div className="max-w-3xl mx-auto">
+          {/* Column headers — desktop */}
+          <AnimateIn variant="blurUp" delay={0.1}>
+            <div className="hidden md:grid md:grid-cols-[180px_1fr_40px_1fr] items-center gap-0 mb-3 px-1">
               <div />
-              <div className="flex items-center gap-2 px-4 py-2">
-                <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center">
-                  <X size={12} className="text-red-400" />
-                </div>
-                <span className="text-sm font-semibold text-red-400 uppercase tracking-wider">Bez Custely</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2">
-                <div className="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center">
-                  <Check size={12} className="text-emerald-500" />
-                </div>
-                <span className="text-sm font-semibold text-emerald-600 uppercase tracking-wider">S Custelou</span>
-              </div>
+              <span className="text-xs font-bold text-red-400 uppercase tracking-wider text-center">Bez Custely</span>
+              <div />
+              <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider text-center">S Custelou</span>
             </div>
-          </div>
-        </AnimateIn>
+          </AnimateIn>
 
-        {/* Comparison rows */}
-        <StaggerContainer
-          className="max-w-4xl mx-auto space-y-3"
-          staggerDelay={0.08}
-        >
-          {features.map((feature) => (
-            <StaggerItem key={feature.title}>
-              <div className="rounded-2xl border border-black/[0.06] bg-white overflow-hidden hover:border-black/[0.1] transition-colors">
-                {/* Desktop: 3-column row */}
-                <div className="hidden md:grid md:grid-cols-[200px_1fr_1fr]">
-                  {/* Feature label */}
-                  <div className="flex items-center gap-3 p-5 border-r border-black/[0.06]">
-                    <feature.icon className="w-5 h-5 text-[#9CA3AF] shrink-0" />
-                    <span className="text-sm font-semibold text-[#0A0A0A]">{feature.title}</span>
+          {/* Rows */}
+          <StaggerContainer className="space-y-2" staggerDelay={0.06}>
+            {features.map((feature) => (
+              <StaggerItem key={feature.title}>
+                {/* Desktop row */}
+                <div className="hidden md:grid md:grid-cols-[180px_1fr_40px_1fr] items-center gap-0 rounded-xl border border-black/[0.06] overflow-hidden hover:border-black/[0.12] transition-colors">
+                  {/* Label */}
+                  <div className="flex items-center gap-2.5 px-5 py-4 bg-[#FAFAFA] border-r border-black/[0.06]">
+                    <feature.icon className="w-4 h-4 text-[#9CA3AF] shrink-0" />
+                    <span className="text-[13px] font-semibold text-[#0A0A0A]">{feature.title}</span>
                   </div>
                   {/* Before */}
-                  <div className="p-5 bg-red-50/50 border-r border-black/[0.06]">
-                    <p className="text-sm text-[#6B7280] leading-relaxed">{feature.before}</p>
+                  <div className="px-5 py-4 bg-red-50/40">
+                    <p className="text-[13px] text-[#6B7280]">{feature.before}</p>
+                  </div>
+                  {/* Arrow */}
+                  <div className="flex items-center justify-center py-4 bg-white">
+                    <ArrowRight size={14} className="text-[#D1D5DB]" />
                   </div>
                   {/* After */}
-                  <div className="p-5 bg-emerald-50/50">
-                    <p className="text-sm text-[#0A0A0A] leading-relaxed font-medium">{feature.after}</p>
+                  <div className="px-5 py-4 bg-emerald-50/50">
+                    <p className="text-[13px] text-[#0A0A0A] font-semibold">{feature.after}</p>
                   </div>
                 </div>
 
-                {/* Mobile: stacked */}
-                <div className="md:hidden p-5">
-                  <div className="flex items-center gap-3 mb-4">
-                    <feature.icon className="w-5 h-5 text-[#9CA3AF] shrink-0" />
+                {/* Mobile row */}
+                <div className="md:hidden rounded-xl border border-black/[0.06] overflow-hidden">
+                  <div className="flex items-center gap-2.5 px-4 py-3 bg-[#FAFAFA] border-b border-black/[0.06]">
+                    <feature.icon className="w-4 h-4 text-[#9CA3AF] shrink-0" />
                     <span className="text-sm font-semibold text-[#0A0A0A]">{feature.title}</span>
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex items-start gap-2.5 p-3 rounded-xl bg-red-50/60">
-                      <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center mt-0.5 shrink-0">
+                  <div className="grid grid-cols-2">
+                    <div className="px-4 py-3 bg-red-50/40 border-r border-black/[0.06]">
+                      <div className="flex items-center gap-1.5 mb-1">
                         <X size={10} className="text-red-400" />
+                        <span className="text-[10px] font-bold text-red-400 uppercase">Před</span>
                       </div>
-                      <p className="text-sm text-[#6B7280] leading-relaxed">{feature.before}</p>
+                      <p className="text-xs text-[#6B7280] leading-relaxed">{feature.before}</p>
                     </div>
-                    <div className="flex items-start gap-2.5 p-3 rounded-xl bg-emerald-50/60">
-                      <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center mt-0.5 shrink-0">
+                    <div className="px-4 py-3 bg-emerald-50/50">
+                      <div className="flex items-center gap-1.5 mb-1">
                         <Check size={10} className="text-emerald-500" />
+                        <span className="text-[10px] font-bold text-emerald-600 uppercase">Po</span>
                       </div>
-                      <p className="text-sm text-[#0A0A0A] leading-relaxed font-medium">{feature.after}</p>
+                      <p className="text-xs text-[#0A0A0A] leading-relaxed font-semibold">{feature.after}</p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
       </div>
     </section>
   )
