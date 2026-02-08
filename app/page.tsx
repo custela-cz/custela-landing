@@ -4,7 +4,7 @@ import LogoCloud from '@/components/LogoCloud'
 import Problems from '@/components/Problems'
 import DashboardPreview from '@/components/DashboardPreview'
 import Features from '@/components/Features'
-import HowItWorks from '@/components/HowItWorks'
+import Results from '@/components/Results'
 import Pricing from '@/components/Pricing'
 import Testimonials from '@/components/Testimonials'
 import FAQ from '@/components/FAQ'
@@ -24,9 +24,9 @@ export default function Home() {
       <Problems />
       <DashboardPreview />
       <Features />
-      <HowItWorks />
-      <Pricing />
+      <Results />
       <Testimonials />
+      <Pricing />
       {/* Light → Dark transition */}
       <div className="h-32 md:h-40 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#F5F5F5] via-[#F5F5F5]/80 to-black" />

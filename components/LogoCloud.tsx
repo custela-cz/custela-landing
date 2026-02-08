@@ -7,8 +7,9 @@ export default function LogoCloud() {
     <section className="py-12 md:py-16 border-y border-white/[0.05] bg-black">
       <AnimateIn variant="fade" duration={0.8}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Headline per structure: "[Company] helps [ICP] to [outcome]" */}
           <p className="text-center text-[#555] text-xs font-medium uppercase tracking-[0.2em] mb-10">
-            Integrujeme s platformami, které používáte
+            Custela propojuje data z platforem, které denně používáte
           </p>
 
           <div className="flex items-center justify-center gap-12 md:gap-20">

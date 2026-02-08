@@ -111,19 +111,19 @@ export default function DashboardPreview() {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
+        {/* Header — Solution Introduce: bridge from Problem to product */}
         <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-              Jeden dashboard pro vše
+              Řešení
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Reálná data,</span>{' '}
-              <span className="text-gradient-lime-dark">nulové přepínání</span>
+              <span className="text-gradient-dark">Místo tří platforem</span>{' '}
+              <span className="text-gradient-lime-dark">jeden dashboard</span>
             </h2>
             <p className="text-lg text-[#6B7280]">
-              Google Ads, Meta Ads i Sklik — všechno na jedné obrazovce.<br className="hidden md:block" />
-              Od přehledu tržeb po detail každé kampaně.
+              Custela propojí Google Ads, Meta Ads i Sklik do jednoho přehledu.
+              Tržby, náklady i ROAS vidíte okamžitě — bez přepínání, bez exportů, bez Excelu.
             </p>
           </div>
         </AnimateIn>
