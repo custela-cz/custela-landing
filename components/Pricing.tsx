@@ -55,9 +55,6 @@ const tiers = [
 export default function Pricing() {
   return (
     <section id="pricing" className="py-20 md:py-28 bg-white relative">
-      {/* Subtle background */}
-      <div className="absolute inset-0 bg-grid-light pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <AnimateIn variant="blurUp">
@@ -89,7 +86,7 @@ export default function Pricing() {
           {tiers.map((tier) => (
             <StaggerItem key={tier.name}>
               <div
-                className={`relative p-8 rounded-2xl transition-all duration-300 h-full ${
+                className={`relative p-8 rounded-2xl h-full ${
                   tier.popular
                     ? 'card-light-featured'
                     : 'card-light'
@@ -126,7 +123,7 @@ export default function Pricing() {
                   href="https://app.custela.com/auth"
                   className={`group flex items-center justify-center gap-2 w-full py-3.5 rounded-full font-semibold transition-all text-sm mb-8 ${
                     tier.popular
-                      ? 'bg-[#0A0A0A] hover:bg-[#171717] text-white shadow-[0_4px_20px_rgba(0,0,0,0.15)]'
+                      ? 'bg-[#0A0A0A] hover:bg-[#171717] text-white'
                       : 'bg-[#F5F5F5] hover:bg-[#EBEBEB] text-[#0A0A0A] border border-black/[0.06]'
                   }`}
                 >

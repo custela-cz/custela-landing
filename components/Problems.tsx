@@ -56,9 +56,9 @@ export default function Problems() {
         <StaggerContainer className="grid md:grid-cols-3 gap-6" staggerDelay={0.15}>
           {problems.map((problem) => (
             <StaggerItem key={problem.title}>
-              <div className="group p-8 rounded-2xl card-light card-shine-light h-full flex flex-col">
-                <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-100 transition-colors duration-300">
-                  <problem.icon className="w-7 h-7 text-red-400 group-hover:text-red-500 transition-colors duration-300" />
+              <div className="group p-8 rounded-2xl card-light h-full flex flex-col">
+                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-6">
+                  <problem.icon className="w-6 h-6 text-red-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0A0A0A] mb-3">
                   {problem.title}

@@ -58,7 +58,7 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial) => (
             <StaggerItem key={testimonial.name}>
-              <div className="p-8 rounded-2xl card-light card-shine-light h-full flex flex-col">
+              <div className="p-8 rounded-2xl card-light h-full flex flex-col">
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (

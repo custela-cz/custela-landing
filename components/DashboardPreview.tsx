@@ -110,9 +110,6 @@ const campaigns = [
 export default function DashboardPreview() {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden bg-white">
-      {/* Subtle lime glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-lime/[0.03] rounded-full blur-[120px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <AnimateIn variant="blurUp">
@@ -131,15 +128,14 @@ export default function DashboardPreview() {
           </div>
         </AnimateIn>
 
-        {/* Dashboard mockup with perspective */}
+        {/* Dashboard mockup */}
         <AnimateIn variant="blurScale" duration={0.9}>
-          <div className="relative max-w-5xl mx-auto" style={{ perspective: '1200px' }}>
+          <div className="relative max-w-5xl mx-auto">
             {/* Shadow */}
-            <div className="absolute -inset-4 bg-gradient-to-b from-black/[0.03] to-black/[0.08] rounded-[32px] blur-2xl pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[50%] bg-lime/[0.04] rounded-full blur-[80px] pointer-events-none" />
+            <div className="absolute -inset-4 bg-gradient-to-b from-black/[0.02] to-black/[0.06] rounded-[32px] blur-2xl pointer-events-none" />
 
             {/* Browser frame */}
-            <div className="relative rounded-2xl border border-black/[0.08] overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.12)] animate-dashboard-float">
+            <div className="relative rounded-2xl border border-black/[0.08] overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.1)]">
               {/* Title bar */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-black/[0.06] bg-[#F5F5F5]">
                 <div className="flex gap-1.5">

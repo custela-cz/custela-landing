@@ -46,10 +46,8 @@ export default function HowItWorks() {
 
         {/* Steps */}
         <div className="grid md:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto relative">
-          {/* Connecting lines on desktop */}
-          <div className="hidden md:block absolute top-14 left-[calc(16.67%+48px)] right-[calc(16.67%+48px)] h-px">
-            <div className="w-full h-full bg-gradient-to-r from-[#7AB800]/30 via-[#7AB800]/10 to-[#7AB800]/30" />
-          </div>
+          {/* Connecting line on desktop */}
+          <div className="hidden md:block absolute top-14 left-[calc(16.67%+48px)] right-[calc(16.67%+48px)] h-px bg-[#E5E7EB]" />
 
           {steps.map((step, index) => (
             <AnimateIn
@@ -60,10 +58,10 @@ export default function HowItWorks() {
               <div className="text-center relative">
                 {/* Icon */}
                 <div className="relative inline-flex">
-                  <div className="w-28 h-28 bg-white border border-black/[0.06] rounded-full flex items-center justify-center mb-6 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
+                  <div className="w-28 h-28 bg-white border border-black/[0.06] rounded-full flex items-center justify-center mb-6 shadow-sm">
                     <step.icon className="w-10 h-10 text-[#9CA3AF]" />
                   </div>
-                  <div className="absolute -top-1 -right-1 w-9 h-9 bg-[#0A0A0A] rounded-full flex items-center justify-center shadow-[0_2px_12px_rgba(0,0,0,0.15)]">
+                  <div className="absolute -top-1 -right-1 w-9 h-9 bg-[#0A0A0A] rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-xs">
                       {step.number}
                     </span>
