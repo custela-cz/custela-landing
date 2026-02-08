@@ -30,8 +30,8 @@ export default function Footer() {
               Custela<span className="text-gradient-lime">.</span>
             </a>
             <p className="text-[#888] mt-4 max-w-xs text-sm leading-relaxed">
-              Spravujte všechny reklamní platformy z jednoho místa. Šetřete čas,
-              snižte náklady a rosťte rychleji.
+              Google Ads, Meta Ads a Sklik na jednom dashboardu.
+              Konec přepínání, konec ručních reportů.
             </p>
             <div className="mt-6">
               <a

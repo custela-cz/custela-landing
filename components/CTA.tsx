@@ -22,19 +22,19 @@ export default function CTA() {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-lime/[0.08] border border-lime/20 rounded-full mb-8 shimmer-badge">
                 <span className="w-2 h-2 bg-lime rounded-full animate-pulse" />
                 <span className="text-white/80 text-sm font-medium">
-                  7 dní zdarma
+                  14 dní zdarma — bez kreditní karty
                 </span>
               </div>
 
               {/* Headline */}
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                <span className="text-gradient">Začněte šetřit čas</span>
+                <span className="text-gradient">Zjistěte, kolik času</span>
                 <br />
-                <span className="text-gradient-lime">ještě dnes</span>
+                <span className="text-gradient-lime">ušetříte</span>
               </h2>
               <p className="text-lg text-[#888] max-w-xl mx-auto mb-10">
-                Připojte své reklamní účty za 5 minut a zjistěte, kolik času a
-                peněz můžete ušetřit.
+                Propojte své reklamní účty za 3 minuty.
+                Za prvních 14 dní nezaplatíte ani korunu.
               </p>
 
               {/* CTA Button */}
@@ -42,7 +42,7 @@ export default function CTA() {
                 href="https://app.custela.com/auth"
                 className="group inline-flex items-center gap-2 px-10 py-4 bg-lime hover:bg-lime-hover text-black font-bold rounded-full transition-all text-lg glow-lime-btn"
               >
-                Vyzkoušet zdarma
+                Mít přehled do 3 minut
                 <ArrowRight
                   size={20}
                   className="group-hover:translate-x-1 transition-transform duration-300"
@@ -57,7 +57,7 @@ export default function CTA() {
                 </span>
                 <span className="flex items-center gap-2 text-sm text-[#555]">
                   <Check size={16} className="text-emerald-500" />
-                  7 dní zdarma
+                  14 dní zdarma
                 </span>
                 <span className="flex items-center gap-2 text-sm text-[#555]">
                   <Check size={16} className="text-emerald-500" />

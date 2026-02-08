@@ -9,21 +9,21 @@ const steps = [
     icon: Link2,
     title: 'Propojte účty',
     description:
-      'Připojte své Google Ads, Meta Ads a Sklik účty během několika minut. Stačí pár kliknutí.',
+      'Přihlaste se přes Google, Meta nebo Sklik. Pár kliknutí a data tečou. Celé to trvá pod 3 minuty.',
   },
   {
     number: '02',
     icon: LineChart,
-    title: 'Sledujte výkon',
+    title: 'Vidíte vše na jednom místě',
     description:
-      'Všechna data na jednom dashboardu. Porovnávejte metriky a odhalte trendy napříč platformami.',
+      'Tržby, náklady, ROAS, konverze — ze všech platforem na jednom dashboardu. Žádné přepínání, žádné tabulky.',
   },
   {
     number: '03',
     icon: Rocket,
-    title: 'Optimalizujte',
+    title: 'Rozhodujte se na základě dat',
     description:
-      'Využijte AI doporučení, automatické reporty a ušetřete hodiny práce každý týden.',
+      'AI vám ukáže, kde plýtváte a kde je prostor pro růst. Místo hodin v Excelu řešíte strategii.',
   },
 ]
 
@@ -35,11 +35,11 @@ export default function HowItWorks() {
         <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-              3 jednoduché kroky
+              Přehled za 3 minuty
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Jak to</span>{' '}
-              <span className="text-gradient-lime-dark">funguje</span>
+              <span className="text-gradient-dark">Nastavení je</span>{' '}
+              <span className="text-gradient-lime-dark">triviální</span>
             </h2>
           </div>
         </AnimateIn>
@@ -89,7 +89,7 @@ export default function HowItWorks() {
               href="https://app.custela.com/auth"
               className="group inline-flex items-center gap-2 px-8 py-4 bg-[#0A0A0A] hover:bg-[#171717] text-white font-bold rounded-full transition-all text-base shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
             >
-              Začít hned
+              Propojit účty zdarma
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-1 transition-transform duration-300"

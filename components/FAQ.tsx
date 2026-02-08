@@ -9,32 +9,32 @@ const faqs = [
   {
     question: 'Jaké reklamní platformy podporujete?',
     answer:
-      'Aktuálně podporujeme Google Ads, Meta Ads (Facebook & Instagram), Sklik a Google Analytics. Další platformy plánujeme přidat v blízké budoucnosti.',
+      'Aktuálně podporujeme Google Ads, Meta Ads (Facebook & Instagram), Sklik a Google Analytics. Custela je jediný nástroj na českém trhu, který spojí všechny tři hlavní PPC platformy do jednoho dashboardu.',
   },
   {
     question: 'Je zkušební doba opravdu zdarma?',
     answer:
-      'Ano, nabízíme 7 dní zdarma bez nutnosti zadávat platební kartu. Získáte plný přístup ke všem funkcím vašeho vybraného tarifu.',
-  },
-  {
-    question: 'Mohu kdykoli zrušit předplatné?',
-    answer:
-      'Samozřejmě. Předplatné můžete zrušit kdykoliv. Po zrušení budete mít přístup do konce zaplaceného období.',
-  },
-  {
-    question: 'Jsou moje data v bezpečí?',
-    answer:
-      'Bezpečnost je naše priorita. Data jsou šifrována pomocí TLS, ukládáme je v EU a dodržujeme GDPR. K vašim reklamním účtům přistupujeme pouze pro čtení dat.',
+      'Ano, nabízíme 14 dní zcela zdarma bez nutnosti zadávat platební kartu. Získáte plný přístup ke všem funkcím vašeho vybraného tarifu. Pokud vám Custela nesedne, nemusíte nic rušit — trial prostě skončí.',
   },
   {
     question: 'Jak dlouho trvá nastavení?',
     answer:
-      'Propojení účtů trvá doslova 5 minut. Stačí se přihlásit přes Google/Meta/Sklik a povolit přístup. Data se začnou synchronizovat ihned.',
+      'Propojení účtů trvá pod 3 minuty. Stačí se přihlásit přes Google, Meta nebo Sklik a povolit přístup. Data se začnou synchronizovat okamžitě a první přehled uvidíte do pár minut.',
   },
   {
-    question: 'Nabízíte zákaznickou podporu?',
+    question: 'Jsou moje data v bezpečí?',
     answer:
-      'Ano, všechny tarify zahrnují e-mailovou podporu s odpovědí do 2 pracovních dnů. Tarify Growth a Scale navíc nabízí prioritní podporu.',
+      'Bezpečnost je naše priorita. Data jsou šifrována pomocí TLS, ukládáme je v EU a dodržujeme GDPR. K vašim reklamním účtům přistupujeme pouze pro čtení dat — nikdy neměníme nic bez vašeho souhlasu.',
+  },
+  {
+    question: 'Mohu kdykoli zrušit předplatné?',
+    answer:
+      'Samozřejmě. Předplatné můžete zrušit kdykoliv na dva kliky. Po zrušení budete mít přístup do konce zaplaceného období. Žádné výpovědní lhůty, žádné poplatky za zrušení.',
+  },
+  {
+    question: 'Pro koho je Custela určena?',
+    answer:
+      'Pro majitele e-shopů, marketing manažery a agentury, kteří inzerují na více platformách a chtějí mít přehled bez neustálého přepínání. Ať spravujete jednu značku nebo desítky klientů.',
   },
 ]
 

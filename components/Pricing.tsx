@@ -182,7 +182,7 @@ export default function Pricing() {
         {/* Note */}
         <AnimateIn variant="blurFade" delay={0.4}>
           <p className="text-center text-xs text-[#9CA3AF] mt-6">
-            Ceny jsou bez DPH (21 %). 7 dní zdarma u všech tarifů. Zrušení kdykoliv.
+            Ceny jsou bez DPH (21 %). 14 dní zdarma u všech tarifů. Bez kreditní karty. Zrušení kdykoliv.
           </p>
         </AnimateIn>
       </div>

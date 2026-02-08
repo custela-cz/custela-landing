@@ -36,7 +36,7 @@ export default function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] border border-white/[0.08] rounded-full mb-8 shimmer-badge">
               <span className="w-2 h-2 bg-lime rounded-full animate-pulse" />
-              <span className="text-sm text-[#999] font-medium">Google Ads · Meta Ads · Sklik — vše v jednom</span>
+              <span className="text-sm text-[#999] font-medium">Jediný dashboard pro Google Ads, Meta Ads i Sklik</span>
             </div>
           </motion.div>
 
@@ -48,7 +48,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="text-gradient block"
             >
-              Přestaňte přepínat.
+              Reklamy pod kontrolou.
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
@@ -56,7 +56,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="text-gradient-lime block"
             >
-              Začněte řídit.
+              Konečně.
             </motion.span>
           </h1>
 
@@ -67,9 +67,9 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-[#888] max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            Tržby, náklady, ROAS i konverze ze všech platforem
-            na jednom dashboardu. Žádné tabulky, žádné přepínání —
-            jen čísla, která potřebujete pro lepší rozhodnutí.
+            Google Ads, Meta Ads a Sklik na jednom dashboardu.
+            Vidíte tržby, náklady i ROAS v reálném čase —
+            bez přepínání, bez tabulek, bez chaosu.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -83,11 +83,11 @@ export default function Hero() {
               href="https://app.custela.com/auth"
               className="group flex items-center gap-2 px-8 py-4 bg-lime hover:bg-lime-hover text-black font-bold rounded-full transition-all duration-300 text-lg glow-lime-btn"
             >
-              Vyzkoušet 14 dní zdarma
+              Mít přehled do 3 minut
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <a
-              href="#features"
+              href="#how-it-works"
               className="flex items-center gap-2 px-8 py-4 bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.1] hover:border-white/[0.2] text-white font-medium rounded-full transition-all duration-300 text-lg"
             >
               Jak to funguje
@@ -101,9 +101,9 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.8 }}
             className="flex flex-wrap items-center justify-center gap-8 mt-10 text-sm text-[#555]"
           >
-            <span>Bez kreditní karty</span>
+            <span>14 dní zdarma</span>
             <span className="w-1 h-1 bg-[#333] rounded-full" />
-            <span>Setup za 3 minuty</span>
+            <span>Bez kreditní karty</span>
             <span className="w-1 h-1 bg-[#333] rounded-full" />
             <span>Zrušení kdykoliv</span>
           </motion.div>
@@ -119,19 +119,19 @@ export default function Hero() {
               <div className="text-3xl md:text-5xl font-bold text-white mb-1">
                 <CountUp value={3} duration={1.5} />
               </div>
-              <div className="text-sm text-[#555]">Reklamní platformy</div>
+              <div className="text-sm text-[#555]">Reklamní platformy v jednom</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-5xl font-bold text-white mb-1">
-                <CountUp value={34} suffix="%" duration={2} />
+                <CountUp value={10} suffix="+" duration={2} />
               </div>
-              <div className="text-sm text-[#555]">Ušetřený čas</div>
+              <div className="text-sm text-[#555]">Ušetřených hodin měsíčně</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-5xl font-bold text-white mb-1">
                 <CountUp value={3} suffix=" min" duration={1.5} />
               </div>
-              <div className="text-sm text-[#555]">Propojení účtů</div>
+              <div className="text-sm text-[#555]">Propojení všech účtů</div>
             </div>
           </motion.div>
         </div>

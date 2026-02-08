@@ -7,27 +7,30 @@ import AnimateIn from '@/components/AnimateIn'
 const testimonials = [
   {
     quote:
-      'Před Custelou jsem trávil 2 hodiny denně přepínáním mezi platformami. Teď mám vše na jednom místě a ušetřím minimálně 10 hodin týdně.',
+      'Každé ráno jsem otevíral tři platformy zvlášť. Teď otevřu Custelu a za 2 minuty vím, jak si stojím. Ušetřím minimálně 10 hodin týdně na reportech.',
     name: 'Martin Novák',
     role: 'Majitel e-shopu',
     company: 'FitShop.cz',
     initials: 'MN',
+    metric: '10 h/týden ušetřeno',
   },
   {
     quote:
-      'Díky AI tipům jsme snížili náklady na akvizici o 28 % za první měsíc. Reporty, které dříve trvaly hodiny, mám teď během vteřin.',
+      'Díky AI doporučením jsme snížili CPA o 22 % za první měsíc. Custela nám ukázala kampaně, které žraly rozpočet bez výsledků — to z jednotlivých platforem nebylo vidět.',
     name: 'Kateřina Dvořáková',
     role: 'Marketing manažer',
     company: 'ModaOnline.cz',
     initials: 'KD',
+    metric: '−22 % CPA za měsíc',
   },
   {
     quote:
-      'Spravujeme kampaně pro 15+ klientů. Custela nám ušetřila obrovské množství času a naši klienti milují přehledné reporty.',
+      'Spravujeme kampaně pro 12 klientů na Google i Metu. Custela nám ušetřila celý jeden pracovní den týdně, který jsme dříve trávili reportováním a kontrolou.',
     name: 'Tomáš Procházka',
-    role: 'CEO',
+    role: 'Jednatel',
     company: 'DigiMedia Agency',
     initials: 'TP',
+    metric: '1 den/týden ušetřen',
   },
 ]
 
@@ -39,11 +42,11 @@ export default function Testimonials() {
         <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-              Reference
+              Reálné výsledky
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Co říkají naši</span>{' '}
-              <span className="text-gradient-lime-dark">zákazníci</span>
+              <span className="text-gradient-dark">Co říkají ti, kdo</span>{' '}
+              <span className="text-gradient-lime-dark">přestali přepínat</span>
             </h2>
           </div>
         </AnimateIn>
@@ -57,7 +60,7 @@ export default function Testimonials() {
             <StaggerItem key={testimonial.name}>
               <div className="p-8 rounded-2xl card-light card-shine-light h-full flex flex-col">
                 {/* Stars */}
-                <div className="flex gap-1 mb-6">
+                <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
@@ -65,6 +68,11 @@ export default function Testimonials() {
                       className="text-amber-400 fill-amber-400"
                     />
                   ))}
+                </div>
+
+                {/* Metric highlight */}
+                <div className="inline-flex self-start px-3 py-1 bg-[#7AB800]/10 rounded-full mb-4">
+                  <span className="text-xs font-semibold text-[#7AB800]">{testimonial.metric}</span>
                 </div>
 
                 {/* Quote */}

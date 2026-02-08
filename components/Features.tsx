@@ -1,50 +1,50 @@
 'use client'
 
-import { Layers, BarChart3, Zap, RefreshCw, Settings, Wallet } from 'lucide-react'
+import { LayoutDashboard, BarChart3, Zap, RefreshCw, Settings, Wallet } from 'lucide-react'
 import { StaggerContainer, StaggerItem } from '@/components/AnimateIn'
 import AnimateIn from '@/components/AnimateIn'
 
 const features = [
   {
-    icon: Layers,
-    title: 'Multi-platformní dashboard',
+    icon: LayoutDashboard,
+    title: 'Všechno na jedné obrazovce',
     description:
-      'Google Ads, Meta Ads a Sklik v jednom přehledném dashboardu. Porovnávejte výkon napříč platformami.',
+      'Google Ads, Meta Ads i Sklik v jednom dashboardu. Porovnáte výkon napříč platformami — bez přepínání, bez přihlašování, bez exportů.',
     span: 'md:col-span-2',
   },
   {
     icon: BarChart3,
-    title: 'Automatické reporty',
+    title: 'Reporty za vteřiny, ne hodiny',
     description:
-      'Přehledné reporty o výkonu kampaní. Žádné ruční kopírování do tabulek.',
+      'Přehledné reporty o výkonu všech kampaní se generují automaticky. Žádné ruční kopírování do tabulek. Otevřete a vidíte.',
     span: '',
   },
   {
     icon: Zap,
-    title: 'AI optimalizace',
+    title: 'AI, která řekne co opravit',
     description:
-      'Chytrá doporučení pro zlepšení výkonu. Identifikujte problémy dříve, než vás stojí peníze.',
+      'Chytrá doporučení, kde plýtváte rozpočtem a kde je prostor pro růst. Identifikujte problémy dříve, než vás stojí peníze.',
     span: '',
   },
   {
     icon: RefreshCw,
-    title: 'Synchronizace v reálném čase',
+    title: 'Data vždy aktuální',
     description:
-      'Data se automaticky synchronizují každé 4 hodiny. Vždy aktuální přehled.',
+      'Automatická synchronizace každé 4 hodiny. Žádná stará data, žádné nepřesnosti. Vždy víte, jak na tom vaše kampaně jsou.',
     span: '',
   },
   {
     icon: Settings,
-    title: 'Správa kampaní',
+    title: 'Kampaně z jednoho místa',
     description:
-      'Upravujte kampaně, rozpočty a cílení přímo z Custela. Bez přepínání mezi platformami.',
+      'Upravujte rozpočty, pozastavujte kampaně a měňte cílení přímo v Custele. Jednou rukou ovládáte tři platformy.',
     span: '',
   },
   {
     icon: Wallet,
-    title: 'Sledování rozpočtů',
+    title: 'Rozpočty pod kontrolou',
     description:
-      'Mějte přehled o výdajích napříč všemi platformami. Automatická upozornění při překročení.',
+      'Okamžitý přehled o výdajích na všech platformách. Automatická upozornění, když se náklady vymknou plánu.',
     span: 'md:col-span-2',
   },
 ]
@@ -53,7 +53,6 @@ export default function Features() {
   return (
     <section id="features" className="py-20 md:py-28 relative bg-white">
       <div className="absolute inset-0 bg-grid-light-lg pointer-events-none" />
-      {/* Subtle lime accent blob */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-lime/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -61,15 +60,15 @@ export default function Features() {
         <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-              Funkce
+              Co pro vás Custela udělá
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Vše co potřebujete pro</span>
-              <br />
-              <span className="text-gradient-lime-dark">úspěšný marketing</span>
+              <span className="text-gradient-dark">Méně chaosu.</span>{' '}
+              <span className="text-gradient-lime-dark">Více výsledků.</span>
             </h2>
             <p className="text-lg text-[#6B7280]">
-              Custela kombinuje všechny vaše reklamní platformy do jednoho nástroje.
+              Jeden nástroj, který nahradí přepínání mezi třemi platformami,
+              ruční reporty v Excelu a nekonečné kontrolování rozpočtů.
             </p>
           </div>
         </AnimateIn>
