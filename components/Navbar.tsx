@@ -16,7 +16,7 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    const sectionIds = ['features', 'how-it-works', 'pricing', 'faq']
+    const sectionIds = ['platforms', 'dashboard', 'pricing']
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,10 +35,9 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { name: 'Funkce', href: '#features' },
-    { name: 'Jak to funguje', href: '#how-it-works' },
+    { name: 'Platformy', href: '#platforms' },
+    { name: 'Jak to funguje', href: '#dashboard' },
     { name: 'Ceník', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
   ]
 
   return (
@@ -92,7 +91,7 @@ export default function Navbar() {
             </a>
             <a
               href="https://app.custela.com/auth"
-              className="px-5 py-2 bg-white text-black font-semibold rounded-full transition-all duration-300 text-sm hover:bg-white/90 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+              className="px-5 py-2 bg-lime hover:bg-lime-hover text-black font-semibold rounded-full transition-all duration-300 text-sm"
             >
               Začít zdarma
             </a>
@@ -129,7 +128,7 @@ export default function Navbar() {
               <div className="pt-4 border-t border-white/[0.06] space-y-3">
                 <a
                   href="https://app.custela.com/auth"
-                  className="block w-full text-center px-5 py-3 bg-white text-black font-semibold rounded-full"
+                  className="block w-full text-center px-5 py-3 bg-lime hover:bg-lime-hover text-black font-semibold rounded-full"
                 >
                   Začít zdarma
                 </a>

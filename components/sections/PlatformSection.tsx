@@ -2,15 +2,17 @@
 
 import AnimateIn from '@/components/AnimateIn'
 
-export default function LogoCloud() {
+export default function PlatformSection() {
   return (
-    <section className="py-12 md:py-16 border-y border-white/[0.05] bg-black">
-      <AnimateIn variant="fade" duration={0.8}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-[#555] text-xs font-medium uppercase tracking-[0.2em] mb-10">
+    <section className="section-viewport relative" id="platforms">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <AnimateIn variant="blurUp">
+          <p className="text-center text-[#555] text-xs font-medium uppercase tracking-[0.2em] mb-12">
             AI pracuje s daty z platforem, které denně používáte
           </p>
+        </AnimateIn>
 
+        <AnimateIn variant="fade" delay={0.2}>
           <div className="flex items-center justify-center gap-12 md:gap-20">
             <LogoItem>
               <GoogleAdsLogo />
@@ -25,15 +27,25 @@ export default function LogoCloud() {
               <AnalyticsLogo />
             </LogoItem>
           </div>
-        </div>
-      </AnimateIn>
+        </AnimateIn>
+
+        <AnimateIn variant="blurUp" delay={0.4}>
+          <p className="text-center text-[#666] text-base md:text-lg mt-12 max-w-2xl mx-auto leading-relaxed">
+            Jediná AI platforma na českém trhu, která spojí{' '}
+            <span className="text-white font-medium">Google Ads</span>,{' '}
+            <span className="text-white font-medium">Meta Ads</span> a{' '}
+            <span className="text-white font-medium">Sklik</span> do jednoho
+            inteligentního dashboardu.
+          </p>
+        </AnimateIn>
+      </div>
     </section>
   )
 }
 
 function LogoItem({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-center justify-center opacity-40 hover:opacity-70 transition-opacity duration-300">
+    <div className="flex items-center justify-center opacity-40 hover:opacity-80 transition-opacity duration-300">
       {children}
     </div>
   )

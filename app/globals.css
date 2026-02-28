@@ -92,60 +92,62 @@ body {
   border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* ==================== */
-/* LIGHT SECTION STYLES */
-/* ==================== */
-
-/* Dark gradient text for light backgrounds */
-.text-gradient-dark {
-  background: linear-gradient(180deg, #0A0A0A 0%, #374151 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Lime gradient adjusted for light backgrounds */
-.text-gradient-lime-dark {
-  background: linear-gradient(135deg, #7AB800 0%, #96D800 50%, #7AB800 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Light card */
-.card-light {
-  background: rgba(255, 255, 255, 0.7);
+/* Glass card for dark sections (over 3D canvas) */
+.card-glass-dark {
+  background: rgba(255,255,255,0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.03),
-    0 4px 16px rgba(0, 0, 0, 0.02);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.card-light:hover {
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 8px 32px rgba(0, 0, 0, 0.05);
+.card-glass-dark:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
 }
 
-/* Featured light card (pricing popular) */
-.card-light-featured {
-  background: #FFFFFF;
-  border: 2px solid rgba(122, 184, 0, 0.3);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.03),
-    0 4px 16px rgba(0, 0, 0, 0.02);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+/* ==================== */
+/* THREE.JS CANVAS      */
+/* ==================== */
+.canvas-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
 }
 
-.card-light-featured:hover {
-  border-color: rgba(122, 184, 0, 0.5);
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 8px 32px rgba(0, 0, 0, 0.05);
+.canvas-container canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ==================== */
+/* SECTION LAYOUT       */
+/* ==================== */
+.section-viewport {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 80px 0;
+}
+
+/* ==================== */
+/* MOBILE FALLBACK      */
+/* ==================== */
+.fallback-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 60% 40% at var(--glow-x, 50%) var(--glow-y, 30%),
+    rgba(191, 255, 55, var(--glow-opacity, 0.06)),
+    transparent 70%
+  ),
+  linear-gradient(180deg, #000000 0%, #0A0A0A 100%);
 }
 
 /* ==================== */

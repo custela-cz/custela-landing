@@ -1,8 +1,7 @@
 'use client'
 
 import { Check, ArrowRight } from 'lucide-react'
-import { StaggerContainer, StaggerItem } from '@/components/AnimateIn'
-import AnimateIn from '@/components/AnimateIn'
+import AnimateIn, { StaggerContainer, StaggerItem } from '@/components/AnimateIn'
 
 const tiers = [
   {
@@ -54,78 +53,65 @@ const tiers = [
   },
 ]
 
-export default function Pricing() {
+export default function PricingSection() {
   return (
-    <section id="pricing" className="py-20 md:py-28 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
+    <section className="section-viewport relative" id="pricing">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimateIn variant="blurUp">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <p className="text-lime/60 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
               Ceník
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Levnější než jeden</span>{' '}
-              <span className="text-gradient-lime-dark">den marketéra</span>
+              <span className="text-gradient">Levnější než jeden</span>{' '}
+              <span className="text-gradient-lime">den marketéra</span>
             </h2>
-            <p className="text-lg text-[#6B7280]">
+            <p className="text-[#888] text-base">
               Kolik stojí hodiny ručních reportů a kampaně, co spalují rozpočet? Víc než Custela.
-            </p>
-            <p className="text-sm text-[#9CA3AF] mt-3">
-              Ušetřete{' '}
-              <span className="text-[#0A0A0A] font-semibold">15 %</span> při roční
-              platbě
             </p>
           </div>
         </AnimateIn>
 
-        {/* Pricing cards */}
         <StaggerContainer
-          className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"
+          className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto"
           staggerDelay={0.15}
         >
           {tiers.map((tier) => (
             <StaggerItem key={tier.name}>
               <div
-                className={`relative p-8 rounded-2xl h-full ${
+                className={`relative p-7 rounded-2xl h-full ${
                   tier.popular
-                    ? 'card-light-featured'
-                    : 'card-light'
+                    ? 'card-glass-dark border-lime/20 ring-1 ring-lime/10'
+                    : 'card-glass-dark'
                 }`}
               >
-                {/* Popular badge */}
                 {tier.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1.5 bg-[#0A0A0A] text-white text-xs font-bold rounded-full uppercase tracking-wider">
+                    <span className="px-4 py-1.5 bg-lime text-black text-xs font-bold rounded-full uppercase tracking-wider">
                       Nejoblíbenější
                     </span>
                   </div>
                 )}
 
-                {/* Tier name */}
-                <h3 className="text-xl font-semibold text-[#0A0A0A] mb-2">
+                <h3 className="text-lg font-semibold text-white mb-1.5">
                   {tier.name}
                 </h3>
-                <p className="text-sm text-[#6B7280] mb-6">{tier.description}</p>
+                <p className="text-xs text-[#888] mb-5">{tier.description}</p>
 
-                {/* Price */}
-                <div className="mb-2">
-                  <span className="text-4xl font-bold text-[#0A0A0A]">
-                    {tier.price}
-                  </span>
-                  <span className="text-[#9CA3AF] ml-1">Kč/měsíc</span>
+                <div className="mb-1.5">
+                  <span className="text-3xl font-bold text-white">{tier.price}</span>
+                  <span className="text-[#666] ml-1 text-sm">Kč/měsíc</span>
                 </div>
-                <p className="text-xs text-[#9CA3AF] mb-8">
+                <p className="text-[10px] text-[#666] mb-6">
                   Reklamní rozpočet {tier.spend}
                 </p>
 
-                {/* CTA */}
                 <a
                   href="https://app.custela.com/auth"
-                  className={`group flex items-center justify-center gap-2 w-full py-3.5 rounded-full font-semibold transition-all text-sm mb-8 ${
+                  className={`group flex items-center justify-center gap-2 w-full py-3 rounded-full font-semibold transition-all text-sm mb-6 ${
                     tier.popular
-                      ? 'bg-[#0A0A0A] hover:bg-[#171717] text-white'
-                      : 'bg-[#F5F5F5] hover:bg-[#EBEBEB] text-[#0A0A0A] border border-black/[0.06]'
+                      ? 'bg-lime hover:bg-lime-hover text-black glow-lime-btn'
+                      : 'bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.08]'
                   }`}
                 >
                   Začít zdarma
@@ -135,18 +121,11 @@ export default function Pricing() {
                   />
                 </a>
 
-                {/* Features */}
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   {tier.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-start gap-3 text-sm"
-                    >
-                      <Check
-                        size={16}
-                        className="text-[#7AB800] mt-0.5 shrink-0"
-                      />
-                      <span className="text-[#6B7280]">{feature}</span>
+                    <li key={feature} className="flex items-start gap-2.5 text-sm">
+                      <Check size={14} className="text-lime mt-0.5 shrink-0" />
+                      <span className="text-[#888]">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -157,19 +136,17 @@ export default function Pricing() {
 
         {/* Enterprise */}
         <AnimateIn variant="blurUp" delay={0.3}>
-          <div className="max-w-5xl mx-auto mt-8">
-            <div className="flex flex-col sm:flex-row items-center justify-between p-8 card-light rounded-2xl gap-6">
+          <div className="max-w-5xl mx-auto mt-6">
+            <div className="flex flex-col sm:flex-row items-center justify-between p-6 card-glass-dark rounded-2xl gap-4">
               <div>
-                <h3 className="text-xl font-semibold text-[#0A0A0A] mb-1">
-                  Enterprise
-                </h3>
-                <p className="text-[#6B7280] text-sm">
-                  Reklamní rozpočet nad 200 000 Kč? AI řešení na míru pro váš byznys.
+                <h3 className="text-lg font-semibold text-white mb-1">Enterprise</h3>
+                <p className="text-[#888] text-sm">
+                  Reklamní rozpočet nad 200 000 Kč? AI řešení na míru.
                 </p>
               </div>
               <a
                 href="mailto:info@custela.com"
-                className="shrink-0 px-6 py-3 bg-[#F5F5F5] hover:bg-[#EBEBEB] text-[#0A0A0A] border border-black/[0.06] rounded-full font-semibold text-sm transition-all"
+                className="shrink-0 px-6 py-2.5 bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.08] rounded-full font-semibold text-sm transition-all"
               >
                 Kontaktujte nás
               </a>
@@ -177,9 +154,8 @@ export default function Pricing() {
           </div>
         </AnimateIn>
 
-        {/* Note */}
         <AnimateIn variant="blurFade" delay={0.4}>
-          <p className="text-center text-xs text-[#9CA3AF] mt-6">
+          <p className="text-center text-xs text-[#555] mt-5">
             Ceny jsou bez DPH (21 %). 14 dní zdarma u všech tarifů. Bez kreditní karty. Zrušení kdykoliv.
           </p>
         </AnimateIn>

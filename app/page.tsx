@@ -1,43 +1,51 @@
+'use client'
+
+import dynamic from 'next/dynamic'
+import { useMobileDetect } from '@/lib/useMobileDetect'
 import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
-import LogoCloud from '@/components/LogoCloud'
-import Problems from '@/components/Problems'
-import Pillars from '@/components/Pillars'
-import DashboardPreview from '@/components/DashboardPreview'
-import HowItWorks from '@/components/HowItWorks'
-import Features from '@/components/Features'
-import Results from '@/components/Results'
-import Pricing from '@/components/Pricing'
-import Testimonials from '@/components/Testimonials'
-import FAQ from '@/components/FAQ'
-import CTA from '@/components/CTA'
-import Footer from '@/components/Footer'
+import MobileFallback from '@/components/MobileFallback'
+import HeroSection from '@/components/sections/HeroSection'
+import PlatformSection from '@/components/sections/PlatformSection'
+import ProblemSolutionSection from '@/components/sections/ProblemSolutionSection'
+import DashboardSection from '@/components/sections/DashboardSection'
+import ResultsSection from '@/components/sections/ResultsSection'
+import PricingSection from '@/components/sections/PricingSection'
+import CTAFooterSection from '@/components/sections/CTAFooterSection'
+
+const Scene = dynamic(() => import('@/components/three/Scene'), { ssr: false })
+
+function SectionContent() {
+  return (
+    <>
+      <HeroSection />
+      <PlatformSection />
+      <ProblemSolutionSection />
+      <DashboardSection />
+      <ResultsSection />
+      <PricingSection />
+      <CTAFooterSection />
+    </>
+  )
+}
 
 export default function Home() {
+  const isMobile = useMobileDetect()
+
   return (
     <main className="min-h-screen">
       <Navbar />
-      <Hero />
-      <LogoCloud />
-      {/* Dark → Light transition */}
-      <div className="h-32 md:h-40 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-[#FAFAFA]" />
-      </div>
-      <Problems />
-      <Pillars />
-      <DashboardPreview />
-      <HowItWorks />
-      <Features />
-      <Results />
-      <Testimonials />
-      <Pricing />
-      {/* Light → Dark transition */}
-      <div className="h-32 md:h-40 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F5F5F5] via-[#F5F5F5]/80 to-black" />
-      </div>
-      <FAQ />
-      <CTA />
-      <Footer />
+      {isMobile ? (
+        <>
+          <MobileFallback />
+          <div className="relative z-10">
+            <SectionContent />
+          </div>
+        </>
+      ) : (
+        <Scene>
+          <SectionContent />
+        </Scene>
+      )}
     </main>
   )
 }
