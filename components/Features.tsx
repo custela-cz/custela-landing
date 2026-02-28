@@ -1,27 +1,33 @@
 'use client'
 
-import { LayoutDashboard, BarChart3, Zap, RefreshCw, Settings, Wallet, X, Check, ArrowRight } from 'lucide-react'
+import { Sparkles, Brain, BarChart3, LayoutDashboard, RefreshCw, Wallet, X, Check, ArrowRight } from 'lucide-react'
 import { StaggerContainer, StaggerItem } from '@/components/AnimateIn'
 import AnimateIn from '@/components/AnimateIn'
 
 const features = [
   {
-    icon: LayoutDashboard,
-    title: 'Přehled kampaní',
-    before: '3 platformy, 3 přihlášení, každé ráno',
-    after: '1 dashboard — vše na jednom místě',
+    icon: Sparkles,
+    title: 'Tvorba kampaní',
+    before: 'Hodiny ručního nastavování',
+    after: 'AI vytvoří kampaň za minuty',
+  },
+  {
+    icon: Brain,
+    title: 'Optimalizace',
+    before: 'Ladíte naslepo, zjistíte pozdě',
+    after: 'AI optimalizuje průběžně za vás',
   },
   {
     icon: BarChart3,
     title: 'Reporting',
     before: 'Ruční exporty a Excel tabulky',
-    after: 'Automatické reporty za vteřiny',
+    after: 'Automatické reporty na kliknutí',
   },
   {
-    icon: Zap,
-    title: 'Optimalizace',
-    before: 'Problémy zjistíte, až když stojí peníze',
-    after: 'AI upozorní předem',
+    icon: LayoutDashboard,
+    title: 'Přehled kampaní',
+    before: '3 platformy, 3 přihlášení denně',
+    after: '1 dashboard — vše na jednom místě',
   },
   {
     icon: RefreshCw,
@@ -30,16 +36,10 @@ const features = [
     after: 'Auto-sync každé 4 hodiny',
   },
   {
-    icon: Settings,
-    title: 'Správa kampaní',
-    before: '3 rozhraní, 3× stejná práce',
-    after: 'Jeden nástroj na vše',
-  },
-  {
     icon: Wallet,
     title: 'Rozpočty',
     before: 'Žádný celkový přehled výdajů',
-    after: 'Real-time náklady + upozornění',
+    after: 'Real-time náklady + AI upozornění',
   },
 ]
 
@@ -57,6 +57,9 @@ export default function Features() {
               <span className="text-gradient-dark">Před a po</span>{' '}
               <span className="text-gradient-lime-dark">Custele</span>
             </h2>
+            <p className="text-lg text-[#6B7280]">
+              Konkrétně, bod po bodu. Takhle se změní váš den.
+            </p>
           </div>
         </AnimateIn>
 

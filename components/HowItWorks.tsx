@@ -1,6 +1,6 @@
 'use client'
 
-import { Link2, LineChart, Rocket, ArrowRight } from 'lucide-react'
+import { Link2, Sparkles, TrendingUp, ArrowRight } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 
 const steps = [
@@ -9,21 +9,21 @@ const steps = [
     icon: Link2,
     title: 'Propojte účty',
     description:
-      'Přihlaste se přes Google, Meta nebo Sklik. Pár kliknutí a data tečou. Celé to trvá pod 3 minuty.',
+      'Google Ads, Meta Ads nebo Sklik — pár kliknutí a data tečou. Pod 3 minuty.',
   },
   {
     number: '02',
-    icon: LineChart,
-    title: 'Vidíte vše na jednom místě',
+    icon: Sparkles,
+    title: 'AI převezme řízení',
     description:
-      'Tržby, náklady, ROAS, konverze — ze všech platforem na jednom dashboardu. Žádné přepínání, žádné tabulky.',
+      'AI vytvoří kampaně, nastaví bidy a začne optimalizovat. Vy kontrolujete, AI maká.',
   },
   {
     number: '03',
-    icon: Rocket,
-    title: 'Rozhodujte se na základě dat',
+    icon: TrendingUp,
+    title: 'Sledujte růst',
     description:
-      'AI vám ukáže, kde plýtváte a kde je prostor pro růst. Místo hodin v Excelu řešíte strategii.',
+      'Dashboard ukazuje výsledky v reálném čase. Reporty se generují samy. Vy řešíte strategii.',
   },
 ]
 
@@ -35,11 +35,11 @@ export default function HowItWorks() {
         <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-              Přehled za 3 minuty
+              Jak to funguje
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Nastavení je</span>{' '}
-              <span className="text-gradient-lime-dark">triviální</span>
+              <span className="text-gradient-dark">Od chaosu k autopilotu</span>{' '}
+              <span className="text-gradient-lime-dark">za 3 minuty</span>
             </h2>
           </div>
         </AnimateIn>

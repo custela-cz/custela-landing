@@ -1,38 +1,38 @@
 'use client'
 
-import { Clock, MousePointerClick, TrendingDown, Layers } from 'lucide-react'
+import { Clock, Sparkles, TrendingDown, Layers } from 'lucide-react'
 import { StaggerContainer, StaggerItem } from '@/components/AnimateIn'
 import AnimateIn from '@/components/AnimateIn'
 import { CountUp } from '@/components/AnimateIn'
 
 const results = [
   {
-    icon: Clock,
-    value: 15,
-    suffix: '+',
-    unit: 'hodin/měsíc',
-    label: 'ušetřených na reportech a přepínání mezi platformami',
+    icon: Sparkles,
+    value: 10,
+    suffix: 'x',
+    unit: 'rychlejší start',
+    label: 'AI vytvoří kampaň za minuty místo hodin ručního nastavování',
   },
   {
-    icon: MousePointerClick,
-    value: 3,
-    suffix: '',
-    unit: 'minuty',
-    label: 'na kompletní nastavení a propojení všech účtů',
+    icon: Clock,
+    value: 20,
+    suffix: '+',
+    unit: 'hodin/měsíc',
+    label: 'ušetřených na reportech, optimalizaci a přepínání platforem',
   },
   {
     icon: Layers,
     value: 3,
     suffix: '',
     unit: 'platformy → 1',
-    label: 'Google Ads, Meta Ads a Sklik v jednom dashboardu',
+    label: 'Google Ads, Meta Ads a Sklik na jednom AI dashboardu',
   },
   {
     icon: TrendingDown,
     value: 23,
     suffix: '%',
     unit: 'méně plýtvání',
-    label: 'díky identifikaci neefektivních kampaní napříč platformami',
+    label: 'díky AI optimalizaci a identifikaci neefektivních kampaní',
   },
 ]
 
@@ -47,11 +47,11 @@ export default function Results() {
               Výsledky
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Měřitelný dopad</span>{' '}
-              <span className="text-gradient-lime-dark">od prvního dne</span>
+              <span className="text-gradient-dark">Méně práce,</span>{' '}
+              <span className="text-gradient-lime-dark">lepší čísla</span>
             </h2>
             <p className="text-lg text-[#6B7280]">
-              Čísla, která uživatelé Custely zažívají po propojení svých reklamních účtů.
+              AI přebere rutinu. Vy sklízíte výsledky.
             </p>
           </div>
         </AnimateIn>

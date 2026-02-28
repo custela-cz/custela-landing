@@ -7,25 +7,25 @@ import AnimateIn from '@/components/AnimateIn'
 const testimonials = [
   {
     quote:
-      'Každé ráno jsem otevíral tři platformy zvlášť. Teď otevřu Custelu a za 2 minuty vím, jak si stojím. Ušetřím minimálně 10 hodin týdně na reportech.',
+      'AI mi vytvořila kampaně, které by mi zabraly celý den. Za první měsíc jsme zvedli ROAS o 35 %. Teď se soustředím na strategii místo klikání v rozhraních.',
     name: 'Martin Novák',
     role: 'Majitel e-shopu',
     company: 'FitShop.cz',
     initials: 'MN',
-    metric: '10 h/týden ušetřeno',
+    metric: '+35 % ROAS za měsíc',
   },
   {
     quote:
-      'Díky AI doporučením jsme snížili CPA o 22 % za první měsíc. Custela nám ukázala kampaně, které žraly rozpočet bez výsledků — to z jednotlivých platforem nebylo vidět.',
+      'Reporty, které mi dřív zabraly půl dne, se teď generují samy. AI navíc odhalila kampaně, které žraly rozpočet — to z jednotlivých platforem nebylo vidět. CPA dolů o 22 %.',
     name: 'Kateřina Dvořáková',
     role: 'Marketing manažer',
     company: 'ModaOnline.cz',
     initials: 'KD',
-    metric: '−22 % CPA za měsíc',
+    metric: '-22 % CPA za měsíc',
   },
   {
     quote:
-      'Spravujeme kampaně pro 12 klientů na Google i Metu. Custela nám ušetřila celý jeden pracovní den týdně, který jsme dříve trávili reportováním a kontrolou.',
+      'Spravujeme kampaně pro 12 klientů. Custela nám ušetřila celý pracovní den týdně — AI optimalizuje a reporty létají automaticky. Klienti jsou nadšení z výsledků.',
     name: 'Tomáš Procházka',
     role: 'Jednatel',
     company: 'DigiMedia Agency',
@@ -45,8 +45,8 @@ export default function Testimonials() {
               Reálné výsledky
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Co říkají ti, kdo</span>{' '}
-              <span className="text-gradient-lime-dark">přestali přepínat</span>
+              <span className="text-gradient-dark">Oni přepnuli na AI.</span>{' '}
+              <span className="text-gradient-lime-dark">Tady jsou čísla.</span>
             </h2>
           </div>
         </AnimateIn>

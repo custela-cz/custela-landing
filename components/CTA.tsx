@@ -25,13 +25,13 @@ export default function CTA() {
 
               {/* Headline */}
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                <span className="text-gradient">Zjistěte, kolik času</span>
+                <span className="text-gradient">Každý den bez AI</span>
                 <br />
-                <span className="text-gradient-lime">ušetříte</span>
+                <span className="text-gradient-lime">stojí peníze.</span>
               </h2>
               <p className="text-lg text-[#888] max-w-xl mx-auto mb-10">
-                Propojte své reklamní účty za 3 minuty.
-                Za prvních 14 dní nezaplatíte ani korunu.
+                3 minuty na propojení. AI vytvoří kampaně, optimalizuje rozpočty
+                a reporty jdou samy. Prvních 14 dní zdarma.
               </p>
 
               {/* CTA Button */}
@@ -39,7 +39,7 @@ export default function CTA() {
                 href="https://app.custela.com/auth"
                 className="group inline-flex items-center gap-2 px-10 py-4 bg-lime hover:bg-lime-hover text-black font-bold rounded-full transition-all text-lg glow-lime-btn"
               >
-                Mít přehled do 3 minut
+                Spustit AI na mé reklamy
                 <ArrowRight
                   size={20}
                   className="group-hover:translate-x-1 transition-transform duration-300"

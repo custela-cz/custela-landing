@@ -9,11 +9,12 @@ const tiers = [
     name: 'Start',
     price: '1 490',
     spend: 'do 50 000 Kč',
-    description: 'Pro malé e-shopy a začínající marketéry.',
+    description: 'Pro malé e-shopy, které chtějí přehled a automatické reporty.',
     features: [
       'Google Ads + Meta Ads + Sklik',
       'Jednotný dashboard',
       'Automatické reporty',
+      'AI doporučení',
       'E-mailová podpora',
       'Až 5 reklamních účtů',
     ],
@@ -23,10 +24,11 @@ const tiers = [
     name: 'Growth',
     price: '2 490',
     spend: 'do 100 000 Kč',
-    description: 'Pro rostoucí e-shopy s většími rozpočty.',
+    description: 'Pro rostoucí e-shopy, které chtějí AI na své straně.',
     features: [
       'Vše ze Start',
-      'AI optimalizační tipy',
+      'AI tvorba kampaní',
+      'AI optimalizace kampaní',
       'Pokročilá analytika',
       'Prioritní podpora',
       'Až 15 reklamních účtů',
@@ -38,10 +40,10 @@ const tiers = [
     name: 'Scale',
     price: '3 490',
     spend: 'do 200 000 Kč',
-    description: 'Pro velké e-shopy a agentury.',
+    description: 'Pro velké e-shopy a agentury s maximálními nároky.',
     features: [
       'Vše z Growth',
-      'Automatické optimalizace',
+      'Plně automatická AI optimalizace',
       'Multi-projektové prostředí',
       'Dedikovaný account manager',
       'Neomezené reklamní účty',
@@ -63,12 +65,11 @@ export default function Pricing() {
               Ceník
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Jednoduchý a</span>{' '}
-              <span className="text-gradient-lime-dark">transparentní</span>{' '}
-              <span className="text-gradient-dark">ceník</span>
+              <span className="text-gradient-dark">Levnější než jeden</span>{' '}
+              <span className="text-gradient-lime-dark">den marketéra</span>
             </h2>
             <p className="text-lg text-[#6B7280]">
-              Vyberte si tarif podle vašeho reklamního rozpočtu. Bez skrytých poplatků.
+              Kolik stojí hodiny ručních reportů a kampaně, co spalují rozpočet? Víc než Custela.
             </p>
             <p className="text-sm text-[#9CA3AF] mt-3">
               Ušetřete{' '}
@@ -163,7 +164,7 @@ export default function Pricing() {
                   Enterprise
                 </h3>
                 <p className="text-[#6B7280] text-sm">
-                  Reklamní rozpočet nad 200 000 Kč? Připravíme vám řešení na míru.
+                  Reklamní rozpočet nad 200 000 Kč? AI řešení na míru pro váš byznys.
                 </p>
               </div>
               <a

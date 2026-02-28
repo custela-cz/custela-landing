@@ -111,19 +111,19 @@ export default function DashboardPreview() {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header — Solution Introduce: bridge from Problem to product */}
+        {/* Header */}
         <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-[#7AB800] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-              Řešení
+              Podívejte se dovnitř
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Místo tří platforem</span>{' '}
-              <span className="text-gradient-lime-dark">jeden dashboard</span>
+              <span className="text-gradient-dark">Takhle vypadá</span>{' '}
+              <span className="text-gradient-lime-dark">kontrola nad reklamou</span>
             </h2>
             <p className="text-lg text-[#6B7280]">
-              Custela propojí Google Ads, Meta Ads i Sklik do jednoho přehledu.
-              Tržby, náklady i ROAS vidíte okamžitě — bez přepínání, bez exportů, bez Excelu.
+              Všechny platformy, metriky a kampaně na jedné obrazovce.
+              Žádné přepínání, žádné hádání — jen čistá data a AI doporučení.
             </p>
           </div>
         </AnimateIn>
@@ -150,9 +150,9 @@ export default function DashboardPreview() {
                 </div>
               </div>
 
-              {/* App layout — DARK theme matching real app */}
+              {/* App layout */}
               <div className="flex min-h-[520px] md:min-h-[600px]">
-                {/* ─── Sidebar ─── */}
+                {/* Sidebar */}
                 <div className="hidden sm:flex flex-col w-[190px] md:w-[210px] bg-[#0A0A0A] border-r border-white/[0.06] p-3 md:p-4">
                   {/* Logo */}
                   <div className="text-base font-bold text-white mb-5 tracking-tight px-1">
@@ -192,7 +192,7 @@ export default function DashboardPreview() {
                   </div>
                 </div>
 
-                {/* ─── Main content ─── */}
+                {/* Main content */}
                 <div className="flex-1 p-3 md:p-5 overflow-hidden bg-[#111111]">
                   {/* Topbar */}
                   <div className="flex items-center justify-between mb-4">
@@ -204,7 +204,7 @@ export default function DashboardPreview() {
                     </div>
                   </div>
 
-                  {/* ─ Primary stat cards (dark) ─ */}
+                  {/* Primary stat cards */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-2.5 mb-3">
                     {primaryStats.map((stat, i) => (
                       <div
@@ -227,7 +227,7 @@ export default function DashboardPreview() {
                     ))}
                   </div>
 
-                  {/* ─ Chart + Funnel row ─ */}
+                  {/* Chart + Funnel row */}
                   <div className="grid grid-cols-1 md:grid-cols-[1fr_180px] gap-2.5 mb-3">
                     {/* Chart */}
                     <div className="bg-[#1a1a1a] rounded-xl p-3 border border-white/[0.06]">
@@ -249,10 +249,8 @@ export default function DashboardPreview() {
                             <stop offset="100%" stopColor="#BFFF37" stopOpacity="0" />
                           </linearGradient>
                         </defs>
-                        {/* Revenue area */}
                         <path d="M0,75 C25,70 50,65 80,58 C110,51 130,62 160,48 C190,34 210,42 250,30 C290,18 330,25 370,15 L400,12 L400,100 L0,100 Z" fill="url(#limeGrad)" />
                         <path d="M0,75 C25,70 50,65 80,58 C110,51 130,62 160,48 C190,34 210,42 250,30 C290,18 330,25 370,15 L400,12" fill="none" stroke="#BFFF37" strokeWidth="2" />
-                        {/* Spend line */}
                         <path d="M0,88 C25,85 50,82 80,78 C110,74 130,80 160,72 C190,64 210,68 250,62 C290,56 330,60 370,54 L400,50" fill="none" stroke="#60A5FA" strokeWidth="1.5" opacity="0.6" />
                       </svg>
                     </div>
@@ -280,7 +278,7 @@ export default function DashboardPreview() {
                     </div>
                   </div>
 
-                  {/* ─ Secondary stat cards (lighter) ─ */}
+                  {/* Secondary stat cards */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-2.5 mb-3">
                     {secondaryStats.map((stat) => (
                       <div key={stat.label} className="rounded-xl p-2.5 md:p-3 bg-[#161616] border border-white/[0.04]">
@@ -296,7 +294,7 @@ export default function DashboardPreview() {
                     ))}
                   </div>
 
-                  {/* ─ Campaign table ─ */}
+                  {/* Campaign table */}
                   <div className="bg-[#1a1a1a] rounded-xl border border-white/[0.06] overflow-hidden">
                     <div className="flex items-center justify-between px-3 py-2 border-b border-white/[0.06]">
                       <p className="text-white text-[10px] font-medium">Kampaně</p>

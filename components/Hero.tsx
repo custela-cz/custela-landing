@@ -14,18 +14,19 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Eyebrow — product category */}
+          {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] border border-white/[0.08] rounded-full mb-8">
-              <span className="text-sm text-[#888] font-medium">Multi-platformní PPC dashboard</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-sm text-[#888] font-medium">AI marketing platforma pro e-shopy</span>
             </div>
           </motion.div>
 
-          {/* Headline — main capability */}
+          {/* Headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-6 tracking-tight">
             <motion.span
               initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
@@ -33,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="text-gradient block"
             >
-              Reklamy pod kontrolou.
+              Vaše reklamy
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
@@ -41,20 +42,19 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="text-gradient-lime block"
             >
-              Konečně.
+              na autopilotu.
             </motion.span>
           </h1>
 
-          {/* Body — feature + target + problem + benefit */}
+          {/* Body */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-[#888] max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            Pro e-shopy a marketéry, kteří spravují kampaně na Google Ads, Meta Ads i Skliku.
-            Custela spojí všechna data do jednoho dashboardu — místo hodin přepínání máte
-            přehled o tržbách, nákladech i ROAS na jednom místě.
+            AI vytvoří kampaně, průběžně je optimalizuje a reporty se generují samy.
+            Google Ads, Meta Ads i Sklik — vše na jednom dashboardu.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -68,7 +68,7 @@ export default function Hero() {
               href="https://app.custela.com/auth"
               className="group flex items-center gap-2 px-8 py-4 bg-lime hover:bg-lime-hover text-black font-bold rounded-full transition-all duration-300 text-lg glow-lime-btn"
             >
-              Vyzkoušet zdarma na 14 dní
+              Vyzkoušet 14 dní zdarma
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <a
@@ -79,7 +79,7 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Risk reversal */}
+          {/* Trust signals */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -93,7 +93,7 @@ export default function Hero() {
             <span>Zrušení kdykoliv</span>
           </motion.div>
 
-          {/* Product screenshot — show the product in the hero */}
+          {/* Product screenshot */}
           <motion.div
             initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -115,7 +115,7 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-              {/* Dashboard preview — compact version */}
+              {/* Dashboard preview */}
               <div className="bg-[#111111] p-4 md:p-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mb-3">
                   {[

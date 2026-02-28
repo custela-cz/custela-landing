@@ -1,33 +1,33 @@
 'use client'
 
-import { Clock, FileSpreadsheet, EyeOff } from 'lucide-react'
+import { PenLine, SlidersHorizontal, FileSpreadsheet } from 'lucide-react'
 import { StaggerContainer, StaggerItem } from '@/components/AnimateIn'
 import AnimateIn from '@/components/AnimateIn'
 
 const problems = [
   {
-    icon: Clock,
-    title: 'Přepínání mezi platformami vás stojí hodiny',
-    pain: 'Každé ráno otevíráte Google Ads, Meta Ads, Sklik a Analytics zvlášť. Přihlášení, přepnutí, hledání dat.',
-    agitate: 'To je přes 15 hodin měsíčně jen přihlašováním a proklikáváním. Čas, který byste mohli věnovat optimalizaci kampaní, trávíte kontrolováním čísel.',
-    stat: '15+ h/měsíc',
-    statLabel: 'ztraceno přepínáním',
+    icon: PenLine,
+    title: 'Kampaně tvoříte ručně',
+    pain: 'Výběr klíčovek, psaní textů, ladění cílení — hodiny práce na každou kampaň. A stejně tipujete, jestli to bude fungovat.',
+    agitate: 'Vaše konkurence s AI testuje desátou kampaň, zatímco vy ručně nastavujete první.',
+    stat: '4+ hodin',
+    statLabel: 'na jednu kampaň',
+  },
+  {
+    icon: SlidersHorizontal,
+    title: 'Optimalizujete naslepo',
+    pain: 'Bidujete na základě pocitu. Každá platforma ukazuje svůj výsek. Celkový obraz neexistuje.',
+    agitate: 'Peníze unikají do kampaní, které nevydělávají. Zjistíte to za dny — z měsíčního reportu, který už je zastaralý.',
+    stat: '23 %',
+    statLabel: 'rozpočtu pryč',
   },
   {
     icon: FileSpreadsheet,
-    title: 'Ruční reporty místo strategie',
-    pain: 'Export z Google, export z Mety, export ze Skliku. Pak kopírování do Excelu, formátování sloupců, ruční výpočty.',
-    agitate: 'Strávíte hodiny přípravou reportu, který je zastaralý, ještě než ho odešlete. A místo strategických rozhodnutí formátujete tabulky.',
-    stat: '4–6 hodin',
+    title: 'Reporty vás stojí dny',
+    pain: 'Export Google, export Meta, export Sklik. Kopírování do Excelu. Formátování. Ruční výpočty.',
+    agitate: 'Celé dopoledne na report, který je zastaralý, než ho odešlete. Místo strategie formátujete tabulky.',
+    stat: '4–6 h',
     statLabel: 'týdně na reporty',
-  },
-  {
-    icon: EyeOff,
-    title: 'Problémy v kampaních odhalíte pozdě',
-    pain: 'Bez celkového pohledu na všechny platformy nevidíte, kde unikají peníze. Každá platforma ukazuje jen svůj výsek.',
-    agitate: 'Propad výkonu na jedné platformě zjistíte až za dny — když se to projeví na tržbách. Do té doby jste zbytečně utratili tisíce korun.',
-    stat: '23 %',
-    statLabel: 'rozpočtu jde typicky do neefektivních kampaní',
   },
 ]
 
@@ -42,17 +42,17 @@ export default function Problems() {
               Problém
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-dark">Správa reklam na více platformách</span>{' '}
-              <span className="text-[#9CA3AF]">je zbytečně bolestivá</span>
+              <span className="text-gradient-dark">Řídíte reklamu ručně.</span>{' '}
+              <span className="text-[#9CA3AF]">Vaše konkurence má AI.</span>
             </h2>
             <p className="text-lg text-[#6B7280]">
-              Většina e-shopů spravuje kampaně na třech platformách zvlášť.
-              Výsledek? Ztracený čas, chybějící přehled a peníze utracené naslepo.
+              Ruční tvorba, optimalizace po čichu, Excel reporty.
+              Každý z těchto problémů vás stojí tisíce měsíčně.
             </p>
           </div>
         </AnimateIn>
 
-        {/* Problem cards with PAS framework */}
+        {/* Problem cards */}
         <StaggerContainer className="grid md:grid-cols-3 gap-6" staggerDelay={0.15}>
           {problems.map((problem) => (
             <StaggerItem key={problem.title}>
@@ -63,11 +63,9 @@ export default function Problems() {
                 <h3 className="text-lg font-semibold text-[#0A0A0A] mb-3">
                   {problem.title}
                 </h3>
-                {/* Pain */}
                 <p className="text-[#6B7280] leading-relaxed text-sm mb-2">
                   {problem.pain}
                 </p>
-                {/* Agitate */}
                 <p className="text-[#4B5563] leading-relaxed text-sm flex-1 font-medium">
                   {problem.agitate}
                 </p>

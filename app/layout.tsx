@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Custela - Automatizujte svůj e-commerce marketing',
-  description: 'Propojte Google Ads, Meta Ads a Sklik na jednom místě. Šetřete čas a získejte lepší výsledky s Custela.',
-  keywords: ['marketing automation', 'e-commerce', 'Google Ads', 'Meta Ads', 'Sklik', 'PPC', 'reklamy'],
+  title: 'Custela — AI platforma pro e-commerce reklamu',
+  description: 'AI vytváří kampaně, optimalizuje rozpočty a generuje reporty. Google Ads, Meta Ads a Sklik na jednom dashboardu. Vyzkoušejte 14 dní zdarma.',
+  keywords: ['AI marketing', 'e-commerce', 'Google Ads', 'Meta Ads', 'Sklik', 'PPC', 'AI kampaně', 'automatizace reklam', 'AI optimalizace'],
   authors: [{ name: 'Custela' }],
   openGraph: {
-    title: 'Custela - Automatizujte svůj e-commerce marketing',
-    description: 'Propojte Google Ads, Meta Ads a Sklik na jednom místě. Šetřete čas a získejte lepší výsledky.',
+    title: 'Custela — AI platforma pro e-commerce reklamu',
+    description: 'AI vytváří kampaně, optimalizuje rozpočty a generuje reporty. Google Ads, Meta Ads a Sklik na jednom dashboardu.',
     url: 'https://custela.com',
     siteName: 'Custela',
     locale: 'cs_CZ',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Custela - Automatizujte svůj e-commerce marketing',
-    description: 'Propojte Google Ads, Meta Ads a Sklik na jednom místě.',
+    title: 'Custela — AI platforma pro e-commerce reklamu',
+    description: 'AI vytváří kampaně, optimalizuje rozpočty a generuje reporty automaticky.',
   },
   robots: {
     index: true,
