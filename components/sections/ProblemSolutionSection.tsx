@@ -41,8 +41,8 @@ const solutions = [
 
 export default function ProblemSolutionSection() {
   return (
-    <section className="section-viewport relative" id="problem-solution">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative py-20 md:py-28 bg-[#0A0A0A]" id="problem-solution">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -63,7 +63,7 @@ export default function ProblemSolutionSection() {
             <StaggerContainer className="space-y-4" staggerDelay={0.1}>
               {problems.map((item) => (
                 <StaggerItem key={item.title}>
-                  <div className="card-glass-dark rounded-xl p-5 flex items-start gap-4">
+                  <div className="rounded-xl p-5 flex items-start gap-4 bg-white/[0.03] border border-white/[0.06] hover:border-white/[0.1] transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
                       <item.icon className="w-5 h-5 text-red-400" />
                     </div>
@@ -87,7 +87,7 @@ export default function ProblemSolutionSection() {
             <StaggerContainer className="space-y-4" staggerDelay={0.1}>
               {solutions.map((item) => (
                 <StaggerItem key={item.title}>
-                  <div className="card-glass-dark rounded-xl p-5 flex items-start gap-4 border-lime/10">
+                  <div className="rounded-xl p-5 flex items-start gap-4 bg-white/[0.03] border border-lime/[0.08] hover:border-lime/[0.15] transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-lime/10 flex items-center justify-center shrink-0">
                       <item.icon className="w-5 h-5 text-lime" />
                     </div>

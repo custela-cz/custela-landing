@@ -55,8 +55,8 @@ const tiers = [
 
 export default function PricingSection() {
   return (
-    <section className="section-viewport relative" id="pricing">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative py-20 md:py-28 bg-black" id="pricing">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-lime/60 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
@@ -81,8 +81,8 @@ export default function PricingSection() {
               <div
                 className={`relative p-7 rounded-2xl h-full ${
                   tier.popular
-                    ? 'card-glass-dark border-lime/20 ring-1 ring-lime/10'
-                    : 'card-glass-dark'
+                    ? 'bg-white/[0.04] border border-lime/20 ring-1 ring-lime/10'
+                    : 'bg-white/[0.03] border border-white/[0.06] hover:border-white/[0.1] transition-colors'
                 }`}
               >
                 {tier.popular && (
@@ -137,7 +137,7 @@ export default function PricingSection() {
         {/* Enterprise */}
         <AnimateIn variant="blurUp" delay={0.3}>
           <div className="max-w-5xl mx-auto mt-6">
-            <div className="flex flex-col sm:flex-row items-center justify-between p-6 card-glass-dark rounded-2xl gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-2xl gap-4 bg-white/[0.03] border border-white/[0.06]">
               <div>
                 <h3 className="text-lg font-semibold text-white mb-1">Enterprise</h3>
                 <p className="text-[#888] text-sm">

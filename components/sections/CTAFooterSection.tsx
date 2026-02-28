@@ -59,11 +59,11 @@ export default function CTAFooterSection() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <section className="section-viewport relative flex-col" id="cta">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <section className="relative bg-[#0A0A0A]" id="cta">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         {/* CTA Card */}
         <AnimateIn variant="blurScale">
-          <div className="card-glass-dark rounded-2xl p-8 md:p-14 text-center relative overflow-hidden mb-20">
+          <div className="rounded-2xl p-8 md:p-14 text-center relative overflow-hidden bg-white/[0.03] border border-white/[0.06] mb-20">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[250px] bg-lime/[0.04] rounded-full blur-[100px] pointer-events-none" />
             <div className="relative">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-lime/[0.08] border border-lime/20 rounded-full mb-8">
@@ -117,7 +117,7 @@ export default function CTAFooterSection() {
             </h3>
             <div className="space-y-2">
               {faqs.map((faq, index) => (
-                <div key={index} className="rounded-xl overflow-hidden card-glass-dark">
+                <div key={index} className="rounded-xl overflow-hidden bg-white/[0.03] border border-white/[0.06]">
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                     className="w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.03] transition-all duration-300"
@@ -155,11 +155,13 @@ export default function CTAFooterSection() {
             </div>
           </div>
         </AnimateIn>
+      </div>
 
-        {/* Footer */}
-        <footer className="border-t border-white/[0.06] pt-12 pb-8">
+      {/* Footer */}
+      <footer className="border-t border-white/[0.06] bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-4 gap-10 mb-12">
-            <div className="md:col-span-1">
+            <div>
               <a href="/" className="text-xl font-bold text-white tracking-tight">
                 Custela<span className="text-gradient-lime">.</span>
               </a>
@@ -220,8 +222,8 @@ export default function CTAFooterSection() {
             </p>
             <p className="text-xs text-[#555]">Michael Cetl, IČO: 08992207</p>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </section>
   )
 }

@@ -5,17 +5,17 @@ import { motion } from 'framer-motion'
 
 export default function HeroSection() {
   return (
-    <section className="section-viewport relative" id="hero">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16" id="hero">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] border border-white/[0.08] rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] border border-white/[0.08] rounded-full mb-8 backdrop-blur-sm">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-sm text-[#888] font-medium">
+            <span className="text-sm text-[#999] font-medium">
               AI marketing platforma pro e-shopy
             </span>
           </div>
@@ -46,7 +46,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg md:text-xl text-[#888] max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-lg md:text-xl text-[#999] max-w-2xl mx-auto mb-12 leading-relaxed"
         >
           AI vytvoří kampaně, průběžně je optimalizuje a reporty se generují samy.
           Google Ads, Meta Ads i Sklik — vše na jednom dashboardu.
@@ -76,7 +76,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.8 }}
-          className="flex flex-wrap items-center justify-center gap-8 mt-8 text-sm text-[#555]"
+          className="flex flex-wrap items-center justify-center gap-8 mt-8 text-sm text-[#666]"
         >
           <span>Bez kreditní karty</span>
           <span className="w-1 h-1 bg-[#333] rounded-full" />

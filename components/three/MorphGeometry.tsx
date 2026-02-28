@@ -1,15 +1,15 @@
 'use client'
 
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
-import { useScrollProgress } from '@/lib/useScrollProgress'
+import { scrollState } from './Scene'
+import { MORPH_CONFIG } from '@/lib/constants'
 import morphVertexShader from './shaders/morphVertex.glsl'
 import morphFragmentShader from './shaders/morphFragment.glsl'
 
 export default function MorphGeometry() {
   const meshRef = useRef<THREE.Mesh>(null)
-  const scrollState = useScrollProgress()
   const mouseRef = useRef({ x: 0, y: 0 })
 
   const uniforms = useMemo(
@@ -25,48 +25,47 @@ export default function MorphGeometry() {
     []
   )
 
-  // Track mouse position
-  if (typeof window !== 'undefined') {
+  useEffect(() => {
     const handler = (e: MouseEvent) => {
       mouseRef.current.x = (e.clientX / window.innerWidth) * 2 - 1
       mouseRef.current.y = -(e.clientY / window.innerHeight) * 2 + 1
     }
-    if (typeof window !== 'undefined' && !meshRef.current) {
-      window.addEventListener('mousemove', handler, { passive: true })
-    }
-  }
+    window.addEventListener('mousemove', handler, { passive: true })
+    return () => window.removeEventListener('mousemove', handler)
+  }, [])
 
   useFrame((_, delta) => {
     if (!meshRef.current) return
     const mat = meshRef.current.material as THREE.ShaderMaterial
-    const s = scrollState.current
+    const s = scrollState
+    const config = MORPH_CONFIG[s.sectionIndex] || MORPH_CONFIG[0]
 
     mat.uniforms.uTime.value += delta
     mat.uniforms.uMorphProgress.value = THREE.MathUtils.lerp(
       mat.uniforms.uMorphProgress.value,
-      s.morphProgress,
-      0.08
+      s.sectionProgress,
+      0.06
     )
     mat.uniforms.uNoiseFrequency.value = THREE.MathUtils.lerp(
       mat.uniforms.uNoiseFrequency.value,
-      s.noiseFreq,
-      0.05
+      config.noiseFreq,
+      0.04
     )
     mat.uniforms.uNoiseAmplitude.value = THREE.MathUtils.lerp(
       mat.uniforms.uNoiseAmplitude.value,
-      s.noiseAmp,
-      0.05
+      config.noiseAmp,
+      0.04
     )
-    mat.uniforms.uShapeA.value = s.shapeA
-    mat.uniforms.uShapeB.value = s.shapeB
+    mat.uniforms.uShapeA.value = config.shapeA
+    mat.uniforms.uShapeB.value = config.shapeB
     mat.uniforms.uMouse.value.set(
-      THREE.MathUtils.lerp(mat.uniforms.uMouse.value.x, mouseRef.current.x, 0.05),
-      THREE.MathUtils.lerp(mat.uniforms.uMouse.value.y, mouseRef.current.y, 0.05)
+      THREE.MathUtils.lerp(mat.uniforms.uMouse.value.x, mouseRef.current.x, 0.03),
+      THREE.MathUtils.lerp(mat.uniforms.uMouse.value.y, mouseRef.current.y, 0.03)
     )
 
     // Gentle rotation
-    meshRef.current.rotation.y += delta * 0.1
-    meshRef.current.rotation.x += delta * 0.05
+    meshRef.current.rotation.y += delta * 0.08
+    meshRef.current.rotation.x += delta * 0.04
   })
 
   return (

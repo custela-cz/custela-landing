@@ -4,8 +4,8 @@ import AnimateIn from '@/components/AnimateIn'
 
 export default function PlatformSection() {
   return (
-    <section className="section-viewport relative" id="platforms">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative py-16 md:py-20 bg-black/90 backdrop-blur-md border-y border-white/[0.04]" id="platforms">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateIn variant="blurUp">
           <p className="text-center text-[#555] text-xs font-medium uppercase tracking-[0.2em] mb-12">
             AI pracuje s daty z platforem, které denně používáte
@@ -30,7 +30,7 @@ export default function PlatformSection() {
         </AnimateIn>
 
         <AnimateIn variant="blurUp" delay={0.4}>
-          <p className="text-center text-[#666] text-base md:text-lg mt-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-center text-[#777] text-base md:text-lg mt-12 max-w-2xl mx-auto leading-relaxed">
             Jediná AI platforma na českém trhu, která spojí{' '}
             <span className="text-white font-medium">Google Ads</span>,{' '}
             <span className="text-white font-medium">Meta Ads</span> a{' '}

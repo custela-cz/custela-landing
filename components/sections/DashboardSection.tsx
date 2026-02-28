@@ -26,8 +26,8 @@ const steps = [
 
 export default function DashboardSection() {
   return (
-    <section className="section-viewport relative" id="dashboard">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative py-20 md:py-28 bg-black" id="dashboard">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-lime/60 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
@@ -44,7 +44,7 @@ export default function DashboardSection() {
         <StaggerContainer className="grid md:grid-cols-3 gap-6 mb-16" staggerDelay={0.15}>
           {steps.map((step) => (
             <StaggerItem key={step.number}>
-              <div className="card-glass-dark rounded-xl p-6 text-center h-full">
+              <div className="rounded-xl p-6 text-center h-full bg-white/[0.03] border border-white/[0.06] hover:border-white/[0.1] transition-colors">
                 <div className="w-12 h-12 rounded-xl bg-lime/10 flex items-center justify-center mx-auto mb-4">
                   <step.icon className="w-6 h-6 text-lime" />
                 </div>
@@ -58,7 +58,7 @@ export default function DashboardSection() {
 
         {/* Dashboard mockup */}
         <AnimateIn variant="blurScale" delay={0.3}>
-          <div className="card-glass-dark rounded-2xl overflow-hidden max-w-4xl mx-auto">
+          <div className="rounded-2xl overflow-hidden max-w-4xl mx-auto bg-[#111] border border-white/[0.06]">
             {/* Browser bar */}
             <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/[0.06]">
               <div className="flex gap-1.5">
@@ -90,7 +90,6 @@ export default function DashboardSection() {
                   </div>
                 ))}
               </div>
-              {/* Chart */}
               <div className="bg-white/[0.03] rounded-lg p-3 border border-white/[0.06]">
                 <div className="flex items-center justify-between mb-2">
                   <p className="text-[10px] text-white font-medium">Přehled výkonu</p>

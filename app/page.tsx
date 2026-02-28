@@ -14,38 +14,25 @@ import CTAFooterSection from '@/components/sections/CTAFooterSection'
 
 const Scene = dynamic(() => import('@/components/three/Scene'), { ssr: false })
 
-function SectionContent() {
-  return (
-    <>
-      <HeroSection />
-      <PlatformSection />
-      <ProblemSolutionSection />
-      <DashboardSection />
-      <ResultsSection />
-      <PricingSection />
-      <CTAFooterSection />
-    </>
-  )
-}
-
 export default function Home() {
   const isMobile = useMobileDetect()
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
-      {isMobile ? (
-        <>
-          <MobileFallback />
-          <div className="relative z-10">
-            <SectionContent />
-          </div>
-        </>
-      ) : (
-        <Scene>
-          <SectionContent />
-        </Scene>
-      )}
+    <main className="min-h-screen relative">
+      {/* 3D canvas fixed behind everything */}
+      {!isMobile ? <Scene /> : <MobileFallback />}
+
+      {/* Normal scrollable HTML on top */}
+      <div className="relative z-10">
+        <Navbar />
+        <HeroSection />
+        <PlatformSection />
+        <ProblemSolutionSection />
+        <DashboardSection />
+        <ResultsSection />
+        <PricingSection />
+        <CTAFooterSection />
+      </div>
     </main>
   )
 }

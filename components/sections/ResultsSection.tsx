@@ -31,8 +31,8 @@ const results = [
 
 export default function ResultsSection() {
   return (
-    <section className="section-viewport relative" id="results">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative py-20 md:py-28 bg-[#0A0A0A]" id="results">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateIn variant="blurUp">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-lime/60 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
@@ -51,7 +51,7 @@ export default function ResultsSection() {
         >
           {results.map((result) => (
             <StaggerItem key={result.label}>
-              <div className="card-glass-dark rounded-xl p-6 text-center">
+              <div className="rounded-xl p-6 text-center bg-white/[0.03] border border-white/[0.06] hover:border-white/[0.1] transition-colors">
                 <div className="mb-3">
                   <span className="text-4xl md:text-5xl font-bold text-white">
                     <CountUp value={result.value} duration={2} />
