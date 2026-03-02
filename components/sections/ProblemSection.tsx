@@ -5,42 +5,58 @@ export default function ProblemSection() {
     <section className="problem-section">
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
-          <div className="section-label">Problém</div>
-          <h2>Řídíte reklamu ručně.<br />Vaše konkurence má Custelu.</h2>
+          <div className="section-label">Proč Custela</div>
+          <h2>Každý den bez automatizace<br />vás stojí peníze.</h2>
+          <p className="sh-sub">E-shopy v ČR průměrně ztrácí 23 % rozpočtu v neefektivních kampaních. Custela tyto úniky najde a opraví — automaticky.</p>
         </div>
         <div className="problem-grid">
           <div className="problem-card reveal">
-            <div className="problem-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" />
-              </svg>
+            <div className="problem-number">01</div>
+            <h3>Ruční správa kampaní vás brzdí</h3>
+            <p>Nastavit jednu kampaň trvá hodiny. Mezitím konkurence testuje desítky variant a obsazuje vaše klíčová slova.</p>
+            <div className="problem-bottom">
+              <div className="problem-stat-row">
+                <span className="problem-stat-num">4+ h</span>
+                <span className="problem-stat-label">průměrná doba tvorby kampaně</span>
+              </div>
+              <div className="problem-arrow">→</div>
+              <div className="problem-stat-row">
+                <span className="problem-stat-num problem-stat-green">12 min</span>
+                <span className="problem-stat-label">s Custelou</span>
+              </div>
             </div>
-            <h3>Kampaně tvoříte ručně</h3>
-            <p>Hodiny práce na každou kampaň. Konkurence testuje desátou, vy nastavujete první.</p>
-            <div className="problem-stat">4+ hodin na kampaň</div>
           </div>
           <div className="problem-card reveal reveal-delay-1">
-            <div className="problem-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
+            <div className="problem-number">02</div>
+            <h3>Bez dat nevidíte, kam peníze tečou</h3>
+            <p>Rozpočet se rozprostře do desítek kampaní. Bez analýzy neuvidíte, které vydělávají a které jen utrácí.</p>
+            <div className="problem-bottom">
+              <div className="problem-stat-row">
+                <span className="problem-stat-num">23 %</span>
+                <span className="problem-stat-label">rozpočtu teče do ztrátových kampaní</span>
+              </div>
+              <div className="problem-arrow">→</div>
+              <div className="problem-stat-row">
+                <span className="problem-stat-num problem-stat-green">+32 %</span>
+                <span className="problem-stat-label">ROAS po optimalizaci</span>
+              </div>
             </div>
-            <h3>Optimalizujete naslepo</h3>
-            <p>Bidujete na základě pocitu. Peníze unikají do kampaní, které nevydělávají.</p>
-            <div className="problem-stat">23% rozpočtu pryč</div>
           </div>
           <div className="problem-card reveal reveal-delay-2">
-            <div className="problem-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                <path d="M14 2v6h6M16 13H8M16 17H8" />
-              </svg>
+            <div className="problem-number">03</div>
+            <h3>Ruční reporty kradou čas, který nemáte</h3>
+            <p>Exporty z třech platforem, kopírování do tabulek, formátování. A mezitím nikdo neoptimalizuje kampaně.</p>
+            <div className="problem-bottom">
+              <div className="problem-stat-row">
+                <span className="problem-stat-num">4–6 h</span>
+                <span className="problem-stat-label">týdně na reporty</span>
+              </div>
+              <div className="problem-arrow">→</div>
+              <div className="problem-stat-row">
+                <span className="problem-stat-num problem-stat-green">0 min</span>
+                <span className="problem-stat-label">automaticky v inboxu</span>
+              </div>
             </div>
-            <h3>Reporty stojí dny</h3>
-            <p>Export, kopírování, formátování. Celé dopoledne na zastaralý report.</p>
-            <div className="problem-stat">4–6 h týdně</div>
           </div>
         </div>
       </div>
