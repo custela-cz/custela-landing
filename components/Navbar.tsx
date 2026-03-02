@@ -1,142 +1,96 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  useEffect(() => {
-    const sectionIds = ['platforms', 'dashboard', 'pricing']
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      },
-      { rootMargin: '-40% 0px -55% 0px' }
-    )
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
-    return () => observer.disconnect()
-  }, [])
-
-  const navLinks = [
-    { name: 'Platformy', href: '#platforms' },
-    { name: 'Jak to funguje', href: '#dashboard' },
-    { name: 'Ceník', href: '#pricing' },
-  ]
 
   return (
-    <motion.nav
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-black/70 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
-          : 'bg-transparent'
-      }`}
+    <nav
+      id="nav"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        padding: '14px 0',
+        background: scrolled ? 'rgba(255,255,255,.92)' : 'transparent',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        borderBottom: scrolled ? '1px solid #e5e7eb' : '1px solid transparent',
+        transition: 'all .3s',
+      }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <a href="/" className="text-xl font-bold text-white tracking-tight">
-            Custela<span className="text-gradient-lime">.</span>
-          </a>
+      <div className="max-w-[1160px] mx-auto px-6 flex items-center justify-between">
+        <a
+          href="/"
+          style={{
+            fontSize: '22px',
+            fontWeight: 800,
+            letterSpacing: '-0.03em',
+            color: scrolled ? '#111827' : '#fff',
+            transition: 'color .3s',
+          }}
+        >
+          Custela<span style={{ color: '#84cc16' }}>.</span>
+        </a>
 
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => {
-              const sectionId = link.href.replace('#', '')
-              const isActive = activeSection === sectionId
-              return (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                    isActive ? 'text-white' : 'text-[#888] hover:text-white'
-                  }`}
-                >
-                  {isActive && (
-                    <motion.span
-                      layoutId="activeNav"
-                      className="absolute inset-0 bg-white/[0.08] rounded-full"
-                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative">{link.name}</span>
-                </a>
-              )
-            })}
-          </div>
+        <ul className="nav-links-desktop" style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '36px',
+          listStyle: 'none',
+        }}>
+          {[
+            { href: '#features', label: 'Funkce' },
+            { href: '#how-it-works', label: 'Jak to funguje' },
+            { href: '#pricing', label: 'Ceník' },
+            { href: '#faq', label: 'FAQ' },
+          ].map(link => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className="nav-link-item"
+                style={{
+                  fontSize: '14px',
+                  fontWeight: 500,
+                  color: scrolled ? '#6b7280' : 'rgba(255,255,255,.7)',
+                  transition: 'color .2s',
+                }}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href="https://app.custela.com/auth"
-              className="text-[#888] hover:text-white transition-colors duration-300 text-sm font-medium"
-            >
-              Přihlásit se
-            </a>
-            <a
-              href="https://app.custela.com/auth"
-              className="px-5 py-2 bg-lime hover:bg-lime-hover text-black font-semibold rounded-full transition-all duration-300 text-sm"
-            >
-              Začít zdarma
-            </a>
-          </div>
-
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-[#888] hover:text-white"
+        <div className="nav-cta-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <a
+            href="https://app.custela.com/auth"
+            className="btn-ghost nav-login"
+            style={{ color: scrolled ? '#4b5563' : 'rgba(255,255,255,.7)' }}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            Přihlásit se
+          </a>
+          <a
+            href="https://app.custela.com/auth"
+            className="btn-primary"
+            style={{ background: '#84cc16', color: '#000' }}
+          >
+            Začít zdarma{' '}
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M3 8h10M9 4l4 4-4 4" />
+            </svg>
+          </a>
         </div>
       </div>
-
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/90 backdrop-blur-2xl border-t border-white/[0.06] overflow-hidden"
-          >
-            <div className="px-4 py-4 space-y-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-[#888] hover:text-white transition-colors py-2"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <div className="pt-4 border-t border-white/[0.06] space-y-3">
-                <a
-                  href="https://app.custela.com/auth"
-                  className="block w-full text-center px-5 py-3 bg-lime hover:bg-lime-hover text-black font-semibold rounded-full"
-                >
-                  Začít zdarma
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+    </nav>
   )
 }

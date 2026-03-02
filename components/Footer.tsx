@@ -1,86 +1,36 @@
-const footerLinks = {
-  product: [
-    { name: 'Platformy', href: '/#platforms' },
-    { name: 'Jak to funguje', href: '/#dashboard' },
-    { name: 'Ceník', href: '/#pricing' },
-  ],
-  company: [
-    { name: 'O nás', href: '#' },
-    { name: 'Kontakt', href: 'mailto:info@custela.com' },
-  ],
-  legal: [
-    { name: 'Obchodní podmínky', href: '/obchodni-podminky' },
-    { name: 'Ochrana soukromí', href: '/ochrana-soukromi' },
-  ],
-}
-
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-
   return (
-    <footer className="bg-[#0A0A0A] border-t border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
-          <div>
-            <a href="/" className="text-xl font-bold text-white tracking-tight">
-              Custela<span className="text-gradient-lime">.</span>
-            </a>
-            <p className="text-[#888] mt-4 max-w-xs text-sm leading-relaxed">
-              AI marketing platforma pro e-shopy.
-            </p>
-            <div className="mt-4">
-              <a
-                href="mailto:info@custela.com"
-                className="text-[#555] hover:text-white text-sm transition-colors duration-300"
-              >
-                info@custela.com
-              </a>
+    <footer>
+      <div className="max-w-[1160px] mx-auto px-6">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <div style={{ fontSize: '22px', fontWeight: 800, letterSpacing: '-0.03em' }}>
+              Custela<span style={{ color: '#84cc16' }}>.</span>
             </div>
+            <p>Autopilot pro e-commerce reklamu.</p>
+            <a href="mailto:info@custela.com">info@custela.com</a>
           </div>
-
-          <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Produkt</h4>
-            <ul className="space-y-3">
-              {footerLinks.product.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-[#888] hover:text-white transition-colors duration-300 text-sm">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="footer-col">
+            <h4>Produkt</h4>
+            <a href="#features">Funkce</a>
+            <a href="#how-it-works">Jak to funguje</a>
+            <a href="#pricing">Ceník</a>
           </div>
-
-          <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Společnost</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-[#888] hover:text-white transition-colors duration-300 text-sm">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="footer-col">
+            <h4>Společnost</h4>
+            <a href="#">O nás</a>
+            <a href="#">Blog</a>
+            <a href="mailto:info@custela.com">Kontakt</a>
           </div>
-
-          <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Právní</h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-[#888] hover:text-white transition-colors duration-300 text-sm">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="footer-col">
+            <h4>Právní</h4>
+            <a href="/obchodni-podminky">Podmínky</a>
+            <a href="/ochrana-soukromi">Soukromí</a>
           </div>
         </div>
-
-        <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#555]">&copy; {currentYear} Custela. Všechna práva vyhrazena.</p>
-          <p className="text-xs text-[#555]">Michael Cetl, IČO: 08992207</p>
+        <div className="footer-bottom">
+          <span>&copy; 2026 Custela.</span>
+          <span>Michael Cetl, IČO: 08992207</span>
         </div>
       </div>
     </footer>

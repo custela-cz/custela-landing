@@ -13,22 +13,20 @@ export default function LegalPage({
   children,
 }: LegalPageProps) {
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-white">
       <Navbar />
 
       <article className="pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <header className="mb-12 pb-8 border-b border-white/[0.06]">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <header className="mb-12 pb-8 border-b border-gray-200">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#111827' }}>
               {title}
             </h1>
-            <p className="text-[#888]">
-              <strong className="text-white">Platné od:</strong> {effectiveDate}
+            <p style={{ color: '#6b7280' }}>
+              <strong style={{ color: '#111827' }}>Platné od:</strong> {effectiveDate}
             </p>
           </header>
 
-          {/* Content */}
           <div className="legal-content">{children}</div>
         </div>
       </article>
@@ -88,9 +86,9 @@ export function LegalTable({
 
 export function LegalFooter() {
   return (
-    <footer className="pt-8 border-t border-white/[0.06] text-[#888]">
+    <footer className="pt-8 border-t border-gray-200" style={{ color: '#6b7280' }}>
       <p>
-        <strong className="text-white">Poslední aktualizace:</strong> 1. února
+        <strong style={{ color: '#111827' }}>Poslední aktualizace:</strong> 1. února
         2025
       </p>
       <p className="mt-2">

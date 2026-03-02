@@ -1,90 +1,80 @@
 'use client'
 
-import { ArrowRight } from 'lucide-react'
-import { motion } from 'framer-motion'
+import HeroCanvas from '../HeroCanvas'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16" id="hero">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-        {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] border border-white/[0.08] rounded-full mb-8 backdrop-blur-sm">
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-sm text-[#999] font-medium">
-              AI marketing platforma pro e-shopy
-            </span>
+    <>
+      <section className="hero">
+        <div className="hero-orbs">
+          <div className="orb orb-1" />
+          <div className="orb orb-2" />
+          <div className="orb orb-3" />
+        </div>
+        <div className="hero-grid" />
+        <HeroCanvas />
+        <div className="max-w-[1160px] mx-auto px-6 hero-content">
+          <div className="hero-inner">
+            <div className="hero-text">
+              <div className="badge reveal">
+                <span className="dot" />
+                Automatizace reklamy pro e-shopy
+              </div>
+              <h1 className="reveal reveal-delay-1">
+                Marketingová aplikace, která pracuje{' '}
+                <em>pro&nbsp;vás.</em>
+              </h1>
+              <p className="hero-sub reveal reveal-delay-2">
+                Custela vytvoří kampaně, průběžně je optimalizuje a vygeneruje
+                přehledné reporty. Google&nbsp;Ads, Meta&nbsp;Ads i Sklik —
+                vše v&nbsp;jednom dashboardu.
+              </p>
+              <div className="hero-buttons reveal reveal-delay-3">
+                <a
+                  href="https://app.custela.com/auth"
+                  className="btn-primary btn-large"
+                >
+                  Vyzkoušet 7 dní zdarma{' '}
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  >
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </a>
+                <a href="#how-it-works" className="btn-secondary btn-large">
+                  Jak to funguje
+                </a>
+              </div>
+              <div className="hero-trust reveal reveal-delay-4">
+                <span>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 8l4 4 6-6" />
+                  </svg>
+                  Bez kreditní karty
+                </span>
+                <span>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 8l4 4 6-6" />
+                  </svg>
+                  Zvládne nastavit každý
+                </span>
+                <span>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 8l4 4 6-6" />
+                  </svg>
+                  Zrušení kdykoliv
+                </span>
+              </div>
+            </div>
+            <div />
           </div>
-        </motion.div>
-
-        {/* Headline */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-6 tracking-tight">
-          <motion.span
-            initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="text-gradient block"
-          >
-            Vaše reklamy
-          </motion.span>
-          <motion.span
-            initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="text-gradient-lime block"
-          >
-            na autopilotu.
-          </motion.span>
-        </h1>
-
-        {/* Body */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg md:text-xl text-[#999] max-w-2xl mx-auto mb-12 leading-relaxed"
-        >
-          AI vytvoří kampaně, průběžně je optimalizuje a reporty se generují samy.
-          Google Ads, Meta Ads i Sklik — vše na jednom dashboardu.
-        </motion.p>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <a
-            href="https://app.custela.com/auth"
-            className="group flex items-center gap-2 px-8 py-4 bg-lime hover:bg-lime-hover text-black font-bold rounded-full transition-all duration-300 text-lg glow-lime-btn"
-          >
-            Vyzkoušet 14 dní zdarma
-            <ArrowRight
-              size={20}
-              className="group-hover:translate-x-1 transition-transform duration-300"
-            />
-          </a>
-        </motion.div>
-
-        {/* Trust signals */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.8 }}
-          className="flex flex-wrap items-center justify-center gap-8 mt-8 text-sm text-[#666]"
-        >
-          <span>Bez kreditní karty</span>
-          <span className="w-1 h-1 bg-[#333] rounded-full" />
-          <span>Nastavení pod 3 minuty</span>
-          <span className="w-1 h-1 bg-[#333] rounded-full" />
-          <span>Zrušení kdykoliv</span>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
+      <div className="hero-transition" />
+    </>
   )
 }

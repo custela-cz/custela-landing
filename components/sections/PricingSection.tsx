@@ -1,164 +1,89 @@
 'use client'
 
-import { Check, ArrowRight } from 'lucide-react'
-import AnimateIn, { StaggerContainer, StaggerItem } from '@/components/AnimateIn'
+import { useState } from 'react'
 
-const tiers = [
-  {
-    name: 'Start',
-    price: '1 490',
-    spend: 'do 50 000 Kč',
-    description: 'Pro malé e-shopy, které chtějí přehled a automatické reporty.',
-    features: [
-      'Google Ads + Meta Ads + Sklik',
-      'Jednotný dashboard',
-      'Automatické reporty',
-      'AI doporučení',
-      'E-mailová podpora',
-      'Až 5 reklamních účtů',
-    ],
-    popular: false,
-  },
-  {
-    name: 'Growth',
-    price: '2 490',
-    spend: 'do 100 000 Kč',
-    description: 'Pro rostoucí e-shopy, které chtějí AI na své straně.',
-    features: [
-      'Vše ze Start',
-      'AI tvorba kampaní',
-      'AI optimalizace kampaní',
-      'Pokročilá analytika',
-      'Prioritní podpora',
-      'Až 15 reklamních účtů',
-      'Google Analytics integrace',
-    ],
-    popular: true,
-  },
-  {
-    name: 'Scale',
-    price: '3 490',
-    spend: 'do 200 000 Kč',
-    description: 'Pro velké e-shopy a agentury s maximálními nároky.',
-    features: [
-      'Vše z Growth',
-      'Plně automatická AI optimalizace',
-      'Multi-projektové prostředí',
-      'Dedikovaný account manager',
-      'Neomezené reklamní účty',
-      'API přístup',
-      'Custom reporty',
-    ],
-    popular: false,
-  },
-]
+const CheckIcon = () => (
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M3 8l4 4 6-6" />
+  </svg>
+)
 
 export default function PricingSection() {
+  const [isYearly, setIsYearly] = useState(true)
+
   return (
-    <section className="relative py-20 md:py-28 bg-black" id="pricing">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateIn variant="blurUp">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-lime/60 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-              Ceník
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient">Levnější než jeden</span>{' '}
-              <span className="text-gradient-lime">den marketéra</span>
-            </h2>
-            <p className="text-[#888] text-base">
-              Kolik stojí hodiny ručních reportů a kampaně, co spalují rozpočet? Víc než Custela.
-            </p>
-          </div>
-        </AnimateIn>
+    <section className="pricing-section" id="pricing">
+      <div className="max-w-[1160px] mx-auto px-6">
+        <div className="sh reveal">
+          <div className="section-label">Ceník</div>
+          <h2>Levnější než jeden den marketéra</h2>
+          <p className="pricing-sub">Kolik stojí hodiny ručních reportů a kampaně, co spalují rozpočet?</p>
+        </div>
 
-        <StaggerContainer
-          className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto"
-          staggerDelay={0.15}
-        >
-          {tiers.map((tier) => (
-            <StaggerItem key={tier.name}>
-              <div
-                className={`relative p-7 rounded-2xl h-full ${
-                  tier.popular
-                    ? 'bg-white/[0.04] border border-lime/20 ring-1 ring-lime/10'
-                    : 'bg-white/[0.03] border border-white/[0.06] hover:border-white/[0.1] transition-colors'
-                }`}
-              >
-                {tier.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1.5 bg-lime text-black text-xs font-bold rounded-full uppercase tracking-wider">
-                      Nejoblíbenější
-                    </span>
-                  </div>
-                )}
+        <div className="pricing-toggle reveal">
+          <span className={!isYearly ? 'active' : ''}>Měsíčně</span>
+          <div
+            className={`toggle-switch${isYearly ? ' active' : ''}`}
+            onClick={() => setIsYearly(!isYearly)}
+          />
+          <span className={isYearly ? 'active' : ''}>Ročně</span>
+          <span className="save-badge">-15%</span>
+        </div>
 
-                <h3 className="text-lg font-semibold text-white mb-1.5">
-                  {tier.name}
-                </h3>
-                <p className="text-xs text-[#888] mb-5">{tier.description}</p>
-
-                <div className="mb-1.5">
-                  <span className="text-3xl font-bold text-white">{tier.price}</span>
-                  <span className="text-[#666] ml-1 text-sm">Kč/měsíc</span>
-                </div>
-                <p className="text-[10px] text-[#666] mb-6">
-                  Reklamní rozpočet {tier.spend}
-                </p>
-
-                <a
-                  href="https://app.custela.com/auth"
-                  className={`group flex items-center justify-center gap-2 w-full py-3 rounded-full font-semibold transition-all text-sm mb-6 ${
-                    tier.popular
-                      ? 'bg-lime hover:bg-lime-hover text-black glow-lime-btn'
-                      : 'bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.08]'
-                  }`}
-                >
-                  Začít zdarma
-                  <ArrowRight
-                    size={16}
-                    className="group-hover:translate-x-1 transition-transform duration-300"
-                  />
-                </a>
-
-                <ul className="space-y-2.5">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5 text-sm">
-                      <Check size={14} className="text-lime mt-0.5 shrink-0" />
-                      <span className="text-[#888]">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-
-        {/* Enterprise */}
-        <AnimateIn variant="blurUp" delay={0.3}>
-          <div className="max-w-5xl mx-auto mt-6">
-            <div className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-2xl gap-4 bg-white/[0.03] border border-white/[0.06]">
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-1">Enterprise</h3>
-                <p className="text-[#888] text-sm">
-                  Reklamní rozpočet nad 200 000 Kč? AI řešení na míru.
-                </p>
-              </div>
-              <a
-                href="mailto:info@custela.com"
-                className="shrink-0 px-6 py-2.5 bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.08] rounded-full font-semibold text-sm transition-all"
-              >
-                Kontaktujte nás
-              </a>
+        <div className="pricing-grid">
+          <div className="pricing-card reveal">
+            <div className="pricing-name">Start</div>
+            <div className="pricing-desc">Pro malé e-shopy.</div>
+            <div className="pricing-amount">
+              <span className="pricing-value">{isYearly ? '1 267' : '1 490'}</span>
+              <span className="pricing-period"> Kč/měs</span>
             </div>
+            <div className="pricing-limit">Rozpočet do 50 000 Kč</div>
+            <a href="https://app.custela.com/auth" className="btn-secondary cta-btn">Začít zdarma</a>
+            <ul className="pricing-features">
+              <li><CheckIcon />Google + Meta + Sklik</li>
+              <li><CheckIcon />Dashboard + Reporty</li>
+              <li><CheckIcon />Až 5 účtů</li>
+            </ul>
           </div>
-        </AnimateIn>
 
-        <AnimateIn variant="blurFade" delay={0.4}>
-          <p className="text-center text-xs text-[#555] mt-5">
-            Ceny jsou bez DPH (21 %). 14 dní zdarma u všech tarifů. Bez kreditní karty. Zrušení kdykoliv.
-          </p>
-        </AnimateIn>
+          <div className="pricing-card featured reveal reveal-delay-1">
+            <div className="pricing-popular">Nejoblíbenější</div>
+            <div className="pricing-name">Growth</div>
+            <div className="pricing-desc">AI na vaší straně.</div>
+            <div className="pricing-amount">
+              <span className="pricing-value">{isYearly ? '2 117' : '2 490'}</span>
+              <span className="pricing-period"> Kč/měs</span>
+            </div>
+            <div className="pricing-limit">Rozpočet do 100 000 Kč</div>
+            <a href="https://app.custela.com/auth" className="btn-primary cta-btn">Začít zdarma</a>
+            <ul className="pricing-features">
+              <li><CheckIcon />Vše ze Start</li>
+              <li><CheckIcon />AI tvorba + optimalizace</li>
+              <li><CheckIcon />Až 15 účtů + GA</li>
+            </ul>
+          </div>
+
+          <div className="pricing-card reveal reveal-delay-2">
+            <div className="pricing-name">Scale</div>
+            <div className="pricing-desc">Pro agentury.</div>
+            <div className="pricing-amount">
+              <span className="pricing-value">{isYearly ? '2 967' : '3 490'}</span>
+              <span className="pricing-period"> Kč/měs</span>
+            </div>
+            <div className="pricing-limit">Rozpočet do 200 000 Kč</div>
+            <a href="https://app.custela.com/auth" className="btn-secondary cta-btn">Začít zdarma</a>
+            <ul className="pricing-features">
+              <li><CheckIcon />Vše z Growth</li>
+              <li><CheckIcon />Plná AI + Multi-projekt</li>
+              <li><CheckIcon />∞ účtů + API</li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="reveal" style={{textAlign:'center',fontSize:'13px',color:'#9ca3af',marginTop:'20px'}}>
+          Ceny bez DPH. 7 dní zdarma. Bez kreditní karty.
+        </p>
       </div>
     </section>
   )
