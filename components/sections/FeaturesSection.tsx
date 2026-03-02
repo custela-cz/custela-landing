@@ -71,7 +71,7 @@ export default function FeaturesSection() {
         <div className="sh reveal">
           <div className="section-label">4 pilíře Custely</div>
           <h2>Jeden nástroj místo celého týmu.</h2>
-          <p className="sh-sub">Custela nahrazuje PPC specialistu, analytika i reportéra. Vy se soustředíte na růst — my se staráme o kampaně.</p>
+          <p className="sh-sub">S Custelou máte po ruce seniorního PPC specialistu i analytika. Soustřeďte se na podnikání — kampaně řídíme za vás.</p>
         </div>
         <div className="features-stack">
           {pillars.map((p, i) => (
