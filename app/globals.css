@@ -1349,10 +1349,27 @@ a {
 }
 
 /* Strikethrough element */
+/* Topic labels & content layout */
+.compare-item-topic {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,.25);
+  margin-bottom: 2px;
+}
+.compare-card--with .compare-item-topic {
+  color: rgba(132,204,22,.5);
+}
+.compare-item-content {
+  display: flex;
+  flex-direction: column;
+}
 .compare-strike {
   position: relative;
-  display: inline-flex;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .compare-strike__text {
   transition: opacity 0.4s ease;
@@ -1360,8 +1377,7 @@ a {
 .compare-strike__line {
   position: absolute;
   left: -2px;
-  right: -2px;
-  top: 50%;
+  bottom: 7px;
   height: 2px;
   background: linear-gradient(90deg, #ef4444, rgba(239,68,68,.4));
   width: 0;
@@ -1793,31 +1809,56 @@ a {
 }
 .cta-box {
   position: relative;
-  background: #111827;
-  border-radius: 20px;
-  padding: 72px 60px;
+  background: linear-gradient(160deg, #0f1720 0%, #111827 50%, #0d1117 100%);
+  border: 1px solid rgba(132,204,22,.1);
+  border-radius: 24px;
+  padding: 80px 60px;
   text-align: center;
   overflow: hidden;
 }
 .cta-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.06;
+  opacity: 0.05;
   background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.5) 1px, transparent 0);
-  background-size: 24px 24px;
+  background-size: 28px 28px;
+}
+.cta-glow {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 320px;
+  background: radial-gradient(ellipse, rgba(132,204,22,.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #84cc16;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 .cta-box h2 {
   font-size: clamp(30px, 3.5vw, 44px);
   letter-spacing: -0.03em;
+  line-height: 1.15;
   position: relative;
   z-index: 1;
   color: #ffffff;
 }
 .cta-box p {
-  font-size: 16px;
+  font-size: 17px;
+  line-height: 1.6;
   color: #9ca3af;
-  margin: 14px auto 32px;
-  max-width: 480px;
+  margin: 18px auto 36px;
+  max-width: 500px;
   position: relative;
   z-index: 1;
 }
@@ -1831,18 +1872,21 @@ a {
 .btn-primary.lime {
   background: #84cc16;
   color: #000;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(132,204,22,.15);
 }
 .btn-primary.lime:hover {
   background: #a3e635;
-  box-shadow: 0 0 30px rgba(132,204,22,.25);
+  box-shadow: 0 0 40px rgba(132,204,22,.3);
 }
 .cta-trust {
   display: flex;
   justify-content: center;
-  gap: 24px;
-  margin-top: 20px;
+  gap: 28px;
+  margin-top: 24px;
   font-size: 13px;
-  color: #6b7280;
+  font-weight: 500;
+  color: rgba(255,255,255,.4);
   position: relative;
   z-index: 1;
 }
