@@ -343,12 +343,12 @@ a {
 .hero-3d {
   position: relative;
   width: 100%;
-  min-height: 420px;
+  aspect-ratio: 1;
+  max-height: 520px;
 }
 .hero-scene {
   position: absolute;
-  inset: -40px -60px;
-  z-index: 1;
+  inset: 0;
 }
 
 @media (max-width: 1024px) {
