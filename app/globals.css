@@ -927,7 +927,7 @@ a {
 }
 .feature-stack-card {
   position: sticky;
-  top: calc(40vh + var(--card-index, 0) * 18px);
+  top: calc(100px + var(--card-index, 0) * 20px);
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 48px;
@@ -936,12 +936,12 @@ a {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,.04);
+  box-shadow: 0 -8px 30px rgba(0,0,0,.08), 0 2px 12px rgba(0,0,0,.04);
   transition: box-shadow 0.35s;
   z-index: calc(10 + var(--card-index, 0));
 }
 .feature-stack-card:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,.08);
+  box-shadow: 0 -8px 30px rgba(0,0,0,.08), 0 12px 40px rgba(0,0,0,.1);
 }
 .feature-stack-num {
   font-size: 56px;
