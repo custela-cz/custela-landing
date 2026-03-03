@@ -73,10 +73,10 @@ export default function HeroSection() {
 
             <div className="hero-cards-wrap">
               <div className="glass-card gc-1">
-                <div className="gc-label">ROAS</div>
+                <div className="gc-label">PNO</div>
                 <div className="gc-main">
-                  <span className="gc-value">4.2×</span>
-                  <span className="gc-trend">↑ 18 %</span>
+                  <span className="gc-value">12,4 %</span>
+                  <span className="gc-trend">↓ 18 %</span>
                 </div>
                 <div className="gc-bar">
                   <div className="gc-bar-fill" style={{ width: '82%' }} />
@@ -84,10 +84,10 @@ export default function HeroSection() {
               </div>
 
               <div className="glass-card gc-2">
-                <div className="gc-label">CPA</div>
+                <div className="gc-label">Konverzní poměr</div>
                 <div className="gc-main">
-                  <span className="gc-value">142 Kč</span>
-                  <span className="gc-trend">↓ 23 %</span>
+                  <span className="gc-value">3,8 %</span>
+                  <span className="gc-trend">↑ 23 %</span>
                 </div>
                 <div className="gc-bar">
                   <div className="gc-bar-fill" style={{ width: '65%' }} />
@@ -95,17 +95,17 @@ export default function HeroSection() {
               </div>
 
               <div className="glass-card gc-3">
-                <div className="gc-label">Konverze</div>
+                <div className="gc-label">Hodnota objednávky</div>
                 <div className="gc-main">
-                  <span className="gc-value">+847</span>
+                  <span className="gc-value">1 247 Kč</span>
                 </div>
-                <div className="gc-sub">tento týden</div>
+                <div className="gc-sub">průměr tento týden</div>
               </div>
 
               <div className="glass-card gc-4">
                 <div className="gc-status-row">
                   <span className="gc-dot" />
-                  AI agent aktivní
+                  Custela Agent aktivní
                 </div>
                 <div className="gc-sub">Poslední analýza 14:32</div>
               </div>
