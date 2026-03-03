@@ -927,7 +927,7 @@ a {
 }
 .feature-stack-card {
   position: sticky;
-  top: calc(90px + var(--card-index, 0) * 14px);
+  top: calc(40vh + var(--card-index, 0) * 18px);
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 48px;

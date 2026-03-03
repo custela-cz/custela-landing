@@ -2,20 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-const withoutItems = [
-  'Hodiny ručně',
-  'Naslepo',
-  'Excel exporty',
-  '3 platformy zvlášť',
-  'Ruční kontrola',
-]
-
-const withItems = [
-  'Za minuty',
-  'Průběžná doporučení',
-  'Automatické reporty',
-  '1 dashboard',
-  'Pravidelná synchronizace',
+const compareItems = [
+  { topic: 'Správa kampaní', without: 'Hodiny ručně', with: 'Za minuty' },
+  { topic: 'Optimalizace', without: 'Naslepo', with: 'Průběžná doporučení' },
+  { topic: 'Reporting', without: 'Excel exporty', with: 'Automatické reporty' },
+  { topic: 'Přehled', without: '3 platformy zvlášť', with: '1 dashboard' },
+  { topic: 'Synchronizace dat', without: 'Ruční kontrola', with: 'Pravidelná synchronizace' },
 ]
 
 export default function CompareSection() {
@@ -67,7 +59,7 @@ export default function CompareSection() {
               </div>
             </div>
             <ul className="compare-card__list">
-              {withoutItems.map((item, i) => (
+              {compareItems.map((row, i) => (
                 <li key={i} style={{ '--item-index': i } as React.CSSProperties}>
                   <span className="compare-item-icon compare-item-icon--x">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -75,7 +67,8 @@ export default function CompareSection() {
                     </svg>
                   </span>
                   <span className="compare-strike">
-                    <span className="compare-strike__text">{item}</span>
+                    <span className="compare-item-topic">{row.topic}</span>
+                    <span className="compare-strike__text">{row.without}</span>
                     <span className="compare-strike__line" />
                   </span>
                 </li>
@@ -104,14 +97,17 @@ export default function CompareSection() {
               </div>
             </div>
             <ul className="compare-card__list">
-              {withItems.map((item, i) => (
+              {compareItems.map((row, i) => (
                 <li key={i} style={{ '--item-index': i } as React.CSSProperties}>
                   <span className="compare-item-icon compare-item-icon--check">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                       <path d="M2.5 6.5l2.5 2.5 4.5-5.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  {item}
+                  <span className="compare-item-content">
+                    <span className="compare-item-topic">{row.topic}</span>
+                    <span>{row.with}</span>
+                  </span>
                 </li>
               ))}
             </ul>
