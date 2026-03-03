@@ -466,13 +466,18 @@ a {
   .hero-text { max-width: 100%; }
   .hero-buttons, .hero-trust { justify-content: center; }
   .hero-cards-wrap { display: none; }
+  /* Tone down orbs so they don't wash out text */
+  .hero-orbs { opacity: 0.25; }
 }
 @media (max-width: 768px) {
   .hero { min-height: auto; }
   .hero-content { padding: 120px 0 60px; }
   .hero-text h1 { font-size: 36px; }
+  .hero-sub { color: rgba(255,255,255,.7); }
   .hero-buttons { flex-direction: column; }
+  .hero-buttons a { width: 100%; justify-content: center; }
   .hero-trust { flex-wrap: wrap; justify-content: center; }
+  .hero-orbs { opacity: 0.15; }
 }
 
 /* ==================== */
