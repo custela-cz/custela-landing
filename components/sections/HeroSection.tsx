@@ -1,9 +1,6 @@
 'use client'
 
-import dynamic from 'next/dynamic'
 import HeroCanvas from '../HeroCanvas'
-
-const HeroScene = dynamic(() => import('../HeroScene'), { ssr: false })
 
 export default function HeroSection() {
   return (
@@ -73,8 +70,45 @@ export default function HeroSection() {
                 </span>
               </div>
             </div>
-            <div className="hero-3d">
-              <HeroScene />
+
+            <div className="hero-cards-wrap">
+              <div className="glass-card gc-1">
+                <div className="gc-label">ROAS</div>
+                <div className="gc-main">
+                  <span className="gc-value">4.2×</span>
+                  <span className="gc-trend">↑ 18 %</span>
+                </div>
+                <div className="gc-bar">
+                  <div className="gc-bar-fill" style={{ width: '82%' }} />
+                </div>
+              </div>
+
+              <div className="glass-card gc-2">
+                <div className="gc-label">CPA</div>
+                <div className="gc-main">
+                  <span className="gc-value">142 Kč</span>
+                  <span className="gc-trend">↓ 23 %</span>
+                </div>
+                <div className="gc-bar">
+                  <div className="gc-bar-fill" style={{ width: '65%' }} />
+                </div>
+              </div>
+
+              <div className="glass-card gc-3">
+                <div className="gc-label">Konverze</div>
+                <div className="gc-main">
+                  <span className="gc-value">+847</span>
+                </div>
+                <div className="gc-sub">tento týden</div>
+              </div>
+
+              <div className="glass-card gc-4">
+                <div className="gc-status-row">
+                  <span className="gc-dot" />
+                  AI agent aktivní
+                </div>
+                <div className="gc-sub">Poslední analýza 14:32</div>
+              </div>
             </div>
           </div>
         </div>
