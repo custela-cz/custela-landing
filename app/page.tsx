@@ -12,7 +12,7 @@ import FeaturesSection from '@/components/sections/FeaturesSection'
 import HowStepsSection from '@/components/sections/HowStepsSection'
 import CompareSection from '@/components/sections/CompareSection'
 import StatsSection from '@/components/sections/StatsSection'
-import TestimonialsSection from '@/components/sections/TestimonialsSection'
+
 import PricingSection from '@/components/sections/PricingSection'
 import FAQSection from '@/components/sections/FAQSection'
 import CTASection from '@/components/sections/CTASection'
@@ -43,7 +43,7 @@ export default function Home() {
       <HowStepsSection />
       <CompareSection />
       <StatsSection />
-      <TestimonialsSection />
+
       <PricingSection />
       <FAQSection />
       <CTASection />

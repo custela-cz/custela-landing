@@ -157,7 +157,7 @@ export default function FeaturesSection() {
         <div className="sh reveal">
           <div className="section-label">4 pilíře Custely</div>
           <h2>Jeden nástroj místo celého týmu.</h2>
-          <p className="sh-sub">S Custelou máte po ruce seniorního PPC specialistu i analytika. Soustřeďte se na podnikání — kampaně řídíme za vás.</p>
+          <p className="sh-sub">S Custelou máte po ruce seniorního PPC specialistu i analytika. Soustřeďte se na podnikání, my vám najdeme příležitosti v datech pro optimalizaci.</p>
         </div>
         <div className="features-stack">
           {[
@@ -168,7 +168,7 @@ export default function FeaturesSection() {
             },
             {
               num: '02', badge: 'AI + 170 pravidel', title: 'Optimalizace, která nikdy nespí',
-              desc: 'AI agent analyzuje vaše účty 2× týdně, přesouvá rozpočty k výdělečným kampaním a zastavuje ty ztrátové. Bez vašeho zásahu.',
+              desc: 'AI agent analyzuje vaše účty 2× týdně a doporučí, kam přesunout rozpočty a které kampaně pozastavit. Vy rozhodujete, co se provede.',
               visual: <OptimizationVisual />,
             },
             {
@@ -178,7 +178,7 @@ export default function FeaturesSection() {
             },
             {
               num: '04', badge: '3 platformy → 1 obrazovka', title: 'Dashboard pro všechny kanály',
-              desc: 'Google Ads, Meta Ads, Sklik — vše na jedné obrazovce v reálném čase. Sync každé 4 hodiny, žádné přepínání tabů.',
+              desc: 'Google Ads, Meta Ads, Sklik — vše na jedné obrazovce v reálném čase. Pravidelná synchronizace dat, žádné přepínání tabů.',
               visual: <DashboardVisual />,
             },
           ].map((p, i) => (

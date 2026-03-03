@@ -16,8 +16,8 @@ export default function HowStepsSection() {
           </div>
           <div className="how-step reveal reveal-delay-1">
             <div className="step-number">02</div>
-            <h3>Custela převezme řízení</h3>
-            <p>Custela vytvoří kampaně, nastaví bidy a optimalizuje.</p>
+            <h3>Custela analyzuje a doporučí</h3>
+            <p>Custela navrhne kampaně, doporučí bidy a najde prostor pro optimalizaci.</p>
           </div>
           <div className="how-step reveal reveal-delay-2">
             <div className="step-number">03</div>

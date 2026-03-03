@@ -7,7 +7,7 @@ export default function ProblemSection() {
         <div className="sh reveal">
           <div className="section-label">Proč Custela</div>
           <h2>Každý den bez automatizace<br />vás stojí peníze.</h2>
-          <p className="sh-sub">E-shopy v ČR průměrně ztrácí 23 % rozpočtu v neefektivních kampaních. Custela tyto úniky najde a opraví — automaticky.</p>
+          <p className="sh-sub">E-shopy v ČR průměrně ztrácí 23 % rozpočtu v neefektivních kampaních. Custela tyto úniky najde a doporučí konkrétní kroky.</p>
         </div>
         <div className="problem-grid">
           <div className="problem-card reveal">

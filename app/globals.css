@@ -340,10 +340,22 @@ a {
   50% { opacity: 0.4; }
 }
 
+.hero-3d {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+}
+.hero-scene {
+  position: absolute;
+  inset: -40px -60px;
+  z-index: 1;
+}
+
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; text-align: center; }
   .hero-text { max-width: 100%; }
   .hero-buttons, .hero-trust { justify-content: center; }
+  .hero-3d { display: none; }
 }
 @media (max-width: 768px) {
   .hero { min-height: auto; }
@@ -1071,39 +1083,112 @@ a {
 .compare-section {
   padding: 80px 0;
 }
-.compare-table {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,.06);
-}
-.compare-header, .compare-row {
+.compare-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  font-size: 14px;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
-.compare-header {
-  background: #f9fafb;
-  font-weight: 700;
-  font-size: 13px;
-  border-bottom: 1px solid #e5e7eb;
+.compare-card {
+  border-radius: 20px;
+  padding: 36px 32px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.compare-header div, .compare-row div {
-  padding: 14px 20px;
+.compare-card:hover {
+  transform: translateY(-4px);
 }
-.compare-row {
-  border-bottom: 1px solid #f3f4f6;
+.compare-card--without {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
 }
-.compare-row div:first-child {
-  font-weight: 600;
+.compare-card--without:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,.06);
 }
-.compare-row div:nth-child(2) {
+.compare-card--with {
+  background: #ffffff;
+  border: 1.5px solid #84cc16;
+  box-shadow: 0 4px 24px rgba(132,204,22,.1);
+}
+.compare-card--with:hover {
+  box-shadow: 0 12px 40px rgba(132,204,22,.18);
+}
+.compare-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.compare-card__header h3 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.compare-card--without .compare-card__header h3 {
   color: #6b7280;
 }
-.compare-row div:nth-child(3) {
+.compare-card--with .compare-card__header h3 {
+  color: #111827;
+}
+.compare-card__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.compare-card__icon--x {
+  background: #e5e7eb;
+  color: #9ca3af;
+}
+.compare-card__icon--check {
+  background: #f7fee7;
   color: #65a30d;
-  font-weight: 600;
+}
+.compare-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.compare-card__list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+.compare-card__list li:last-child {
+  border-bottom: none;
+}
+.compare-card--without .compare-card__list li {
+  color: #6b7280;
+}
+.compare-card--with .compare-card__list li {
+  color: #111827;
+}
+.compare-item-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.compare-item-icon--x {
+  background: #e5e7eb;
+  color: #9ca3af;
+}
+.compare-item-icon--check {
+  background: #dcfce7;
+  color: #16a34a;
 }
 
 /* ==================== */
@@ -1463,7 +1548,7 @@ footer {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 40px;
   margin-bottom: 40px;
 }
@@ -1520,8 +1605,8 @@ footer {
   .feature-stack-left h3 { font-size: 19px; }
   .problem-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .problem-arrow { transform: rotate(90deg); }
-  .compare-header, .compare-row { grid-template-columns: 1fr 1fr 1fr; font-size: 12px; }
-  .compare-header div, .compare-row div { padding: 10px 12px; }
+  .compare-cards { grid-template-columns: 1fr; }
+  .compare-card { padding: 28px 24px; }
   .cta-box { padding: 48px 24px; }
   .footer-grid { grid-template-columns: 1fr; }
 }

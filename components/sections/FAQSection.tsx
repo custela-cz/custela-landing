@@ -4,20 +4,28 @@ import { useState } from 'react'
 
 const faqs = [
   {
-    question: 'Jak funguje tvorba kampaní?',
-    answer: 'Custela analyzuje produkty a data, navrhne klíčová slova, napíše texty. Kampaně běží za minuty.',
+    question: 'Co přesně Custela dělá?',
+    answer: 'Custela propojí vaše reklamní účty (Google Ads, Meta Ads, Sklik) a automaticky vytváří kampaně, optimalizuje rozpočty a generuje reporty. Všechno z jednoho dashboardu — bez ručního nastavování.',
   },
   {
-    question: 'Jak Custela optimalizuje kampaně?',
-    answer: 'Custela sleduje výkon 24/7 — přesouvá rozpočty, upravuje bidy, pozastavuje neefektivní klíčová slova.',
+    question: 'Pro koho je Custela určená?',
+    answer: 'Primárně pro e-shopy a marketéry, kteří spravují PPC reklamu na víc platformách a chtějí ušetřit čas. Hodí se jak pro menší e-shopy, tak pro agentury spravující více klientů.',
   },
   {
     question: 'Jaké platformy podporujete?',
-    answer: 'Google Ads, Meta Ads a Sklik — vše na jednom dashboardu.',
+    answer: 'Aktuálně Google Ads, Meta Ads (Facebook a Instagram) a Sklik. Všechny platformy spravujete z jednoho místa — nemusíte přepínat mezi účty.',
+  },
+  {
+    question: 'Jak funguje automatická optimalizace?',
+    answer: 'Custela průběžně sleduje výkon vašich kampaní — přesouvá rozpočty k nejlepším kampaním, upravuje bidy, pozastavuje neefektivní klíčová slova a doporučuje konkrétní kroky ke zlepšení ROAS.',
+  },
+  {
+    question: 'Musím Custele dát přístup ke svým účtům?',
+    answer: 'Ano, propojení probíhá přes oficiální API platforem (OAuth). Custela potřebuje přístup k vašim reklamním účtům, aby mohla spravovat kampaně a stahovat data. Vaše přístupy jsou v bezpečí.',
   },
   {
     question: 'Je trial opravdu zdarma?',
-    answer: 'Ano, 7 dní zdarma bez kreditní karty.',
+    answer: 'Ano, 7 dní zdarma bez nutnosti zadávat kreditní kartu. Během trialu máte přístup ke všem funkcím, takže si Custelu můžete vyzkoušet naplno.',
   },
 ]
 
@@ -44,7 +52,7 @@ export default function FAQSection() {
               </div>
               <div
                 className="faq-answer"
-                style={{ maxHeight: openIndex === i ? '200px' : '0' }}
+                style={{ maxHeight: openIndex === i ? '300px' : '0' }}
               >
                 <div className="faq-answer-inner">{faq.answer}</div>
               </div>

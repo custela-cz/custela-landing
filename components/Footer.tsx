@@ -17,12 +17,6 @@ export default function Footer() {
             <a href="#pricing">Ceník</a>
           </div>
           <div className="footer-col">
-            <h4>Společnost</h4>
-            <a href="#">O nás</a>
-            <a href="#">Blog</a>
-            <a href="mailto:info@custela.com">Kontakt</a>
-          </div>
-          <div className="footer-col">
             <h4>Právní</h4>
             <a href="/obchodni-podminky">Podmínky</a>
             <a href="/ochrana-soukromi">Soukromí</a>
@@ -30,7 +24,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <span>&copy; 2026 Custela.</span>
-          <span>Michael Cetl, IČO: 08992207</span>
+          <span>Všechna práva vyhrazena.</span>
         </div>
       </div>
     </footer>

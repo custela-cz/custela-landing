@@ -124,7 +124,7 @@ export default function FlowSection() {
 
         <div className="flow-bottom reveal">
           <div className="flow-bstat"><div className="v"><em>3</em> min</div><div className="l">propojení všech platforem</div></div>
-          <div className="flow-bstat"><div className="v"><em>4h</em> refresh</div><div className="l">vždy aktuální data</div></div>
+          <div className="flow-bstat"><div className="v">Pravidelný <em>refresh</em></div><div className="l">vždy aktuální data</div></div>
           <div className="flow-bstat"><div className="v">Audit <em>zdarma</em></div><div className="l">odhalí úniky v rozpočtu</div></div>
           <div className="flow-bstat"><div className="v"><em>0 Kč</em> start</div><div className="l">bez závazků a bez karty</div></div>
         </div>

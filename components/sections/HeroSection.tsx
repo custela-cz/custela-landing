@@ -1,6 +1,9 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import HeroCanvas from '../HeroCanvas'
+
+const HeroScene = dynamic(() => import('../HeroScene'), { ssr: false })
 
 export default function HeroSection() {
   return (
@@ -70,7 +73,9 @@ export default function HeroSection() {
                 </span>
               </div>
             </div>
-            <div />
+            <div className="hero-3d">
+              <HeroScene />
+            </div>
           </div>
         </div>
       </section>
