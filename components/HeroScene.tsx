@@ -2,48 +2,161 @@
 
 import { useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Float, Text, Line } from '@react-three/drei'
+import { Float, Text } from '@react-three/drei'
 import * as THREE from 'three'
 
 const LIME = '#84cc16'
 const LIME_LIGHT = '#a3e635'
 
+/* ── Layout ── */
 const platforms = [
-  { pos: [-2.2, 1.1, 0] as [number, number, number], label: 'Google Ads' },
-  { pos: [-2.2, 0, 0] as [number, number, number], label: 'Meta Ads' },
-  { pos: [-2.2, -1.1, 0] as [number, number, number], label: 'Sklik' },
+  { pos: [-2.5, 1.15, 0] as [number, number, number], label: 'Google Ads' },
+  { pos: [-2.5, 0, 0] as [number, number, number], label: 'Meta Ads' },
+  { pos: [-2.5, -1.15, 0] as [number, number, number], label: 'Sklik' },
 ]
-
+const hub: [number, number, number] = [0, 0, 0]
 const outputs = [
-  { pos: [2.2, 0.6, 0] as [number, number, number], label: '+32 % ROAS' },
-  { pos: [2.2, -0.6, 0] as [number, number, number], label: '−18 % CPA' },
+  { pos: [2.5, 0.65, 0] as [number, number, number], label: '+32 % ROAS' },
+  { pos: [2.5, -0.65, 0] as [number, number, number], label: '−18 % CPA' },
 ]
 
-const HUB: [number, number, number] = [0, 0, 0]
+const connectionDefs = [
+  ...platforms.map((p) => ({ from: p.pos, to: hub })),
+  ...outputs.map((o) => ({ from: hub, to: o.pos })),
+]
 
-/* ── Platform / output node ── */
-function Node({ position, label, coreSize = 0.1, glowSize = 0.28 }: {
+/* ── Particle flow system ── */
+const PPC = 80 // particles per connection
+const TOTAL = PPC * connectionDefs.length
+
+function ParticleStreams() {
+  const pointsRef = useRef<THREE.Points>(null)
+
+  const texture = useMemo(() => {
+    const c = document.createElement('canvas')
+    c.width = 32
+    c.height = 32
+    const ctx = c.getContext('2d')!
+    const g = ctx.createRadialGradient(16, 16, 0, 16, 16, 16)
+    g.addColorStop(0, 'rgba(255,255,255,1)')
+    g.addColorStop(0.35, 'rgba(255,255,255,0.4)')
+    g.addColorStop(1, 'rgba(255,255,255,0)')
+    ctx.fillStyle = g
+    ctx.fillRect(0, 0, 32, 32)
+    return new THREE.CanvasTexture(c)
+  }, [])
+
+  const { positions, particleData } = useMemo(() => {
+    const pos = new Float32Array(TOTAL * 3)
+    const data: {
+      conn: number
+      progress: number
+      speed: number
+      xN: number
+      yN: number
+      zN: number
+      phase: number
+    }[] = []
+    for (let c = 0; c < connectionDefs.length; c++) {
+      for (let i = 0; i < PPC; i++) {
+        data.push({
+          conn: c,
+          progress: Math.random(),
+          speed: 0.1 + Math.random() * 0.14,
+          xN: (Math.random() - 0.5) * 0.18,
+          yN: (Math.random() - 0.5) * 0.18,
+          zN: (Math.random() - 0.5) * 0.5,
+          phase: Math.random() * Math.PI * 2,
+        })
+      }
+    }
+    return { positions: pos, particleData: data }
+  }, [])
+
+  const fromVecs = useMemo(
+    () => connectionDefs.map((c) => new THREE.Vector3(...c.from)),
+    [],
+  )
+  const toVecs = useMemo(
+    () => connectionDefs.map((c) => new THREE.Vector3(...c.to)),
+    [],
+  )
+  const tmp = useMemo(() => new THREE.Vector3(), [])
+
+  useFrame(({ clock }, delta) => {
+    const t = clock.getElapsedTime()
+    for (let i = 0; i < TOTAL; i++) {
+      const p = particleData[i]
+      p.progress = (p.progress + delta * p.speed) % 1
+
+      tmp.lerpVectors(fromVecs[p.conn], toVecs[p.conn], p.progress)
+
+      // organic wiggle, strongest at midpoint
+      const w = Math.sin(p.progress * Math.PI)
+      tmp.x += Math.sin(t * 1.5 + p.phase) * p.xN * w
+      tmp.y += Math.cos(t * 1.2 + p.phase) * p.yN * w
+      tmp.z += Math.sin(t * 0.8 + p.phase * 2) * p.zN * w
+
+      positions[i * 3] = tmp.x
+      positions[i * 3 + 1] = tmp.y
+      positions[i * 3 + 2] = tmp.z
+    }
+    if (pointsRef.current) {
+      pointsRef.current.geometry.attributes.position.needsUpdate = true
+    }
+  })
+
+  return (
+    <points ref={pointsRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          args={[positions, 3]}
+          usage={THREE.DynamicDrawUsage}
+        />
+      </bufferGeometry>
+      <pointsMaterial
+        map={texture}
+        color={LIME_LIGHT}
+        size={0.1}
+        transparent
+        opacity={0.6}
+        sizeAttenuation
+        blending={THREE.AdditiveBlending}
+        depthWrite={false}
+      />
+    </points>
+  )
+}
+
+/* ── Small node marker ── */
+function NodeMarker({
+  position,
+  label,
+  size = 0.06,
+  glow = 0.22,
+}: {
   position: [number, number, number]
   label: string
-  coreSize?: number
-  glowSize?: number
+  size?: number
+  glow?: number
 }) {
   return (
-    <Float speed={1.8} floatIntensity={0.1} rotationIntensity={0}>
+    <Float speed={1.6} floatIntensity={0.08} rotationIntensity={0}>
       <group position={position}>
         <mesh>
-          <sphereGeometry args={[glowSize, 32, 32]} />
-          <meshBasicMaterial color={LIME} transparent opacity={0.06} />
+          <sphereGeometry args={[glow, 24, 24]} />
+          <meshBasicMaterial color={LIME} transparent opacity={0.05} />
         </mesh>
         <mesh>
-          <sphereGeometry args={[coreSize, 16, 16]} />
-          <meshBasicMaterial color={LIME} transparent opacity={0.55} />
+          <sphereGeometry args={[size, 16, 16]} />
+          <meshBasicMaterial color={LIME_LIGHT} transparent opacity={0.55} />
         </mesh>
         <Text
-          position={[0, -(coreSize + 0.22), 0]}
-          fontSize={0.14}
+          position={[0, -(size + 0.22), 0]}
+          fontSize={0.13}
           color="white"
-          fillOpacity={0.5}
+          fillOpacity={0.45}
           anchorX="center"
           anchorY="top"
         >
@@ -54,125 +167,75 @@ function Node({ position, label, coreSize = 0.1, glowSize = 0.28 }: {
   )
 }
 
-/* ── Central Custela hub ── */
-function Hub() {
+/* ── Central hub ── */
+function HubNode() {
   const wireRef = useRef<THREE.Mesh>(null)
-  const glowRef = useRef<THREE.Mesh>(null)
+  const pulseRef = useRef<THREE.Mesh>(null)
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime()
     if (wireRef.current) {
-      wireRef.current.rotation.y = t * 0.15
-      wireRef.current.rotation.x = t * 0.08
+      wireRef.current.rotation.y = t * 0.12
+      wireRef.current.rotation.x = t * 0.06
     }
-    if (glowRef.current) {
-      glowRef.current.scale.setScalar(1 + Math.sin(t * 1.2) * 0.06)
+    if (pulseRef.current) {
+      pulseRef.current.scale.setScalar(1 + Math.sin(t * 1.2) * 0.08)
     }
   })
 
   return (
-    <Float speed={1.2} floatIntensity={0.06} rotationIntensity={0}>
-      <group position={HUB}>
-        <mesh ref={glowRef}>
-          <sphereGeometry args={[0.55, 32, 32]} />
+    <Float speed={1} floatIntensity={0.04} rotationIntensity={0}>
+      <group position={hub}>
+        {/* Outer pulse */}
+        <mesh ref={pulseRef}>
+          <sphereGeometry args={[0.5, 32, 32]} />
           <meshBasicMaterial color={LIME} transparent opacity={0.04} />
         </mesh>
+        {/* Wireframe shape */}
         <mesh ref={wireRef}>
-          <icosahedronGeometry args={[0.3, 1]} />
-          <meshBasicMaterial color={LIME} wireframe transparent opacity={0.2} />
+          <icosahedronGeometry args={[0.28, 1]} />
+          <meshBasicMaterial
+            color={LIME}
+            wireframe
+            transparent
+            opacity={0.18}
+          />
         </mesh>
+        {/* Core */}
         <mesh>
-          <sphereGeometry args={[0.12, 32, 32]} />
-          <meshBasicMaterial color={LIME_LIGHT} transparent opacity={0.65} />
+          <sphereGeometry args={[0.1, 32, 32]} />
+          <meshBasicMaterial color={LIME_LIGHT} transparent opacity={0.8} />
         </mesh>
       </group>
     </Float>
   )
 }
 
-/* ── Animated data particles flowing along a connection ── */
-function DataFlow({ from, to, speed = 0.25, count = 3 }: {
-  from: [number, number, number]
-  to: [number, number, number]
-  speed?: number
-  count?: number
-}) {
-  const fromVec = useMemo(() => new THREE.Vector3(...from), [from])
-  const toVec = useMemo(() => new THREE.Vector3(...to), [to])
-  const refs = useRef<(THREE.Mesh | null)[]>([])
-
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime()
-    for (let i = 0; i < count; i++) {
-      const mesh = refs.current[i]
-      if (!mesh) continue
-      const progress = ((t * speed + i / count) % 1)
-      mesh.position.lerpVectors(fromVec, toVec, progress)
-      ;(mesh.material as THREE.MeshBasicMaterial).opacity =
-        Math.sin(progress * Math.PI) * 0.55
-    }
-  })
-
-  return (
-    <>
-      {Array.from({ length: count }, (_, i) => (
-        <mesh key={i} ref={(el) => { refs.current[i] = el }}>
-          <sphereGeometry args={[0.03, 8, 8]} />
-          <meshBasicMaterial color={LIME_LIGHT} transparent />
-        </mesh>
-      ))}
-    </>
-  )
-}
-
-/* ── Whole scene with subtle rotation ── */
+/* ── Scene wrapper with subtle sway ── */
 function SceneGroup() {
-  const groupRef = useRef<THREE.Group>(null)
+  const ref = useRef<THREE.Group>(null)
 
   useFrame(({ clock }) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.1) * 0.05
+    if (ref.current) {
+      ref.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.08) * 0.04
     }
   })
 
-  const connections = useMemo(() => [
-    ...platforms.map((p) => ({ from: p.pos, to: HUB })),
-    ...outputs.map((o) => ({ from: HUB, to: o.pos })),
-  ], [])
-
   return (
-    <group ref={groupRef}>
-      <Hub />
-
+    <group ref={ref}>
+      <ParticleStreams />
+      <HubNode />
       {platforms.map((p, i) => (
-        <Node key={`p-${i}`} position={p.pos} label={p.label} />
+        <NodeMarker key={`p${i}`} position={p.pos} label={p.label} />
       ))}
-
       {outputs.map((o, i) => (
-        <Node
-          key={`o-${i}`}
+        <NodeMarker
+          key={`o${i}`}
           position={o.pos}
           label={o.label}
-          coreSize={0.07}
-          glowSize={0.2}
+          size={0.05}
+          glow={0.18}
         />
-      ))}
-
-      {connections.map((c, i) => (
-        <group key={`c-${i}`}>
-          <Line
-            points={[c.from, c.to]}
-            color={LIME}
-            transparent
-            opacity={0.1}
-            lineWidth={1}
-          />
-          <DataFlow
-            from={c.from}
-            to={c.to}
-            speed={0.2 + i * 0.03}
-          />
-        </group>
       ))}
     </group>
   )
