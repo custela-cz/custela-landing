@@ -1947,34 +1947,159 @@ footer {
 /* ==================== */
 /* NAV RESPONSIVE       */
 /* ==================== */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-mobile-menu { display: none; }
 @media (max-width: 1024px) {
   .nav-links-desktop { display: none !important; }
   .nav-login { display: none !important; }
+  .nav-cta-group { display: none !important; }
+  .nav-hamburger { display: block; }
+  .nav-mobile-menu { display: flex !important; }
 }
 
 /* ==================== */
 /* RESPONSIVE           */
 /* ==================== */
+
+/* ── Tablet (≤1024px) ── */
 @media (max-width: 1024px) {
-  .problem-grid, .how-steps, .testimonials-grid, .pricing-grid { grid-template-columns: 1fr 1fr; }
+  .problem-grid, .how-steps, .testimonials-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-grid { grid-template-columns: 1fr 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .feature-stack-card { grid-template-columns: 1fr; gap: 24px; }
-}
-@media (max-width: 768px) {
-  .problem-grid, .how-steps, .testimonials-grid, .pricing-grid, .stats-grid { grid-template-columns: 1fr; }
-  .feature-stack-card { position: relative; top: auto; padding: 28px 24px; }
-  .feature-stack-num { font-size: 36px; }
-  .feature-stack-left h3 { font-size: 19px; }
-  .problem-bottom { flex-direction: column; gap: 8px; text-align: center; }
-  .problem-arrow { transform: rotate(90deg); }
   .compare-stage { grid-template-columns: 1fr; gap: 0; }
   .compare-divider { flex-direction: row; padding: 8px 0; }
   .compare-divider__line { flex: 1; height: 1px; width: auto; background: linear-gradient(to right, transparent, rgba(255,255,255,.1), transparent); }
+  .flow-bottom { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Mobile (≤768px) ── */
+@media (max-width: 768px) {
+  /* Sections — reduce padding */
+  .problem-section { padding: 40px 0 60px; }
+  .flow-section { padding: 60px 0; }
+  .features-section { padding: 40px 0 60px; }
+  .how-section { padding: 40px 0; }
+  .compare-section { padding: 60px 0; }
+  .stats-section { padding: 40px 0; }
+  .testimonials-section { padding: 40px 0; }
+  .pricing-section { padding: 40px 0; }
+  .faq-section { padding: 40px 0; }
+  .cta-section { padding: 40px 0 60px; }
+  .dashboard-section { padding: 20px 0 40px; }
+  .platforms { padding: 40px 0 12px; }
+
+  /* Shared heading */
+  .sh { margin-bottom: 28px; }
+  .sh h2 { font-size: 26px; }
+  .sh-sub { font-size: 15px; }
+
+  /* Grids → single column */
+  .problem-grid, .how-steps, .testimonials-grid, .pricing-grid, .stats-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .flow-bottom { grid-template-columns: 1fr 1fr; }
+
+  /* Problem cards */
+  .problem-card { padding: 24px 20px; }
+  .problem-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .problem-arrow { transform: rotate(90deg); }
+
+  /* Features sticky → normal stack */
+  .features-stack { gap: 16px; }
+  .feature-stack-card { position: relative; top: auto; padding: 28px 20px; }
+  .feature-stack-num { font-size: 36px; }
+  .feature-stack-left h3 { font-size: 19px; }
+  .feature-stack-left p { font-size: 14px; }
+
+  /* Feature visuals — smaller */
+  .fv-report-kpis { grid-template-columns: repeat(2, 1fr); }
+
+  /* How steps */
+  .how-step { padding: 24px 16px; }
+  .step-number { font-size: 28px; }
+
+  /* Compare */
+  .compare-card { padding: 24px 20px; }
   .compare-vs { width: 40px; height: 40px; font-size: 11px; }
-  .compare-card { padding: 28px 24px; }
-  .cta-box { padding: 48px 24px; }
-  .footer-grid { grid-template-columns: 1fr; }
+
+  /* Stats */
+  .stat-card { padding: 24px 16px; }
+  .stat-value { font-size: 32px; }
+  .stat-unit { font-size: 18px; }
+
+  /* Testimonials */
+  .testimonial-card { padding: 20px; }
+
+  /* Pricing */
+  .pricing-card { padding: 24px 20px; }
+  .pricing-value { font-size: 30px; }
+
+  /* FAQ */
+  .faq-question { padding: 14px 18px; font-size: 14px; }
+  .faq-answer-inner { padding: 0 18px 14px; font-size: 13px; }
+
+  /* CTA */
+  .cta-box { padding: 48px 24px; border-radius: 20px; }
+  .cta-box h2 { font-size: 26px; }
+  .cta-box p { font-size: 15px; margin: 14px auto 28px; }
+  .cta-trust { gap: 16px; flex-wrap: wrap; }
+
+  /* Footer */
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+/* ── Small phone (≤480px) ── */
+@media (max-width: 480px) {
+  /* Hero */
+  .hero-content { padding: 110px 0 50px; }
+  .hero-text h1 { font-size: 30px; }
+  .hero-sub { font-size: 15px; }
+  .hero-buttons { flex-direction: column; gap: 10px; }
+  .hero-buttons a { width: 100%; justify-content: center; }
+  .hero-trust { flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+  /* Platforms */
+  .platform-logos { gap: 20px; }
+
+  /* Problem stat — tighter */
+  .problem-stat-num { font-size: 16px; }
+
+  /* Flow bottom */
+  .flow-bottom { grid-template-columns: 1fr; }
+  .flow-bstat { padding: 16px 12px; }
+
+  /* Feature cards — visual fills width */
+  .feature-stack-card { padding: 24px 16px; gap: 16px; }
+  .feature-stack-num { font-size: 30px; }
+
+  /* Compare */
+  .compare-card { padding: 20px 16px; }
+  .compare-card__list li { font-size: 13px; gap: 10px; padding: 10px 0; }
+
+  /* Stats — 2 columns on small phone */
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat-value { font-size: 28px; }
+  .stat-unit { font-size: 16px; }
+
+  /* Pricing */
+  .pricing-card { padding: 24px 16px; }
+  .pricing-name { font-size: 18px; }
+  .pricing-value { font-size: 28px; }
+
+  /* CTA */
+  .cta-box { padding: 36px 18px; }
+  .cta-box h2 { font-size: 22px; line-height: 1.25; }
+  .cta-box p { font-size: 14px; }
+  .cta-buttons a { width: 100%; justify-content: center; }
+  .cta-trust { flex-direction: column; gap: 10px; align-items: center; }
+  .cta-label { font-size: 11px; }
 }
 
 /* ==================== */
