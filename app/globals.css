@@ -934,7 +934,8 @@ a {
   .flow-res-num { font-size: 18px; }
   .flow-res-title { font-size: 12px; }
   .flow-res-desc { font-size: 10px; }
-  .flow-bottom { grid-template-columns: 1fr 1fr; }
+  .flow-bottom { display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 0; }
+  .flow-bstat { flex: 0 0 auto; min-width: 140px; padding: 18px 14px; }
 }
 
 /* ==================== */
@@ -2002,7 +2003,6 @@ footer {
   .compare-stage { grid-template-columns: 1fr; gap: 0; }
   .compare-divider { flex-direction: row; padding: 8px 0; }
   .compare-divider__line { flex: 1; height: 1px; width: auto; background: linear-gradient(to right, transparent, rgba(255,255,255,.1), transparent); }
-  .flow-bottom { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── Mobile (≤768px) ── */
@@ -2029,7 +2029,6 @@ footer {
   /* Grids → single column */
   .problem-grid, .how-steps, .testimonials-grid, .pricing-grid, .stats-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-  .flow-bottom { grid-template-columns: 1fr 1fr; }
 
   /* Problem cards */
   .problem-card { padding: 24px 20px; }
@@ -2095,8 +2094,7 @@ footer {
   .problem-stat-num { font-size: 16px; }
 
   /* Flow bottom */
-  .flow-bottom { grid-template-columns: 1fr; }
-  .flow-bstat { padding: 16px 12px; }
+  .flow-bstat { min-width: 120px; padding: 14px 10px; }
 
   /* Feature cards — visual fills width */
   .feature-stack-card { padding: 24px 16px; gap: 16px; }
