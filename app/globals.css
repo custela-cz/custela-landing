@@ -920,11 +920,20 @@ a {
 }
 
 @media (max-width: 900px) {
-  .flow-stage { grid-template-columns: 1fr; gap: 28px; height: auto; }
-  .flow-mid { min-height: 200px; }
-  .flow-col { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-  .flow-svg { display: none; }
-  .flow-hub-ring, .flow-hub-ring2 { display: none; }
+  .flow-stage-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .flow-stage { min-width: 700px; grid-template-columns: 160px 1fr 160px; height: 280px; }
+  .flow-svg { height: 280px; }
+  .flow-src { padding: 10px 12px; font-size: 12px; }
+  .flow-src svg { width: 18px; height: 18px; }
+  .flow-src strong { font-size: 12px; }
+  .flow-src span { font-size: 9px; }
+  .flow-hub-box { padding: 14px 20px; }
+  .flow-hub-logo { font-size: 16px; }
+  .flow-hub-sub { font-size: 9px; }
+  .flow-res { padding: 10px 12px; }
+  .flow-res-num { font-size: 18px; }
+  .flow-res-title { font-size: 12px; }
+  .flow-res-desc { font-size: 10px; }
   .flow-bottom { grid-template-columns: 1fr 1fr; }
 }
 
@@ -2027,9 +2036,9 @@ footer {
   .problem-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .problem-arrow { transform: rotate(90deg); }
 
-  /* Features sticky → normal stack */
+  /* Features sticky — keep overlap effect on mobile */
   .features-stack { gap: 16px; }
-  .feature-stack-card { position: relative; top: auto; padding: 28px 20px; }
+  .feature-stack-card { padding: 28px 20px; top: calc(80px + var(--card-index, 0) * 16px); }
   .feature-stack-num { font-size: 36px; }
   .feature-stack-left h3 { font-size: 19px; }
   .feature-stack-left p { font-size: 14px; }
