@@ -920,22 +920,30 @@ a {
 }
 
 @media (max-width: 900px) {
-  .flow-stage-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .flow-stage { min-width: 700px; grid-template-columns: 160px 1fr 160px; height: 280px; }
-  .flow-svg { height: 280px; }
-  .flow-src { padding: 10px 12px; font-size: 12px; }
-  .flow-src svg { width: 18px; height: 18px; }
-  .flow-src strong { font-size: 12px; }
-  .flow-src span { font-size: 9px; }
-  .flow-hub-box { padding: 14px 20px; }
-  .flow-hub-logo { font-size: 16px; }
-  .flow-hub-sub { font-size: 9px; }
-  .flow-res { padding: 10px 12px; }
-  .flow-res-num { font-size: 18px; }
-  .flow-res-title { font-size: 12px; }
-  .flow-res-desc { font-size: 10px; }
-  .flow-bottom { display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 0; }
-  .flow-bstat { flex: 0 0 auto; min-width: 140px; padding: 18px 14px; }
+  /* Scale entire diagram to fit viewport */
+  .flow-stage-wrap { overflow: visible; }
+  .flow-stage { grid-template-columns: 1fr 1.4fr 1fr; height: auto; aspect-ratio: 960/340; }
+  .flow-svg { height: 100%; }
+  .flow-src { padding: 8px 6px; font-size: 11px; gap: 6px; }
+  .flow-src svg { width: 16px; height: 16px; }
+  .flow-src strong { font-size: 11px; }
+  .flow-src span { font-size: 8px; }
+  .flow-col { gap: 6px; }
+  .flow-hub-ring { width: 100px; height: 100px; }
+  .flow-hub-ring::before { width: 100px; height: 100px; }
+  .flow-hub-ring2 { width: 70px; height: 70px; }
+  .flow-hub-ring2::before { width: 70px; height: 70px; }
+  .flow-hub-box { padding: 10px 14px; }
+  .flow-hub-logo { font-size: 14px; }
+  .flow-hub-sub { font-size: 8px; }
+  .flow-res { padding: 8px 6px; gap: 6px; }
+  .flow-res-num { font-size: 16px; }
+  .flow-res-title { font-size: 10px; }
+  .flow-res-desc { display: none; }
+  .flow-bottom { grid-template-columns: repeat(4, 1fr); }
+  .flow-bstat { padding: 16px 8px; }
+  .flow-bstat .v { font-size: 15px; }
+  .flow-bstat .l { font-size: 9px; }
 }
 
 /* ==================== */
