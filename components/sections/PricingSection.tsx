@@ -33,7 +33,7 @@ export default function PricingSection() {
         <div className="pricing-grid">
           <div className="pricing-card reveal">
             <div className="pricing-name">Starter</div>
-            <div className="pricing-desc">Pro malé e-shopy.</div>
+            <div className="pricing-desc">Pro malé e-shopy a začínající podniky.</div>
             <div className="pricing-amount">
               <span className="pricing-value">{isYearly ? '1 267' : '1 490'}</span>
               <span className="pricing-period"> Kč/měs</span>
@@ -63,7 +63,7 @@ export default function PricingSection() {
               <li><CheckIcon />Vše ze Starter</li>
               <li><CheckIcon />AI tvorba obrázků</li>
               <li><CheckIcon />AI tvorba textů</li>
-              <li><CheckIcon />Reklamní rozpočet do 100 000 Kč</li>
+              <li><CheckIcon />3 uživatelé (připravujeme)</li>
             </ul>
           </div>
 
