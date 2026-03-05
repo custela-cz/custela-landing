@@ -32,7 +32,7 @@ export default function PricingSection() {
 
         <div className="pricing-grid">
           <div className="pricing-card reveal">
-            <div className="pricing-name">Start</div>
+            <div className="pricing-name">Starter</div>
             <div className="pricing-desc">Pro malé e-shopy.</div>
             <div className="pricing-amount">
               <span className="pricing-value">{isYearly ? '1 267' : '1 490'}</span>
@@ -51,7 +51,7 @@ export default function PricingSection() {
 
           <div className="pricing-card featured reveal reveal-delay-1">
             <div className="pricing-popular">Nejoblíbenější</div>
-            <div className="pricing-name">Growth</div>
+            <div className="pricing-name">Pro</div>
             <div className="pricing-desc">AI na vaší straně.</div>
             <div className="pricing-amount">
               <span className="pricing-value">{isYearly ? '2 117' : '2 490'}</span>
@@ -60,7 +60,7 @@ export default function PricingSection() {
             <div className="pricing-limit">Rozpočet do 100 000 Kč</div>
             <a href="https://app.custela.com/auth" className="btn-primary cta-btn">Začít zdarma</a>
             <ul className="pricing-features">
-              <li><CheckIcon />Vše ze Start</li>
+              <li><CheckIcon />Vše ze Starter</li>
               <li><CheckIcon />AI tvorba + optimalizace</li>
               <li><CheckIcon />Až 15 účtů + GA</li>
             </ul>
@@ -74,7 +74,7 @@ export default function PricingSection() {
             </div>
             <a href="mailto:info@custela.com" className="btn-secondary cta-btn">Kontaktujte nás</a>
             <ul className="pricing-features">
-              <li><CheckIcon />Vše z Growth</li>
+              <li><CheckIcon />Vše z Pro</li>
               <li><CheckIcon />Plná AI + Multi-projekt</li>
               <li><CheckIcon />∞ účtů</li>
             </ul>
