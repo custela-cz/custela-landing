@@ -43,7 +43,9 @@ export default function PricingSection() {
             <ul className="pricing-features">
               <li><CheckIcon />Google + Meta + Sklik</li>
               <li><CheckIcon />Dashboard + Reporty</li>
-              <li><CheckIcon />Až 5 účtů</li>
+              <li><CheckIcon />AI optimalizace</li>
+              <li><CheckIcon />AI tvorba kampaní</li>
+              <li><CheckIcon />Až 3 účty</li>
             </ul>
           </div>
 
@@ -74,7 +76,7 @@ export default function PricingSection() {
             <ul className="pricing-features">
               <li><CheckIcon />Vše z Growth</li>
               <li><CheckIcon />Plná AI + Multi-projekt</li>
-              <li><CheckIcon />∞ účtů + API</li>
+              <li><CheckIcon />∞ účtů</li>
             </ul>
           </div>
         </div>
