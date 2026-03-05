@@ -45,9 +45,6 @@ export default function HeroSection() {
                     <path d="M3 8h10M9 4l4 4-4 4" />
                   </svg>
                 </a>
-                <a href="#how-it-works" className="btn-secondary btn-large">
-                  Jak to funguje
-                </a>
               </div>
               <div className="hero-trust reveal reveal-delay-4">
                 <span>
