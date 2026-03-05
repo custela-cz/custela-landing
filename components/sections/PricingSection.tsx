@@ -61,8 +61,9 @@ export default function PricingSection() {
             <a href="https://app.custela.com/auth" className="btn-primary cta-btn">Začít zdarma</a>
             <ul className="pricing-features">
               <li><CheckIcon />Vše ze Starter</li>
-              <li><CheckIcon />AI tvorba + optimalizace</li>
-              <li><CheckIcon />Až 15 účtů + GA</li>
+              <li><CheckIcon />AI tvorba obrázků</li>
+              <li><CheckIcon />AI tvorba textů</li>
+              <li><CheckIcon />Reklamní rozpočet do 100 000 Kč</li>
             </ul>
           </div>
 
