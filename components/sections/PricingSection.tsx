@@ -65,14 +65,12 @@ export default function PricingSection() {
           </div>
 
           <div className="pricing-card reveal reveal-delay-2">
-            <div className="pricing-name">Scale</div>
-            <div className="pricing-desc">Pro agentury.</div>
+            <div className="pricing-name">Enterprise</div>
+            <div className="pricing-desc">Pro agentury a velké inzerenty.</div>
             <div className="pricing-amount">
-              <span className="pricing-value">{isYearly ? '2 967' : '3 490'}</span>
-              <span className="pricing-period"> Kč/měs</span>
+              <span className="pricing-value">Na dotaz</span>
             </div>
-            <div className="pricing-limit">Rozpočet do 200 000 Kč</div>
-            <a href="https://app.custela.com/auth" className="btn-secondary cta-btn">Začít zdarma</a>
+            <a href="mailto:info@custela.com" className="btn-secondary cta-btn">Kontaktujte nás</a>
             <ul className="pricing-features">
               <li><CheckIcon />Vše z Growth</li>
               <li><CheckIcon />Plná AI + Multi-projekt</li>
