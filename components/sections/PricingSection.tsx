@@ -64,6 +64,7 @@ export default function PricingSection() {
               <li><CheckIcon />AI tvorba obrázků</li>
               <li><CheckIcon />AI tvorba textů</li>
               <li><CheckIcon />3 uživatelé (připravujeme)</li>
+              <li><CheckIcon />Přednostní přístup k novým funkcím</li>
             </ul>
           </div>
 
