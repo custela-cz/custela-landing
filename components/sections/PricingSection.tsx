@@ -38,7 +38,7 @@ export default function PricingSection() {
               <span className="pricing-value">{isYearly ? '1 267' : '1 490'}</span>
               <span className="pricing-period"> Kč/měs</span>
             </div>
-            <div className="pricing-limit">Rozpočet do 50 000 Kč</div>
+            <div className="pricing-limit">Rozpočet do 50 000 Kč měsíčně</div>
             <a href="https://app.custela.com/auth" className="btn-secondary cta-btn">Začít zdarma</a>
             <ul className="pricing-features">
               <li><CheckIcon />Google + Meta + Sklik</li>
@@ -57,7 +57,7 @@ export default function PricingSection() {
               <span className="pricing-value">{isYearly ? '2 117' : '2 490'}</span>
               <span className="pricing-period"> Kč/měs</span>
             </div>
-            <div className="pricing-limit">Rozpočet do 100 000 Kč</div>
+            <div className="pricing-limit">Rozpočet do 100 000 Kč měsíčně</div>
             <a href="https://app.custela.com/auth" className="btn-primary cta-btn">Začít zdarma</a>
             <ul className="pricing-features">
               <li><CheckIcon />Vše ze Starter</li>
@@ -73,6 +73,7 @@ export default function PricingSection() {
             <div className="pricing-amount">
               <span className="pricing-value">Na dotaz</span>
             </div>
+            <div className="pricing-limit">Rozpočet od 100 000 Kč měsíčně</div>
             <a href="mailto:info@custela.com" className="btn-secondary cta-btn">Kontaktujte nás</a>
             <ul className="pricing-features">
               <li><CheckIcon />Vše z Pro</li>
