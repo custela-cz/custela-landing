@@ -1,8 +1,19 @@
 'use client'
 
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import HeroCanvas from '../HeroCanvas'
 
 export default function HeroSection() {
+  const [url, setUrl] = useState('')
+  const router = useRouter()
+
+  const handleAudit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!url.trim()) return
+    window.location.href = `https://app.custela.com/audit?url=${encodeURIComponent(url.trim())}`
+  }
+
   return (
     <>
       <section className="hero">
@@ -46,6 +57,21 @@ export default function HeroSection() {
                   </svg>
                 </a>
               </div>
+              <form className="audit-bar reveal reveal-delay-3" onSubmit={handleAudit}>
+                <input
+                  type="text"
+                  placeholder="Zadejte URL vašeho e-shopu…"
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  className="audit-input"
+                />
+                <button type="submit" className="audit-btn">
+                  Spustit audit
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </button>
+              </form>
               <div className="hero-trust reveal reveal-delay-4">
                 <span>
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
