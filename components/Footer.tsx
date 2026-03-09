@@ -20,6 +20,7 @@ export default function Footer() {
             <h4>Právní</h4>
             <a href="/obchodni-podminky">Podmínky</a>
             <a href="/ochrana-soukromi">Soukromí</a>
+            <a href="/ai-transparency">AI Transparency</a>
           </div>
         </div>
         <div className="footer-bottom">
