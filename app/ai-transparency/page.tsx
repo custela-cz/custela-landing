@@ -38,7 +38,7 @@ export default function AITransparencyPage() {
         <p>Ochranu vašich dat bereme vážně:</p>
         <ul>
           <li>Do AI služby odesíláme pouze agregované, anonymizované výkonnostní metriky &mdash; nikdy nezasíláme přihlašovací údaje, osobní data ani přístupové tokeny.</li>
-          <li>K datům Google Ads přistupujeme výhradně přes read-only OAuth oprávnění. Vaše kampaně nemůžeme upravovat.</li>
+          <li>K datům Google Ads přistupujeme přes OAuth oprávnění.</li>
           <li>Data zpracovaná AI nejsou společností Anthropic uchovávána po dobu delší, než trvá API požadavek.</li>
           <li>Veškeré zpracování dat je v souladu s GDPR. Podrobnosti naleznete v našich <a href="/ochrana-soukromi">Zásadách ochrany osobních údajů</a>.</li>
         </ul>
@@ -82,7 +82,7 @@ export default function AITransparencyPage() {
         <p>We take your data privacy seriously:</p>
         <ul>
           <li>We only send aggregated, anonymized performance metrics to the AI service &mdash; never raw credentials, personal data, or access tokens.</li>
-          <li>Google Ads data is accessed via read-only OAuth scopes. We cannot modify your campaigns.</li>
+          <li>Google Ads data is accessed via OAuth scopes.</li>
           <li>AI-processed data is not stored by Anthropic beyond the duration of the API request.</li>
           <li>All data handling complies with GDPR. See our <a href="/ochrana-soukromi">Privacy Policy</a> for details.</li>
         </ul>
