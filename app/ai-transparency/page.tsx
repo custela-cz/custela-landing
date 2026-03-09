@@ -12,6 +12,52 @@ export default function AITransparencyPage() {
       title="AI Transparency"
       effectiveDate="9. března 2026"
     >
+      {/* ===== ČESKÁ VERZE ===== */}
+
+      <LegalSection title="1. Úvod">
+        <p>V Custele věříme v transparentnost ohledně AI služeb, které používáme. Tato stránka popisuje, jak a proč integrujeme AI třetích stran do naší platformy.</p>
+      </LegalSection>
+
+      <LegalSection title="2. Používané AI služby">
+        <p>Custela integruje následující AI službu:</p>
+        <ul>
+          <li><strong>Anthropic Claude API</strong> &mdash; velký jazykový model používaný pro AI analýzy a doporučení v rámci naší platformy.</li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="3. Jak AI používáme">
+        <p>Anthropic Claude API používáme pro následující účely:</p>
+        <ul>
+          <li><strong>Audit Google Ads</strong> &mdash; AI analyzuje strukturu kampaní, klíčová slova, strategie nabídek, reklamní texty a nastavení trackingu za účelem identifikace problémů a příležitostí k optimalizaci.</li>
+          <li><strong>Doporučení k optimalizaci</strong> &mdash; AI generuje konkrétní doporučení na základě výkonnostních dat účtu, seřazená podle potenciálního dopadu.</li>
+          <li><strong>Shrnutí výkonu</strong> &mdash; AI vytváří srozumitelná shrnutí stavu účtu a klíčových trendů.</li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="4. Data a soukromí">
+        <p>Ochranu vašich dat bereme vážně:</p>
+        <ul>
+          <li>Do AI služby odesíláme pouze agregované, anonymizované výkonnostní metriky &mdash; nikdy nezasíláme přihlašovací údaje, osobní data ani přístupové tokeny.</li>
+          <li>K datům Google Ads přistupujeme výhradně přes read-only OAuth oprávnění. Vaše kampaně nemůžeme upravovat.</li>
+          <li>Data zpracovaná AI nejsou společností Anthropic uchovávána po dobu delší, než trvá API požadavek.</li>
+          <li>Veškeré zpracování dat je v souladu s GDPR. Podrobnosti naleznete v našich <a href="/ochrana-soukromi">Zásadách ochrany osobních údajů</a>.</li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="5. Kontrola uživatele">
+        <p>AI funkce jsou nedílnou součástí auditu a optimalizace v Custele. Všechna doporučení generovaná AI jsou jasně označena a prezentována jako návrhy &mdash; žádné automatické změny nejsou v reklamních účtech prováděny bez vašeho výslovného souhlasu. Máte plnou kontrolu nad tím, která doporučení implementujete.</p>
+      </LegalSection>
+
+      <LegalSection title="6. Kontakt">
+        <p>Máte-li dotazy ohledně naší integrace AI, kontaktujte nás na <a href="mailto:info@custela.com">info@custela.com</a>.</p>
+      </LegalSection>
+
+      {/* ===== ENGLISH VERSION ===== */}
+
+      <div style={{ marginTop: 48, paddingTop: 48, borderTop: '1px solid #e5e7eb' }}>
+        <p style={{ fontSize: 12, fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.05em', color: '#9ca3af', marginBottom: 32 }}>English version</p>
+      </div>
+
       <LegalSection title="1. Introduction">
         <p>At Custela, we believe in being transparent about the AI services we use. This page describes how and why we integrate third-party AI in our platform.</p>
       </LegalSection>
