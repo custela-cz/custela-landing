@@ -10,7 +10,7 @@ export default function OchranaSoukromi() {
   return (
     <LegalPage
       title="Zásady ochrany osobních údajů"
-      effectiveDate="1. února 2025"
+      effectiveDate="3. března 2026"
     >
       <LegalSection title="1. Úvod">
         <p>1.1. Tyto Zásady ochrany osobních údajů (dále jen &bdquo;Zásady&ldquo;) popisují, jak shromažďujeme, používáme, ukládáme a chráníme vaše osobní údaje při používání služby Custela.</p>

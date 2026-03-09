@@ -14,7 +14,7 @@ export default function LegalPage({
 }: LegalPageProps) {
   return (
     <main className="min-h-screen bg-white">
-      <Navbar />
+      <Navbar forceScrolled />
 
       <article className="pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,11 +88,11 @@ export function LegalFooter() {
   return (
     <footer className="pt-8 border-t border-gray-200" style={{ color: '#6b7280' }}>
       <p>
-        <strong style={{ color: '#111827' }}>Poslední aktualizace:</strong> 1. února
-        2025
+        <strong style={{ color: '#111827' }}>Poslední aktualizace:</strong> 3. března
+        2026
       </p>
       <p className="mt-2">
-        &copy; 2025 Michael Cetl - Custela. Všechna práva vyhrazena.
+        &copy; 2026 Michael Cetl - Custela. Všechna práva vyhrazena.
       </p>
     </footer>
   )

@@ -9,15 +9,16 @@ const navLinks = [
   { href: '#faq', label: 'FAQ' },
 ]
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
+export default function Navbar({ forceScrolled = false }: { forceScrolled?: boolean } = {}) {
+  const [scrolled, setScrolled] = useState(forceScrolled)
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
+    if (forceScrolled) return
     const onScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [forceScrolled])
 
   // Lock body scroll when menu is open
   useEffect(() => {
