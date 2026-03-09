@@ -18,8 +18,8 @@ export default function Footer() {
           </div>
           <div className="footer-col">
             <h4>Právní dokumenty</h4>
-            <a href="/obchodni-podminky">Podmínky</a>
-            <a href="/ochrana-soukromi">Soukromí</a>
+            <a href="/obchodni-podminky">Obchodní podmínky</a>
+            <a href="/ochrana-soukromi">Ochrana soukromí</a>
             <a href="/ai-transparency">AI Transparency</a>
           </div>
         </div>
