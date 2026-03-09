@@ -17,7 +17,7 @@ export default function Footer() {
             <a href="#pricing">Ceník</a>
           </div>
           <div className="footer-col">
-            <h4>Právní</h4>
+            <h4>Právní dokumenty</h4>
             <a href="/obchodni-podminky">Podmínky</a>
             <a href="/ochrana-soukromi">Soukromí</a>
             <a href="/ai-transparency">AI Transparency</a>
