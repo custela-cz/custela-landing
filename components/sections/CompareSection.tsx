@@ -3,11 +3,12 @@
 import { useEffect, useRef, useState } from 'react'
 
 const compareItems = [
-  { topic: 'Správa kampaní', without: 'Hodiny ručně', with: 'Za minuty' },
-  { topic: 'Optimalizace', without: 'Naslepo', with: 'Průběžná doporučení' },
-  { topic: 'Reporting', without: 'Excel exporty', with: 'Automatické reporty' },
-  { topic: 'Přehled', without: '3 platformy zvlášť', with: '1 dashboard' },
-  { topic: 'Synchronizace dat', without: 'Ruční kontrola', with: 'Pravidelná synchronizace' },
+  { topic: 'Měsíční náklady', agency: '30 000+ Kč', custela: 'Od 1 267 Kč' },
+  { topic: 'Správa kampaní', agency: 'Manuální, pomalá reakce', custela: 'Custela agent 24/7' },
+  { topic: 'Optimalizace', agency: 'Jednou týdně', custela: 'Nonstop analýza z tisíců datových bodů' },
+  { topic: 'Reporting', agency: 'PDF jednou měsíčně', custela: 'Real-time dashboard' },
+  { topic: 'Platformy', agency: 'Obvykle 1–2', custela: 'Google + Meta + Sklik' },
+  { topic: 'Nasazení', agency: 'Týdny onboardingu', custela: '3 minuty' },
 ]
 
 export default function CompareSection() {
@@ -38,14 +39,14 @@ export default function CompareSection() {
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
           <div className="section-label">Srovnání</div>
-          <h2>Vaše reklama.<br />S Custelou a bez ní.</h2>
+          <h2>Custela vs. typická agentura</h2>
           <p className="sh-sub" style={{ color: '#7a8494' }}>
-            Stejné kampaně, stejný rozpočet — jiný přístup, jiné výsledky.
+            Stejný výsledek za zlomek ceny — a bez čekání na reporty.
           </p>
         </div>
 
         <div className={`compare-stage${animated ? ' compare-animated' : ''}`}>
-          {/* Without Custela */}
+          {/* Agency */}
           <div className="compare-card compare-card--without">
             <div className="compare-card__header">
               <span className="compare-card__icon compare-card__icon--x">
@@ -54,8 +55,8 @@ export default function CompareSection() {
                 </svg>
               </span>
               <div>
-                <span className="compare-card__label compare-card__label--old">Starý způsob</span>
-                <h3>Bez Custely</h3>
+                <span className="compare-card__label compare-card__label--old">Drahý standard</span>
+                <h3>PPC agentura</h3>
               </div>
             </div>
             <ul className="compare-card__list">
@@ -68,7 +69,7 @@ export default function CompareSection() {
                   </span>
                   <span className="compare-strike">
                     <span className="compare-item-topic">{row.topic}</span>
-                    <span className="compare-strike__text">{row.without}</span>
+                    <span className="compare-strike__text">{row.agency}</span>
                     <span className="compare-strike__line" />
                   </span>
                 </li>
@@ -92,8 +93,8 @@ export default function CompareSection() {
                 </svg>
               </span>
               <div>
-                <span className="compare-card__label compare-card__label--new">S Custelou</span>
-                <h3>Automaticky &amp; chytře</h3>
+                <span className="compare-card__label compare-card__label--new">Chytřejší cesta</span>
+                <h3>Custela AI agent</h3>
               </div>
             </div>
             <ul className="compare-card__list">
@@ -106,7 +107,7 @@ export default function CompareSection() {
                   </span>
                   <span className="compare-item-content">
                     <span className="compare-item-topic">{row.topic}</span>
-                    <span>{row.with}</span>
+                    <span>{row.custela}</span>
                   </span>
                 </li>
               ))}
