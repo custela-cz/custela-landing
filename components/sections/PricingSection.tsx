@@ -8,8 +8,19 @@ const CheckIcon = () => (
   </svg>
 )
 
+function formatCzk(n: number) {
+  return Math.round(n).toLocaleString('cs-CZ')
+}
+
 export default function PricingSection() {
   const [isYearly, setIsYearly] = useState(true)
+  const [budget, setBudget] = useState(50000)
+
+  const savingsRate = 0.23
+  const roasBoost = 0.32
+  const monthlySavings = budget * savingsRate
+  const yearlyExtraSavings = monthlySavings * 12
+  const extraRevenue = budget * roasBoost
 
   return (
     <section className="pricing-section" id="pricing">
@@ -39,7 +50,7 @@ export default function PricingSection() {
               <span className="pricing-period"> Kč/měs</span>
             </div>
             <div className="pricing-limit">Rozpočet do 50 000 Kč měsíčně</div>
-            <a href="https://app.custela.com/auth" className="btn-secondary cta-btn">Začít zdarma</a>
+            <a href="https://app.custela.com/auth" className="btn-secondary cta-btn">Vyzkoušet 7 dní zdarma</a>
             <ul className="pricing-features">
               <li><CheckIcon />Google + Meta + Sklik</li>
               <li><CheckIcon />Dashboard + Reporty</li>
@@ -58,7 +69,7 @@ export default function PricingSection() {
               <span className="pricing-period"> Kč/měs</span>
             </div>
             <div className="pricing-limit">Rozpočet do 100 000 Kč měsíčně</div>
-            <a href="https://app.custela.com/auth" className="btn-primary cta-btn">Začít zdarma</a>
+            <a href="https://app.custela.com/auth" className="btn-primary cta-btn">Vyzkoušet 7 dní zdarma</a>
             <ul className="pricing-features">
               <li><CheckIcon />Vše ze Starter</li>
               <li><CheckIcon />AI tvorba obrázků</li>
@@ -87,6 +98,38 @@ export default function PricingSection() {
         <p className="reveal" style={{textAlign:'center',fontSize:'13px',color:'#9ca3af',marginTop:'20px'}}>
           Ceny bez DPH. 7 dní zdarma. Bez kreditní karty.
         </p>
+
+        {/* Savings calculator */}
+        <div className="savings-calc reveal" style={{marginTop:'40px'}}>
+          <div className="savings-calc__header">
+            <h3>Kolik vám Custela ušetří?</h3>
+            <p>Zadejte svůj měsíční rozpočet na reklamu</p>
+          </div>
+          <div className="savings-calc__input">
+            <input
+              type="range"
+              min={10000}
+              max={500000}
+              step={5000}
+              value={budget}
+              onChange={(e) => setBudget(Number(e.target.value))}
+            />
+            <div className="savings-calc__budget">{formatCzk(budget)} Kč / měsíc</div>
+          </div>
+          <div className="savings-calc__results">
+            <div className="savings-calc__card">
+              <div className="savings-calc__label">Úspora na rozpočtu</div>
+              <div className="savings-calc__value savings-calc__value--green">{formatCzk(monthlySavings)} Kč/měs</div>
+              <div className="savings-calc__sub">{formatCzk(yearlyExtraSavings)} Kč ročně</div>
+            </div>
+            <div className="savings-calc__card">
+              <div className="savings-calc__label">Navýšení tržeb z reklamy</div>
+              <div className="savings-calc__value savings-calc__value--green">+{formatCzk(extraRevenue)} Kč/měs</div>
+              <div className="savings-calc__sub">díky +32 % ROAS</div>
+            </div>
+          </div>
+          <p className="savings-calc__note">* Na základě průměrných výsledků uživatelů Custely (23 % úspora rozpočtu, +32 % ROAS).</p>
+        </div>
       </div>
     </section>
   )
