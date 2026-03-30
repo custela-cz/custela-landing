@@ -12,123 +12,86 @@ function formatCzk(n: number) {
   return Math.round(n).toLocaleString('cs-CZ')
 }
 
-export default function PricingSection() {
-  const [isYearly, setIsYearly] = useState(true)
-  const [budget, setBudget] = useState(50000)
+const features = [
+  'Google Ads + Meta Ads + Sklik',
+  'Autonomní správa kampaní 24/7',
+  'AI tvorba kampaní, textů i obrázků',
+  'Dashboard + automatické reporty na email',
+  'Neomezený počet kampaní',
+]
 
-  const savingsRate = 0.23
-  const roasBoost = 0.32
-  const monthlySavings = budget * savingsRate
-  const yearlyExtraSavings = monthlySavings * 12
-  const extraRevenue = budget * roasBoost
+export default function PricingSection() {
+  const [revenue, setRevenue] = useState(200000)
+
+  const custelaCost = revenue * 0.05
 
   return (
     <section className="pricing-section" id="pricing">
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
           <div className="section-label">Ceník</div>
-          <h2>Levnější než jeden den marketéra</h2>
-          <p className="pricing-sub">Kolik stojí hodiny ručních reportů a kampaně, co spalují rozpočet?</p>
+          <h2>5 % z tržeb. Nic víc.</h2>
+          <p className="sh-sub">Žádný paušál, žádný závazek. Platíte jen podíl z toho, co kampaně vydělají.</p>
         </div>
 
-        <div className="pricing-toggle reveal">
-          <span className={!isYearly ? 'active' : ''}>Měsíčně</span>
-          <div
-            className={`toggle-switch${isYearly ? ' active' : ''}`}
-            onClick={() => setIsYearly(!isYearly)}
-          />
-          <span className={isYearly ? 'active' : ''}>Ročně</span>
-          <span className="save-badge">-15%</span>
-        </div>
-
-        <div className="pricing-grid">
-          <div className="pricing-card reveal">
-            <div className="pricing-name">Starter</div>
-            <div className="pricing-desc">Pro malé e-shopy a začínající podniky.</div>
-            <div className="pricing-amount">
-              <span className="pricing-value">{isYearly ? '1 267' : '1 490'}</span>
-              <span className="pricing-period"> Kč/měs</span>
+        {/* Single centered pricing card */}
+        <div className="reveal" style={{ maxWidth: 480, margin: '0 auto' }}>
+          <div className="pricing-card featured" style={{ textAlign: 'center' }}>
+            <div className="pricing-value" style={{ fontSize: 56 }}>5 %</div>
+            <div className="pricing-desc" style={{ fontSize: 16, marginBottom: 8 }}>z tržeb z kampaní</div>
+            <div style={{ fontSize: 13, color: '#9ca3af', marginBottom: 28 }}>
+              Vše zahrnuto. Žádné skryté poplatky.
             </div>
-            <div className="pricing-limit">Rozpočet do 50 000 Kč měsíčně</div>
-            <a href="https://app.custela.com/auth" className="btn-secondary cta-btn">Chci platit jen za výsledky</a>
-            <ul className="pricing-features">
-              <li><CheckIcon />Google + Meta + Sklik</li>
-              <li><CheckIcon />Dashboard + Reporty</li>
-              <li><CheckIcon />AI optimalizace</li>
-              <li><CheckIcon />AI tvorba kampaní</li>
-              <li><CheckIcon />Až 3 účty</li>
+            <ul className="pricing-features" style={{ marginBottom: 28 }}>
+              {features.map((f) => (
+                <li key={f}><CheckIcon />{f}</li>
+              ))}
             </ul>
-          </div>
-
-          <div className="pricing-card featured reveal reveal-delay-1">
-            <div className="pricing-popular">Nejoblíbenější</div>
-            <div className="pricing-name">Pro</div>
-            <div className="pricing-desc">AI na vaší straně.</div>
-            <div className="pricing-amount">
-              <span className="pricing-value">{isYearly ? '2 117' : '2 490'}</span>
-              <span className="pricing-period"> Kč/měs</span>
+            <a
+              href="https://app.custela.com/auth"
+              className="btn-primary btn-large cta-btn"
+            >
+              Chci platit jen za výsledky{' '}
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+            <div style={{ fontSize: 12, color: '#9ca3af', marginTop: 16 }}>
+              Bez kreditní karty. Bez závazků. Nefunguje = neplatíte.
             </div>
-            <div className="pricing-limit">Rozpočet do 100 000 Kč měsíčně</div>
-            <a href="https://app.custela.com/auth" className="btn-primary cta-btn">Chci platit jen za výsledky</a>
-            <ul className="pricing-features">
-              <li><CheckIcon />Vše ze Starter</li>
-              <li><CheckIcon />AI tvorba obrázků</li>
-              <li><CheckIcon />AI tvorba textů</li>
-              <li><CheckIcon />3 uživatelé (funkci připravujeme)</li>
-              <li><CheckIcon />Přednostní přístup k novým funkcím</li>
-            </ul>
-          </div>
-
-          <div className="pricing-card reveal reveal-delay-2">
-            <div className="pricing-name">Enterprise</div>
-            <div className="pricing-desc">Pro agentury a velké inzerenty.</div>
-            <div className="pricing-amount">
-              <span className="pricing-value">Na dotaz</span>
-            </div>
-            <div className="pricing-limit">Rozpočet od 100 000 Kč měsíčně</div>
-            <a href="mailto:info@custela.com" className="btn-secondary cta-btn">Kontaktujte nás</a>
-            <ul className="pricing-features">
-              <li><CheckIcon />Vše z Pro</li>
-              <li><CheckIcon />Plná AI + Multi-projekt</li>
-              <li><CheckIcon />∞ účtů</li>
-            </ul>
           </div>
         </div>
 
-        <p className="reveal" style={{textAlign:'center',fontSize:'13px',color:'#9ca3af',marginTop:'20px'}}>
-          Ceny bez DPH. 7 dní zdarma. Bez kreditní karty.
-        </p>
-
-        {/* Savings calculator */}
-        <div className="savings-calc reveal" style={{marginTop:'40px'}}>
+        {/* Calculator */}
+        <div className="savings-calc reveal" style={{ marginTop: 48 }}>
           <div className="savings-calc__header">
-            <h3>Kolik vám Custela ušetří?</h3>
-            <p>Zadejte svůj měsíční rozpočet na reklamu</p>
+            <h3>Kolik vás Custela bude stát?</h3>
+            <p>Zadejte měsíční tržby z kampaní</p>
           </div>
           <div className="savings-calc__input">
             <input
               type="range"
-              min={10000}
-              max={500000}
-              step={5000}
-              value={budget}
-              onChange={(e) => setBudget(Number(e.target.value))}
+              min={50000}
+              max={2000000}
+              step={10000}
+              value={revenue}
+              onChange={(e) => setRevenue(Number(e.target.value))}
             />
-            <div className="savings-calc__budget">{formatCzk(budget)} Kč / měsíc</div>
+            <div className="savings-calc__budget">{formatCzk(revenue)} Kč / měsíc</div>
           </div>
           <div className="savings-calc__results">
             <div className="savings-calc__card">
-              <div className="savings-calc__label">Úspora na rozpočtu</div>
-              <div className="savings-calc__value savings-calc__value--green">{formatCzk(monthlySavings)} Kč/měs</div>
-              <div className="savings-calc__sub">{formatCzk(yearlyExtraSavings)} Kč ročně</div>
+              <div className="savings-calc__label">Custela</div>
+              <div className="savings-calc__value savings-calc__value--green">{formatCzk(custelaCost)} Kč/měs</div>
+              <div className="savings-calc__sub">5 % z tržeb</div>
             </div>
             <div className="savings-calc__card">
-              <div className="savings-calc__label">Navýšení tržeb z reklamy</div>
-              <div className="savings-calc__value savings-calc__value--green">+{formatCzk(extraRevenue)} Kč/měs</div>
-              <div className="savings-calc__sub">díky +32 % ROAS</div>
+              <div className="savings-calc__label">Typická agentura</div>
+              <div className="savings-calc__value">15 000–30 000 Kč</div>
+              <div className="savings-calc__sub">fixní paušál</div>
             </div>
           </div>
-          <p className="savings-calc__note">* Na základě průměrných výsledků uživatelů Custely (23 % úspora rozpočtu, +32 % ROAS).</p>
+          <p className="savings-calc__note">Platíte jen když kampaně generují tržby. Nefunguje = neplatíte.</p>
         </div>
       </div>
     </section>
