@@ -11,19 +11,27 @@ export default function HowStepsSection() {
         <div className="how-steps">
           <div className="how-step reveal">
             <div className="step-number">01</div>
-            <h3>Propojte účty</h3>
-            <p>Pár kliknutí a data tečou. Pod 3 minuty.</p>
+            <h3>Propojíte účty</h3>
+            <p>Google Ads, Meta, Sklik — jedním klikem.</p>
           </div>
           <div className="how-step reveal reveal-delay-1">
             <div className="step-number">02</div>
-            <h3>Custela analyzuje a doporučí</h3>
-            <p>Custela navrhne kampaně, doporučí bidy a najde prostor pro optimalizaci.</p>
+            <h3>Custela analyzuje</h3>
+            <p>5 AI agentů projde kampaně, rozpočty, klíčová slova, kreativy i feed.</p>
           </div>
           <div className="how-step reveal reveal-delay-2">
             <div className="step-number">03</div>
-            <h3>Sledujte růst</h3>
-            <p>Výsledky v reálném čase. Reporty jdou samy.</p>
+            <h3>Navrhne a provede změny</h3>
+            <p>Automaticky, podle 170+ pravidel.</p>
           </div>
+          <div className="how-step reveal reveal-delay-3">
+            <div className="step-number">04</div>
+            <h3>Vy schvalujete</h3>
+            <p>Plná kontrola, žádné black-box rozhodování.</p>
+          </div>
+        </div>
+        <div className="how-cta reveal">
+          <a href="/jak-to-funguje">Podívejte se detailně &rarr;</a>
         </div>
       </div>
     </section>

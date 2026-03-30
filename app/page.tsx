@@ -4,17 +4,14 @@ import { useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import HeroSection from '@/components/sections/HeroSection'
-import PlatformSection from '@/components/sections/PlatformSection'
-import DashboardSection from '@/components/sections/DashboardSection'
 import ProblemSection from '@/components/sections/ProblemSection'
-import FlowSection from '@/components/sections/FlowSection'
-import FeaturesSection from '@/components/sections/FeaturesSection'
 import HowStepsSection from '@/components/sections/HowStepsSection'
-import CompareSection from '@/components/sections/CompareSection'
+import FeaturesSection from '@/components/sections/FeaturesSection'
 import StatsSection from '@/components/sections/StatsSection'
-
+import PersonaSection from '@/components/sections/PersonaSection'
+import CompareSection from '@/components/sections/CompareSection'
 import PricingSection from '@/components/sections/PricingSection'
-import FAQSection from '@/components/sections/FAQSection'
+import PlatformSection from '@/components/sections/PlatformSection'
 import CTASection from '@/components/sections/CTASection'
 
 export default function Home() {
@@ -35,17 +32,14 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <PlatformSection />
-      <DashboardSection />
       <ProblemSection />
-      <FlowSection />
-      <FeaturesSection />
       <HowStepsSection />
-      <CompareSection />
+      <FeaturesSection />
       <StatsSection />
-
+      <PersonaSection />
+      <CompareSection />
       <PricingSection />
-      <FAQSection />
+      <PlatformSection />
       <CTASection />
       <Footer />
     </main>

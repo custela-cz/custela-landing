@@ -3,10 +3,11 @@
 import { useEffect, useState } from 'react'
 
 const navLinks = [
-  { href: '#features', label: 'Funkce' },
   { href: '#how-it-works', label: 'Jak to funguje' },
+  { href: '#features', label: 'Funkce' },
   { href: '#pricing', label: 'Ceník' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/partneri', label: 'Partneři' },
 ]
 
 export default function Navbar({ forceScrolled = false }: { forceScrolled?: boolean } = {}) {
@@ -20,7 +21,6 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
     return () => window.removeEventListener('scroll', onScroll)
   }, [forceScrolled])
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -37,10 +37,10 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
           right: 0,
           zIndex: 1000,
           padding: '14px 0',
-          background: scrolled || menuOpen ? 'rgba(255,255,255,.92)' : 'transparent',
+          background: scrolled || menuOpen ? 'rgba(10,10,10,.92)' : 'transparent',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
-          borderBottom: scrolled || menuOpen ? '1px solid #e5e7eb' : '1px solid transparent',
+          borderBottom: scrolled || menuOpen ? '1px solid rgba(255,255,255,.08)' : '1px solid transparent',
           transition: 'all .3s',
         }}
       >
@@ -51,11 +51,11 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               fontSize: '22px',
               fontWeight: 800,
               letterSpacing: '-0.03em',
-              color: scrolled || menuOpen ? '#111827' : '#fff',
+              color: '#fff',
               transition: 'color .3s',
             }}
           >
-            Custela<span style={{ color: '#84cc16' }}>.</span>
+            Custela<span style={{ color: '#BFFF37' }}>.</span>
           </a>
 
           <ul className="nav-links-desktop" style={{
@@ -72,7 +72,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
                   style={{
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: scrolled ? '#6b7280' : 'rgba(255,255,255,.7)',
+                    color: 'rgba(255,255,255,.55)',
                     transition: 'color .2s',
                   }}
                 >
@@ -86,23 +86,20 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
             <a
               href="https://app.custela.com/auth"
               className="btn-ghost nav-login"
-              style={{ color: scrolled ? '#4b5563' : 'rgba(255,255,255,.7)' }}
             >
               Přihlásit se
             </a>
             <a
               href="https://app.custela.com/auth"
-              className="btn-primary"
-              style={{ background: '#84cc16', color: '#000' }}
+              className="btn-primary nav-cta-glow"
             >
-              Začít zdarma{' '}
+              Chci platit jen za výsledky{' '}
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M3 8h10M9 4l4 4-4 4" />
               </svg>
             </a>
           </div>
 
-          {/* Hamburger button — visible only on mobile via CSS */}
           <button
             className="nav-hamburger"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -112,7 +109,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               display: 'block',
               width: '22px',
               height: '2px',
-              background: scrolled || menuOpen ? '#111827' : '#fff',
+              background: '#fff',
               transition: 'all .3s',
               transform: menuOpen ? 'rotate(45deg) translate(4px, 4px)' : 'none',
             }} />
@@ -120,7 +117,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               display: 'block',
               width: '22px',
               height: '2px',
-              background: scrolled || menuOpen ? '#111827' : '#fff',
+              background: '#fff',
               transition: 'all .3s',
               opacity: menuOpen ? 0 : 1,
               marginTop: '5px',
@@ -129,7 +126,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               display: 'block',
               width: '22px',
               height: '2px',
-              background: scrolled || menuOpen ? '#111827' : '#fff',
+              background: '#fff',
               transition: 'all .3s',
               transform: menuOpen ? 'rotate(-45deg) translate(4px, -4px)' : 'none',
               marginTop: '5px',
@@ -148,7 +145,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
           right: 0,
           bottom: 0,
           zIndex: 999,
-          background: 'rgba(255,255,255,.98)',
+          background: 'rgba(10,10,10,.98)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           display: 'flex',
@@ -169,7 +166,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
             style={{
               fontSize: '20px',
               fontWeight: 600,
-              color: '#111827',
+              color: '#ffffff',
               padding: '12px 24px',
             }}
           >
@@ -184,7 +181,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               textAlign: 'center',
               fontSize: '14px',
               fontWeight: 500,
-              color: '#6b7280',
+              color: 'rgba(255,255,255,.5)',
               padding: '10px',
             }}
           >
@@ -195,13 +192,11 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
             className="btn-primary"
             onClick={() => setMenuOpen(false)}
             style={{
-              background: '#84cc16',
-              color: '#000',
               textAlign: 'center',
               justifyContent: 'center',
             }}
           >
-            Začít zdarma
+            Chci platit jen za výsledky
           </a>
         </div>
       </div>
