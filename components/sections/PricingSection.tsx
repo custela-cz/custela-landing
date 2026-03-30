@@ -50,7 +50,7 @@ export default function PricingSection() {
               <span className="pricing-period"> Kč/měs</span>
             </div>
             <div className="pricing-limit">Rozpočet do 50 000 Kč měsíčně</div>
-            <a href="https://app.custela.com/auth" className="btn-secondary cta-btn">Vyzkoušet 7 dní zdarma</a>
+            <a href="https://app.custela.com/auth" className="btn-secondary cta-btn">Chci platit jen za výsledky</a>
             <ul className="pricing-features">
               <li><CheckIcon />Google + Meta + Sklik</li>
               <li><CheckIcon />Dashboard + Reporty</li>
@@ -69,7 +69,7 @@ export default function PricingSection() {
               <span className="pricing-period"> Kč/měs</span>
             </div>
             <div className="pricing-limit">Rozpočet do 100 000 Kč měsíčně</div>
-            <a href="https://app.custela.com/auth" className="btn-primary cta-btn">Vyzkoušet 7 dní zdarma</a>
+            <a href="https://app.custela.com/auth" className="btn-primary cta-btn">Chci platit jen za výsledky</a>
             <ul className="pricing-features">
               <li><CheckIcon />Vše ze Starter</li>
               <li><CheckIcon />AI tvorba obrázků</li>

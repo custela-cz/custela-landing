@@ -130,15 +130,16 @@ export default function ProblemSection() {
     <section className="problem-section" ref={sectionRef}>
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
-          <div className="section-label">Proč Custela</div>
+          <div className="section-label">Proč měnit přístup</div>
           <h2>
-            Každý den bez automatizace
+            Platíte za správu kampaní.
             <br />
-            vás stojí peníze.
+            Ne za jejich výsledky
           </h2>
           <p className="sh-sub">
-            E-shopy v ČR průměrně ztrácí 23 % rozpočtu v neefektivních
-            kampaních. Custela tyto úniky najde a doporučí konkrétní kroky.
+            Agentura si účtuje paušál bez ohledu na výkon. PPC specialista
+            stojí desítky tisíc měsíčně. Custela řídí kampaně autonomně
+            — a&nbsp;platíte jen za výsledky.
           </p>
         </div>
         <div className="problem-grid" ref={gridRef}>
@@ -148,7 +149,7 @@ export default function ProblemSection() {
             style={{ opacity: 0, willChange: 'transform' }}
           >
             <div className="problem-number">01</div>
-            <h3>Ruční správa kampaní vás brzdí</h3>
+            <h3>Agentura vás stojí víc, než vydělá</h3>
             <p>
               Nastavit jednu kampaň trvá hodiny. Mezitím konkurence testuje
               desítky variant a obsazuje vaše klíčová slova.

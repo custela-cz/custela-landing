@@ -21,7 +21,7 @@ export default function CTASection() {
               href="https://app.custela.com/auth"
               className="btn-primary lime btn-large"
             >
-              Vyzkoušet na 7 dní zdarma
+              Chci platit jen za výsledky
               <svg
                 viewBox="0 0 16 16"
                 fill="none"

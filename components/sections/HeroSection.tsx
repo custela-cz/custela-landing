@@ -21,8 +21,8 @@ export default function HeroSection() {
                 Automatizace reklamy pro e-shopy
               </div>
               <h1 className="reveal reveal-delay-1">
-                Marketingová aplikace, která pracuje{' '}
-                <em>pro&nbsp;vás.</em>
+                Profesionální{' '}
+                <em>správa kampaní.</em> Platíte za&nbsp;výsledky
               </h1>
               <p className="hero-sub reveal reveal-delay-2">
                 Custela vytvoří kampaně, průběžně je optimalizuje a vygeneruje
@@ -34,7 +34,7 @@ export default function HeroSection() {
                   href="https://app.custela.com/auth"
                   className="btn-primary btn-large"
                 >
-                  Vyzkoušet 7 dní zdarma{' '}
+                  Chci platit jen za výsledky{' '}
                   <svg
                     viewBox="0 0 16 16"
                     fill="none"
@@ -58,13 +58,13 @@ export default function HeroSection() {
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M3 8l4 4 6-6" />
                   </svg>
-                  Zvládne nastavit každý
+                  Propojení za 5 minut
                 </span>
                 <span>
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M3 8l4 4 6-6" />
                   </svg>
-                  Zrušení kdykoliv
+                  Bez závazků
                 </span>
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function HeroSection() {
               <div className="glass-card gc-4">
                 <div className="gc-status-row">
                   <span className="gc-dot" />
-                  Custela Agent aktivní
+                  Custela provedla 12 optimalizací
                 </div>
                 <div className="gc-sub">Poslední analýza 14:32</div>
               </div>
