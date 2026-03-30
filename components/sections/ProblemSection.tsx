@@ -207,24 +207,23 @@ export default function ProblemSection() {
             style={{ opacity: 0, willChange: 'transform' }}
           >
             <div className="problem-number">03</div>
-            <h3>Každá hodina bez reakce stojí rozpočet</h3>
+            <h3>Rozpočet tam, kde vydělává</h3>
             <p>
-              Propad výkonu, nefunkční reklama, vyčerpaný rozpočet na špatné
-              kampani. Custela detekuje anomálie a jedná v řádu minut
-              — ne hodin.
+              Custela průběžně přesouvá rozpočet do kampaní s nejlepším výkonem.
+              Žádné peníze na neefektivní reklamy.
             </p>
             <div className="problem-bottom">
               <div className="problem-stat-row">
-                <span className="problem-stat-num">hodiny</span>
-                <span className="problem-stat-label">průměrná reakce</span>
+                <span className="problem-stat-num">každé 4 h</span>
+                <span className="problem-stat-label">přehodnocení rozpočtu</span>
               </div>
               <div className="problem-arrow">{'\u2192'}</div>
               <div className="problem-stat-row">
                 <span className="problem-stat-num problem-stat-green">
-                  minuty
+                  3
                 </span>
                 <span className="problem-stat-label">
-                  s Custelou
+                  platformy najednou
                 </span>
               </div>
             </div>
