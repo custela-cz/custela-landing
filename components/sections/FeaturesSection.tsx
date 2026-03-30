@@ -155,30 +155,30 @@ export default function FeaturesSection() {
     <section className="features-section" id="features">
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
-          <div className="section-label">4 pilíře Custely</div>
-          <h2>Jeden nástroj místo celého týmu.</h2>
-          <p className="sh-sub">S Custelou máte po ruce seniorního PPC specialistu i analytika. Soustřeďte se na podnikání, my vám najdeme příležitosti v datech pro optimalizaci.</p>
+          <div className="section-label">Co Custela dělá</div>
+          <h2>Kompletní správa kampaní. Plně automaticky.</h2>
+          <p className="sh-sub">Od tvorby kampaní po reporting — Custela řídí celý proces bez zásahu. Vy se soustředíte na podnikání.</p>
         </div>
         <div className="features-stack">
           {[
             {
-              num: '01', badge: 'Hodiny → Minuty', title: 'Tvorba kampaní na autopilotu',
-              desc: 'Zadáte cíl, Custela navrhne strukturu, klíčová slova, texty a spustí kampaně na Google, Metu i Sklik. Jednu kampaň, tři platformy, nula ruční práce.',
+              num: '01', badge: 'Tvorba kampaní', title: 'Kampaně vytvoří za vás',
+              desc: 'Zadáte cíl a URL. Custela vytvoří strukturu, klíčová slova, texty a spustí kampaně na všech platformách. Jedna zadání, tři platformy.',
               visual: <CampaignVisual />,
             },
             {
-              num: '02', badge: 'AI + 170 pravidel', title: 'Optimalizace, která nikdy nespí',
-              desc: 'AI agent analyzuje vaše účty 2× týdně a automaticky přesouvá rozpočty, upravuje bidy a pozastavuje neefektivní kampaně.',
+              num: '02', badge: 'Průběžná optimalizace', title: 'Optimalizuje nonstop. Bez vašeho zásahu.',
+              desc: 'Custela průběžně přesouvá rozpočty, upravuje bidy a pozastavuje neefektivní kampaně. Každé rozhodnutí podložené daty.',
               visual: <OptimizationVisual />,
             },
             {
-              num: '03', badge: 'Nula ruční práce', title: 'Reporty, které se píšou samy',
-              desc: 'Denní, týdenní, měsíční přehledy ze všech platforem. Automaticky v inboxu — stačí otevřít a víte, jak na tom jste.',
+              num: '03', badge: 'Reporting', title: 'Přehled o výkonu. Automaticky.',
+              desc: 'Denní, týdenní i měsíční přehledy ze všech platforem. Přijdou na email — vy jen otevřete.',
               visual: <ReportVisual />,
             },
             {
-              num: '04', badge: '3 platformy → 1 obrazovka', title: 'Dashboard pro všechny kanály',
-              desc: 'Google Ads, Meta Ads, Sklik — vše na jedné obrazovce v reálném čase. Pravidelná synchronizace dat, žádné přepínání tabů.',
+              num: '04', badge: 'Všechny platformy', title: 'Jeden pohled na všechny kampaně',
+              desc: 'Google Ads, Meta Ads, Sklik — výkon všech platforem na jednom místě. Data se synchronizují automaticky, v reálném čase.',
               visual: <DashboardVisual />,
             },
           ].map((p, i) => (
