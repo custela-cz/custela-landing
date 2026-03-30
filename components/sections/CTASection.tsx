@@ -3,21 +3,25 @@
 export default function CTASection() {
   return (
     <section className="cta-section">
-      <div className="dot-grid" />
-      <div className="cta-glow" />
       <div className="max-w-[1160px] mx-auto px-6">
-        <div className="cta-inner reveal">
-          <h2>Přestaňte optimalizovat ručně.</h2>
+        <div className="cta-box reveal">
+          <div className="cta-pattern" />
+          <div className="cta-glow" />
+          <div className="cta-label">Začněte za 3 minuty</div>
+          <h2>
+            Každá hodina bez automatizace<br />
+            vás stojí zákazníky.
+          </h2>
           <p>
-            Zapněte autopilota pro vaše kampaně. Propojte účty a&nbsp;Custela
-            převezme správu ještě dnes.
+            Propojte účty, Custela Agent převezme správu kampaní ještě&nbsp;dnes.
+            Žádné složité nastavování — stačí 3&nbsp;kroky.
           </p>
           <div className="cta-buttons">
             <a
               href="https://app.custela.com/auth"
-              className="btn-primary btn-large"
+              className="btn-primary lime btn-large"
             >
-              Chci platit jen za výsledky
+              Vyzkoušet na 7 dní zdarma
               <svg
                 viewBox="0 0 16 16"
                 fill="none"
@@ -34,13 +38,13 @@ export default function CTASection() {
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M3 8l4 4 6-6" />
               </svg>
-              Žádná kreditka
+              Bez kreditní karty
             </span>
             <span>
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M3 8l4 4 6-6" />
               </svg>
-              14 dní zdarma
+              7 dní zdarma
             </span>
             <span>
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">

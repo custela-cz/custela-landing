@@ -9,11 +9,13 @@ const config: Config = {
     extend: {
       colors: {
         lime: {
-          DEFAULT: '#BFFF37',
-          dark: '#99CC2E',
+          DEFAULT: '#84cc16',
+          light: '#ecfccb',
+          medium: '#d9f99d',
+          dark: '#65a30d',
+          bg: '#f7fee7',
         },
         black: '#0A0A0A',
-        surface: '#141416',
         g: {
           0: '#f9fafb',
           1: '#f3f4f6',
