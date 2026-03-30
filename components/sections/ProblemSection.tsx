@@ -130,11 +130,11 @@ export default function ProblemSection() {
     <section className="problem-section" ref={sectionRef}>
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
-          <div className="section-label">Proč měnit přístup</div>
+          <div className="section-label">Co vás stojí současný model</div>
           <h2>
             Platíte za správu kampaní.
             <br />
-            Ne za jejich výsledky
+            Ne za jejich výsledky.
           </h2>
           <p className="sh-sub">
             Agentura si účtuje paušál bez ohledu na výkon. PPC specialista
@@ -149,24 +149,24 @@ export default function ProblemSection() {
             style={{ opacity: 0, willChange: 'transform' }}
           >
             <div className="problem-number">01</div>
-            <h3>Agentura vás stojí víc, než vydělá</h3>
+            <h3>Vaše kampaně můžou být lepší. Každý den.</h3>
             <p>
-              Nastavit jednu kampaň trvá hodiny. Mezitím konkurence testuje
-              desítky variant a obsazuje vaše klíčová slova.
+              170+ pravidel kontroluje bidding, rozpočty, klíčová slova
+              i kreativy. Každých pár hodin, napříč všemi platformami.
             </p>
             <div className="problem-bottom">
               <div className="problem-stat-row">
-                <span className="problem-stat-num">4+ h</span>
+                <span className="problem-stat-num">170+</span>
                 <span className="problem-stat-label">
-                  průměrná doba tvorby kampaně
+                  optimalizačních pravidel
                 </span>
               </div>
-              <div className="problem-arrow">{'\u2192'}</div>
+              <div className="problem-arrow">&middot;</div>
               <div className="problem-stat-row">
                 <span className="problem-stat-num problem-stat-green">
-                  12 min
+                  3
                 </span>
-                <span className="problem-stat-label">s Custelou</span>
+                <span className="problem-stat-label">platformy najednou</span>
               </div>
             </div>
           </div>
@@ -176,25 +176,26 @@ export default function ProblemSection() {
             style={{ opacity: 0, willChange: 'transform' }}
           >
             <div className="problem-number">02</div>
-            <h3>Bez dat nevidíte, kam peníze tečou</h3>
+            <h3>Kampaně nespí. Optimalizace by taky neměla.</h3>
             <p>
-              Rozpočet se rozprostře do desítek kampaní. Bez analýzy neuvidíte,
-              které vydělávají a které jen utrácí.
+              Výkon kampaní se mění každou hodinu — nové aukce, jiné publikum,
+              sezónní výkyvy. Custela monitoruje a reaguje nepřetržitě,
+              i když vy nemusíte.
             </p>
             <div className="problem-bottom">
               <div className="problem-stat-row">
-                <span className="problem-stat-num">23 %</span>
+                <span className="problem-stat-num">8 h</span>
                 <span className="problem-stat-label">
-                  rozpočtu teče do ztrátových kampaní
+                  klasická správa
                 </span>
               </div>
               <div className="problem-arrow">{'\u2192'}</div>
               <div className="problem-stat-row">
                 <span className="problem-stat-num problem-stat-green">
-                  +32 %
+                  24/7
                 </span>
                 <span className="problem-stat-label">
-                  ROAS po optimalizaci
+                  s Custelou
                 </span>
               </div>
             </div>
@@ -205,23 +206,24 @@ export default function ProblemSection() {
             style={{ opacity: 0, willChange: 'transform' }}
           >
             <div className="problem-number">03</div>
-            <h3>Ruční reporty kradou čas, který nemáte</h3>
+            <h3>Každá hodina bez reakce stojí rozpočet</h3>
             <p>
-              Exporty z třech platforem, kopírování do tabulek, formátování. A
-              mezitím nikdo neoptimalizuje kampaně.
+              Propad výkonu, nefunkční reklama, vyčerpaný rozpočet na špatné
+              kampani. Custela detekuje anomálie a jedná v řádu minut
+              — ne hodin.
             </p>
             <div className="problem-bottom">
               <div className="problem-stat-row">
-                <span className="problem-stat-num">4–6 h</span>
-                <span className="problem-stat-label">týdně na reporty</span>
+                <span className="problem-stat-num">hodiny</span>
+                <span className="problem-stat-label">průměrná reakce</span>
               </div>
               <div className="problem-arrow">{'\u2192'}</div>
               <div className="problem-stat-row">
                 <span className="problem-stat-num problem-stat-green">
-                  0 min
+                  minuty
                 </span>
                 <span className="problem-stat-label">
-                  automaticky v inboxu
+                  s Custelou
                 </span>
               </div>
             </div>
