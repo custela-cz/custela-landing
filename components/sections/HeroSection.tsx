@@ -22,7 +22,7 @@ export default function HeroSection() {
               </div>
               <h1 className="reveal reveal-delay-1">
                 Profesionální{' '}
-                <em>správa kampaní.</em> Platíte za&nbsp;výsledky
+                <em>správa kampaní.</em> Platíte jen za&nbsp;výsledky
               </h1>
               <p className="hero-sub reveal reveal-delay-2">
                 Custela vytvoří kampaně, průběžně je optimalizuje a vygeneruje
