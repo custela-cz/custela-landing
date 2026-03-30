@@ -3,12 +3,12 @@
 import { motion } from 'framer-motion'
 
 const compareItems = [
-  { topic: 'Měsíční náklady', agency: '30 000+ Kč', custela: 'Od 1 267 Kč' },
-  { topic: 'Správa kampaní', agency: 'Manuální, pomalá reakce', custela: 'Custela agent 24/7' },
-  { topic: 'Optimalizace', agency: 'Jednou týdně', custela: 'Nonstop analýza z tisíců datových bodů' },
-  { topic: 'Reporting', agency: 'PDF jednou měsíčně', custela: 'Real-time dashboard' },
-  { topic: 'Platformy', agency: 'Obvykle 1–2', custela: 'Google + Meta + Sklik' },
-  { topic: 'Nasazení', agency: 'Týdny onboardingu', custela: '3 minuty' },
+  { topic: 'Měsíční náklady', agency: 'Fixní paušál', custela: '5 % z tržeb' },
+  { topic: 'Správa kampaní', agency: 'Závislá na kapacitě týmu', custela: 'Autonomní, 24/7' },
+  { topic: 'Optimalizace', agency: 'Podle kapacity specialisty', custela: 'Průběžná, každé 4 hodiny' },
+  { topic: 'Reporting', agency: 'Většinou 1× měsíčně', custela: 'Real-time dashboard + email reporty' },
+  { topic: 'Platformy', agency: 'Záleží na agentuře', custela: 'Google + Meta + Sklik' },
+  { topic: 'Nasazení', agency: 'Dny až týdny', custela: '3 minuty' },
 ]
 
 const cubicEase = [0.16, 1, 0.3, 1] as const
@@ -33,9 +33,9 @@ export default function CompareSection() {
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
           <div className="section-label">Srovnání</div>
-          <h2>Custela vs. typická agentura</h2>
+          <h2>Dva přístupy ke správě kampaní</h2>
           <p className="sh-sub" style={{ color: '#7a8494' }}>
-            Stejný výsledek za zlomek ceny — a bez čekání na reporty.
+            Profesionální správa kampaní za 5 % z tržeb. Bez paušálu, bez závazků.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export default function CompareSection() {
                 </svg>
               </span>
               <div>
-                <span className="compare-card__label compare-card__label--old">Drahý standard</span>
+                <span className="compare-card__label compare-card__label--old">Tradiční správa</span>
                 <h3>PPC agentura</h3>
               </div>
             </div>
@@ -126,8 +126,8 @@ export default function CompareSection() {
                 </svg>
               </span>
               <div>
-                <span className="compare-card__label compare-card__label--new">Chytřejší cesta</span>
-                <h3>Custela AI agent</h3>
+                <span className="compare-card__label compare-card__label--new">Autonomní správa</span>
+                <h3>Custela</h3>
               </div>
             </div>
             <ul className="compare-card__list">
