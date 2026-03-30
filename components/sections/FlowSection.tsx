@@ -130,10 +130,10 @@ export default function FlowSection() {
         </div>
 
         <div className="flow-bottom reveal">
-          <div className="flow-bstat"><div className="v"><em>3</em> min</div><div className="l">propojení účtů</div></div>
-          <div className="flow-bstat"><div className="v">Každé <em>4 h</em></div><div className="l">cyklus optimalizace</div></div>
-          <div className="flow-bstat"><div className="v">Audit <em>zdarma</em></div><div className="l">analýza výkonu kampaní</div></div>
-          <div className="flow-bstat"><div className="v"><em>0 Kč</em> start</div><div className="l">bez karty, bez závazků</div></div>
+          <div className="flow-bstat"><div className="v"><em>0 Kč</em> start</div><div className="l">žádná platba předem</div></div>
+          <div className="flow-bstat"><div className="v">Platíte za <em>výkon</em></div><div className="l">ne za hodiny nebo paušál</div></div>
+          <div className="flow-bstat"><div className="v">Audit <em>zdarma</em></div><div className="l">ještě než začnete platit</div></div>
+          <div className="flow-bstat"><div className="v"><em>0</em> riziko</div><div className="l">nefunguje = neplatíte</div></div>
         </div>
       </div>
     </section>
