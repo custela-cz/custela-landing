@@ -6,8 +6,8 @@ export default function FlowSection() {
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="flow-header reveal">
           <div className="section-label">Jak to funguje</div>
-          <h2>Propojíte účty.<br /><em>Custela</em> udělá zbytek.</h2>
-          <p>Data ze všech platforem na jednom místě. Custela je vyhodnotí, najde příležitosti a optimalizuje za vás.</p>
+          <h2>Propojíte účty.<br /><em>Custela</em> řídí kampaně.</h2>
+          <p>Google Ads, Meta Ads i Sklik pod jednou střechou. Custela analyzuje, rozhoduje a optimalizuje — plně automaticky.</p>
         </div>
 
         <div className="flow-stage-wrap reveal">
@@ -94,7 +94,7 @@ export default function FlowSection() {
                 <div className="flow-hub-ring2" />
                 <div className="flow-hub-box">
                   <div className="flow-hub-logo">Custela<span>.</span></div>
-                  <div className="flow-hub-sub">Autopilot pro PPC</div>
+                  <div className="flow-hub-sub">Autonomní správa PPC</div>
                 </div>
               </div>
             </div>
@@ -105,24 +105,24 @@ export default function FlowSection() {
             {/* Right: Results */}
             <div className="flow-col flow-col-outputs">
               <div className="flow-res">
-                <div className="flow-res-num">+32%</div>
+                <div className="flow-res-num">+32 %</div>
                 <div className="flow-res-txt">
-                  <div className="flow-res-title">Vyšší ROAS</div>
-                  <div className="flow-res-desc">průměrný nárůst návratnosti do 90 dní</div>
+                  <div className="flow-res-title">ROAS</div>
+                  <div className="flow-res-desc">průměrný nárůst do 90 dní</div>
                 </div>
               </div>
               <div className="flow-res">
                 <div className="flow-res-num">24/7</div>
                 <div className="flow-res-txt">
-                  <div className="flow-res-title">Nonstop dohled</div>
-                  <div className="flow-res-desc">okamžitá reakce na anomálie v kampani</div>
+                  <div className="flow-res-title">monitoring</div>
+                  <div className="flow-res-desc">detekce a řešení anomálií v minutách</div>
                 </div>
               </div>
               <div className="flow-res">
-                <div className="flow-res-num">170+</div>
+                <div className="flow-res-num">3</div>
                 <div className="flow-res-txt">
-                  <div className="flow-res-title">Pravidel</div>
-                  <div className="flow-res-desc">optimalizuje na pozadí automaticky za vás</div>
+                  <div className="flow-res-title">platformy</div>
+                  <div className="flow-res-desc">jedna autonomní správa</div>
                 </div>
               </div>
             </div>
@@ -130,10 +130,10 @@ export default function FlowSection() {
         </div>
 
         <div className="flow-bottom reveal">
-          <div className="flow-bstat"><div className="v"><em>3</em> min</div><div className="l">propojení všech platforem</div></div>
-          <div className="flow-bstat"><div className="v">Pravidelný <em>refresh</em></div><div className="l">vždy aktuální data</div></div>
-          <div className="flow-bstat"><div className="v">Audit <em>zdarma</em></div><div className="l">odhalí úniky v rozpočtu</div></div>
-          <div className="flow-bstat"><div className="v"><em>0 Kč</em> start</div><div className="l">bez závazků a bez karty</div></div>
+          <div className="flow-bstat"><div className="v"><em>3</em> min</div><div className="l">propojení účtů</div></div>
+          <div className="flow-bstat"><div className="v">Každé <em>4 h</em></div><div className="l">cyklus optimalizace</div></div>
+          <div className="flow-bstat"><div className="v">Audit <em>zdarma</em></div><div className="l">analýza výkonu kampaní</div></div>
+          <div className="flow-bstat"><div className="v"><em>0 Kč</em> start</div><div className="l">bez karty, bez závazků</div></div>
         </div>
       </div>
     </section>

@@ -168,7 +168,7 @@ export default function FeaturesSection() {
             },
             {
               num: '02', badge: 'AI + 170 pravidel', title: 'Optimalizace, která nikdy nespí',
-              desc: 'AI agent analyzuje vaše účty 2× týdně a doporučí, kam přesunout rozpočty a které kampaně pozastavit. Vy rozhodujete, co se provede.',
+              desc: 'AI agent analyzuje vaše účty 2× týdně a automaticky přesouvá rozpočty, upravuje bidy a pozastavuje neefektivní kampaně.',
               visual: <OptimizationVisual />,
             },
             {
