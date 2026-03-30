@@ -7,14 +7,14 @@ export default function CTASection() {
         <div className="cta-box reveal">
           <div className="cta-pattern" />
           <div className="cta-glow" />
-          <div className="cta-label">Začněte za 3 minuty</div>
+          <div className="cta-label">Začněte ještě dnes</div>
           <h2>
-            Každá hodina bez automatizace<br />
-            vás stojí zákazníky.
+            Profesionální správa kampaní.<br />
+            5 % z tržeb. Nic víc.
           </h2>
           <p>
-            Propojte účty, Custela Agent převezme správu kampaní ještě&nbsp;dnes.
-            Žádné složité nastavování — stačí 3&nbsp;kroky.
+            Propojte účty za 3 minuty. Custela převezme správu kampaní
+            — plně automaticky.
           </p>
           <div className="cta-buttons">
             <a
@@ -44,13 +44,13 @@ export default function CTASection() {
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M3 8l4 4 6-6" />
               </svg>
-              7 dní zdarma
+              Bez paušálu
             </span>
             <span>
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M3 8l4 4 6-6" />
               </svg>
-              Zrušení kdykoliv
+              Nefunguje = neplatíte
             </span>
           </div>
         </div>
