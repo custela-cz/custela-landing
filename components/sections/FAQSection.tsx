@@ -5,35 +5,35 @@ import { useState } from 'react'
 const faqs = [
   {
     question: 'Co přesně Custela dělá?',
-    answer: 'Custela propojí vaše reklamní účty (Google Ads, Meta Ads, Sklik), automaticky vytváří kampaně, hledá optimalizace rozpočtů a generuje reporty. Všechno z jednoho dashboardu.',
+    answer: 'Custela autonomně řídí vaše PPC kampaně na Google Ads, Meta Ads i Skliku. Vytváří kampaně, optimalizuje bidy, přesouvá rozpočty a posílá reporty — vše plně automaticky, bez vašeho zásahu.',
   },
   {
     question: 'Jak rychle uvidím výsledky?',
-    answer: 'Většina uživatelů vidí první zlepšení ROAS do 7–14 dnů. Custela začne analyzovat data okamžitě po propojení účtů — doporučuje přesuny rozpočtů, úpravy bidů a pozastavení neefektivních klíčových slov. Čím víc dat AI agent nasbírá, tím přesnější doporučení dává.',
+    answer: 'První optimalizace proběhnou během hodin od propojení účtů. Měřitelné zlepšení výkonu kampaní obvykle vidíte do 2–4 týdnů.',
   },
   {
-    question: 'Můžu Custelu používat vedle svého stávajícího PPC specialisty?',
-    answer: 'Ano. Custela funguje jako doplněk — váš specialista má plný přehled o tom, co AI agent dělá, a může kdykoli zasáhnout. Spousta týmů používá Custelu pro rutinní optimalizaci a reporting, zatímco specialista se soustředí na strategii.',
+    question: 'Potřebuji k Custele někoho dalšího?',
+    answer: 'Ne. Custela zvládá kompletní správu kampaní sama. Pokud ale PPC specialistu nebo agenturu už máte, Custela jim může uvolnit ruce pro strategii.',
   },
   {
-    question: 'Co se stane s mými kampaněmi, když Custelu zruším?',
-    answer: 'Vaše kampaně zůstanou přesně tak, jak jsou — Custela nic nemaže ani neruší. Přijdete pouze o automatickou optimalizaci a reporting. Všechna data a nastavení zůstávají ve vašich reklamních účtech.',
+    question: 'Co se stane, když Custelu zruším?',
+    answer: 'Kampaně zůstanou ve vašich reklamních účtech přesně tak, jak jsou. Žádná data neztratíte — účty jsou vaše.',
   },
   {
-    question: 'Čím se Custela liší od jiných PPC nástrojů?',
-    answer: 'Custela je AI agent, ne jen dashboardový nástroj. Aktivně spravuje kampaně pomocí sady optimalizačních pravidel, podporuje Google Ads, Meta Ads i Sklik v jednom rozhraní a je stavěná pro český trh. Nemusíte nic nastavovat — propojíte účty a Custela převezme správu.',
+    question: 'Čím se Custela liší od jiných řešení?',
+    answer: 'Custela nejen analyzuje — sama jedná. Vytváří kampaně, optimalizuje rozpočty i bidy, a to plně automaticky, 24/7. A platíte jen 5 % z tržeb.',
   },
   {
-    question: 'Musím Custele dát přístup ke svým účtům?',
-    answer: 'Ano, propojení probíhá přes oficiální API platforem (OAuth). Custela potřebuje přístup k vašim reklamním účtům, aby mohla analyzovat kampaně a stahovat data. Vaše přístupy jsou v bezpečí.',
+    question: 'Je to bezpečné? Jaký přístup Custela potřebuje?',
+    answer: 'Custela potřebuje přístup k vašim reklamním účtům přes oficiální API. Data nikdy nesdílíme s třetími stranami. Přístup můžete kdykoliv odebrat.',
   },
   {
-    question: 'Pro koho je Custela určená?',
-    answer: 'Primárně pro e-shopy a marketéry, kteří spravují PPC reklamu na víc platformách a chtějí ušetřit čas. Hodí se jak pro menší e-shopy, tak pro agentury spravující více klientů.',
+    question: 'Pro koho je Custela?',
+    answer: 'Pro e-shopy, které chtějí profesionální správu kampaní bez paušálu. Od malých obchodů po velké inzerenty.',
   },
   {
-    question: 'Je trial opravdu zdarma?',
-    answer: 'Ano, 7 dní zdarma bez nutnosti zadávat kreditní kartu. Během trialu máte přístup ke všem funkcím, takže si Custelu můžete vyzkoušet naplno.',
+    question: 'Jak funguje platba 5 % z tržeb?',
+    answer: 'Platíte 5 % z tržeb, které vygenerují kampaně spravované Custelou. Žádný paušál, žádná platba předem. Pokud kampaně negenerují tržby, neplatíte nic.',
   },
 ]
 
