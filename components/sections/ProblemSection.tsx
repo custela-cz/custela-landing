@@ -137,9 +137,9 @@ export default function ProblemSection() {
             Ne za jejich výsledky.
           </h2>
           <p className="sh-sub">
-            Agentura si účtuje paušál bez ohledu na výkon. PPC specialista
-            stojí desítky tisíc měsíčně. Custela řídí kampaně autonomně
-            — a&nbsp;platíte jen za výsledky.
+            Většina e-shopů platí za správu kampaní fixní částku — bez ohledu
+            na to, jestli kampaně vydělávají. Custela to obrací: řídí kampaně
+            autonomně a&nbsp;platíte jen za výsledky.
           </p>
         </div>
         <div className="problem-grid" ref={gridRef}>
