@@ -149,19 +149,20 @@ export default function ProblemSection() {
             style={{ opacity: 0, willChange: 'transform' }}
           >
             <div className="problem-number">01</div>
-            <h3>Vaše kampaně můžou být lepší. Každý den.</h3>
+            <h3>Optimalizuje vše. Nepřetržitě.</h3>
             <p>
-              170+ pravidel kontroluje bidding, rozpočty, klíčová slova
-              i kreativy. Každých pár hodin, napříč všemi platformami.
+              Bidding, rozpočty, klíčová slova, kreativy — Custela kontroluje
+              vše na Google Ads, Meta Ads i Skliku. Automaticky, každých pár
+              hodin.
             </p>
             <div className="problem-bottom">
               <div className="problem-stat-row">
-                <span className="problem-stat-num">170+</span>
+                <span className="problem-stat-num">4 h</span>
                 <span className="problem-stat-label">
-                  optimalizačních pravidel
+                  cyklus optimalizace
                 </span>
               </div>
-              <div className="problem-arrow">&middot;</div>
+              <div className="problem-arrow">{'\u2192'}</div>
               <div className="problem-stat-row">
                 <span className="problem-stat-num problem-stat-green">
                   3
@@ -176,23 +177,23 @@ export default function ProblemSection() {
             style={{ opacity: 0, willChange: 'transform' }}
           >
             <div className="problem-number">02</div>
-            <h3>Kampaně nespí. Optimalizace by taky neměla.</h3>
+            <h3>Reaguje dřív, než si všimnete problému.</h3>
             <p>
-              Výkon kampaní se mění každou hodinu — nové aukce, jiné publikum,
-              sezónní výkyvy. Custela monitoruje a reaguje nepřetržitě,
-              i když vy nemusíte.
+              Propad výkonu, anomálie v rozpočtu, nefunkční reklama — Custela
+              detekuje a řeší v řádu minut. Vy dostanete notifikaci,
+              ne problém.
             </p>
             <div className="problem-bottom">
               <div className="problem-stat-row">
-                <span className="problem-stat-num">8 h</span>
+                <span className="problem-stat-num">hodiny</span>
                 <span className="problem-stat-label">
-                  klasická správa
+                  běžná reakce
                 </span>
               </div>
               <div className="problem-arrow">{'\u2192'}</div>
               <div className="problem-stat-row">
                 <span className="problem-stat-num problem-stat-green">
-                  24/7
+                  minuty
                 </span>
                 <span className="problem-stat-label">
                   s Custelou
