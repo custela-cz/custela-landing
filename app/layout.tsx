@@ -6,12 +6,12 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-H9P5ZD71TP'
 
 export const metadata: Metadata = {
   title: 'Custela — Autopilot pro vaši reklamu',
-  description: 'Custela vytvoří kampaně, optimalizuje rozpočty a generuje reporty. Google Ads, Meta Ads a Sklik na jednom dashboardu. Vyzkoušejte 7 dní zdarma.',
-  keywords: ['AI marketing', 'e-commerce', 'Google Ads', 'Meta Ads', 'Sklik', 'PPC', 'AI kampaně', 'automatizace reklam', 'AI optimalizace'],
+  description: 'Custela vytvoří kampaně, optimalizuje rozpočty a generuje reporty. Google Ads a Meta Ads na jednom dashboardu. Vyzkoušejte 7 dní zdarma.',
+  keywords: ['AI marketing', 'e-commerce', 'Google Ads', 'Meta Ads', 'PPC', 'AI kampaně', 'automatizace reklam', 'AI optimalizace'],
   authors: [{ name: 'Custela' }],
   openGraph: {
     title: 'Custela — Autopilot pro vaši reklamu',
-    description: 'Custela vytvoří kampaně, optimalizuje rozpočty a generuje reporty. Google Ads, Meta Ads a Sklik na jednom dashboardu.',
+    description: 'Custela vytvoří kampaně, optimalizuje rozpočty a generuje reporty. Google Ads a Meta Ads na jednom dashboardu.',
     url: 'https://custela.com',
     siteName: 'Custela',
     locale: 'cs_CZ',

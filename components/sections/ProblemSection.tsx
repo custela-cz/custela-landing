@@ -152,7 +152,7 @@ export default function ProblemSection() {
             <h3>Optimalizuje vše. Nepřetržitě.</h3>
             <p>
               Bidding, rozpočty, klíčová slova, kreativy — Custela kontroluje
-              vše na Google Ads, Meta Ads i Skliku. Automaticky, každých pár
+              vše na Google Ads i Meta Ads. Automaticky, každých pár
               hodin.
             </p>
             <div className="problem-bottom">

@@ -27,7 +27,7 @@ export default function HeroSection() {
               </h1>
               <p className="hero-sub reveal reveal-delay-2">
                 Custela vytvoří kampaně, průběžně je optimalizuje a vygeneruje
-                přehledné reporty. Google&nbsp;Ads, Meta&nbsp;Ads i Sklik —
+                přehledné reporty. Google&nbsp;Ads a Meta&nbsp;Ads —
                 vše v&nbsp;jednom dashboardu.
               </p>
               <div className="hero-buttons reveal reveal-delay-3">

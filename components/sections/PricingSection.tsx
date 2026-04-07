@@ -14,7 +14,7 @@ function formatCzk(n: number) {
 }
 
 const features = [
-  'Google Ads + Meta Ads + Sklik',
+  'Google Ads + Meta Ads',
   'Autonomní správa kampaní 24/7',
   'AI tvorba kampaní, textů i obrázků',
   'Dashboard + automatické reporty na email',

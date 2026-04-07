@@ -10,9 +10,8 @@ const LIME_LIGHT = '#a3e635'
 
 /* ── Layout ── */
 const platforms = [
-  { pos: [-2.5, 1.15, 0] as [number, number, number], label: 'Google Ads' },
-  { pos: [-2.5, 0, 0] as [number, number, number], label: 'Meta Ads' },
-  { pos: [-2.5, -1.15, 0] as [number, number, number], label: 'Sklik' },
+  { pos: [-2.5, 0.575, 0] as [number, number, number], label: 'Google Ads' },
+  { pos: [-2.5, -0.575, 0] as [number, number, number], label: 'Meta Ads' },
 ]
 const hub: [number, number, number] = [0, 0, 0]
 const outputs = [

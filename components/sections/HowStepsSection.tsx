@@ -12,7 +12,7 @@ export default function HowStepsSection() {
           <div className="how-step reveal">
             <div className="step-number">01</div>
             <h3>Propojte účty</h3>
-            <p>Google Ads, Meta Ads, Sklik — pár kliknutí a Custela má přístup.</p>
+            <p>Google Ads a Meta Ads — pár kliknutí a Custela má přístup.</p>
           </div>
           <div className="how-step reveal reveal-delay-1">
             <div className="step-number">02</div>

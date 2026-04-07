@@ -5,7 +5,7 @@ import { useState } from 'react'
 const faqs = [
   {
     question: 'Co přesně Custela dělá?',
-    answer: 'Custela autonomně řídí vaše PPC kampaně na Google Ads, Meta Ads i Skliku. Vytváří kampaně, optimalizuje bidy, přesouvá rozpočty a posílá reporty — vše plně automaticky, bez vašeho zásahu.',
+    answer: 'Custela autonomně řídí vaše PPC kampaně na Google Ads a Meta Ads. Vytváří kampaně, optimalizuje bidy, přesouvá rozpočty a posílá reporty — vše plně automaticky, bez vašeho zásahu.',
   },
   {
     question: 'Jak rychle uvidím výsledky?',

@@ -7,7 +7,7 @@ const compareItems = [
   { topic: 'Správa kampaní', agency: 'Závislá na kapacitě týmu', custela: 'Autonomní, 24/7' },
   { topic: 'Optimalizace', agency: 'Podle kapacity specialisty', custela: 'Průběžná, každé 4 hodiny' },
   { topic: 'Reporting', agency: 'Většinou 1× měsíčně', custela: 'Real-time dashboard + email reporty' },
-  { topic: 'Platformy', agency: 'Záleží na agentuře', custela: 'Google + Meta + Sklik' },
+  { topic: 'Platformy', agency: 'Záleží na agentuře', custela: 'Google Ads + Meta Ads' },
   { topic: 'Nasazení', agency: 'Dny až týdny', custela: '3 minuty' },
 ]
 

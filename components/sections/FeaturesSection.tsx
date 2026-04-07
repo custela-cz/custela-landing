@@ -134,13 +134,6 @@ function DashboardVisual() {
             <div className="fv-dash-minibar-fill" style={{ width: '55%', background: '#3b82f6' }} />
           </div>
         </div>
-        <div className="fv-dash-platform">
-          <div className="fv-dash-platform-name">Sklik</div>
-          <div className="fv-dash-platform-roas">ROAS 5.1×</div>
-          <div className="fv-dash-minibar">
-            <div className="fv-dash-minibar-fill" style={{ width: '84%', background: '#e63900' }} />
-          </div>
-        </div>
       </div>
       <div className="fv-dash-total">
         <span>Celkový ROAS</span>
@@ -178,7 +171,7 @@ export default function FeaturesSection() {
             },
             {
               num: '04', badge: 'Všechny platformy', title: 'Jeden pohled na všechny kampaně',
-              desc: 'Google Ads, Meta Ads, Sklik — výkon všech platforem na jednom místě. Data se synchronizují automaticky, v reálném čase.',
+              desc: 'Google Ads a Meta Ads — výkon všech platforem na jednom místě. Data se synchronizují automaticky, v reálném čase.',
               visual: <DashboardVisual />,
             },
           ].map((p, i) => (
