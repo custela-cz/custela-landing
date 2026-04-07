@@ -1,6 +1,7 @@
 'use client'
 
 import HeroCanvas from '../HeroCanvas'
+import { trackCta } from '@/lib/analytics'
 
 export default function HeroSection() {
   return (
@@ -33,6 +34,7 @@ export default function HeroSection() {
                 <a
                   href="https://app.custela.com/auth"
                   className="btn-primary btn-large"
+                  onClick={() => trackCta('hero', 'Chci platit jen za výsledky')}
                 >
                   Chci platit jen za výsledky{' '}
                   <svg

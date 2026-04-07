@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { trackCta } from '@/lib/analytics'
 
 const navLinks = [
   { href: '#features', label: 'Funkce' },
@@ -87,6 +88,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               href="https://app.custela.com/auth"
               className="btn-ghost nav-login"
               style={{ color: scrolled ? '#4b5563' : 'rgba(255,255,255,.7)' }}
+              onClick={() => trackCta('navbar', 'Přihlásit se')}
             >
               Přihlásit se
             </a>
@@ -94,6 +96,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               href="https://app.custela.com/auth"
               className="btn-primary"
               style={{ background: '#84cc16', color: '#000' }}
+              onClick={() => trackCta('navbar', 'Chci platit jen za výsledky')}
             >
               Chci platit jen za výsledky{' '}
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -179,7 +182,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
         <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px', width: '200px' }}>
           <a
             href="https://app.custela.com/auth"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => { trackCta('navbar_mobile', 'Přihlásit se'); setMenuOpen(false); }}
             style={{
               textAlign: 'center',
               fontSize: '14px',
@@ -193,7 +196,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
           <a
             href="https://app.custela.com/auth"
             className="btn-primary"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => { trackCta('navbar_mobile', 'Chci platit jen za výsledky'); setMenuOpen(false); }}
             style={{
               background: '#84cc16',
               color: '#000',

@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-H9P5ZD71TP'
 
 export const metadata: Metadata = {
   title: 'Custela — Autopilot pro vaši reklamu',
@@ -42,6 +45,22 @@ export default function RootLayout({
           data-settings-id="ZyNJbtMHQGd24M"
           async
         />
+        {/* GA4 — loaded with consent mode, Usercentrics manages consent state */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            wait_for_update: 500
+          });
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}', { send_page_view: true });
+        `}</Script>
       </head>
       <body>{children}</body>
     </html>

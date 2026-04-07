@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { trackCta } from '@/lib/analytics'
 
 const CheckIcon = () => (
   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
@@ -50,6 +51,7 @@ export default function PricingSection() {
             <a
               href="https://app.custela.com/auth"
               className="btn-primary btn-large cta-btn"
+              onClick={() => trackCta('pricing', 'Chci platit jen za výsledky')}
             >
               Chci platit jen za výsledky{' '}
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">

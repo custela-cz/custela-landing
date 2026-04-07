@@ -1,5 +1,7 @@
 'use client'
 
+import { trackCta } from '@/lib/analytics'
+
 export default function CTASection() {
   return (
     <section className="cta-section">
@@ -20,6 +22,7 @@ export default function CTASection() {
             <a
               href="https://app.custela.com/auth"
               className="btn-primary lime btn-large"
+              onClick={() => trackCta('cta_section', 'Chci platit jen za výsledky')}
             >
               Chci platit jen za výsledky
               <svg
