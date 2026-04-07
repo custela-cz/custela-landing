@@ -1,7 +1,16 @@
 /**
  * GA4 server-side tracking via /api/track (Measurement Protocol).
  * Client ID is stored in localStorage for session continuity.
+ *
+ * Uses absolute URL to avoid sendBeacon losing POST body on 307 redirects
+ * (custela.com → www.custela.com).
  */
+
+const GA_MEASUREMENT_ID = 'G-H9P5ZD71TP';
+const GA_API_SECRET = 'gEEUmhZmQ_yfvDCed0opsA';
+
+/** Direct GA4 Measurement Protocol URL — bypasses /api/track to avoid redirect issues */
+const MP_URL = `https://www.google-analytics.com/mp/collect?measurement_id=${GA_MEASUREMENT_ID}&api_secret=${GA_API_SECRET}`;
 
 function getClientId(): string {
   if (typeof window === 'undefined') return '';
@@ -14,26 +23,26 @@ function getClientId(): string {
 }
 
 /**
- * Send an event to GA4 via server-side Measurement Protocol.
- * Non-blocking — fires and forgets via navigator.sendBeacon with fetch fallback.
+ * Send an event to GA4 via Measurement Protocol (direct, no server proxy).
+ * Uses sendBeacon for reliability during navigation, fetch as fallback.
  */
 export function trackEvent(name: string, params?: Record<string, string | number>) {
   const clientId = getClientId();
   if (!clientId) return;
 
   const payload = JSON.stringify({
-    clientId,
+    client_id: clientId,
     events: [{ name, params }],
   });
 
-  // sendBeacon is reliable on navigation (link clicks)
+  // sendBeacon direct to GA4 — no redirect issues
   if (navigator.sendBeacon) {
-    const sent = navigator.sendBeacon('/api/track', new Blob([payload], { type: 'application/json' }));
+    const sent = navigator.sendBeacon(MP_URL, new Blob([payload], { type: 'application/json' }));
     if (sent) return;
   }
 
   // Fallback
-  fetch('/api/track', {
+  fetch(MP_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: payload,
