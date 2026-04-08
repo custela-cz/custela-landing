@@ -96,9 +96,9 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               href="https://app.custela.com/auth"
               className="btn-primary"
               style={{ background: '#84cc16', color: '#000' }}
-              onClick={() => trackCta('navbar', 'Chci platit jen za výsledky')}
+              onClick={() => trackCta('navbar', 'Vyzkoušet zdarma')}
             >
-              Chci platit jen za výsledky{' '}
+              Vyzkoušet zdarma{' '}
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M3 8h10M9 4l4 4-4 4" />
               </svg>
