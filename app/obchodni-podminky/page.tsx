@@ -24,7 +24,7 @@ export default function ObchodniPodminky() {
           <li>E-mail: <a href="mailto:info@custela.com">info@custela.com</a></li>
         </ul>
 
-        <p>1.3. <strong>Custela</strong> je cloudová SaaS platforma pro správu a automatizaci e-commerce marketingu, která umožňuje propojení reklamních platforem Google Ads, Meta Ads a Sklik.</p>
+        <p>1.3. <strong>Custela</strong> je cloudová SaaS platforma pro správu a automatizaci e-commerce marketingu, která umožňuje propojení reklamních platforem Google Ads a Meta Ads.</p>
 
         <p>1.4. Registrací a používáním služby Custela uživatel souhlasí s těmito Podmínkami.</p>
       </LegalSection>
@@ -36,7 +36,7 @@ export default function ObchodniPodminky() {
 
         <p>2.3. <strong>Účet</strong> – uživatelský účet vytvořený při registraci do Služby.</p>
 
-        <p>2.4. <strong>Reklamní kampaň</strong> – kampaň v reklamních systémech Google Ads, Meta Ads nebo Sklik, která je vytvořena, spravována nebo optimalizována prostřednictvím Služby.</p>
+        <p>2.4. <strong>Reklamní kampaň</strong> – kampaň v reklamních systémech Google Ads nebo Meta Ads, která je vytvořena, spravována nebo optimalizována prostřednictvím Služby.</p>
 
         <p>2.5. <strong>Přivedená objednávka</strong> – dokončená objednávka v e-shopu Uživatele, která je prostřednictvím měření Služby (server-side tracking, měřicí pixel, UTM parametry a napojená analytika) atribuována Reklamní kampani spravované ve Službě.</p>
 
@@ -101,7 +101,7 @@ export default function ObchodniPodminky() {
         <p>7.1. Služba zahrnuje:</p>
         <ul>
           <li>Přístup k webové aplikaci Custela (app.custela.com)</li>
-          <li>Propojení reklamních platforem (Google Ads, Meta Ads, Sklik)</li>
+          <li>Propojení reklamních platforem (Google Ads, Meta Ads)</li>
           <li>Analytické nástroje a reporty</li>
           <li>Automatizační funkce</li>
         </ul>
@@ -122,7 +122,7 @@ export default function ObchodniPodminky() {
         <p>8.1. Poskytovatel nenese odpovědnost za:</p>
         <ul>
           <li>Škody způsobené nesprávným používáním Služby uživatelem</li>
-          <li>Výpadky nebo chyby na straně třetích stran (Google, Meta, Seznam)</li>
+          <li>Výpadky nebo chyby na straně třetích stran (Google, Meta)</li>
           <li>Ztrátu dat způsobenou uživatelem nebo třetími stranami</li>
           <li>Nepřímé nebo následné škody (ušlý zisk, ztráta dat apod.)</li>
         </ul>
