@@ -101,7 +101,6 @@ export default function ObchodniPodminky() {
         <p>7.1. Služba zahrnuje:</p>
         <ul>
           <li>Přístup k webové aplikaci Custela (app.custela.com)</li>
-          <li>Propojení reklamních platforem (Google Ads, Meta Ads)</li>
           <li>Analytické nástroje a reporty</li>
           <li>Automatizační funkce</li>
         </ul>
@@ -109,8 +108,7 @@ export default function ObchodniPodminky() {
         <p>7.2. <strong>Zákaznická podpora:</strong></p>
         <ul>
           <li>E-mailová podpora na adrese <a href="mailto:info@custela.com">info@custela.com</a></li>
-          <li>AI chatbot dostupný v aplikaci</li>
-          <li>Odpověď na dotazy obvykle do 2 pracovních dnů</li>
+          <li>Odpověď na dotazy obvykle do 24 hodin</li>
         </ul>
 
         <p>7.3. Poskytovatel se zavazuje zajistit dostupnost Služby minimálně <strong>99 % času</strong> měsíčně, s výjimkou plánované údržby.</p>
