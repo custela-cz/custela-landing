@@ -78,12 +78,7 @@ export default function ObchodniPodminky() {
 
         <p>5.2. Faktura je vystavena nejpozději do 10. dne následujícího kalendářního měsíce a zaslána elektronicky na e-mail uvedený při registraci.</p>
 
-        <p>5.3. <strong>Způsoby platby:</strong></p>
-        <ul>
-          <li>Bankovní převod na základě faktury</li>
-          <li>Online platba kartou přes platební bránu Stripe</li>
-          <li>Inkaso kartou (automatická strhávání na konci zúčtovacího období) po souhlasu uživatele</li>
-        </ul>
+        <p>5.3. <strong>Způsob platby:</strong> bankovní převod na základě faktury na účet uvedený na faktuře.</p>
 
         <p>5.4. Splatnost faktury je <strong>14 dnů</strong> od vystavení, není-li sjednáno jinak.</p>
 

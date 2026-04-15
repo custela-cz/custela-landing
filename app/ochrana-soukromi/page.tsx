@@ -10,7 +10,7 @@ export default function OchranaSoukromi() {
   return (
     <LegalPage
       title="Zásady ochrany osobních údajů"
-      effectiveDate="3. března 2026"
+      effectiveDate="15. dubna 2026"
     >
       <LegalSection title="1. Úvod">
         <p>1.1. Tyto Zásady ochrany osobních údajů (dále jen &bdquo;Zásady&ldquo;) popisují, jak shromažďujeme, používáme, ukládáme a chráníme vaše osobní údaje při používání služby Custela.</p>
@@ -54,7 +54,6 @@ export default function OchranaSoukromi() {
           rows={[
             ['Google Ads', 'ID účtu, statistiky kampaní, výdaje na reklamu'],
             ['Meta Ads', 'ID účtu, statistiky kampaní, výdaje na reklamu'],
-            ['Sklik', 'ID účtu, statistiky kampaní, výdaje na reklamu'],
           ]}
         />
 
@@ -93,7 +92,6 @@ export default function OchranaSoukromi() {
           rows={[
             ['Vercel Inc.', 'Hosting aplikace', 'USA (DPF certifikace)'],
             ['Supabase Inc.', 'Databáze a autentizace', 'USA (DPF certifikace)'],
-            ['Stripe Inc.', 'Zpracování plateb', 'USA (DPF certifikace)'],
             ['Google LLC', 'Analytika, OAuth přihlášení', 'USA (DPF certifikace)'],
           ]}
         />
@@ -183,7 +181,6 @@ export default function OchranaSoukromi() {
           headers={['Poskytovatel', 'Účel', 'Více informací']}
           rows={[
             ['Google Analytics', 'Webová analytika', 'policies.google.com/privacy'],
-            ['Stripe', 'Zpracování plateb', 'stripe.com/privacy'],
           ]}
         />
 
