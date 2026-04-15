@@ -40,7 +40,7 @@ export default function ObchodniPodminky() {
 
         <p>2.5. <strong>Přivedená objednávka</strong> – dokončená objednávka v e-shopu Uživatele, která je prostřednictvím měření Služby (server-side tracking, měřicí pixel, UTM parametry a napojená analytika) atribuována Reklamní kampani spravované ve Službě.</p>
 
-        <p>2.6. <strong>Obrat přivedených objednávek</strong> – součet hodnot (bez DPH a bez nákladů na dopravu) všech Přivedených objednávek za kalendářní měsíc.</p>
+        <p>2.6. <strong>Obrat přivedených objednávek</strong> – součet hodnot všech Přivedených objednávek za kalendářní měsíc.</p>
 
         <p>2.7. <strong>Provize</strong> – odměna Poskytovatele za poskytování Služby, stanovená jako procentuální podíl z Obratu přivedených objednávek.</p>
       </LegalSection>
