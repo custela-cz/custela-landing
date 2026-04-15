@@ -66,7 +66,7 @@ export default function ObchodniPodminky() {
 
         <p>4.4. <strong>Atribuce objednávek:</strong> Přivedené objednávky jsou identifikovány na základě měřicích nástrojů Služby (server-side tracking, měřicí pixel, UTM parametry, napojená webová analytika a e-shop). Uživatel je povinen poskytnout Poskytovateli součinnost při implementaci měření a zajistit jeho funkčnost.</p>
 
-        <p>4.5. <strong>Vratky a storna:</strong> Pokud je Přivedená objednávka stornována nebo vrácena do konce následujícího kalendářního měsíce po zaúčtování, bude odpovídající část Provize započtena proti Provizi následujícího období, případně vrácena.</p>
+        <p>4.5. <strong>Vratky a storna se nezohledňují.</strong> Provize se vypočítává z Obratu přivedených objednávek tak, jak byl vykázán Službou v daném kalendářním měsíci. Pozdější storna, vratky, reklamace ani nezaplacení objednávky zákazníkem nemají vliv na výši již vyúčtované Provize.</p>
 
         <p>4.6. Poskytovatel si vyhrazuje právo výši Provize změnit. O změně bude uživatel informován minimálně <strong>30 dnů předem</strong> e-mailem nebo oznámením v aplikaci.</p>
 
