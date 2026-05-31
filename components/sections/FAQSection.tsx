@@ -5,11 +5,19 @@ import { useState } from 'react'
 const faqs = [
   {
     question: 'Co přesně Custela dělá?',
-    answer: 'Custela autonomně řídí vaše PPC kampaně na Google Ads a Meta Ads. Vytváří kampaně, optimalizuje bidy, přesouvá rozpočty a posílá reporty — vše plně automaticky, bez vašeho zásahu.',
+    answer: 'Custela autonomně řídí vaše PPC kampaně na Google Ads a Meta Ads: vytváří je, optimalizuje bidy a rozpočty a posílá reporty. Navíc hlídá produktový feed, opravuje obrázky a měří skutečné konverze. Vše automaticky, 24/7.',
+  },
+  {
+    question: 'Mám nad tím kontrolu?',
+    answer: 'Ano. Denní i měsíční rozpočet a klíčová nastavení vždy schvalujete vy — strop útraty máte plně pod kontrolou a kdykoli můžete zasáhnout. Automatika navíc běží pod dohledem našich PPC specialistů, takže nic zásadního se nestane bez kontroly.',
   },
   {
     question: 'Jak rychle uvidím výsledky?',
-    answer: 'První optimalizace proběhnou během hodin od propojení účtů. Měřitelné zlepšení výkonu kampaní obvykle vidíte do 2–4 týdnů.',
+    answer: 'Kampaně připravíme a spustíme obvykle do 24–48 hodin. Měřitelné zlepšení výkonu pak vidíte zpravidla během prvních 2–4 týdnů, kdy se kampaně učí.',
+  },
+  {
+    question: 'Co se stane s mými stávajícími kampaněmi?',
+    answer: 'Nepřebíráme je ani nevypínáme. Custela spustí vlastní kampaně na své straně a vaše stávající běží dál vedle nich. Klidně koexistují.',
   },
   {
     question: 'Potřebuji k Custele někoho dalšího?',
@@ -17,23 +25,27 @@ const faqs = [
   },
   {
     question: 'Co se stane, když Custelu zruším?',
-    answer: 'Kampaně zůstanou ve vašich reklamních účtech přesně tak, jak jsou. Žádná data neztratíte — účty jsou vaše.',
+    answer: 'Skončit můžete kdykoli, bez výpovědní lhůty a závazků. Kampaně, které pro vás Custela vytvořila, ale běží na naší straně a zůstávají u nás. Vaše vlastní původní kampaně i reklamní účty se přitom nemění a zůstávají vaše.',
   },
   {
     question: 'Čím se Custela liší od jiných řešení?',
-    answer: 'Custela nejen analyzuje — sama jedná. Vytváří kampaně, optimalizuje rozpočty i bidy, a to plně automaticky, 24/7. A platíte jen 5 % z tržeb.',
+    answer: 'Custela nejen analyzuje, sama jedná: vytváří kampaně a optimalizuje rozpočty i bidy plně automaticky, 24/7. A platíte jen 3–5 % z obratu z reklamy, žádný paušál.',
   },
   {
     question: 'Je to bezpečné? Jaký přístup Custela potřebuje?',
-    answer: 'Custela potřebuje přístup k vašim reklamním účtům přes oficiální API. Data nikdy nesdílíme s třetími stranami. Přístup můžete kdykoliv odebrat.',
+    answer: 'Reklamní účty na Googlu i Metě vám nastavíme a spravujeme my, přes oficiální rozhraní. Od vás potřebujeme jen informace o sortimentu a podklady (kreativu), žádné heslo k e-shopu.',
   },
   {
     question: 'Pro koho je Custela?',
     answer: 'Pro e-shopy, které chtějí profesionální správu kampaní bez paušálu. Od malých obchodů po velké inzerenty.',
   },
   {
-    question: 'Jak funguje platba 5 % z tržeb?',
-    answer: 'Platíte 5 % z tržeb, které vygenerují kampaně spravované Custelou. Žádný paušál, žádná platba předem. Pokud kampaně negenerují tržby, neplatíte nic.',
+    question: 'Funguje to i s mým e-shopem?',
+    answer: 'Ano. Custela funguje s jakýmkoli e-shopem, který umí vyexportovat produktový XML feed — Shoptet, Shopify, WooCommerce, Upgates i vlastní řešení, bez ohledu na velikost obratu.',
+  },
+  {
+    question: 'Jak funguje platba 3–5 % z obratu?',
+    answer: 'Platíte 3–5 % z obratu, který vygenerují kampaně spravované Custelou — sazba klesá s vaším měsíčním obratem (do 500 tis. 5 %, 500 tis.–1 mil. 4 %, nad 1 mil. 3 %). Žádný paušál, žádná platba předem. Když kampaně negenerují obrat, neplatíte nic.',
   },
 ]
 
@@ -49,7 +61,7 @@ export default function FAQSection() {
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
           <div className="section-label">FAQ</div>
-          <h2>Časté dotazy</h2>
+          <h2 style={{ fontWeight: 800 }}>Časté dotazy</h2>
         </div>
         <div className="faq-list reveal">
           {faqs.map((faq, i) => (
@@ -60,7 +72,7 @@ export default function FAQSection() {
               </div>
               <div
                 className="faq-answer"
-                style={{ maxHeight: openIndex === i ? '300px' : '0' }}
+                style={{ maxHeight: openIndex === i ? '380px' : '0' }}
               >
                 <div className="faq-answer-inner">{faq.answer}</div>
               </div>

@@ -3,97 +3,105 @@
 import { useState } from 'react'
 import { trackCta } from '@/lib/analytics'
 
-const CheckIcon = () => (
-  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M3 8l4 4 6-6" />
-  </svg>
-)
-
-function formatCzk(n: number) {
-  return Math.round(n).toLocaleString('cs-CZ')
-}
-
-const features = [
+const FEATURES = [
   'Google Ads + Meta Ads',
   'Autonomní správa kampaní 24/7',
-  'AI tvorba kampaní, textů i obrázků',
-  'Dashboard + automatické reporty na email',
+  'Tvorba kampaní, textů i obrázků',
+  'Dashboard + reporty na e-mail',
   'Neomezený počet kampaní',
 ]
 
-export default function PricingSection() {
-  const [revenue, setRevenue] = useState(200000)
+const TIERS = [
+  { rate: 5, range: 'do 500 000 Kč', max: 500000, agency: '15 000–30 000 Kč' },
+  { rate: 4, range: '500 000 – 1 000 000 Kč', max: 1000000, agency: '30 000–45 000 Kč' },
+  { rate: 3, range: '1 000 000 Kč a víc', max: Infinity, agency: '45 000–100 000 Kč' },
+]
+function tierFor(o: number) {
+  return TIERS.find((t) => o < t.max) ?? TIERS[TIERS.length - 1]
+}
+function fmt(n: number) {
+  return Math.round(n).toLocaleString('cs-CZ')
+}
 
-  const custelaCost = revenue * 0.05
+const CheckIcon = () => (
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l4 4 6-7" /></svg>
+)
+
+export default function PricingSection() {
+  const [obrat, setObrat] = useState(200000)
+  const tier = tierFor(obrat)
+  const rate = tier.rate
+  const cost = (obrat * rate) / 100
 
   return (
     <section className="pricing-section" id="pricing">
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
           <div className="section-label">Ceník</div>
-          <h2>5 % z tržeb. Nic víc.</h2>
-          <p className="sh-sub">Žádný paušál, žádný závazek. Platíte jen podíl z toho, co kampaně vydělají.</p>
+          <h2 style={{ fontWeight: 800 }}>3–5 % z obratu. Nic víc.</h2>
+          <p className="sh-sub">Žádný paušál, žádný závazek. Čím větší obrat, tím nižší sazba.</p>
         </div>
 
-        {/* Single centered pricing card */}
-        <div className="reveal" style={{ maxWidth: 480, margin: '0 auto' }}>
-          <div className="pricing-card featured" style={{ textAlign: 'center' }}>
-            <div className="pricing-value" style={{ fontSize: 56 }}>5 %</div>
-            <div className="pricing-desc" style={{ fontSize: 16, marginBottom: 8 }}>z tržeb z kampaní</div>
-            <div style={{ fontSize: 13, color: '#9ca3af', marginBottom: 28 }}>
-              Vše zahrnuto. Žádné skryté poplatky.
-            </div>
-            <ul className="pricing-features" style={{ marginBottom: 28 }}>
-              {features.map((f) => (
-                <li key={f}><CheckIcon />{f}</li>
-              ))}
-            </ul>
-            <a
-              href="https://app.custela.com/auth"
-              className="btn-primary btn-large cta-btn"
-              onClick={() => trackCta('pricing', 'Chci platit jen za výsledky')}
-            >
-              Chci platit jen za výsledky{' '}
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <path d="M3 8h10M9 4l4 4-4 4" />
-              </svg>
-            </a>
-            <div style={{ fontSize: 12, color: '#9ca3af', marginTop: 16 }}>
-              Bez kreditní karty. Bez závazků. Nefunguje = neplatíte.
-            </div>
-          </div>
-        </div>
-
-        {/* Calculator */}
-        <div className="savings-calc reveal" style={{ marginTop: 48 }}>
-          <div className="savings-calc__header">
-            <h3>Kolik vás Custela bude stát?</h3>
-            <p>Zadejte měsíční tržby z kampaní</p>
-          </div>
-          <div className="savings-calc__input">
+        <div className="price-wrap reveal">
+          {/* Kalkulačka */}
+          <div className="price-calc">
+            <div className="price-eyebrow">Spočítejte si cenu</div>
+            <div className="price-obrat">{fmt(obrat)} Kč<span> / měsíční obrat z reklamy</span></div>
             <input
+              className="price-range"
               type="range"
               min={50000}
               max={2000000}
               step={10000}
-              value={revenue}
-              onChange={(e) => setRevenue(Number(e.target.value))}
+              value={obrat}
+              onChange={(e) => setObrat(Number(e.target.value))}
+              aria-label="Měsíční obrat z reklamy"
             />
-            <div className="savings-calc__budget">{formatCzk(revenue)} Kč / měsíc</div>
-          </div>
-          <div className="savings-calc__results">
-            <div className="savings-calc__card">
-              <div className="savings-calc__label">Custela</div>
-              <div className="savings-calc__value savings-calc__value--green">{formatCzk(custelaCost)} Kč/měs</div>
-              <div className="savings-calc__sub">5 % z tržeb</div>
+            <div className="price-result">
+              <div className="price-cost">{fmt(cost)} Kč<span>/ měsíc</span></div>
+              <div className="price-rate">vaše sazba <strong>{rate} %</strong> z obratu</div>
             </div>
-            <div className="savings-calc__card">
-              <div className="savings-calc__label">Typická agentura</div>
-              <div className="savings-calc__value">15 000–30 000 Kč</div>
-              <div className="savings-calc__sub">fixní paušál</div>
+            <div className="price-legend">
+              <div className="price-legend-head">Sazba podle měsíčního obratu z reklamy</div>
+              {TIERS.map((t) => (
+                <div key={t.rate} className={`price-legend-row ${rate === t.rate ? 'active' : ''}`}>
+                  <span className="price-legend-range">{t.range}</span>
+                  <span className="price-legend-rate">{t.rate} %</span>
+                </div>
+              ))}
             </div>
+            <div className="price-vs">
+              <div className="price-vs-item price-vs-cust">
+                <span>Custela</span>
+                <strong>{fmt(cost)} Kč/měs</strong>
+              </div>
+              <div className="price-vs-item">
+                <span>Typická agentura</span>
+                <strong>{tier.agency}</strong>
+              </div>
+            </div>
+            <p className="price-note">Platíte jen když kampaně generují obrat. Nefunguje = neplatíte.</p>
           </div>
-          <p className="savings-calc__note">Platíte jen když kampaně generují tržby. Nefunguje = neplatíte.</p>
+
+          {/* Vše v ceně */}
+          <div className="price-plan">
+            <div className="price-eyebrow">Vše v ceně</div>
+            <h3 className="price-plan-h3">Kompletní autonomní správa</h3>
+            <ul className="price-features">
+              {FEATURES.map((f) => (
+                <li key={f}><span className="price-fcheck"><CheckIcon /></span>{f}</li>
+              ))}
+            </ul>
+            <a
+              href="https://app.custela.com/auth"
+              className="btn-primary btn-large price-cta"
+              onClick={() => trackCta('pricing', 'Vyzkoušet zdarma')}
+            >
+              Vyzkoušet zdarma{' '}
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
+            </a>
+            <div className="price-trust">Bez kreditní karty · Bez závazků · Nefunguje = neplatíte</div>
+          </div>
         </div>
       </div>
     </section>

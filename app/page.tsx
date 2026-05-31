@@ -4,14 +4,12 @@ import { useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import HeroSection from '@/components/sections/HeroSection'
-import PlatformSection from '@/components/sections/PlatformSection'
 import DashboardSection from '@/components/sections/DashboardSection'
 import ProblemSection from '@/components/sections/ProblemSection'
-import FlowSection from '@/components/sections/FlowSection'
 import FeaturesSection from '@/components/sections/FeaturesSection'
+import ExtrasSection from '@/components/sections/ExtrasSection'
 import HowStepsSection from '@/components/sections/HowStepsSection'
 import CompareSection from '@/components/sections/CompareSection'
-import StatsSection from '@/components/sections/StatsSection'
 
 import PricingSection from '@/components/sections/PricingSection'
 import FAQSection from '@/components/sections/FAQSection'
@@ -33,16 +31,19 @@ export default function Home() {
 
   return (
     <main>
+      <div className="site-aurora" aria-hidden="true">
+        <div className="sa-orb sa-1" />
+        <div className="sa-orb sa-2" />
+        <div className="sa-orb sa-3" />
+      </div>
       <Navbar />
       <HeroSection />
-      <PlatformSection />
       <DashboardSection />
       <ProblemSection />
-      <FlowSection />
-      <FeaturesSection />
       <HowStepsSection />
+      <FeaturesSection />
+      <ExtrasSection />
       <CompareSection />
-      <StatsSection />
 
       <PricingSection />
       <FAQSection />

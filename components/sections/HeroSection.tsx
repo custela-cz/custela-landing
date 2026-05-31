@@ -1,19 +1,12 @@
 'use client'
 
-import HeroCanvas from '../HeroCanvas'
+import { Megaphone, ScanLine, Image as ImageIcon, Radar } from 'lucide-react'
 import { trackCta } from '@/lib/analytics'
 
 export default function HeroSection() {
   return (
     <>
       <section className="hero">
-        <div className="hero-orbs">
-          <div className="orb orb-1" />
-          <div className="orb orb-2" />
-          <div className="orb orb-3" />
-        </div>
-        <div className="hero-grid" />
-        <HeroCanvas />
         <div className="max-w-[1160px] mx-auto px-6 hero-content">
           <div className="hero-inner">
             <div className="hero-text">
@@ -22,21 +15,24 @@ export default function HeroSection() {
                 Automatizace reklamy pro e-shopy
               </div>
               <h1 className="reveal reveal-delay-1">
-                Profesionální{' '}
-                <em>správa kampaní.</em> Platíte jen za&nbsp;výsledky
+                <span className="h1-line">
+                  Profesionální <em>správa&nbsp;kampaní</em>.
+                </span>
+                <span className="h1-line">Platíte jen za&nbsp;výsledky.</span>
               </h1>
               <p className="hero-sub reveal reveal-delay-2">
-                Custela vytvoří kampaně, průběžně je optimalizuje a vygeneruje
-                přehledné reporty. Google&nbsp;Ads a Meta&nbsp;Ads —
+                Custela vytváří a 24/7 optimalizuje vaše kampaně na
+                Google&nbsp;Ads a Meta&nbsp;Ads. Navíc hlídá produktový feed,
+                opravuje obrázky produktů a měří skutečné konverze —
                 vše v&nbsp;jednom dashboardu.
               </p>
               <div className="hero-buttons reveal reveal-delay-3">
                 <a
                   href="https://app.custela.com/auth"
                   className="btn-primary btn-large"
-                  onClick={() => trackCta('hero', 'Chci platit jen za výsledky')}
+                  onClick={() => trackCta('hero', 'Chci víc objednávek')}
                 >
-                  Chci platit jen za výsledky{' '}
+                  Chci víc objednávek{' '}
                   <svg
                     viewBox="0 0 16 16"
                     fill="none"
@@ -69,45 +65,46 @@ export default function HeroSection() {
                   Bez závazků
                 </span>
               </div>
+
+              <div className="hero-proof reveal reveal-delay-5">
+                <div className="hero-proof-avatars">
+                  <span style={{ background: '#84cc16' }}>JN</span>
+                  <span style={{ background: '#65a30d', color: '#fff' }}>PK</span>
+                  <span style={{ background: '#a3e635' }}>MR</span>
+                  <span className="hero-proof-more">+</span>
+                </div>
+                <span className="hero-proof-text">
+                  <strong>10+&nbsp;let zkušeností</strong> s&nbsp;marketingem,{' '}
+                  <strong>stovky projektů</strong> za&nbsp;sebou
+                </span>
+              </div>
             </div>
 
             <div className="hero-cards-wrap">
-              <div className="glass-card gc-1">
-                <div className="gc-label">PNO</div>
-                <div className="gc-main">
-                  <span className="gc-value">12,4 %</span>
-                  <span className="gc-trend">↓ 18 %</span>
+              <div className="hero-cards-plane">
+                <div className="glass-card gc-1">
+                  <span className="hero-feat-icon"><Megaphone size={18} strokeWidth={2} /></span>
+                  <div className="hero-feat-title">Správa kampaní</div>
+                  <div className="hero-feat-desc">Google&nbsp;Ads &amp; Meta na autopilota</div>
                 </div>
-                <div className="gc-bar">
-                  <div className="gc-bar-fill" style={{ width: '82%' }} />
-                </div>
-              </div>
 
-              <div className="glass-card gc-2">
-                <div className="gc-label">Konverzní poměr</div>
-                <div className="gc-main">
-                  <span className="gc-value">3,8 %</span>
-                  <span className="gc-trend">↑ 23 %</span>
+                <div className="glass-card gc-2">
+                  <span className="hero-feat-icon"><ScanLine size={18} strokeWidth={2} /></span>
+                  <div className="hero-feat-title">Produktový feed</div>
+                  <div className="hero-feat-desc">Hlídá a opravuje chyby</div>
                 </div>
-                <div className="gc-bar">
-                  <div className="gc-bar-fill" style={{ width: '65%' }} />
-                </div>
-              </div>
 
-              <div className="glass-card gc-3">
-                <div className="gc-label">Hodnota objednávky</div>
-                <div className="gc-main">
-                  <span className="gc-value">1 247 Kč</span>
+                <div className="glass-card gc-3">
+                  <span className="hero-feat-icon"><ImageIcon size={18} strokeWidth={2} /></span>
+                  <div className="hero-feat-title">Vylepšená prezentace obrázků</div>
+                  <div className="hero-feat-desc">Čisté fotky pro reklamu</div>
                 </div>
-                <div className="gc-sub">průměr tento týden</div>
-              </div>
 
-              <div className="glass-card gc-4">
-                <div className="gc-status-row">
-                  <span className="gc-dot" />
-                  Custela provedla 12 optimalizací
+                <div className="glass-card gc-4">
+                  <span className="hero-feat-icon"><Radar size={18} strokeWidth={2} /></span>
+                  <div className="hero-feat-title">Hlídáme vaše měření</div>
+                  <div className="hero-feat-desc">Skutečné objednávky</div>
                 </div>
-                <div className="gc-sub">Poslední analýza 14:32</div>
               </div>
             </div>
           </div>

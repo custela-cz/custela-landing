@@ -12,19 +12,19 @@ export default function CTASection() {
           <div className="cta-label">Začněte ještě dnes</div>
           <h2>
             Profesionální správa kampaní.<br />
-            5 % z tržeb. Nic víc.
+            3–5 % z obratu. Nic víc.
           </h2>
           <p>
-            Propojte účty za 3 minuty. Custela převezme správu kampaní
-            — plně automaticky.
+            Účty i kampaně nastavíme za vás. Custela je pak řídí a optimalizuje
+            24/7, vy se soustředíte na podnikání.
           </p>
           <div className="cta-buttons">
             <a
               href="https://app.custela.com/auth"
               className="btn-primary lime btn-large"
-              onClick={() => trackCta('cta_section', 'Chci platit jen za výsledky')}
+              onClick={() => trackCta('cta_section', 'Chci víc objednávek')}
             >
-              Chci platit jen za výsledky
+              Chci víc objednávek
               <svg
                 viewBox="0 0 16 16"
                 fill="none"

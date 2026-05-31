@@ -52,7 +52,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               fontSize: '22px',
               fontWeight: 800,
               letterSpacing: '-0.03em',
-              color: scrolled || menuOpen ? '#111827' : '#fff',
+              color: '#111827',
               transition: 'color .3s',
             }}
           >
@@ -73,7 +73,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
                   style={{
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: scrolled ? '#6b7280' : 'rgba(255,255,255,.7)',
+                    color: '#6b7280',
                     transition: 'color .2s',
                   }}
                 >
@@ -87,7 +87,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
             <a
               href="https://app.custela.com/auth"
               className="btn-ghost nav-login"
-              style={{ color: scrolled ? '#4b5563' : 'rgba(255,255,255,.7)' }}
+              style={{ color: '#4b5563' }}
               onClick={() => trackCta('navbar', 'Přihlásit se')}
             >
               Přihlásit se
@@ -115,7 +115,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               display: 'block',
               width: '22px',
               height: '2px',
-              background: scrolled || menuOpen ? '#111827' : '#fff',
+              background: '#111827',
               transition: 'all .3s',
               transform: menuOpen ? 'rotate(45deg) translate(4px, 4px)' : 'none',
             }} />
@@ -123,7 +123,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               display: 'block',
               width: '22px',
               height: '2px',
-              background: scrolled || menuOpen ? '#111827' : '#fff',
+              background: '#111827',
               transition: 'all .3s',
               opacity: menuOpen ? 0 : 1,
               marginTop: '5px',
@@ -132,7 +132,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               display: 'block',
               width: '22px',
               height: '2px',
-              background: scrolled || menuOpen ? '#111827' : '#fff',
+              background: '#111827',
               transition: 'all .3s',
               transform: menuOpen ? 'rotate(-45deg) translate(4px, -4px)' : 'none',
               marginTop: '5px',
