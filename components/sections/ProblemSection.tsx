@@ -59,7 +59,7 @@ export default function ProblemSection() {
             </p>
           </div>
 
-          {/* S Custelou — 5 % z tržeb */}
+          {/* S Custelou — 3–5 % z obratu */}
           <div
             className="reveal reveal-delay-1"
             style={{
@@ -89,9 +89,9 @@ export default function ProblemSection() {
             </div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 4 }}>
               <span style={{ fontSize: 'clamp(34px, 4.5vw, 48px)', fontWeight: 800, letterSpacing: '-0.03em', color: '#111827', lineHeight: 1 }}>
-                5&nbsp;%
+                3–5&nbsp;%
               </span>
-              <span style={{ fontSize: 16, fontWeight: 600, color: '#65a30d' }}>z tržeb</span>
+              <span style={{ fontSize: 16, fontWeight: 600, color: '#65a30d' }}>z obratu</span>
             </div>
             <div style={{ fontSize: 14, color: '#65a30d', fontWeight: 600 }}>platíte jen z výsledků</div>
             <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.6, margin: 0 }}>
