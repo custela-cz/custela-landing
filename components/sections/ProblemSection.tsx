@@ -25,7 +25,7 @@ export default function ProblemSection() {
         <div className="grid md:grid-cols-2 gap-5">
           {/* Dnes — fixní paušál */}
           <div
-            className="reveal"
+            className="reveal problem-cmp-card"
             style={{
               background: '#fafafa',
               border: '1px solid #e5e7eb',
@@ -61,7 +61,7 @@ export default function ProblemSection() {
 
           {/* S Custelou — 3–5 % z obratu */}
           <div
-            className="reveal reveal-delay-1"
+            className="reveal reveal-delay-1 problem-cmp-card"
             style={{
               background: 'linear-gradient(160deg, rgba(101,163,13,0.06), rgba(101,163,13,0.02))',
               border: '1.5px solid rgba(101,163,13,0.35)',

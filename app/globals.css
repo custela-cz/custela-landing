@@ -2384,6 +2384,96 @@ footer {
   .cta-label { font-size: 11px; }
 }
 
+/* ============================================================ */
+/* PHONE POLISH — mobile-only refinements (≤480px / ≤400px).    */
+/* Everything below is inside a phone media query, so desktop   */
+/* and tablet (≥481px) render byte-identically. Density,        */
+/* readability and tap-target fixes for 360–430px phones.       */
+/* ============================================================ */
+@media (max-width: 480px) {
+  /* ── Hero: readability + tighter vertical rhythm ── */
+  .hero-text h1 { margin: 16px 0; }
+  .hero-sub { font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+  .hero-trust { margin-top: 16px; }
+  .hero-proof { margin-top: 18px; }
+  .hero-buttons { width: 100%; }
+  .hero-buttons .btn-primary { width: 100%; justify-content: center; }
+
+  /* ── Dashboard: radius proportional to small card ── */
+  .dashboard-preview { border-radius: 14px; }
+
+  /* ── Problem: kill the 96px inline bottom padding + tighten cards ── */
+  /* (inline styles need !important; scoped to phones only) */
+  .problem-section { padding: 16px 0 48px !important; }
+  .problem-cmp-card { padding: 24px 20px !important; gap: 10px !important; }
+
+  /* ── How it works: compact the step visuals & rhythm ── */
+  .hfs-visual { height: 108px; margin: 10px 0 8px; }
+  .how-flow { gap: 22px 14px; margin-top: 28px; }
+  .hfs-cap { font-size: 13px; line-height: 1.45; max-width: 100%; }
+  .acct-hub { width: 42px; height: 42px; }
+  .acct-hub svg { width: 20px; height: 20px; }
+  .acct-chip { padding: 6px 9px; font-size: 11px; }
+
+  /* ── Features bento: remove dead vertical gap in stacked cards ── */
+  .bento { margin-top: 28px; gap: 12px; }
+  .bento-tile { min-height: 0; gap: 12px; }
+  .bento-ic { margin-bottom: 0; }
+  .bento-hero { min-height: auto; }
+
+  /* ── Extras: drop the desktop 80px section padding & header gap ── */
+  .extras-section { padding: 40px 0; }
+  .extras-grid { margin-top: 24px; gap: 16px; }
+  .extra-card { padding: 22px 18px; }
+
+  /* ── Compare: tighter cards & rhythm ── */
+  .compare-section { padding: 44px 0; }
+  .cmp-grid { margin-top: 28px; gap: 16px; }
+  .cmp-card { padding: 22px 18px; border-radius: 20px; }
+  .cmp-head { margin-bottom: 16px; }
+  .cmp-card ul { gap: 13px; }
+
+  /* ── Pricing: fix mid-number wrap + tighten calculator cards ── */
+  .price-wrap { margin-top: 28px; gap: 16px; }
+  .price-calc, .price-plan { padding: 22px 18px; border-radius: 20px; }
+  .price-vs { grid-template-columns: 1fr; }
+  .price-vs-item strong { white-space: nowrap; }
+
+  /* ── FAQ: stop long questions colliding with the "+" ── */
+  .faq-question { gap: 14px; align-items: flex-start; }
+  .faq-icon { flex-shrink: 0; line-height: 1.4; }
+
+  /* ── CTA: keep trust badges on a wrapped row, trim bottom ── */
+  .cta-box { padding: 36px 18px 28px; }
+  .cta-trust { flex-direction: row; flex-wrap: wrap; gap: 10px 16px; justify-content: center; align-items: center; }
+  .cta-trust span { gap: 8px; }
+
+  /* ── Footer: real tap targets + tighter seam ── */
+  footer { padding: 36px 0 28px; }
+  .footer-grid { gap: 20px; margin-bottom: 28px; }
+  .footer-col a { padding: 9px 0; font-size: 14px; }
+  .footer-brand a { display: inline-block; padding: 8px 0; font-size: 14px; }
+  .footer-bottom { font-size: 13px; }
+
+  /* ── Navbar: enlarge hamburger hit area to 44px ── */
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin-right: -8px;
+  }
+}
+
+/* ── Smallest phones (≤400px): keep the How-it-works flow in 2 columns ── */
+/* (overrides the legacy single-column rule that made the section ~2200px tall) */
+@media (max-width: 400px) {
+  .how-flow { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ==================== */
 /* LEGAL CONTENT        */
 /* ==================== */
