@@ -2408,12 +2408,18 @@ footer {
   .problem-cmp-card { padding: 24px 20px !important; gap: 10px !important; }
 
   /* ── How it works: compact the step visuals & rhythm ── */
-  .hfs-visual { height: 108px; margin: 10px 0 8px; }
-  .how-flow { gap: 22px 14px; margin-top: 28px; }
+  .hfs-visual { height: 122px; margin: 8px 0 6px; }
+  .how-flow { gap: 20px 14px; margin-top: 28px; }
   .hfs-cap { font-size: 13px; line-height: 1.45; max-width: 100%; }
   .acct-hub { width: 42px; height: 42px; }
   .acct-hub svg { width: 20px; height: 20px; }
   .acct-chip { padding: 6px 9px; font-size: 11px; }
+  /* Step-3 checklist is real DOM (not SVG) — shrink it so it fits the
+     compacted visual box instead of overflowing onto title/caption */
+  .v2-list { gap: 7px; max-width: 138px; }
+  .v2-row { padding: 6px 11px; font-size: 12px; }
+  .v2-check { width: 18px; height: 18px; }
+  .v2-check svg { width: 11px; height: 11px; }
 
   /* ── Features bento: remove dead vertical gap in stacked cards ── */
   .bento { margin-top: 28px; gap: 12px; }
@@ -2472,6 +2478,20 @@ footer {
 /* (overrides the legacy single-column rule that made the section ~2200px tall) */
 @media (max-width: 400px) {
   .how-flow { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Background aurora on phones — match desktop's airy white-with-soft- ── */
+/* green look. The full-size fixed orbs are wider than a phone viewport, so  */
+/* they fill it into a flat green wash; shrink them and push them past the   */
+/* edges so the page stays mostly white with soft green glows (a real        */
+/* gradient) and all text keeps full contrast. Desktop (≥641px) untouched.   */
+@media (max-width: 640px) {
+  .site-aurora { filter: blur(80px); }
+  .sa-1 { width: 300px; height: 300px; top: -2%; right: -34%; opacity: 0.30; }
+  .sa-2 { width: 270px; height: 270px; top: 32%; left: -38%; opacity: 0.18; }
+  .sa-3 { width: 250px; height: 250px; top: 66%; right: -34%; opacity: 0.20; }
+  /* Hero's own orbs: keep a soft top glow like desktop, not a full wash */
+  .hero-orbs { opacity: 0.14; }
 }
 
 /* ==================== */
