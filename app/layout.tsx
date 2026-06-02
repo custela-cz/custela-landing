@@ -65,12 +65,8 @@ export default function RootLayout({
           />
         )}
 
-        {/* Microsoft Clarity — statistics cookies; gated by Cookiebot auto-blocking */}
-        <script
-          dangerouslySetInnerHTML={{ __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "w82xbw8l38");` }}
-        />
-
-        {/* GA4 — gated via Google Consent Mode (default denied above; Cookiebot sends the update) */}
+        {/* GA4 — loads with Google Consent Mode denied; the consent bridge below sends the update.
+            Clarity & Meta are NOT loaded here anymore — they load only after consent (see bridge). */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
@@ -79,24 +75,33 @@ export default function RootLayout({
           gtag('js', new Date());
           gtag('config', '${GA_ID}', { send_page_view: true });
         `}</Script>
-        {/* Meta Pixel — PageView tracking + cookie for CAPI matching */}
-        <Script id="meta-pixel" strategy="afterInteractive">{`
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-          n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
-          'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '1256800479990130');
-          fbq('track', 'PageView');
+        {/* Consent bridge — Cookiebot auto-blocking is unreliable with Next's script injection, so
+            gate trackers explicitly: map Cookiebot consent -> Google Consent Mode, and load
+            Meta Pixel (marketing) / Clarity (statistics) only after the matching consent. */}
+        <Script id="consent-bridge" strategy="afterInteractive">{`
+          function custelaApplyConsent(c){
+            gtag('consent','update',{
+              ad_storage: c.marketing?'granted':'denied',
+              ad_user_data: c.marketing?'granted':'denied',
+              ad_personalization: c.marketing?'granted':'denied',
+              analytics_storage: c.statistics?'granted':'denied'
+            });
+            if(c.statistics && !window.__clarityLoaded){
+              window.__clarityLoaded=true;
+              (function(cc,l,a,r,i,t,y){cc[a]=cc[a]||function(){(cc[a].q=cc[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","w82xbw8l38");
+            }
+            if(c.marketing && !window.__fbqLoaded){
+              window.__fbqLoaded=true;
+              !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init','1256800479990130');
+              fbq('track','PageView');
+            }
+          }
+          function custelaConsentHandler(){ if(window.Cookiebot&&window.Cookiebot.consent){ custelaApplyConsent(window.Cookiebot.consent); } }
+          window.addEventListener('CookiebotOnConsentReady', custelaConsentHandler);
+          window.addEventListener('CookiebotOnAccept', custelaConsentHandler);
+          if(window.Cookiebot&&window.Cookiebot.hasResponse){ custelaConsentHandler(); }
         `}</Script>
-        <noscript>
-          <img height="1" width="1" style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=1256800479990130&ev=PageView&noscript=1"
-          />
-        </noscript>
       </head>
       <body>
         {/* Google Tag Manager (noscript) — must be first in <body> */}
