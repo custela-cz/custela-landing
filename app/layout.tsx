@@ -3,6 +3,7 @@ import Script from 'next/script'
 import './globals.css'
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-H9P5ZD71TP'
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-WL825VB4'
 
 export const metadata: Metadata = {
   title: 'Custela — Autopilot pro vaši reklamu',
@@ -39,29 +40,32 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-        {/* Microsoft Clarity — loaded before CMP as a regular script tag */}
+
+        {/* Google Consent Mode v2 — default denied. Must run FIRST, before GTM/Cookiebot/GA4,
+            so nothing stores cookies until Cookiebot (loaded via GTM) sends the consent update. */}
+        <script
+          dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});` }}
+        />
+
+        {/* Google Tag Manager — loads the Cookiebot CMP (configured as a Consent Initialization tag in GTM).
+            Enable by setting NEXT_PUBLIC_GTM_ID (e.g. GTM-XXXXXXX). */}
+        {GTM_ID && (
+          <script
+            dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');` }}
+          />
+        )}
+
+        {/* Microsoft Clarity — statistics cookies; gated by Cookiebot auto-blocking */}
         <script
           dangerouslySetInnerHTML={{ __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "w82xbw8l38");` }}
         />
-        <script
-          id="usercentrics-cmp"
-          src="https://web.cmp.usercentrics.eu/ui/loader.js"
-          data-settings-id="ZyNJbtMHQGd24M"
-          async
-        />
-        {/* GA4 — loaded with consent mode, Usercentrics manages consent state */}
+
+        {/* GA4 — gated via Google Consent Mode (default denied above; Cookiebot sends the update) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
         <Script id="ga4-init" strategy="afterInteractive">{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('consent', 'default', {
-            analytics_storage: 'denied',
-            ad_storage: 'denied',
-            wait_for_update: 500
-          });
           gtag('js', new Date());
           gtag('config', '${GA_ID}', { send_page_view: true });
         `}</Script>
@@ -84,7 +88,20 @@ export default function RootLayout({
           />
         </noscript>
       </head>
-      <body>{children}</body>
+      <body>
+        {/* Google Tag Manager (noscript) — must be first in <body> */}
+        {GTM_ID && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+        )}
+        {children}
+      </body>
     </html>
   )
 }
