@@ -41,14 +41,23 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        {/* Google Consent Mode v2 — default denied. Must run FIRST, before GTM/Cookiebot/GA4,
-            so nothing stores cookies until Cookiebot (loaded via GTM) sends the consent update. */}
+        {/* Google Consent Mode v2 — default denied. Runs first so nothing stores cookies
+            until Cookiebot sends the consent update. */}
         <script
           dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});` }}
         />
 
-        {/* Google Tag Manager — loads the Cookiebot CMP (configured as a Consent Initialization tag in GTM).
-            Enable by setting NEXT_PUBLIC_GTM_ID (e.g. GTM-XXXXXXX). */}
+        {/* Cookiebot CMP — direct deployment, loaded early (before trackers) with auto-blocking
+            so it gates cookie-setting scripts and drives Google Consent Mode. */}
+        <script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="eef7bbe1-a3bd-4b6e-be34-018f1a39886b"
+          data-blockingmode="auto"
+          type="text/javascript"
+        />
+
+        {/* Google Tag Manager (optional now — Cookiebot is loaded directly above, not via GTM) */}
         {GTM_ID && (
           <script
             dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');` }}
