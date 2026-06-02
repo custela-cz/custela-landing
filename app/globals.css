@@ -308,7 +308,11 @@ a {
   position: relative;
   z-index: 10;
   width: 100%;
-  padding: 112px 0 64px;
+  /* vertical only — let the container's px-6 provide the side gutter
+     (a `padding` shorthand here would zero out px-6 and glue the hero
+     to the screen edges below 1160px) */
+  padding-top: 112px;
+  padding-bottom: 64px;
 }
 .hero-inner {
   display: grid;
@@ -602,7 +606,7 @@ a {
 }
 @media (max-width: 768px) {
   .hero { min-height: auto; }
-  .hero-content { padding: 120px 0 60px; }
+  .hero-content { padding-top: 120px; padding-bottom: 60px; }
   .hero-text h1 { font-size: 32px; color: #111827; }
   .hero-sub { color: #6b7280; font-size: 16px; line-height: 1.7; }
   .hero .btn-secondary { display: none; }
@@ -2344,7 +2348,7 @@ footer {
 /* ── Small phone (≤480px) ── */
 @media (max-width: 480px) {
   /* Hero */
-  .hero-content { padding: 110px 0 50px; }
+  .hero-content { padding-top: 110px; padding-bottom: 50px; }
   .hero-text h1 { font-size: 28px; }
   .hero-sub { font-size: 14px; }
   .hero-trust { gap: 12px; }

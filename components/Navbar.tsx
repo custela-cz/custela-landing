@@ -196,7 +196,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
           <a
             href="https://app.custela.com/auth"
             className="btn-primary"
-            onClick={() => { trackCta('navbar_mobile', 'Chci platit jen za výsledky'); setMenuOpen(false); }}
+            onClick={() => { trackCta('navbar_mobile', 'Vyzkoušet zdarma'); setMenuOpen(false); }}
             style={{
               background: '#84cc16',
               color: '#000',
@@ -204,7 +204,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               justifyContent: 'center',
             }}
           >
-            Chci platit jen za výsledky
+            Vyzkoušet zdarma
           </a>
         </div>
       </div>
