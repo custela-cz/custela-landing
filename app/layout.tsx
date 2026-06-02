@@ -47,14 +47,15 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});` }}
         />
 
-        {/* Cookiebot CMP — direct deployment, loaded early (before trackers) with auto-blocking
-            so it gates cookie-setting scripts and drives Google Consent Mode. */}
-        <script
+        {/* Cookiebot CMP — direct deployment. next/script beforeInteractive (the documented way to
+            load a consent manager) so it executes before hydration; auto-blocking gates trackers
+            and drives Google Consent Mode. A raw <script src> here does NOT execute in App Router. */}
+        <Script
           id="Cookiebot"
           src="https://consent.cookiebot.com/uc.js"
           data-cbid="eef7bbe1-a3bd-4b6e-be34-018f1a39886b"
           data-blockingmode="auto"
-          type="text/javascript"
+          strategy="beforeInteractive"
         />
 
         {/* Google Tag Manager (optional now — Cookiebot is loaded directly above, not via GTM) */}
