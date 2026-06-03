@@ -2739,3 +2739,19 @@ footer {
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
+
+/* ============================================================
+   Cookiebot Widget — ikony aktuálního stavu: modrá → černá
+   ------------------------------------------------------------
+   ✓ checkmarky (Preferenční/Statistické/Marketingové) + 🔒 zámek
+   (Nutné) v panelu "Cookie settings". Lime by na bílé byla
+   nečitelná → černá. Používáme JEN `color` (žádný fill/stroke),
+   aby se nezměnil tvar ikon — funguje pro SVG s currentColor.
+   ============================================================ */
+#CookiebotWidget svg,
+#CookiebotWidget .CookiebotWidget-consent-details,
+#CookiebotWidget .CookiebotWidget-consents-list,
+#CookiebotWidget .CookiebotWidget-consent-detail,
+#CookiebotWidget .CookiebotWidget-consent-detail svg {
+  color: #0A0A0A !important;
+}
