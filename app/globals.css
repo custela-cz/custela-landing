@@ -2664,3 +2664,62 @@ footer {
   transform: scale(0.78) !important;
   transform-origin: left center !important;
 }
+
+/* ============================================================
+   Cookiebot Widget — panel "Cookie settings" (změna souhlasu)
+   ------------------------------------------------------------
+   Toto je SAMOSTATNÝ prvek (#CookiebotWidget), ne hlavní lišta
+   (#CybotCookiebotDialog) — proto ho předchozí pravidla míjela
+   a zůstával modrý. Modrá → lime, ať to ladí.
+   ============================================================ */
+
+/* Velikost tlačítek widgetu — sjednotit s lištou */
+#CookiebotWidget .CookiebotWidget-btn,
+#CookiebotWidget #CookiebotWidget-btn-change,
+#CookiebotWidget #CookiebotWidget-btn-withdraw {
+  padding: 7px 16px !important;
+  font-size: 12.5px !important;
+  min-height: 36px !important;
+  line-height: 1.2 !important;
+  border-radius: 8px !important;
+}
+
+/* Primární akce ("Změnit souhlas"): lime pozadí + ČERNÝ text */
+#CookiebotWidget #CookiebotWidget-btn-change,
+#CookiebotWidget .CookiebotWidget-btn-primary {
+  background-color: #BFFF37 !important;
+  border-color: #BFFF37 !important;
+  color: #0A0A0A !important;
+}
+#CookiebotWidget #CookiebotWidget-btn-change:hover,
+#CookiebotWidget .CookiebotWidget-btn-primary:hover {
+  background-color: #A8E62E !important;
+  border-color: #A8E62E !important;
+  color: #0A0A0A !important;
+}
+
+/* Sekundární ("Odebrat souhlas"): bez modré, neutrální tmavý obrys */
+#CookiebotWidget #CookiebotWidget-btn-withdraw {
+  background-color: transparent !important;
+  border-color: #0A0A0A !important;
+  color: #0A0A0A !important;
+}
+#CookiebotWidget #CookiebotWidget-btn-withdraw:hover {
+  background-color: #D4FF70 !important;
+  border-color: #0A0A0A !important;
+  color: #0A0A0A !important;
+}
+
+/* "Zobrazit detaily" odkaz: tmavý text + lime podtržení */
+#CookiebotWidget .CookiebotWidget-show-consent-details,
+#CookiebotWidget .CookiebotWidget-hide-consent-details {
+  color: #0A0A0A !important;
+  text-decoration-color: #A8E62E !important;
+}
+
+/* Fokus / klávesnice → lime */
+#CookiebotWidget button:focus-visible,
+#CookiebotWidget a:focus-visible {
+  outline: 2px solid #A8E62E !important;
+  outline-offset: 2px !important;
+}
