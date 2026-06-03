@@ -2727,15 +2727,13 @@ footer {
 /* ============================================================
    Cookiebot lišta — pravý sloupec tlačítek vertikálně na střed
    ------------------------------------------------------------
-   Tlačítka byla zarovnaná nahoru → mezera dole. Vystředíme je
-   v rámci výšky lišty (best-effort přes pravděpodobné kontejnery
-   — neexistující selektory nemají efekt).
+   #CybotCookiebotDialogFooter je sloupec v gridu
+   .CybotCookiebotDialogContentWrapper (logo | text | tlačítka).
+   Roztahoval se na celou výšku → tlačítka nahoře, mezera dole.
+   align-self: center ho zmenší na obsah a vystředí svisle.
    ============================================================ */
-#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonsContainer,
-#CybotCookiebotDialog #CybotCookiebotDialogBodyButtons,
-#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonsDecline {
+#CybotCookiebotDialog #CybotCookiebotDialogFooter {
   align-self: center !important;
-  justify-content: center !important;
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
@@ -2743,15 +2741,18 @@ footer {
 /* ============================================================
    Cookiebot Widget — ikony aktuálního stavu: modrá → černá
    ------------------------------------------------------------
-   ✓ checkmarky (Preferenční/Statistické/Marketingové) + 🔒 zámek
-   (Nutné) v panelu "Cookie settings". Lime by na bílé byla
-   nečitelná → černá. Používáme JEN `color` (žádný fill/stroke),
-   aby se nezměnil tvar ikon — funguje pro SVG s currentColor.
+   ✓ checkmark / ✗ cross / 🔒 zámek v panelu "Cookie settings".
+   Skutečná třída je Cookiebotwidget-consent-icon (malé "w") a
+   barva je na `fill` (ne currentColor) — proto dřívější `color`
+   nezabral. Ikony jsou plné tvary s vyříznutým otvorem, takže
+   fill: black je bezpečné (nezmění se v plochu). Lime by na bílé
+   byla nečitelná → černá. Přidán i chevron u "Zobrazit detaily".
    ============================================================ */
-#CookiebotWidget svg,
-#CookiebotWidget .CookiebotWidget-consent-details,
-#CookiebotWidget .CookiebotWidget-consents-list,
-#CookiebotWidget .CookiebotWidget-consent-detail,
-#CookiebotWidget .CookiebotWidget-consent-detail svg {
-  color: #0A0A0A !important;
+#CookiebotWidget .Cookiebotwidget-consent-icon svg,
+#CookiebotWidget .Cookiebotwidget-consent-icon svg path,
+#CookiebotWidget .CookiebotWidget-show-consent-details svg,
+#CookiebotWidget .CookiebotWidget-show-consent-details svg path,
+#CookiebotWidget .CookiebotWidget-hide-consent-details svg,
+#CookiebotWidget .CookiebotWidget-hide-consent-details svg path {
+  fill: #0A0A0A !important;
 }
