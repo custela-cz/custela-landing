@@ -2538,9 +2538,9 @@ footer {
 #CybotCookiebotDialog #CybotCookiebotDialogBodyButtonDecline,
 #CybotCookiebotDialog #CybotCookiebotDialogBodyButtonAccept,
 #CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonAccept {
-  padding: 7px 16px !important;
-  font-size: 12.5px !important;
-  min-height: 36px !important;
+  padding: 10px 20px !important;
+  font-size: 13px !important;
+  min-height: 42px !important;
   line-height: 1.2 !important;
   border-radius: 8px !important;
 }
@@ -2677,9 +2677,9 @@ footer {
 #CookiebotWidget .CookiebotWidget-btn,
 #CookiebotWidget #CookiebotWidget-btn-change,
 #CookiebotWidget #CookiebotWidget-btn-withdraw {
-  padding: 7px 16px !important;
-  font-size: 12.5px !important;
-  min-height: 36px !important;
+  padding: 10px 20px !important;
+  font-size: 13px !important;
+  min-height: 42px !important;
   line-height: 1.2 !important;
   border-radius: 8px !important;
 }
@@ -2722,4 +2722,20 @@ footer {
 #CookiebotWidget a:focus-visible {
   outline: 2px solid #A8E62E !important;
   outline-offset: 2px !important;
+}
+
+/* ============================================================
+   Cookiebot lišta — pravý sloupec tlačítek vertikálně na střed
+   ------------------------------------------------------------
+   Tlačítka byla zarovnaná nahoru → mezera dole. Vystředíme je
+   v rámci výšky lišty (best-effort přes pravděpodobné kontejnery
+   — neexistující selektory nemají efekt).
+   ============================================================ */
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonsContainer,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtons,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonsDecline {
+  align-self: center !important;
+  justify-content: center !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
 }
