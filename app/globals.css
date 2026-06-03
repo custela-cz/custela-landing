@@ -2517,3 +2517,101 @@ footer {
 .legal-content table th { @apply text-left px-4 py-3 border font-semibold; background: #f9fafb; color: #111827; border-color: #e5e7eb; }
 .legal-content table td { @apply px-4 py-3 border; color: #6b7280; border-color: #e5e7eb; }
 .legal-content table tr:hover td { background: #f9fafb; }
+
+/* ============================================================
+   Cookiebot consent banner — Custela brand override
+   ------------------------------------------------------------
+   Cookiebot (data-cbid v layout.tsx) injektuje svůj DOM
+   (#CybotCookiebot*) a styly za běhu přes JS, takže pro
+   spolehlivé přebití používáme dvojitou ID specificitu +
+   !important. Cíl: modrá → lime (#BFFF37) a o něco menší
+   tlačítka (min. 40px kvůli dotyku na mobilu).
+   Pozn.: textové odkazy záměrně NEpřebarvujeme na lime — lime
+   na bílé je nečitelná, zůstávají tmavé.
+   ============================================================ */
+
+/* --- Velikost všech tlačítek (kompaktnější, ale stále tappable) --- */
+#CybotCookiebotDialog .CybotCookiebotDialogBodyButton,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonCustomize,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonDecline,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonAccept,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonAccept {
+  padding: 9px 18px !important;
+  font-size: 13px !important;
+  min-height: 40px !important;
+  line-height: 1.2 !important;
+  border-radius: 8px !important;
+}
+
+/* --- Primární akce ("Povolit vše" / OK): lime pozadí, ČERNÝ text --- */
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonAccept,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonAccept {
+  background-color: #BFFF37 !important;
+  border-color: #BFFF37 !important;
+  color: #0A0A0A !important;
+}
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll:hover,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonAccept:hover,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonAccept:hover {
+  background-color: #A8E62E !important;
+  border-color: #A8E62E !important;
+  color: #0A0A0A !important;
+}
+
+/* --- Sekundární / orámovaná tlačítka (Odmítnout, Povolit výběr,
+       Přizpůsobit): zbavit modré, neutrální tmavý obrys --- */
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonDecline,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonCustomize {
+  background-color: transparent !important;
+  border-color: #0A0A0A !important;
+  color: #0A0A0A !important;
+}
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonDecline:hover,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection:hover,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonCustomize:hover {
+  background-color: #D4FF70 !important;
+  border-color: #0A0A0A !important;
+  color: #0A0A0A !important;
+}
+
+/* --- Přepínače kategorií (slider): modrá → lime v zapnutém stavu --- */
+#CybotCookiebotDialog input.CybotCookiebotDialogBodyLevelButtonInput:checked
+  + .CybotCookiebotDialogBodyLevelButtonSlider,
+#CybotCookiebotDialog input:checked + .CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: #A8E62E !important;
+}
+
+/* --- Detail / vybraný tab + akcentové orámování → lime --- */
+#CybotCookiebotDialog .CybotCookiebotDialogDetailBodyContentTabsItemSelected {
+  border-color: #A8E62E !important;
+  color: #0A0A0A !important;
+}
+
+/* --- Textové odkazy: čitelně tmavé, lime jen jako podtržení/akcent --- */
+#CybotCookiebotDialog a,
+#CybotCookiebotDialog .CybotCookiebotDialogBodyLink,
+#CybotCookiebotDialog .CybotCookiebotDialogDetailBodyContentTextAbout a {
+  color: #0A0A0A !important;
+  text-decoration: underline !important;
+  text-decoration-color: #A8E62E !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 2px !important;
+}
+#CybotCookiebotDialog a:hover,
+#CybotCookiebotDialog .CybotCookiebotDialogBodyLink:hover,
+#CybotCookiebotDialog .CybotCookiebotDialogDetailBodyContentTextAbout a:hover {
+  text-decoration-color: #BFFF37 !important;
+}
+
+/* --- Fokus / klávesnice → lime místo modré --- */
+#CybotCookiebotDialog a:focus-visible,
+#CybotCookiebotDialog button:focus-visible,
+#CybotCookiebotDialog input:focus-visible,
+#CybotCookiebotDialog .CybotCookiebotDialogBodyButton:focus-visible {
+  outline: 2px solid #A8E62E !important;
+  outline-offset: 2px !important;
+}
