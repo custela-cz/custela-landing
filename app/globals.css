@@ -2538,9 +2538,9 @@ footer {
 #CybotCookiebotDialog #CybotCookiebotDialogBodyButtonDecline,
 #CybotCookiebotDialog #CybotCookiebotDialogBodyButtonAccept,
 #CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonAccept {
-  padding: 9px 18px !important;
-  font-size: 13px !important;
-  min-height: 40px !important;
+  padding: 7px 16px !important;
+  font-size: 12.5px !important;
+  min-height: 36px !important;
   line-height: 1.2 !important;
   border-radius: 8px !important;
 }
@@ -2614,4 +2614,53 @@ footer {
 #CybotCookiebotDialog .CybotCookiebotDialogBodyButton:focus-visible {
   outline: 2px solid #A8E62E !important;
   outline-offset: 2px !important;
+}
+
+/* ============================================================
+   Cookiebot consent banner — kompaktnější rozměry
+   ------------------------------------------------------------
+   Zmenšení celé lišty (odsazení, nadpis, text, sušenka) +
+   přepínačů kategorií, ať to výškově ladí s menšími tlačítky.
+   Přepínače zmenšujeme přes transform: scale() — zachová to
+   zarovnání posuvného knoflíku (na rozdíl od přepisu rozměrů).
+   ============================================================ */
+
+/* Celá lišta — nižší vnitřní odsazení */
+#CybotCookiebotDialog,
+#CybotCookiebotDialog #CybotCookiebotDialogBody {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+/* Nadpis */
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContentTitle {
+  font-size: 14px !important;
+  line-height: 1.25 !important;
+  margin-bottom: 4px !important;
+}
+
+/* Tělo textu */
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContentText,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContentText p {
+  font-size: 12.5px !important;
+  line-height: 1.4 !important;
+}
+
+/* Sušenka / logo vlevo — zmenšit (best-effort dle šablony) */
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContentControls,
+#CybotCookiebotDialog .CybotCookiebotDialogBodyLogo,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContentLogo {
+  max-width: 56px !important;
+  max-height: 56px !important;
+}
+
+/* Štítky kategorií (Nutné / Preferenční / …) — menší písmo */
+#CybotCookiebotDialog .CybotCookiebotDialogBodyLevelButtonDescription {
+  font-size: 12.5px !important;
+}
+
+/* Přepínače kategorií — menší (scale zachová zarovnání knoflíku) */
+#CybotCookiebotDialog .CybotCookiebotDialogBodyLevelButtonSlider {
+  transform: scale(0.78) !important;
+  transform-origin: left center !important;
 }
