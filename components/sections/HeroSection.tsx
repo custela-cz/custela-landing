@@ -80,7 +80,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="hero-cards-wrap">
+            <div className="hero-cards-wrap reveal reveal-delay-1">
               <div className="hero-cards-plane">
                 <div className="glass-card gc-1">
                   <span className="hero-feat-icon"><Megaphone size={18} strokeWidth={2} /></span>
