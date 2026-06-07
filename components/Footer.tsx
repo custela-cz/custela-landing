@@ -15,6 +15,7 @@ export default function Footer() {
             <a href="#features">Funkce</a>
             <a href="#how-it-works">Jak to funguje</a>
             <a href="#pricing">Ceník</a>
+            <a href="https://status.custela.com" target="_blank" rel="noopener noreferrer">Stav služby</a>
           </div>
           <div className="footer-col">
             <h4>Právní dokumenty</h4>
