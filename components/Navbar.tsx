@@ -101,8 +101,7 @@ export default function Navbar({
             </a>
             <a
               href="https://app.custela.com/auth"
-              className="btn-primary"
-              style={{ background: '#84cc16', color: '#000' }}
+              className="btn-primary lime"
               onClick={() => trackCta('navbar', t.tryFree)}
             >
               {t.tryFree}{' '}
@@ -202,11 +201,9 @@ export default function Navbar({
           </a>
           <a
             href="https://app.custela.com/auth"
-            className="btn-primary"
+            className="btn-primary lime"
             onClick={() => { trackCta('navbar_mobile', t.tryFree); setMenuOpen(false); }}
             style={{
-              background: '#84cc16',
-              color: '#000',
               textAlign: 'center',
               justifyContent: 'center',
             }}

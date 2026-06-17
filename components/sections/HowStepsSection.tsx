@@ -231,8 +231,7 @@ export default function HowStepsSection({ lang = 'cs' }: { lang?: 'cs' | 'en' })
         <div className="how-cta reveal">
           <a
             href="https://app.custela.com/auth"
-            className="btn-primary btn-large"
-            style={{ background: '#84cc16', color: '#000' }}
+            className="btn-primary btn-large lime"
             onClick={() => trackCta('how-it-works', t.ctaText)}
           >
             {t.ctaText}{' '}
