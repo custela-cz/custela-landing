@@ -38,7 +38,7 @@ export default function Home({ lang = 'cs' }: { lang?: Lang }) {
       </div>
       <Navbar lang={lang} />
       <HeroSection lang={lang} />
-      <DashboardSection lang={lang} />
+      <DashboardSection />
       <ProblemSection lang={lang} />
       <HowStepsSection lang={lang} />
       <FeaturesSection lang={lang} />

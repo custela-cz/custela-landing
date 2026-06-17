@@ -3,11 +3,10 @@
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import DashboardWalkthrough from './DashboardWalkthrough'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function DashboardSection({ lang = 'cs' }: { lang?: 'cs' | 'en' }) {
+export default function DashboardSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const imageWrapRef = useRef<HTMLDivElement>(null)
   const glowRef = useRef<HTMLDivElement>(null)
@@ -104,9 +103,14 @@ export default function DashboardSection({ lang = 'cs' }: { lang?: 'cs' | 'en' }
           <div
             className="dashboard-preview"
             ref={imageWrapRef}
-            style={{ position: 'relative', zIndex: 1, opacity: 0, padding: '18px 18px 14px' }}
+            style={{ position: 'relative', zIndex: 1, opacity: 0 }}
           >
-            <DashboardWalkthrough lang={lang} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/dashboard.png"
+              alt="Custela dashboard"
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
         </div>
       </div>
