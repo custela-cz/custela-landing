@@ -1,20 +1,23 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { UI, type Lang } from '@/lib/i18n'
 
 interface LegalPageProps {
   title: string
   effectiveDate: string
   children: React.ReactNode
+  lang?: Lang
 }
 
 export default function LegalPage({
   title,
   effectiveDate,
   children,
+  lang = 'cs',
 }: LegalPageProps) {
   return (
     <main className="min-h-screen bg-white">
-      <Navbar forceScrolled />
+      <Navbar forceScrolled lang={lang} />
 
       <article className="pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,7 +26,7 @@ export default function LegalPage({
               {title}
             </h1>
             <p style={{ color: '#6b7280' }}>
-              <strong style={{ color: '#111827' }}>Platné od:</strong> {effectiveDate}
+              <strong style={{ color: '#111827' }}>{UI[lang].legal.effectiveDate}</strong> {effectiveDate}
             </p>
           </header>
 
@@ -31,7 +34,7 @@ export default function LegalPage({
         </div>
       </article>
 
-      <Footer />
+      <Footer lang={lang} />
     </main>
   )
 }
@@ -84,15 +87,21 @@ export function LegalTable({
   )
 }
 
-export function LegalFooter() {
+export function LegalFooter({
+  lang = 'cs',
+  lastUpdated,
+}: {
+  lang?: Lang
+  lastUpdated?: string
+} = {}) {
+  const date = lastUpdated ?? (lang === 'en' ? 'March 3, 2026' : '3. března 2026')
   return (
     <footer className="pt-8 border-t border-gray-200" style={{ color: '#6b7280' }}>
       <p>
-        <strong style={{ color: '#111827' }}>Poslední aktualizace:</strong> 3. března
-        2026
+        <strong style={{ color: '#111827' }}>{UI[lang].legal.lastUpdated}</strong> {date}
       </p>
       <p className="mt-2">
-        &copy; 2026 Michael Cetl - Custela. Všechna práva vyhrazena.
+        &copy; 2026 Michael Cetl - Custela. {UI[lang].legal.rights}
       </p>
     </footer>
   )

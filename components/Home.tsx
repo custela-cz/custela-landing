@@ -10,12 +10,12 @@ import FeaturesSection from '@/components/sections/FeaturesSection'
 import ExtrasSection from '@/components/sections/ExtrasSection'
 import HowStepsSection from '@/components/sections/HowStepsSection'
 import CompareSection from '@/components/sections/CompareSection'
-
 import PricingSection from '@/components/sections/PricingSection'
 import FAQSection from '@/components/sections/FAQSection'
 import CTASection from '@/components/sections/CTASection'
+import type { Lang } from '@/lib/i18n'
 
-export default function Home() {
+export default function Home({ lang = 'cs' }: { lang?: Lang }) {
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => {
@@ -36,19 +36,18 @@ export default function Home() {
         <div className="sa-orb sa-2" />
         <div className="sa-orb sa-3" />
       </div>
-      <Navbar />
-      <HeroSection />
-      <DashboardSection />
-      <ProblemSection />
-      <HowStepsSection />
-      <FeaturesSection />
-      <ExtrasSection />
-      <CompareSection />
-
-      <PricingSection />
-      <FAQSection />
-      <CTASection />
-      <Footer />
+      <Navbar lang={lang} />
+      <HeroSection lang={lang} />
+      <DashboardSection lang={lang} />
+      <ProblemSection lang={lang} />
+      <HowStepsSection lang={lang} />
+      <FeaturesSection lang={lang} />
+      <ExtrasSection lang={lang} />
+      <CompareSection lang={lang} />
+      <PricingSection lang={lang} />
+      <FAQSection lang={lang} />
+      <CTASection lang={lang} />
+      <Footer lang={lang} />
     </main>
   )
 }

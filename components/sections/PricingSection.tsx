@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { trackCta } from '@/lib/analytics'
 
-const FEATURES = [
+const FEATURES_CS = [
   'Google Ads + Meta Ads',
   'Autonomní správa kampaní 24/7',
   'Tvorba kampaní, textů i obrázků',
@@ -11,13 +11,28 @@ const FEATURES = [
   'Neomezený počet kampaní',
 ]
 
-const TIERS = [
+const FEATURES_EN = [
+  'Google Ads + Meta Ads',
+  'Autonomous campaign management 24/7',
+  'Campaigns, copy, and images created for you',
+  'Dashboard + reports by e-mail',
+  'Unlimited campaigns',
+]
+
+const TIERS_CS = [
   { rate: 5, range: 'do 500 000 Kč', max: 500000, agency: '15 000–30 000 Kč' },
   { rate: 4, range: '500 000 – 1 000 000 Kč', max: 1000000, agency: '30 000–45 000 Kč' },
   { rate: 3, range: '1 000 000 Kč a víc', max: Infinity, agency: '45 000–100 000 Kč' },
 ]
-function tierFor(o: number) {
-  return TIERS.find((t) => o < t.max) ?? TIERS[TIERS.length - 1]
+
+const TIERS_EN = [
+  { rate: 5, range: 'up to 500 000 Kč', max: 500000, agency: '15 000–30 000 Kč' },
+  { rate: 4, range: '500 000 – 1 000 000 Kč', max: 1000000, agency: '30 000–45 000 Kč' },
+  { rate: 3, range: '1 000 000 Kč and up', max: Infinity, agency: '45 000–100 000 Kč' },
+]
+
+function tierFor(tiers: typeof TIERS_CS, o: number) {
+  return tiers.find((t) => o < t.max) ?? tiers[tiers.length - 1]
 }
 function fmt(n: number) {
   return Math.round(n).toLocaleString('cs-CZ')
@@ -27,9 +42,54 @@ const CheckIcon = () => (
   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l4 4 6-7" /></svg>
 )
 
-export default function PricingSection() {
+const CS = {
+  label: 'Ceník',
+  h2: '3–5 % z obratu. Nic víc.',
+  sub: 'Žádný paušál, žádný závazek. Čím větší obrat, tím nižší sazba.',
+  calcEyebrow: 'Spočítejte si cenu',
+  obratSuffix: ' / měsíční obrat z reklamy',
+  inputAria: 'Měsíční obrat z reklamy',
+  perMonth: '/ měsíc',
+  ratePrefix: 'vaše sazba ',
+  rateSuffix: ' z obratu',
+  legendHead: 'Sazba podle měsíčního obratu z reklamy',
+  custela: 'Custela',
+  custelaPerMonth: ' Kč/měs',
+  agencyLabel: 'Typická agentura',
+  note: 'Platíte jen když kampaně generují obrat. Nefunguje = neplatíte.',
+  planEyebrow: 'Vše v ceně',
+  planH3: 'Kompletní autonomní správa',
+  cta: 'Vyzkoušet zdarma',
+  trust: 'Bez kreditní karty · Bez závazků · Nefunguje = neplatíte',
+}
+
+const EN = {
+  label: 'Pricing',
+  h2: '3–5% of revenue. Nothing more.',
+  sub: 'No flat fee, no commitment. The higher your revenue, the lower your rate.',
+  calcEyebrow: 'Calculate your price',
+  obratSuffix: ' / monthly ad revenue',
+  inputAria: 'Monthly ad revenue',
+  perMonth: '/ month',
+  ratePrefix: 'your rate ',
+  rateSuffix: ' of revenue',
+  legendHead: 'Rate by monthly ad revenue',
+  custela: 'Custela',
+  custelaPerMonth: ' Kč/mo',
+  agencyLabel: 'Typical agency',
+  note: 'You only pay when campaigns generate revenue. No results, no fee.',
+  planEyebrow: "Everything included",
+  planH3: 'Complete autonomous management',
+  cta: 'Try it free',
+  trust: 'No credit card · No commitment · No results, no fee',
+}
+
+export default function PricingSection({ lang = 'cs' }: { lang?: 'cs' | 'en' }) {
+  const t = lang === 'en' ? EN : CS
+  const TIERS = lang === 'en' ? TIERS_EN : TIERS_CS
+  const FEATURES = lang === 'en' ? FEATURES_EN : FEATURES_CS
   const [obrat, setObrat] = useState(200000)
-  const tier = tierFor(obrat)
+  const tier = tierFor(TIERS, obrat)
   const rate = tier.rate
   const cost = (obrat * rate) / 100
 
@@ -37,16 +97,16 @@ export default function PricingSection() {
     <section className="pricing-section" id="pricing">
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
-          <div className="section-label">Ceník</div>
-          <h2 style={{ fontWeight: 800 }}>3–5 % z obratu. Nic víc.</h2>
-          <p className="sh-sub">Žádný paušál, žádný závazek. Čím větší obrat, tím nižší sazba.</p>
+          <div className="section-label">{t.label}</div>
+          <h2 style={{ fontWeight: 800 }}>{t.h2}</h2>
+          <p className="sh-sub">{t.sub}</p>
         </div>
 
         <div className="price-wrap reveal">
           {/* Kalkulačka */}
           <div className="price-calc">
-            <div className="price-eyebrow">Spočítejte si cenu</div>
-            <div className="price-obrat">{fmt(obrat)} Kč<span> / měsíční obrat z reklamy</span></div>
+            <div className="price-eyebrow">{t.calcEyebrow}</div>
+            <div className="price-obrat">{fmt(obrat)} Kč<span>{t.obratSuffix}</span></div>
             <input
               className="price-range"
               type="range"
@@ -55,38 +115,38 @@ export default function PricingSection() {
               step={10000}
               value={obrat}
               onChange={(e) => setObrat(Number(e.target.value))}
-              aria-label="Měsíční obrat z reklamy"
+              aria-label={t.inputAria}
             />
             <div className="price-result">
-              <div className="price-cost">{fmt(cost)} Kč<span>/ měsíc</span></div>
-              <div className="price-rate">vaše sazba <strong>{rate} %</strong> z obratu</div>
+              <div className="price-cost">{fmt(cost)} Kč<span>{t.perMonth}</span></div>
+              <div className="price-rate">{t.ratePrefix}<strong>{rate} %</strong>{t.rateSuffix}</div>
             </div>
             <div className="price-legend">
-              <div className="price-legend-head">Sazba podle měsíčního obratu z reklamy</div>
-              {TIERS.map((t) => (
-                <div key={t.rate} className={`price-legend-row ${rate === t.rate ? 'active' : ''}`}>
-                  <span className="price-legend-range">{t.range}</span>
-                  <span className="price-legend-rate">{t.rate} %</span>
+              <div className="price-legend-head">{t.legendHead}</div>
+              {TIERS.map((tt) => (
+                <div key={tt.rate} className={`price-legend-row ${rate === tt.rate ? 'active' : ''}`}>
+                  <span className="price-legend-range">{tt.range}</span>
+                  <span className="price-legend-rate">{tt.rate} %</span>
                 </div>
               ))}
             </div>
             <div className="price-vs">
               <div className="price-vs-item price-vs-cust">
-                <span>Custela</span>
-                <strong>{fmt(cost)} Kč/měs</strong>
+                <span>{t.custela}</span>
+                <strong>{fmt(cost)}{t.custelaPerMonth}</strong>
               </div>
               <div className="price-vs-item">
-                <span>Typická agentura</span>
+                <span>{t.agencyLabel}</span>
                 <strong>{tier.agency}</strong>
               </div>
             </div>
-            <p className="price-note">Platíte jen když kampaně generují obrat. Nefunguje = neplatíte.</p>
+            <p className="price-note">{t.note}</p>
           </div>
 
           {/* Vše v ceně */}
           <div className="price-plan">
-            <div className="price-eyebrow">Vše v ceně</div>
-            <h3 className="price-plan-h3">Kompletní autonomní správa</h3>
+            <div className="price-eyebrow">{t.planEyebrow}</div>
+            <h3 className="price-plan-h3">{t.planH3}</h3>
             <ul className="price-features">
               {FEATURES.map((f) => (
                 <li key={f}><span className="price-fcheck"><CheckIcon /></span>{f}</li>
@@ -95,12 +155,12 @@ export default function PricingSection() {
             <a
               href="https://app.custela.com/auth"
               className="btn-primary btn-large price-cta"
-              onClick={() => trackCta('pricing', 'Vyzkoušet zdarma')}
+              onClick={() => trackCta('pricing', t.cta)}
             >
-              Vyzkoušet zdarma{' '}
+              {t.cta}{' '}
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
             </a>
-            <div className="price-trust">Bez kreditní karty · Bez závazků · Nefunguje = neplatíte</div>
+            <div className="price-trust">{t.trust}</div>
           </div>
         </div>
       </div>

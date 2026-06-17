@@ -2,17 +2,23 @@
 
 import { useEffect, useState } from 'react'
 import { trackCta } from '@/lib/analytics'
+import { UI, type Lang } from '@/lib/i18n'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
-const navLinks = [
-  { href: '#features', label: 'Funkce' },
-  { href: '#how-it-works', label: 'Jak to funguje' },
-  { href: '#pricing', label: 'Ceník' },
-  { href: '#faq', label: 'FAQ' },
-]
-
-export default function Navbar({ forceScrolled = false }: { forceScrolled?: boolean } = {}) {
+export default function Navbar({
+  forceScrolled = false,
+  lang = 'cs',
+}: { forceScrolled?: boolean; lang?: Lang } = {}) {
   const [scrolled, setScrolled] = useState(forceScrolled)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const t = UI[lang].nav
+  const navLinks = [
+    { href: '#features', label: t.features },
+    { href: '#how-it-works', label: t.how },
+    { href: '#pricing', label: t.pricing },
+    { href: '#faq', label: t.faq },
+  ]
 
   useEffect(() => {
     if (forceScrolled) return
@@ -47,7 +53,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
       >
         <div className="max-w-[1160px] mx-auto px-6 flex items-center justify-between">
           <a
-            href="/"
+            href={`/${lang}`}
             style={{
               fontSize: '22px',
               fontWeight: 800,
@@ -84,21 +90,22 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
           </ul>
 
           <div className="nav-cta-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <LanguageSwitcher lang={lang} />
             <a
               href="https://app.custela.com/auth"
               className="btn-ghost nav-login"
               style={{ color: '#4b5563' }}
-              onClick={() => trackCta('navbar', 'Přihlásit se')}
+              onClick={() => trackCta('navbar', t.login)}
             >
-              Přihlásit se
+              {t.login}
             </a>
             <a
               href="https://app.custela.com/auth"
               className="btn-primary"
               style={{ background: '#84cc16', color: '#000' }}
-              onClick={() => trackCta('navbar', 'Vyzkoušet zdarma')}
+              onClick={() => trackCta('navbar', t.tryFree)}
             >
-              Vyzkoušet zdarma{' '}
+              {t.tryFree}{' '}
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M3 8h10M9 4l4 4-4 4" />
               </svg>
@@ -182,7 +189,7 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
         <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px', width: '200px' }}>
           <a
             href="https://app.custela.com/auth"
-            onClick={() => { trackCta('navbar_mobile', 'Přihlásit se'); setMenuOpen(false); }}
+            onClick={() => { trackCta('navbar_mobile', t.login); setMenuOpen(false); }}
             style={{
               textAlign: 'center',
               fontSize: '14px',
@@ -191,12 +198,12 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               padding: '10px',
             }}
           >
-            Přihlásit se
+            {t.login}
           </a>
           <a
             href="https://app.custela.com/auth"
             className="btn-primary"
-            onClick={() => { trackCta('navbar_mobile', 'Vyzkoušet zdarma'); setMenuOpen(false); }}
+            onClick={() => { trackCta('navbar_mobile', t.tryFree); setMenuOpen(false); }}
             style={{
               background: '#84cc16',
               color: '#000',
@@ -204,8 +211,11 @@ export default function Navbar({ forceScrolled = false }: { forceScrolled?: bool
               justifyContent: 'center',
             }}
           >
-            Vyzkoušet zdarma
+            {t.tryFree}
           </a>
+          <div style={{ marginTop: '8px', display: 'flex', justifyContent: 'center' }}>
+            <LanguageSwitcher lang={lang} onNavigate={() => setMenuOpen(false)} />
+          </div>
         </div>
       </div>
     </>

@@ -1,12 +1,38 @@
 'use client'
 
-const ROWS = [
-  { topic: 'Měsíční náklady', agency: 'Fixní paušál', custela: '3–5 % z obratu' },
-  { topic: 'Správa kampaní', agency: 'Závislá na kapacitě týmu', custela: 'Autonomní, 24/7' },
-  { topic: 'Optimalizace', agency: 'Podle kapacity specialisty', custela: 'Průběžná, 24/7' },
-  { topic: 'Reporting', agency: 'Většinou 1× měsíčně', custela: 'Real-time dashboard + e-mail' },
-  { topic: 'Nasazení', agency: 'Dny až týdny', custela: '5 minut' },
-]
+const CS = {
+  rows: [
+    { topic: 'Měsíční náklady', agency: 'Fixní paušál', custela: '3–5 % z obratu' },
+    { topic: 'Správa kampaní', agency: 'Závislá na kapacitě týmu', custela: 'Autonomní, 24/7' },
+    { topic: 'Optimalizace', agency: 'Podle kapacity specialisty', custela: 'Průběžná, 24/7' },
+    { topic: 'Reporting', agency: 'Většinou 1× měsíčně', custela: 'Real-time dashboard + e-mail' },
+    { topic: 'Nasazení', agency: 'Dny až týdny', custela: '5 minut' },
+  ],
+  label: 'Srovnání',
+  heading: 'Dva přístupy ke správě kampaní',
+  sub: 'Profesionální správa kampaní za 3–5 % z obratu. Bez paušálu, bez závazků.',
+  agencyBadge: 'Tradiční správa',
+  agencyTitle: 'PPC agentura',
+  custelaBadge: 'Autonomní správa',
+  custelaTitle: 'Custela',
+}
+
+const EN = {
+  rows: [
+    { topic: 'Monthly cost', agency: 'Flat monthly fee', custela: '3–5% of revenue' },
+    { topic: 'Campaign management', agency: 'Limited by team capacity', custela: 'Autonomous, 24/7' },
+    { topic: 'Optimization', agency: 'Depends on specialist capacity', custela: 'Continuous, 24/7' },
+    { topic: 'Reporting', agency: 'Usually once a month', custela: 'Real-time dashboard + e-mail' },
+    { topic: 'Setup', agency: 'Days to weeks', custela: '5 minutes' },
+  ],
+  label: 'Comparison',
+  heading: 'Two approaches to campaign management',
+  sub: 'Professional campaign management for 3–5% of revenue. No flat fee, no commitment.',
+  agencyBadge: 'Traditional management',
+  agencyTitle: 'PPC agency',
+  custelaBadge: 'Autonomous management',
+  custelaTitle: 'Custela',
+}
 
 function XIcon() {
   return (
@@ -23,26 +49,27 @@ function CheckIcon() {
   )
 }
 
-export default function CompareSection() {
+export default function CompareSection({ lang = 'cs' }: { lang?: 'cs' | 'en' }) {
+  const t = lang === 'en' ? EN : CS
   return (
     <section className="compare-section">
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
-          <div className="section-label">Srovnání</div>
-          <h2 style={{ fontWeight: 800 }}>Dva přístupy ke správě kampaní</h2>
+          <div className="section-label">{t.label}</div>
+          <h2 style={{ fontWeight: 800 }}>{t.heading}</h2>
           <p className="sh-sub">
-            Profesionální správa kampaní za 3–5 % z obratu. Bez paušálu, bez závazků.
+            {t.sub}
           </p>
         </div>
 
         <div className="cmp-grid reveal">
           <div className="cmp-card cmp-agency">
             <div className="cmp-head">
-              <span className="cmp-badge cmp-badge-red">Tradiční správa</span>
-              <h3>PPC agentura</h3>
+              <span className="cmp-badge cmp-badge-red">{t.agencyBadge}</span>
+              <h3>{t.agencyTitle}</h3>
             </div>
             <ul>
-              {ROWS.map((r) => (
+              {t.rows.map((r) => (
                 <li key={r.topic}>
                   <XIcon />
                   <div>
@@ -56,11 +83,11 @@ export default function CompareSection() {
 
           <div className="cmp-card cmp-cust">
             <div className="cmp-head">
-              <span className="cmp-badge cmp-badge-green">Autonomní správa</span>
-              <h3>Custela</h3>
+              <span className="cmp-badge cmp-badge-green">{t.custelaBadge}</span>
+              <h3>{t.custelaTitle}</h3>
             </div>
             <ul>
-              {ROWS.map((r) => (
+              {t.rows.map((r) => (
                 <li key={r.topic}>
                   <CheckIcon />
                   <div>

@@ -2,20 +2,65 @@
 
 import { trackCta } from '@/lib/analytics'
 
-export default function HowStepsSection() {
+const CS = {
+  label: 'Jak to funguje',
+  h2: 'Od nastavení k prvním výsledkům',
+  sub: 'Pár kroků — a skoro všechno uděláme za vás.',
+  step1Title: 'Vytvoříme vám účty',
+  step1Cap: 'Reklamní účty na Googlu i Metě nastavíme za vás.',
+  step2Title: 'Dodáte podklady',
+  step2Cap: 'Pošlete nám info o sortimentu a kreativu.',
+  step3Title: 'Zoptimalizujeme podklady',
+  step3Items: ['Feed', 'Obrázky', 'Kampaně'],
+  step3Cap: 'Projdeme feed, opravíme obrázky a postavíme kampaně.',
+  step4Title: 'Spustíme a ladíme kampaně',
+  step4Aria: 'Spustíme a ladíme 24/7',
+  step4Cap: 'Bidy, rozpočty i publika ladíme nepřetržitě, 24/7.',
+  step5Title: 'Inzerujete',
+  step5AdLabel: 'REKLAMA',
+  step5Cap: 'Vaše reklama běží na Googlu i Metě a přivádí objednávky.',
+  step6Title: 'Reporting',
+  step6Cap: 'Přehledné reporty o výsledcích — i pravidelně na e-mail.',
+  ctaText: 'Vyzkoušet zdarma',
+} as const
+
+const EN = {
+  label: 'How it works',
+  h2: 'From setup to your first results',
+  sub: 'A few steps — and we handle almost everything for you.',
+  step1Title: 'We create your accounts',
+  step1Cap: 'We set up the ad accounts on Google and Meta for you.',
+  step2Title: 'You send the assets',
+  step2Cap: 'Send us info about your product range and your creative.',
+  step3Title: 'We optimize the assets',
+  step3Items: ['Feed', 'Images', 'Campaigns'],
+  step3Cap: 'We review the feed, fix the images and build the campaigns.',
+  step4Title: 'We launch and tune the campaigns',
+  step4Aria: 'We launch and tune 24/7',
+  step4Cap: 'We tune bids, budgets and audiences around the clock, 24/7.',
+  step5Title: 'You advertise',
+  step5AdLabel: 'AD',
+  step5Cap: 'Your ads run on Google and Meta and bring in orders.',
+  step6Title: 'Reporting',
+  step6Cap: 'Clear reports on results — sent to your inbox on a schedule too.',
+  ctaText: 'Try it free',
+} as const
+
+export default function HowStepsSection({ lang = 'cs' }: { lang?: 'cs' | 'en' }) {
+  const t = lang === 'en' ? EN : CS
   return (
     <section className="how-section" id="how-it-works">
       <div className="max-w-[1160px] mx-auto px-6">
         <div className="sh reveal">
-          <div className="section-label">Jak to funguje</div>
-          <h2 style={{ fontWeight: 800 }}>Od nastavení k prvním výsledkům</h2>
-          <p className="sh-sub">Pár kroků — a skoro všechno uděláme za vás.</p>
+          <div className="section-label">{t.label}</div>
+          <h2 style={{ fontWeight: 800 }}>{t.h2}</h2>
+          <p className="sh-sub">{t.sub}</p>
         </div>
 
         <div className="how-flow reveal">
           {/* 1 — Vytvoříme vám účty */}
           <div className="hfs">
-            <h3 className="hfs-title">Vytvoříme vám účty</h3>
+            <h3 className="hfs-title">{t.step1Title}</h3>
             <div className="hfs-visual">
               <div className="acct-vis">
                 <div className="acct-chips">
@@ -33,14 +78,14 @@ export default function HowStepsSection() {
                 </div>
               </div>
             </div>
-            <p className="hfs-cap">Reklamní účty na Googlu i Metě nastavíme za vás.</p>
+            <p className="hfs-cap">{t.step1Cap}</p>
           </div>
 
           {/* 2 — Dodáte podklady */}
           <div className="hfs">
-            <h3 className="hfs-title">Dodáte podklady</h3>
+            <h3 className="hfs-title">{t.step2Title}</h3>
             <div className="hfs-visual">
-              <svg viewBox="0 0 200 172" role="img" aria-label="Dodáte podklady">
+              <svg viewBox="0 0 200 172" role="img" aria-label={t.step2Title}>
                 <defs>
                   <linearGradient id="hwUp" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0" stopColor="#84cc16" />
@@ -58,34 +103,34 @@ export default function HowStepsSection() {
                 <path d="M140,49 V32 M132,40 l8,-8 l8,8" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <p className="hfs-cap">Pošlete nám info o sortimentu a kreativu.</p>
+            <p className="hfs-cap">{t.step2Cap}</p>
           </div>
 
           {/* 3 — Zoptimalizujeme podklady */}
           <div className="hfs">
-            <h3 className="hfs-title">Zoptimalizujeme podklady</h3>
+            <h3 className="hfs-title">{t.step3Title}</h3>
             <div className="hfs-visual">
               <div className="v2-list">
-                {['Feed', 'Obrázky', 'Kampaně'].map((t, i) => (
-                  <div className="v2-row" key={t} style={{ animationDelay: `${i * 0.15}s` }}>
+                {t.step3Items.map((item, i) => (
+                  <div className="v2-row" key={item} style={{ animationDelay: `${i * 0.15}s` }}>
                     <span className="v2-check">
                       <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M4 12l5 5 11-12" />
                       </svg>
                     </span>
-                    {t}
+                    {item}
                   </div>
                 ))}
               </div>
             </div>
-            <p className="hfs-cap">Projdeme feed, opravíme obrázky a postavíme kampaně.</p>
+            <p className="hfs-cap">{t.step3Cap}</p>
           </div>
 
           {/* 4 — Spustíme a ladíme kampaně */}
           <div className="hfs">
-            <h3 className="hfs-title">Spustíme a ladíme kampaně</h3>
+            <h3 className="hfs-title">{t.step4Title}</h3>
             <div className="hfs-visual">
-              <svg viewBox="0 0 200 172" role="img" aria-label="Spustíme a ladíme 24/7">
+              <svg viewBox="0 0 200 172" role="img" aria-label={t.step4Aria}>
                 <defs>
                   <linearGradient id="hwOrbit" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0" stopColor="#84cc16" />
@@ -103,14 +148,14 @@ export default function HowStepsSection() {
                 <text x="100" y="93" textAnchor="middle" fontSize="20" fontWeight="800" fill="#fff" letterSpacing="-0.5">24/7</text>
               </svg>
             </div>
-            <p className="hfs-cap">Bidy, rozpočty i publika ladíme nepřetržitě, 24/7.</p>
+            <p className="hfs-cap">{t.step4Cap}</p>
           </div>
 
           {/* 5 — Inzerujete */}
           <div className="hfs">
-            <h3 className="hfs-title">Inzerujete</h3>
+            <h3 className="hfs-title">{t.step5Title}</h3>
             <div className="hfs-visual">
-              <svg viewBox="0 0 200 172" role="img" aria-label="Inzerujete">
+              <svg viewBox="0 0 200 172" role="img" aria-label={t.step5Title}>
                 <defs>
                   <linearGradient id="hwAd" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0" stopColor="#84cc16" />
@@ -122,7 +167,7 @@ export default function HowStepsSection() {
                 <circle cx="78" cy="55" r="6" fill="#bcd79a" />
                 <path d="M68,72 l12,-12 l9,9 l7,-6 l12,9 z" fill="#cfe0b8" />
                 <rect x="62" y="92" width="46" height="12" rx="6" fill="#eef6e2" />
-                <text x="85" y="101" textAnchor="middle" fontSize="7.5" fontWeight="800" fill="#65a30d" letterSpacing="0.3">REKLAMA</text>
+                <text x="85" y="101" textAnchor="middle" fontSize="7.5" fontWeight="800" fill="#65a30d" letterSpacing="0.3">{t.step5AdLabel}</text>
                 <rect x="62" y="111" width="40" height="6" rx="3" fill="#e7edf0" />
                 <rect x="62" y="124" width="68" height="13" rx="6.5" fill="url(#hwAd)" />
                 {/* platform badges */}
@@ -132,14 +177,14 @@ export default function HowStepsSection() {
                 <text x="150" y="83" textAnchor="middle" fontSize="13" fontWeight="800" fill="#fff">f</text>
               </svg>
             </div>
-            <p className="hfs-cap">Vaše reklama běží na Googlu i Metě a přivádí objednávky.</p>
+            <p className="hfs-cap">{t.step5Cap}</p>
           </div>
 
           {/* 6 — Reporting */}
           <div className="hfs">
-            <h3 className="hfs-title">Reporting</h3>
+            <h3 className="hfs-title">{t.step6Title}</h3>
             <div className="hfs-visual">
-              <svg viewBox="0 0 200 172" role="img" aria-label="Reporting">
+              <svg viewBox="0 0 200 172" role="img" aria-label={t.step6Title}>
                 <defs>
                   <linearGradient id="hwBar" x1="0" y1="1" x2="0" y2="0">
                     <stop offset="0" stopColor="#d6e3c4" />
@@ -162,17 +207,25 @@ export default function HowStepsSection() {
                 </g>
               </svg>
             </div>
-            <p className="hfs-cap">Přehledné reporty o výsledcích — i pravidelně na e-mail.</p>
+            <p className="hfs-cap">{t.step6Cap}</p>
           </div>
         </div>
 
         <div className="how-payoff reveal">
           <span className="how-payoff-badge">3–5&nbsp;%</span>
-          <p>
-            A na konci? Platíte jen <strong>3–5&nbsp;% z&nbsp;obratu</strong> podle vašeho
-            měsíčního obratu, a to <strong className="hp-cond">jen když kampaně vydělávají</strong>.
-            Když ne, neplatíte nic.
-          </p>
+          {lang === 'en' ? (
+            <p>
+              And in the end? You pay just <strong>3–5&nbsp;% of revenue</strong> based on your
+              monthly revenue, and <strong className="hp-cond">only when campaigns are earning</strong>.
+              When they&apos;re not, you pay nothing.
+            </p>
+          ) : (
+            <p>
+              A na konci? Platíte jen <strong>3–5&nbsp;% z&nbsp;obratu</strong> podle vašeho
+              měsíčního obratu, a to <strong className="hp-cond">jen když kampaně vydělávají</strong>.
+              Když ne, neplatíte nic.
+            </p>
+          )}
         </div>
 
         <div className="how-cta reveal">
@@ -180,9 +233,9 @@ export default function HowStepsSection() {
             href="https://app.custela.com/auth"
             className="btn-primary btn-large"
             style={{ background: '#84cc16', color: '#000' }}
-            onClick={() => trackCta('how-it-works', 'Vyzkoušet zdarma')}
+            onClick={() => trackCta('how-it-works', t.ctaText)}
           >
-            Vyzkoušet zdarma{' '}
+            {t.ctaText}{' '}
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M3 8h10M9 4l4 4-4 4" />
             </svg>
