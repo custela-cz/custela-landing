@@ -6,7 +6,7 @@ const EN = {
   label: 'Why Custela',
   todayLabel: 'Today',
   withLabel: 'With Custela',
-  todayPrice: '15,000–30,000 Kč',
+  todayPrice: '€600–€1,200',
   todaySub: 'flat monthly fee',
   todayCopy: 'You pay the same every month — even when your campaigns aren’t earning.',
   withPriceSuffix: 'of revenue',

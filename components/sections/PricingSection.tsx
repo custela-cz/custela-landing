@@ -26,16 +26,23 @@ const TIERS_CS = [
 ]
 
 const TIERS_EN = [
-  { rate: 5, range: 'up to 500 000 Kč', max: 500000, agency: '15 000–30 000 Kč' },
-  { rate: 4, range: '500 000 – 1 000 000 Kč', max: 1000000, agency: '30 000–45 000 Kč' },
-  { rate: 3, range: '1 000 000 Kč and up', max: Infinity, agency: '45 000–100 000 Kč' },
+  { rate: 5, range: 'up to €20,000', max: 20000, agency: '€600–€1,200' },
+  { rate: 4, range: '€20,000 – €40,000', max: 40000, agency: '€1,200–€1,800' },
+  { rate: 3, range: '€40,000 and up', max: Infinity, agency: '€1,800–€4,000' },
 ]
+
+// Per-locale money: Czech audience pays in CZK, international page shows EUR.
+const MONEY_CS = {
+  fmt: (n: number) => Math.round(n).toLocaleString('cs-CZ') + ' Kč',
+  min: 50000, max: 2000000, step: 10000, start: 200000,
+}
+const MONEY_EN = {
+  fmt: (n: number) => '€' + Math.round(n).toLocaleString('en-US'),
+  min: 2000, max: 80000, step: 1000, start: 8000,
+}
 
 function tierFor(tiers: typeof TIERS_CS, o: number) {
   return tiers.find((t) => o < t.max) ?? tiers[tiers.length - 1]
-}
-function fmt(n: number) {
-  return Math.round(n).toLocaleString('cs-CZ')
 }
 
 const CheckIcon = () => (
@@ -54,7 +61,7 @@ const CS = {
   rateSuffix: ' z obratu',
   legendHead: 'Sazba podle měsíčního obratu z reklamy',
   custela: 'Custela',
-  custelaPerMonth: ' Kč/měs',
+  custelaPerMonth: '/měs',
   agencyLabel: 'Typická agentura',
   note: 'Platíte jen když kampaně generují obrat. Nefunguje = neplatíte.',
   planEyebrow: 'Vše v ceně',
@@ -75,7 +82,7 @@ const EN = {
   rateSuffix: ' of revenue',
   legendHead: 'Rate by monthly ad revenue',
   custela: 'Custela',
-  custelaPerMonth: ' Kč/mo',
+  custelaPerMonth: '/mo',
   agencyLabel: 'Typical agency',
   note: 'You only pay when campaigns generate revenue. No results, no fee.',
   planEyebrow: "Everything included",
@@ -88,7 +95,8 @@ export default function PricingSection({ lang = 'cs' }: { lang?: 'cs' | 'en' }) 
   const t = lang === 'en' ? EN : CS
   const TIERS = lang === 'en' ? TIERS_EN : TIERS_CS
   const FEATURES = lang === 'en' ? FEATURES_EN : FEATURES_CS
-  const [obrat, setObrat] = useState(200000)
+  const money = lang === 'en' ? MONEY_EN : MONEY_CS
+  const [obrat, setObrat] = useState(money.start)
   const tier = tierFor(TIERS, obrat)
   const rate = tier.rate
   const cost = (obrat * rate) / 100
@@ -106,19 +114,19 @@ export default function PricingSection({ lang = 'cs' }: { lang?: 'cs' | 'en' }) 
           {/* Kalkulačka */}
           <div className="price-calc">
             <div className="price-eyebrow">{t.calcEyebrow}</div>
-            <div className="price-obrat">{fmt(obrat)} Kč<span>{t.obratSuffix}</span></div>
+            <div className="price-obrat">{money.fmt(obrat)}<span>{t.obratSuffix}</span></div>
             <input
               className="price-range"
               type="range"
-              min={50000}
-              max={2000000}
-              step={10000}
+              min={money.min}
+              max={money.max}
+              step={money.step}
               value={obrat}
               onChange={(e) => setObrat(Number(e.target.value))}
               aria-label={t.inputAria}
             />
             <div className="price-result">
-              <div className="price-cost">{fmt(cost)} Kč<span>{t.perMonth}</span></div>
+              <div className="price-cost">{money.fmt(cost)}<span>{t.perMonth}</span></div>
               <div className="price-rate">{t.ratePrefix}<strong>{rate} %</strong>{t.rateSuffix}</div>
             </div>
             <div className="price-legend">
@@ -133,7 +141,7 @@ export default function PricingSection({ lang = 'cs' }: { lang?: 'cs' | 'en' }) 
             <div className="price-vs">
               <div className="price-vs-item price-vs-cust">
                 <span>{t.custela}</span>
-                <strong>{fmt(cost)}{t.custelaPerMonth}</strong>
+                <strong>{money.fmt(cost)}{t.custelaPerMonth}</strong>
               </div>
               <div className="price-vs-item">
                 <span>{t.agencyLabel}</span>
